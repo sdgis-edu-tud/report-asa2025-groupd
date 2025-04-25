@@ -4,7 +4,7 @@ subtitle: "Project report of Group #"
 author:
   - name: "Frederick Auer"
     affiliation: "MSc Geomatics"
-  - name: "Student 2"
+  - name: "Lin Ruofan"
     affiliation: "MSc Landscape Architecture"
   - name: "Matthijs Jerez Nova"
     affiliation: "MSc Urbanism"
