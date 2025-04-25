@@ -1,6 +1,6 @@
 ---
 title: "Title of your report"
-subtitle: "Project report of Group #"
+subtitle: "Project report of Group D"
 author:
   - name: "Frederick Auer"
     affiliation: "MSc Geomatics"
@@ -10,8 +10,8 @@ author:
     affiliation: "MSc Urbanism"
   - name: "Ula Kunigelyte"
     affiliation: "MSc Urbanism"
-  - name: "Student 5"
-    affiliation: "MSc Landscape Architecture"
+  - name: "Finn van Asch"
+    affiliation: "MSc Urbanism"
 format: html
 ---
 
