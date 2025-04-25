@@ -8,7 +8,7 @@ author:
     affiliation: "MSc Landscape Architecture"
   - name: "Matthijs Jerez Nova"
     affiliation: "MSc Urbanism"
-  - name: "Student 4"
+  - name: "Ula Kunigelyte"
     affiliation: "MSc Urbanism"
   - name: "Student 5"
     affiliation: "MSc Landscape Architecture"
