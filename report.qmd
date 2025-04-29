@@ -4,14 +4,19 @@ subtitle: "Project report of Group D"
 author:
   - name: "Frederick Auer"
     affiliation: "MSc Geomatics"
+    group_role: "Software/Program Helper & Data Collector"
   - name: "Lin Ruofan"
     affiliation: "MSc Landscape Architecture"
+    group_role: "Mapping Specialist & Design Lead"
   - name: "Matthijs Jerez Nova"
     affiliation: "MSc Urbanism"
+    group_role: "Writer/Editor & Research Lead"
   - name: "Ula Kunigelyte"
     affiliation: "MSc Urbanism"
+    group_role: "Mapping Specialist & Data Analyst"
   - name: "Finn van Asch"
     affiliation: "MSc Urbanism"
+    group_role: "Research Lead & Mapping Specialist"
 format: html
 ---
 
