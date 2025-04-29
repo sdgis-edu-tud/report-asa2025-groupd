@@ -1,17 +1,22 @@
 ---
 title: "Title of your report"
-subtitle: "Project report of Group #"
+subtitle: "Project report of Group D"
 author:
-  - name: "Student 1"
+  - name: "Frederick Auer"
     affiliation: "MSc Geomatics"
-  - name: "Student 2"
+    group_role: "Software/Program Helper & Data Collector"
+  - name: "Lin Ruofan"
     affiliation: "MSc Landscape Architecture"
-  - name: "Student 3"
+    group_role: "Mapping Specialist & Design Lead"
+  - name: "Matthijs Jerez Nova"
     affiliation: "MSc Urbanism"
-  - name: "Student 4"
+    group_role: "Writer/Editor & Research Lead"
+  - name: "Ula Kunigelyte"
     affiliation: "MSc Urbanism"
-  - name: "Student 5"
-    affiliation: "MSc Landscape Architecture"
+    group_role: "Mapping Specialist & Data Analyst"
+  - name: "Finn van Asch"
+    affiliation: "MSc Urbanism"
+    group_role: "Research Lead & Mapping Specialist"
 format: html
 ---
 
