@@ -33,7 +33,7 @@ When you click the **Render** button a document will be generated that includes 
 1 + 1
 ```
 
-You can add options to executable code like this 
+You can add options to executable code like this
 
 ```{r}
 #| echo: false
@@ -43,20 +43,36 @@ You can add options to executable code like this
 The `echo: false` option disables the printing of code (only output is displayed).
 
 You can delete this entire callout between and including the lines
-```
+
+```         
 ::: callout
 ```
+
 and
 
-```
+```         
 :::
 ```
+
 and start the report from the Introduction section below.
 :::
 
 ## Introduction
 
+In this report
+
 ## Methods
+
+For air quality, relabeling the RGB values to legend.
+
+| Green Band Value | SO₂ Range (µg/m³) | Color        | Class Label | Class Value |
+|---------------|---------------|---------------|---------------|---------------|
+| 168              | 0.0 – 0.1         | Dark Green   | Very Good   | 0           |
+| 201              | 0.1 – 0.2         | Light Green  | Good        | 1           |
+| 237              | 0.2 – 0.5         | Yellow       | Moderate    | 2           |
+| 204              | 0.5 – 1.0         | Light Orange | Poor        | 3           |
+| 102              | 1.0 – 2.0         | Dark Orange  | Very Poor   | 4           |
+| 0                | 2.0 – 5.0         | Red          | Hazardous   | 5           |
 
 ### MCDA
 
@@ -67,4 +83,3 @@ and start the report from the Introduction section below.
 ## Discussion
 
 ## Conclusion
-
