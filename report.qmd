@@ -22,10 +22,7 @@ bibliography: references.bib
 csl: apa.csl
 
 format: html
-execute:
-  echo: false
-  warning: false
-  message: false
+
 editor: visual
 ---
 
@@ -41,7 +38,11 @@ The ReBioClim project, a European initiativve funded by the Interreg Central Eur
 
 In this report, inspired by the ReBioClim project, we focus on the urban streams of Jablonec nad Nisou. Over recent decades, the city has experienced overbuilding, channelization, and neglect of its urban streams, leading to ecological degradation and reduced quality of life. Our objective is to quantitatively assess the current state of these waterways and identify areas with the highest potential for improvement. Through these efforts, we aim to provide a better understanding of where and how to restore the waterways and create green-blue corridors that offer cooling effects, improve air quality, and provide recreational spaces for residents.
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+```{r fig.subcap="Jablonec nad Nisou and the Bila Nisa stream"}
+#| warning: false
+#| echo: false
+#| message: false
 library(leaflet)
 library(sf)
 
@@ -136,7 +137,7 @@ Therefore, when deciding on our scale, we considered our indicators and attempte
 For air quality, relabeling the RGB values to legend.
 
 | Green Band Value | SO₂ Range (µg/m³) | Color        | Class Label | Class Value |
-|---------------|---------------|---------------|---------------|---------------|
+|------------------|-------------------|--------------|-------------|-------------|
 | 168              | 0.0 – 0.1         | Dark Green   | Very Good   | 0           |
 | 201              | 0.1 – 0.2         | Light Green  | Good        | 1           |
 | 237              | 0.2 – 0.5         | Yellow       | Moderate    | 2           |
