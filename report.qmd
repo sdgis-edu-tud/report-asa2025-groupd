@@ -77,34 +77,45 @@ Our research centers on the Bílá Nisa stream, and will address the problems we
 
 Our derived subquestions, respective to each theme are then the following:
 
-
 > *(Where can the ecological quality of the stream area be enhanced?)*
 
 > *(Which areas are the most in need for flood protection?Where can flood mitigation measures take place?)*
 
 > *(Where can improvements in quality of life balance stakeholder interests in areas around the stream?)*
 
-//we will add how the report is structured here after. 
+//we will add how the report is structured here after.
 
 ## Methods
 
-When applying spatial analytics to a chosen site, the scale, resolution and 
+A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data. The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.
+
+**Definition of Spatial Units**
+
+To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. However, based on our context and discussed principles affecting the conducted analysis, a spatial unit at 100 x 100 meters was chosen. The unit is used for consistency in the assignment of spatial indicators and facilitates the aggregation and comparison of data across the urban stream landscape. The 100 x 100m spatial unit is specific to the scale Jablonec nad Nisou, the resolution of the data collected and relevant literature on stream assessments.
+
+#### **Impact of Scale on Detectable Effects**
+
+The spatial resolution of the data we collected significantly shapes the analytical results. Averaging the data collected within the chosen 100 x 100m cells allows for generalized insights, which we found best fitting. It may however still obscure localized effects such as even smaller micro climatic benefits of tree clusters or linear vegetation elements. We chose the trade off that best fits our and balances detail with analytical feasibility.
+
+#### **Resolution and Data Acquisition Method**
+
+The resolution of spatial analysis is directly tied to the data acquisition method [@BARTESAGHIKOC2020103893]. While spaceborne remote sensing, used for the measurement of some of our indicators when data availability was lacking, is better suited for large-scale urban assessments and often lacks the spatial precision needed for detailed micro climatic or ecological studies. On the other hand biodiversity and quality of life data are generally acquired at larger scale and would require smaller spatial units. For example, the widely accepted walking range of 500 meters [@macioszek2022effect ; @popp2004walking], or biodiversity connectivity of around 100m stretches, identified by [@RANTA2021106980]. Our method reflects this balance, using satellite data for broader patterns such as LST and impervious surfaces. We then supplement this with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few.
+
+**Scale-Specific Indicators for Stream Assessment**
+
+Urban stream analysis requires scale-appropriate methodologies. Different ecosystem services or hydrological characteristics demand different spatial extents. [@RANTA2021106980] uses the following scales to assess the respective indicators.
+
+-   **100 m stream stretches** are appropriate for biological assessments.
+
+-   **500 m buffers** may suit hydromorphological evaluations
+
+-   **Entire sub-catchments** can inform broader planning or restoration strategies.
+
+Therefore, when deciding on our scale, we considered our indicators and attempted to closely match them to retain a good representation of the spatial dynamics of the stream functions we aimed to analyze.
 
 ### Climate Adaptation
 
 ### Biodiversity
-
-When considering the biodiversity we look at three key indicators: Green Network, Habitat type and Floodplains.
-
-| Section | Division (e.g., function, service) | Indicator | Assessment Scale |
-|------------------|-------------------|------------------|------------------|
-| UB – Macrophytes | EFH Habitat availability | Streambed sedimentation | 100 m |
-| PS – Watersupply | Transversal connectivity | Groundwater recharge | 500 m |
-| RS – Climateregulation | Air temperature variation |  | 100 m |
-| RS – Pollination | Nectariferous plants |  | 500 m |
-| CS – Education and cognitive development | Distance to urban stream from home |  | 200 m |
-
-: (#tbl-scale-measurement) Examples of different scales of measurement, according to [@RANTA2021106980].
 
 For air quality, relabeling the RGB values to legend.
 
