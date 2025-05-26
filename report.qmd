@@ -24,43 +24,6 @@ csl: apa.csl
 format: html
 ---
 
-::: callout
-## This is a computational notebook
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
-```
-
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
-
-You can delete this entire callout between and including the lines
-
-```         
-::: callout
-```
-
-and
-
-```         
-:::
-```
-
-and start the report from the Introduction section below.
-:::
-
 ## Introduction
 
 Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss, and the demand for sustainable development [@nijkamp2013new]. According to [@article], in cities the impact of land use on fresh-water ecosystems is especially severe. As climate change is expected to increase the intensity and frequency of extreme weather events, solutions to combat these effects are urgently needed [@ourloglou2020assessing].
@@ -93,11 +56,11 @@ A important foundation for applying spatial analytics in urban environments is i
 
 To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. However, based on our context and discussed principles affecting the conducted analysis, a spatial unit at 100 x 100 meters was chosen. The unit is used for consistency in the assignment of spatial indicators and facilitates the aggregation and comparison of data across the urban stream landscape. The 100 x 100m spatial unit is specific to the scale Jablonec nad Nisou, the resolution of the data collected and relevant literature on stream assessments.
 
-#### **Impact of Scale on Detectable Effects**
+**Impact of Scale on Detectable Effects**
 
 The spatial resolution of the data we collected significantly shapes the analytical results. Averaging the data collected within the chosen 100 x 100m cells allows for generalized insights, which we found best fitting. It may however still obscure localized effects such as even smaller micro climatic benefits of tree clusters or linear vegetation elements. We chose the trade off that best fits our and balances detail with analytical feasibility.
 
-#### **Resolution and Data Acquisition Method**
+**Resolution and Data Acquisition Method**
 
 The resolution of spatial analysis is directly tied to the data acquisition method [@BARTESAGHIKOC2020103893]. While spaceborne remote sensing, used for the measurement of some of our indicators when data availability was lacking, is better suited for large-scale urban assessments and often lacks the spatial precision needed for detailed micro climatic or ecological studies. On the other hand biodiversity and quality of life data are generally acquired at larger scale and would require smaller spatial units. For example, the widely accepted walking range of 500 meters [@macioszek2022effect ; @popp2004walking], or biodiversity connectivity of around 100m stretches, identified by [@RANTA2021106980]. Our method reflects this balance, using satellite data for broader patterns such as LST and impervious surfaces. We then supplement this with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few.
 
@@ -112,6 +75,9 @@ Urban stream analysis requires scale-appropriate methodologies. Different ecosys
 -   **Entire sub-catchments** can inform broader planning or restoration strategies.
 
 Therefore, when deciding on our scale, we considered our indicators and attempted to closely match them to retain a good representation of the spatial dynamics of the stream functions we aimed to analyze.
+
+
+
 
 ### Climate Adaptation
 
