@@ -17,6 +17,10 @@ author:
   - name: "Finn van Asch"
     affiliation: "MSc Urbanism"
     group_role: "Research Lead & Mapping Specialist"
+
+bibliography: references.bib
+csl: apa.csl
+
 format: html
 ---
 
@@ -63,6 +67,22 @@ In this report
 
 ## Methods
 
+### Climate Adaptation
+
+### Biodiversity
+
+When considering the biodiversity we look at three key indicators: Green Network, Habitat type and Floodplains.
+
+| Section | Division (e.g., function, service) | Indicator | Assessment Scale |
+|--------------------|---------------------|----------------|----------------|
+| UB – Macrophytes | EFH Habitat availability | Streambed sedimentation | 100 m |
+| PS – Watersupply | Transversal connectivity | Groundwater recharge | 500 m |
+| RS – Climateregulation | Air temperature variation |  | 100 m |
+| RS – Pollination | Nectariferous plants |  | 500 m |
+| CS – Education and cognitive development | Distance to urban stream from home |  | 200 m |
+
+: (#tbl-scale-measurement) Examples of different scales of measurement, according to [@RANTA2021106980].
+
 For air quality, relabeling the RGB values to legend.
 
 | Green Band Value | SO₂ Range (µg/m³) | Color        | Class Label | Class Value |
@@ -83,3 +103,5 @@ For air quality, relabeling the RGB values to legend.
 ## Discussion
 
 ## Conclusion
+
+:::
