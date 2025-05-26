@@ -22,6 +22,11 @@ bibliography: references.bib
 csl: apa.csl
 
 format: html
+execute:
+  echo: false
+  warning: false
+  message: false
+editor: visual
 ---
 
 ## Introduction
@@ -30,21 +35,61 @@ Urban areas across Europe are increasingly challenged by the impacts of climate 
 
 A good solution is through urban streams. Urban streams are expected to have an important role in the mitigation of climate change by buffering extreme temperatures and prevent floods. More importantly, finding nature-based solutions are key and can restore existing strained water systems [@ourloglou2020assessing]. In this context, spatial analytics can play a crucial role in informing climate adaptation and urban planning strategies [@hurlimann2012role]. Through methods such as Spatial Multi-Criteria Decision Analysis (S-MCDA) and typology development, planners and designers can better understand urban systems, evaluate trade-offs, and propose the correct targeted interventions.
 
-The ReBioClim project, a European initiativve funded by the Interreg Central Europe Program [@rebioclim2024], exemplifies this approach by focusing on revitalizing small urban streams. It additionally provides a framework where nature-based solutions can be identified to enhance biodiversity, mitigate climate change effects, and improve urban living conditions [@rebioclim_ioer2024].Running from Juse 2204 to January 2027, the project addresses the challenges of urban stream restroration in four Central European cities, including Jablonec nad Nisou.
+The ReBioClim project, a European initiativve funded by the Interreg Central Europe Program [@rebioclim2024], exemplifies this approach by focusing on revitalizing small urban streams. It additionally provides a framework where nature-based solutions can be identified to enhance biodiversity, mitigate climate change effects, and improve urban living conditions [@rebioclim_ioer2024]. Running from Juse 2204 to January 2027, the project addresses the challenges of urban stream restroration in four Central European cities, including Jablonec nad Nisou.
+
+![ReBioClim Project Overview](Inserted_images/rebioclim_currentstate.png){width="600"}
 
 In this report, inspired by the ReBioClim project, we focus on the urban streams of Jablonec nad Nisou. Over recent decades, the city has experienced overbuilding, channelization, and neglect of its urban streams, leading to ecological degradation and reduced quality of life. Our objective is to quantitatively assess the current state of these waterways and identify areas with the highest potential for improvement. Through these efforts, we aim to provide a better understanding of where and how to restore the waterways and create green-blue corridors that offer cooling effects, improve air quality, and provide recreational spaces for residents.
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(leaflet)
+library(sf)
+
+# Read the stream GeoJSON without showing messages
+stream <- st_read("Inserted_images/stream_for_interactivemap.geojson")
+
+# Coordinates for Jablonec nad Nisou
+jablonec_coords <- c(lat = 50.7224, lng = 15.1708)
+
+# Render leaflet map
+leaflet() %>%
+  addTiles() %>%
+  addPolylines(
+    data = stream,
+    color = "blue",
+    weight = 3,
+    opacity = 0.8,
+    popup = "Bílá Nisa Stream"
+  ) %>%
+  addCircleMarkers(
+    lng = jablonec_coords["lng"],
+    lat = jablonec_coords["lat"],
+    radius = 6,
+    color = "red",
+    fillOpacity = 0.8,
+    label = "Jablonec nad Nisou"
+  ) %>%
+  addLegend(
+    position = "bottomright",
+    colors = c("blue", "red"),
+    labels = c("Bílá Nisa Stream", "Jablonec nad Nisou"),
+    title = "Legend",
+    opacity = 0.8
+  )
+```
+
+
 Our research centers on the Bílá Nisa stream, and will address the problems we have identified through the lens fo the three following themes: Biodiversity, Climate Adaptation, and Quality of Life. These themes, relevant to our location has led to our main research question:
 
-> *(Where should urban stream restoration be prioritized in Jablonec nad Nisou to maximize biodiversity, climate adaptation, and quality of life?)*
+> *Where should urban stream restoration be prioritized in Jablonec nad Nisou to maximize biodiversity, climate adaptation, and quality of life?*
 
 Our derived subquestions, respective to each theme are then the following:
 
-> *(Where can the ecological quality of the stream area be enhanced?)*
+> *Where can the ecological quality of the stream area be enhanced?*
 
-> *(Which areas are the most in need for flood protection?Where can flood mitigation measures take place?)*
+> *Which areas are the most in need for flood protection?Where can flood mitigation measures take place?*
 
-> *(Where can improvements in quality of life balance stakeholder interests in areas around the stream?)*
+> *Where can improvements in quality of life balance stakeholder interests in areas around the stream?*
 
 //we will add how the report is structured here after.
 
