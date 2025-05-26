@@ -86,7 +86,7 @@ When considering the biodiversity we look at three key indicators: Green Network
 For air quality, relabeling the RGB values to legend.
 
 | Green Band Value | SO₂ Range (µg/m³) | Color        | Class Label | Class Value |
-|---------------|---------------|---------------|---------------|---------------|
+|------------------|-------------------|--------------|-------------|-------------|
 | 168              | 0.0 – 0.1         | Dark Green   | Very Good   | 0           |
 | 201              | 0.1 – 0.2         | Light Green  | Good        | 1           |
 | 237              | 0.2 – 0.5         | Yellow       | Moderate    | 2           |
