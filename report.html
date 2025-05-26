@@ -25,41 +25,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -169,41 +134,6 @@ div.csl-indent {
 </header>
 
 
-<div class="callout callout-style-simple callout-none no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-This is a computational notebook
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <a href="https://quarto.org" class="uri">https://quarto.org</a>.</p>
-<section id="running-code" class="level2">
-<h2 class="anchored" data-anchor-id="running-code">Running Code</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
-<p>You can add options to executable code like this</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-<p>The <code>echo: false</code> option disables the printing of code (only output is displayed).</p>
-<p>You can delete this entire callout between and including the lines</p>
-<pre><code>::: callout</code></pre>
-<p>and</p>
-<pre><code>:::</code></pre>
-<p>and start the report from the Introduction section below.</p>
-</section>
-</div>
-</div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss, and the demand for sustainable development <span class="citation" data-cites="nijkamp2013new">(<a href="#ref-nijkamp2013new" role="doc-biblioref">Nijkamp &amp; Kourtit, 2013</a>)</span>. According to <span class="citation" data-cites="article">(<a href="#ref-article" role="doc-biblioref">Diaz et al., 2019</a>)</span>, in cities the impact of land use on fresh-water ecosystems is especially severe. As climate change is expected to increase the intensity and frequency of extreme weather events, solutions to combat these effects are urgently needed <span class="citation" data-cites="ourloglou2020assessing">(<a href="#ref-ourloglou2020assessing" role="doc-biblioref">Ourloglou et al., 2020</a>)</span>.</p>
@@ -228,15 +158,12 @@ This is a computational notebook
 </section>
 <section id="methodology" class="level2">
 <h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
-<p>A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data. The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.</p>
+<p>A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data. <span class="citation" data-cites="dungan2002balanced">(<a href="#ref-dungan2002balanced" role="doc-biblioref">Dungan et al., 2002</a>)</span> The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.</p>
 <p><strong>Definition of Spatial Units</strong></p>
 <p>To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis <span class="citation" data-cites="BARTESAGHIKOC2020103893">(<a href="#ref-BARTESAGHIKOC2020103893" role="doc-biblioref">Bartesaghi-Koc et al., 2020</a>)</span>. However, based on our context and discussed principles affecting the conducted analysis, a spatial unit at 100 x 100 meters was chosen. The unit is used for consistency in the assignment of spatial indicators and facilitates the aggregation and comparison of data across the urban stream landscape. The 100 x 100m spatial unit is specific to the scale Jablonec nad Nisou, the resolution of the data collected and relevant literature on stream assessments.</p>
-<section id="impact-of-scale-on-detectable-effects" class="level4">
-<h4 class="anchored" data-anchor-id="impact-of-scale-on-detectable-effects"><strong>Impact of Scale on Detectable Effects</strong></h4>
+<p><strong>Impact of Scale on Detectable Effects</strong></p>
 <p>The spatial resolution of the data we collected significantly shapes the analytical results. Averaging the data collected within the chosen 100 x 100m cells allows for generalized insights, which we found best fitting. It may however still obscure localized effects such as even smaller micro climatic benefits of tree clusters or linear vegetation elements. We chose the trade off that best fits our and balances detail with analytical feasibility.</p>
-</section>
-<section id="resolution-and-data-acquisition-method" class="level4">
-<h4 class="anchored" data-anchor-id="resolution-and-data-acquisition-method"><strong>Resolution and Data Acquisition Method</strong></h4>
+<p><strong>Resolution and Data Acquisition Method</strong></p>
 <p>The resolution of spatial analysis is directly tied to the data acquisition method <span class="citation" data-cites="BARTESAGHIKOC2020103893">(<a href="#ref-BARTESAGHIKOC2020103893" role="doc-biblioref">Bartesaghi-Koc et al., 2020</a>)</span>. While spaceborne remote sensing, used for the measurement of some of our indicators when data availability was lacking, is better suited for large-scale urban assessments and often lacks the spatial precision needed for detailed micro climatic or ecological studies. On the other hand biodiversity and quality of life data are generally acquired at larger scale and would require smaller spatial units. For example, the widely accepted walking range of 500 meters <span class="citation" data-cites="macioszek2022effect popp2004walking">(<a href="#ref-macioszek2022effect" role="doc-biblioref">Macioszek et al., 2022</a>; <a href="#ref-popp2004walking" role="doc-biblioref">Popp et al., 2004</a>)</span>, or biodiversity connectivity of around 100m stretches, identified by <span class="citation" data-cites="RANTA2021106980">(<a href="#ref-RANTA2021106980" role="doc-biblioref">Ranta et al., 2021</a>)</span>. Our method reflects this balance, using satellite data for broader patterns such as LST and impervious surfaces. We then supplement this with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few.</p>
 <p><strong>Scale-Specific Indicators for Stream Assessment</strong></p>
 <p>Urban stream analysis requires scale-appropriate methodologies. Different ecosystem services or hydrological characteristics demand different spatial extents. <span class="citation" data-cites="RANTA2021106980">(<a href="#ref-RANTA2021106980" role="doc-biblioref">Ranta et al., 2021</a>)</span> uses the following scales to assess the respective indicators.</p>
@@ -246,6 +173,8 @@ This is a computational notebook
 <li><p><strong>Entire sub-catchments</strong> can inform broader planning or restoration strategies.</p></li>
 </ul>
 <p>Therefore, when deciding on our scale, we considered our indicators and attempted to closely match them to retain a good representation of the spatial dynamics of the stream functions we aimed to analyze.</p>
+<section id="identified-required-collected-data-per-respective-theme" class="level3">
+<h3 class="anchored" data-anchor-id="identified-required-collected-data-per-respective-theme">Identified required collected data per respective theme</h3>
 </section>
 <section id="climate-adaptation" class="level3">
 <h3 class="anchored" data-anchor-id="climate-adaptation">Climate Adaptation</h3>
@@ -341,6 +270,9 @@ Bartesaghi-Koc, C., Osmond, P., &amp; Peters, A. (2020). Quantifying the seasona
 </div>
 <div id="ref-article" class="csl-entry" role="listitem">
 Diaz, S., Settele, J., Brondízio, E., Ngo, H. T., Agard, J., Arneth, A., Balvanera, P., Brauman, K., Butchart, S., Chan, K., Garibaldi, L., Ichii, K., Liu, J., Subramanian, S., Midgley, G., Miloslavich, P., Molnár, Z., Obura, D., Pfaff, A., &amp; Zayas, C. (2019). Pervasive human-driven decline of life on earth points to the need for transformative change. <em>Science (New York, N.Y.)</em>, <em>366</em>. <a href="https://doi.org/10.1126/science.aax3100">https://doi.org/10.1126/science.aax3100</a>
+</div>
+<div id="ref-dungan2002balanced" class="csl-entry" role="listitem">
+Dungan, J. L., Perry, J., Dale, M., Legendre, P., Citron-Pousty, S., Fortin, M.-J., Jakomulska, A., Miriti, M., &amp; Rosenberg, M. (2002). A balanced view of scale in spatial statistical analysis. <em>Ecography</em>, <em>25</em>(5), 626–640.
 </div>
 <div id="ref-hurlimann2012role" class="csl-entry" role="listitem">
 Hurlimann, A. C., &amp; March, A. P. (2012). The role of spatial planning in adapting to climate change. <em>Wiley Interdisciplinary Reviews: Climate Change</em>, <em>3</em>(5), 477–488.
