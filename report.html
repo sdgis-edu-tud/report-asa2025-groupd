@@ -60,7 +60,6 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-<<<<<<< HEAD
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -82,9 +81,6 @@ div.csl-right-inline {
 div.csl-indent {
   margin-left: 2em;
 }</style>
-=======
-</style>
->>>>>>> 5c61646587f15f5798bd0afee6c1ba4984300b94
 
 
 <script src="report_files/libs/clipboard/clipboard.min.js"></script>
@@ -210,66 +206,52 @@ This is a computational notebook
 </div>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<<<<<<< HEAD
-<p>In this report</p>
+<p>Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss, and the demand for sustainable development <span class="citation" data-cites="nijkamp2013new">(<a href="#ref-nijkamp2013new" role="doc-biblioref">Nijkamp &amp; Kourtit, 2013</a>)</span>. According to <span class="citation" data-cites="article">(<a href="#ref-article" role="doc-biblioref">Diaz et al., 2019</a>)</span>, in cities the impact of land use on fresh-water ecosystems is especially severe. As climate change is expected to increase the intensity and frequency of extreme weather events, solutions to combat these effects are urgently needed <span class="citation" data-cites="ourloglou2020assessing">(<a href="#ref-ourloglou2020assessing" role="doc-biblioref">Ourloglou et al., 2020</a>)</span>.</p>
+<p>A good solution is through urban streams. Urban streams are expected to have an important role in the mitigation of climate change by buffering extreme temperatures and prevent floods. More importantly, finding nature-based solutions are key and can restore existing strained water systems <span class="citation" data-cites="ourloglou2020assessing">(<a href="#ref-ourloglou2020assessing" role="doc-biblioref">Ourloglou et al., 2020</a>)</span>. In this context, spatial analytics can play a crucial role in informing climate adaptation and urban planning strategies <span class="citation" data-cites="hurlimann2012role">(<a href="#ref-hurlimann2012role" role="doc-biblioref">Hurlimann &amp; March, 2012</a>)</span>. Through methods such as Spatial Multi-Criteria Decision Analysis (S-MCDA) and typology development, planners and designers can better understand urban systems, evaluate trade-offs, and propose the correct targeted interventions.</p>
+<p>The ReBioClim project, a European initiativve funded by the Interreg Central Europe Program <span class="citation" data-cites="rebioclim2024">(<a href="#ref-rebioclim2024" role="doc-biblioref"><em>Restoring Urban Streams to Promote Biodiversity, Climate Adaptation and to Improve Quality of Life in Cities – EU-Project ReBioClim Launched</em>, 2024</a>)</span>, exemplifies this approach by focusing on revitalizing small urban streams. It additionally provides a framework where nature-based solutions can be identified to enhance biodiversity, mitigate climate change effects, and improve urban living conditions <span class="citation" data-cites="rebioclim_ioer2024">(<a href="#ref-rebioclim_ioer2024" role="doc-biblioref"><em>ReBioClim – Leibniz Institute of Ecological Urban and Regional Development</em>, 2024</a>)</span>.Running from Juse 2204 to January 2027, the project addresses the challenges of urban stream restroration in four Central European cities, including Jablonec nad Nisou.</p>
+<p>In this report, inspired by the ReBioClim project, we focus on the urban streams of Jablonec nad Nisou. Over recent decades, the city has experienced overbuilding, channelization, and neglect of its urban streams, leading to ecological degradation and reduced quality of life. Our objective is to quantitatively assess the current state of these waterways and identify areas with the highest potential for improvement. Through these efforts, we aim to provide a better understanding of where and how to restore the waterways and create green-blue corridors that offer cooling effects, improve air quality, and provide recreational spaces for residents.</p>
+<p>Our research centers on the Bílá Nisa stream, and will address the problems we have identified through the lens fo the three following themes: Biodiversity, Climate Adaptation, and Quality of Life. These themes, relevant to our location has led to our main research question:</p>
+<blockquote class="blockquote">
+<p><em>(Where should urban stream restoration be prioritized in Jablonec nad Nisou to maximize biodiversity, climate adaptation, and quality of life?)</em></p>
+</blockquote>
+<p>Our derived subquestions, respective to each theme are then the following:</p>
+<blockquote class="blockquote">
+<p><em>(Where can the ecological quality of the stream area be enhanced?)</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>(Which areas are the most in need for flood protection?Where can flood mitigation measures take place?)</em></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>(Where can improvements in quality of life balance stakeholder interests in areas around the stream?)</em></p>
+</blockquote>
+<p>//we will add how the report is structured here after.</p>
 </section>
-<section id="methods" class="level2">
-<h2 class="anchored" data-anchor-id="methods">Methods</h2>
+<section id="methodology" class="level2">
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<p>A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data. The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.</p>
+<p><strong>Definition of Spatial Units</strong></p>
+<p>To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis <span class="citation" data-cites="BARTESAGHIKOC2020103893">(<a href="#ref-BARTESAGHIKOC2020103893" role="doc-biblioref">Bartesaghi-Koc et al., 2020</a>)</span>. However, based on our context and discussed principles affecting the conducted analysis, a spatial unit at 100 x 100 meters was chosen. The unit is used for consistency in the assignment of spatial indicators and facilitates the aggregation and comparison of data across the urban stream landscape. The 100 x 100m spatial unit is specific to the scale Jablonec nad Nisou, the resolution of the data collected and relevant literature on stream assessments.</p>
+<section id="impact-of-scale-on-detectable-effects" class="level4">
+<h4 class="anchored" data-anchor-id="impact-of-scale-on-detectable-effects"><strong>Impact of Scale on Detectable Effects</strong></h4>
+<p>The spatial resolution of the data we collected significantly shapes the analytical results. Averaging the data collected within the chosen 100 x 100m cells allows for generalized insights, which we found best fitting. It may however still obscure localized effects such as even smaller micro climatic benefits of tree clusters or linear vegetation elements. We chose the trade off that best fits our and balances detail with analytical feasibility.</p>
+</section>
+<section id="resolution-and-data-acquisition-method" class="level4">
+<h4 class="anchored" data-anchor-id="resolution-and-data-acquisition-method"><strong>Resolution and Data Acquisition Method</strong></h4>
+<p>The resolution of spatial analysis is directly tied to the data acquisition method <span class="citation" data-cites="BARTESAGHIKOC2020103893">(<a href="#ref-BARTESAGHIKOC2020103893" role="doc-biblioref">Bartesaghi-Koc et al., 2020</a>)</span>. While spaceborne remote sensing, used for the measurement of some of our indicators when data availability was lacking, is better suited for large-scale urban assessments and often lacks the spatial precision needed for detailed micro climatic or ecological studies. On the other hand biodiversity and quality of life data are generally acquired at larger scale and would require smaller spatial units. For example, the widely accepted walking range of 500 meters <span class="citation" data-cites="macioszek2022effect popp2004walking">(<a href="#ref-macioszek2022effect" role="doc-biblioref">Macioszek et al., 2022</a>; <a href="#ref-popp2004walking" role="doc-biblioref">Popp et al., 2004</a>)</span>, or biodiversity connectivity of around 100m stretches, identified by <span class="citation" data-cites="RANTA2021106980">(<a href="#ref-RANTA2021106980" role="doc-biblioref">Ranta et al., 2021</a>)</span>. Our method reflects this balance, using satellite data for broader patterns such as LST and impervious surfaces. We then supplement this with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few.</p>
+<p><strong>Scale-Specific Indicators for Stream Assessment</strong></p>
+<p>Urban stream analysis requires scale-appropriate methodologies. Different ecosystem services or hydrological characteristics demand different spatial extents. <span class="citation" data-cites="RANTA2021106980">(<a href="#ref-RANTA2021106980" role="doc-biblioref">Ranta et al., 2021</a>)</span> uses the following scales to assess the respective indicators.</p>
+<ul>
+<li><p><strong>100 m stream stretches</strong> are appropriate for biological assessments.</p></li>
+<li><p><strong>500 m buffers</strong> may suit hydromorphological evaluations</p></li>
+<li><p><strong>Entire sub-catchments</strong> can inform broader planning or restoration strategies.</p></li>
+</ul>
+<p>Therefore, when deciding on our scale, we considered our indicators and attempted to closely match them to retain a good representation of the spatial dynamics of the stream functions we aimed to analyze.</p>
+</section>
 <section id="climate-adaptation" class="level3">
 <h3 class="anchored" data-anchor-id="climate-adaptation">Climate Adaptation</h3>
 </section>
 <section id="biodiversity" class="level3">
 <h3 class="anchored" data-anchor-id="biodiversity">Biodiversity</h3>
-<p>When considering the biodiversity we look at three key indicators: Green Network, Habitat type and Floodplains.</p>
-<table class="caption-top table">
-<caption>(#tbl-scale-measurement) Examples of different scales of measurement, according to <span class="citation" data-cites="RANTA2021106980">(<a href="#ref-RANTA2021106980" role="doc-biblioref">Ranta et al., 2021</a>)</span>.</caption>
-<colgroup>
-<col style="width: 27%">
-<col style="width: 28%">
-<col style="width: 21%">
-<col style="width: 21%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Section</th>
-<th>Division (e.g., function, service)</th>
-<th>Indicator</th>
-<th>Assessment Scale</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>UB – Macrophytes</td>
-<td>EFH Habitat availability</td>
-<td>Streambed sedimentation</td>
-<td>100 m</td>
-</tr>
-<tr class="even">
-<td>PS – Watersupply</td>
-<td>Transversal connectivity</td>
-<td>Groundwater recharge</td>
-<td>500 m</td>
-</tr>
-<tr class="odd">
-<td>RS – Climateregulation</td>
-<td>Air temperature variation</td>
-<td></td>
-<td>100 m</td>
-</tr>
-<tr class="even">
-<td>RS – Pollination</td>
-<td>Nectariferous plants</td>
-<td></td>
-<td>500 m</td>
-</tr>
-<tr class="odd">
-<td>CS – Education and cognitive development</td>
-<td>Distance to urban stream from home</td>
-<td></td>
-<td>200 m</td>
-</tr>
-</tbody>
-</table>
 <p>For air quality, relabeling the RGB values to legend.</p>
 <table class="caption-top table">
 <colgroup>
@@ -334,11 +316,6 @@ This is a computational notebook
 </tbody>
 </table>
 </section>
-=======
-</section>
-<section id="methods" class="level2">
-<h2 class="anchored" data-anchor-id="methods">Methods</h2>
->>>>>>> 5c61646587f15f5798bd0afee6c1ba4984300b94
 <section id="mcda" class="level3">
 <h3 class="anchored" data-anchor-id="mcda">MCDA</h3>
 </section>
@@ -354,21 +331,42 @@ This is a computational notebook
 </section>
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<<<<<<< HEAD
 <p>:::</p>
 
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list">
+<div id="ref-BARTESAGHIKOC2020103893" class="csl-entry" role="listitem">
+Bartesaghi-Koc, C., Osmond, P., &amp; Peters, A. (2020). Quantifying the seasonal cooling capacity of <span>“green infrastructure types”</span> (GITs): An approach to assess and mitigate surface urban heat island in sydney, australia. <em>Landscape and Urban Planning</em>, <em>203</em>, 103893. https://doi.org/<a href="https://doi.org/10.1016/j.landurbplan.2020.103893">https://doi.org/10.1016/j.landurbplan.2020.103893</a>
+</div>
+<div id="ref-article" class="csl-entry" role="listitem">
+Diaz, S., Settele, J., Brondízio, E., Ngo, H. T., Agard, J., Arneth, A., Balvanera, P., Brauman, K., Butchart, S., Chan, K., Garibaldi, L., Ichii, K., Liu, J., Subramanian, S., Midgley, G., Miloslavich, P., Molnár, Z., Obura, D., Pfaff, A., &amp; Zayas, C. (2019). Pervasive human-driven decline of life on earth points to the need for transformative change. <em>Science (New York, N.Y.)</em>, <em>366</em>. <a href="https://doi.org/10.1126/science.aax3100">https://doi.org/10.1126/science.aax3100</a>
+</div>
+<div id="ref-hurlimann2012role" class="csl-entry" role="listitem">
+Hurlimann, A. C., &amp; March, A. P. (2012). The role of spatial planning in adapting to climate change. <em>Wiley Interdisciplinary Reviews: Climate Change</em>, <em>3</em>(5), 477–488.
+</div>
+<div id="ref-macioszek2022effect" class="csl-entry" role="listitem">
+Macioszek, E., Karami, A., Farzin, I., Abbasi, M., Mamdoohi, A. R., &amp; Piccioni, C. (2022). The effect of distance intervals on walking likelihood in different trip purposes. <em>Sustainability</em>, <em>14</em>(6), 3406.
+</div>
+<div id="ref-nijkamp2013new" class="csl-entry" role="listitem">
+Nijkamp, P., &amp; Kourtit, K. (2013). The <span>“new urban europe”</span>: Global challenges and local responses in the urban century. <em>European Planning Studies</em>, <em>21</em>(3), 291–315.
+</div>
+<div id="ref-ourloglou2020assessing" class="csl-entry" role="listitem">
+Ourloglou, O., Stefanidis, K., &amp; Dimitriou, E. (2020). Assessing nature-based and classical engineering solutions for flood-risk reduction in urban streams. <em>Journal of Ecological Engineering</em>, <em>21</em>(2), 46–56.
+</div>
+<div id="ref-popp2004walking" class="csl-entry" role="listitem">
+Popp, M. M., Platzer, E., Eichner, M., &amp; Schade, M. (2004). Walking with and without walking: Perception of distance in large-scale urban areas in reality and in virtual reality. <em>Presence: Teleoperators &amp; Virtual Environments</em>, <em>13</em>(1), 61–76.
+</div>
 <div id="ref-RANTA2021106980" class="csl-entry" role="listitem">
 Ranta, E., Vidal-Abarca, M. R., Calapez, A. R., &amp; Feio, M. J. (2021). Urban stream assessment system (UsAs): An integrative tool to assess biodiversity, ecosystem functions and services. <em>Ecological Indicators</em>, <em>121</em>, 106980. https://doi.org/<a href="https://doi.org/10.1016/j.ecolind.2020.106980">https://doi.org/10.1016/j.ecolind.2020.106980</a>
 </div>
+<div id="ref-rebioclim_ioer2024" class="csl-entry" role="listitem">
+<em>ReBioClim – leibniz institute of ecological urban and regional development</em>. (2024). <a href="https://www.ioer.de/en/projects/rebioclim?utm_source=chatgpt.com" class="uri">https://www.ioer.de/en/projects/rebioclim?utm_source=chatgpt.com</a>.
+</div>
+<div id="ref-rebioclim2024" class="csl-entry" role="listitem">
+<em>Restoring urban streams to promote biodiversity, climate adaptation and to improve quality of life in cities – EU-project ReBioClim launched</em>. (2024). <a href="https://tu-dresden.de/bu/umwelt/hydro/hydrobiologie/das-institut/news/restoring-urban-streams-to-promote-biodiversity-climate-adaptation-and-to-improve-quality-of-life-in-cities-eu-project-rebioclim-lauched?set_language=en&amp;utm_source=chatgpt.com" class="uri">https://tu-dresden.de/bu/umwelt/hydro/hydrobiologie/das-institut/news/restoring-urban-streams-to-promote-biodiversity-climate-adaptation-and-to-improve-quality-of-life-in-cities-eu-project-rebioclim-lauched?set_language=en&amp;utm_source=chatgpt.com</a>.
+</div>
 </div></section></div></main>
-=======
-</section>
-
-</main>
->>>>>>> 5c61646587f15f5798bd0afee6c1ba4984300b94
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
