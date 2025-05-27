@@ -32,7 +32,6 @@ editor: visual
 
 ```
 
-
 ## Introduction
 
 Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss, and the demand for sustainable development [@nijkamp2013new]. According to [@article], in cities the impact of land use on fresh-water ecosystems is especially severe. As climate change is expected to increase the intensity and frequency of extreme weather events, solutions to combat these effects are urgently needed [@ourloglou2020assessing].
@@ -44,7 +43,6 @@ The ReBioClim project, a European initiativve funded by the Interreg Central Eur
 ![ReBioClim Project Overview](Inserted_images/rebioclim_currentstate.png){width="600"}
 
 In this report, inspired by the ReBioClim project, we focus on the urban streams of Jablonec nad Nisou. Over recent decades, the city has experienced overbuilding, channelization, and neglect of its urban streams, leading to ecological degradation and reduced quality of life. Our objective is to quantitatively assess the current state of these waterways and identify areas with the highest potential for improvement. Through these efforts, we aim to provide a better understanding of where and how to restore the waterways and create green-blue corridors that offer cooling effects, improve air quality, and provide recreational spaces for residents.
-
 
 ```{r fig.subcap="Jablonec nad Nisou and the Bila Nisa stream"}
 #| warning: false
@@ -106,7 +104,9 @@ A important foundation for applying spatial analytics in urban environments is i
 
 **Definition of Spatial Units**
 
-To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. However, based on our context and discussed principles affecting the conducted analysis, a spatial unit at 100 x 100 meters was chosen. The unit is used for consistency in the assignment of spatial indicators and facilitates the aggregation and comparison of data across the urban stream landscape. The 100 x 100m spatial unit is specific to the scale Jablonec nad Nisou, the resolution of the data collected and relevant literature on stream assessments.
+To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. On the other hand, [@burdziej2019using] uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
+
+Therefore, based on the size of Jablonec nad Nisou and the Bila Nisa stream as well as the following discussed principles affecting the conducted analysis, a spatial unit grid of 100 x 100 meters was chosen. The unit is used for consistency in the assignment of spatial indicators and facilitates the aggregation and comparison of data across the urban stream landscape. The 100 x 100m spatial unit is specific to the scale Jablonec nad Nisou, the resolution of the data collected and relevant literature on stream assessments.
 
 **Impact of Scale on Detectable Effects**
 
@@ -143,7 +143,7 @@ Therefore, when deciding on our scale, we considered our indicators and attempte
 For air quality, relabeling the RGB values to legend.
 
 | Green Band Value | SO₂ Range (µg/m³) | Color        | Class Label | Class Value |
-|------------------|-------------------|--------------|-------------|-------------|
+|---------------|---------------|---------------|---------------|---------------|
 | 168              | 0.0 – 0.1         | Dark Green   | Very Good   | 0           |
 | 201              | 0.1 – 0.2         | Light Green  | Good        | 1           |
 | 237              | 0.2 – 0.5         | Yellow       | Moderate    | 2           |
