@@ -26,6 +26,13 @@ format: html
 editor: visual
 ---
 
+```{r}
+#| label: setup
+
+
+```
+
+
 ## Introduction
 
 Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss, and the demand for sustainable development [@nijkamp2013new]. According to [@article], in cities the impact of land use on fresh-water ecosystems is especially severe. As climate change is expected to increase the intensity and frequency of extreme weather events, solutions to combat these effects are urgently needed [@ourloglou2020assessing].
@@ -46,8 +53,8 @@ In this report, inspired by the ReBioClim project, we focus on the urban streams
 library(leaflet)
 library(sf)
 
-# Read the stream GeoJSON without showing messages
-stream <- st_read("Inserted_images/stream_for_interactivemap.geojson")
+# Read the stream GeoJSON without 
+stream <- st_read("Inserted_images/stream_for_interactivemap.geojson", quiet = TRUE)
 
 # Coordinates for Jablonec nad Nisou
 jablonec_coords <- c(lat = 50.7224, lng = 15.1708)
@@ -79,12 +86,11 @@ leaflet() %>%
   )
 ```
 
-
-Our research centers on the Bílá Nisa stream, and will address the problems we have identified through the lens fo the three following themes: Biodiversity, Climate Adaptation, and Quality of Life. These themes, relevant to our location has led to our main research question:
+Our research centers on the Bílá Nisa stream, and will address the problems we have identified through the lens fo the three following goals: Biodiversity, Climate Adaptation, and Quality of Life. These goals, relevant to our location has led to our main research question:
 
 > *Where should urban stream restoration be prioritized in Jablonec nad Nisou to maximize biodiversity, climate adaptation, and quality of life?*
 
-Our derived subquestions, respective to each theme are then the following:
+Our derived subquestions, respective to each goal are then the following:
 
 > *Where can the ecological quality of the stream area be enhanced?*
 
