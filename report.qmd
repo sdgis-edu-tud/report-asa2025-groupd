@@ -76,6 +76,12 @@ For air quality, relabeling the RGB values to legend.
 
 ### MCDA
 
+## Maps
+# Biodiversity
+# Climate Adaptation
+# Quality of life
+
+
 ### Typology construction
 
 ## Results
