@@ -3,3 +3,6 @@
 .RData
 .Ruserdata
 data/
+report_files/
+report.html
+
