@@ -159,14 +159,26 @@ For air quality, relabeling the RGB values to legend.
 ![Detailed basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping.pdf)
 
 ![Zoning of large-scale protected areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Zoning%20of%20large-scale%20specially%20protected%20areas.pdf)
+![Levels of protection in natural areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Levels%20of%20protection%20in%20large-scale%20specially%20protected%20natural%20areas%20(RED).png)
+
+![Road segment length, potential for road kills animals](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Road%20segment%20length%20per%20cell.png)
 
 ![Types of greenery along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Types%20of%20greenery%20along%20B%C3%ADl%C3%A1%20Nisa.pdf)
 
+![Build up area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Build%20up%20area.png)
+
+![Diversity of ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Diversity%20of%20ecologically%20valuable%20habitats-01.png)
+
 ![Ecological corridors](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Ecological%20corridors%20(%C3%9ASES).pdf)
+![Ecological corridors normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Ecological%20corridors-01.png)
+![Ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Proportion%20of%20ecologicaly%20valuable%20habitats%20surface%20area.png)
 
 ![Categorization of flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Prevailing%20land-cover%20types%20(categorization%20of%20floodplains).pdf)
 ![Flood plain restoration](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Potential%20for%20natural%20floodplain%20restoration%20(categorization%20of%20floodplains).pdf)
 ![Biotopes along flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biotope%20value%20index%20(categorization%20of%20floodplains).pdf)
+
+![Flood plain biotope value](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Floodplain%20biotope%20value-01.png)
+![Natural flood plain restoration normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Potential%20for%20natural%20floodplain%20restoration-01.png)
 
 #### Climate Adaptation
 
@@ -194,6 +206,14 @@ Secondly, we analyzed how well the urban stream is connected to the urban area t
 ![Nominal map showing accessiblity to urban centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20through%20integrated%20roads%20along%20Bila%20Nisa.png)
 ![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20TRANSPORT.png)
 ![Access to public transport near the stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20Public%20Transport%20near%20Bila%20Nisa.png)
+
+Air pollution maps
+![Normalized BZP pollution](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20BZP.png)
+![SO2 pollution normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20SO2.png)
+![NO2 pollution normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NO2.png)
+
+![Finedust PM10](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM10.png)
+![Finedust PM25 normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM25.png)
 
 ### Typology construction
 
