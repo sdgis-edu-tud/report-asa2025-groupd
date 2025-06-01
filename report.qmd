@@ -123,7 +123,6 @@ slickR(imgs, height = 400, width = 700) +
 
 ```
 
-
 **Scale-Specific Indicators for Stream Assessment**
 
 Urban stream analysis requires scale-appropriate methodologies. Different ecosystem services or hydrological characteristics demand different spatial extents. [@RANTA2021106980] uses for example 100m stretches for biological assessments and 500m buffers for hydromorphilogical evaluations.
@@ -143,7 +142,7 @@ The spatial resolution of the data we collected significantly shapes the analyti
 For air quality, relabeling the RGB values to legend.
 
 | Green Band Value | SO₂ Range (µg/m³) | Color        | Class Label | Class Value |
-|---------------|---------------|---------------|---------------|---------------|
+|------------------|-------------------|--------------|-------------|-------------|
 | 168              | 0.0 – 0.1         | Dark Green   | Very Good   | 0           |
 | 201              | 0.1 – 0.2         | Light Green  | Good        | 1           |
 | 237              | 0.2 – 0.5         | Yellow       | Moderate    | 2           |
