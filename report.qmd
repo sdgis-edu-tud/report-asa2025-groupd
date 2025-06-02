@@ -1,59 +1,217 @@
 ---
 title: "Title of your report"
-subtitle: "Project report of Group #"
+subtitle: "Project report of Group D"
 author:
-  - name: "Student 1"
+  - name: "Frederick Auer"
     affiliation: "MSc Geomatics"
-  - name: "Student 2"
+    group_role: "Software/Program Helper & Data Collector"
+  - name: "Lin Ruofan"
     affiliation: "MSc Landscape Architecture"
-  - name: "Student 3"
+    group_role: "Mapping Specialist & Design Lead"
+  - name: "Matthijs Jerez Nova"
     affiliation: "MSc Urbanism"
-  - name: "Student 4"
+    group_role: "Writer/Editor & Research Lead"
+  - name: "Ula Kunigelyte"
     affiliation: "MSc Urbanism"
-  - name: "Student 5"
-    affiliation: "MSc Landscape Architecture"
+    group_role: "Mapping Specialist & Data Analyst"
+  - name: "Finn van Asch"
+    affiliation: "MSc Urbanism"
+    group_role: "Research Lead & Assistant Mapping Specialist"
+
+bibliography: references.bib
+csl: apa.csl
+
 format: html
+
+editor: visual
 ---
 
-::: callout
-## This is a computational notebook
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
-
 ```{r}
-1 + 1
-```
+#| label: setup
 
-You can add options to executable code like this 
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
-
-You can delete this entire callout between and including the lines
-```
-::: callout
-```
-and
 
 ```
-:::
-```
-and start the report from the Introduction section below.
-:::
 
 ## Introduction
 
-## Methods
+Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss, and the demand for sustainable development [@nijkamp2013new]. According to [@article], in cities the impact of land use on fresh-water ecosystems is especially severe. As climate change is expected to increase the intensity and frequency of extreme weather events, solutions to combat these effects are urgently needed [@ourloglou2020assessing].
+
+A good solution is through urban streams. Urban streams are expected to have an important role in the mitigation of climate change by buffering extreme temperatures and prevent floods. More importantly, finding nature-based solutions are key and can restore existing strained water systems [@ourloglou2020assessing]. In this context, spatial analytics can play a crucial role in informing climate adaptation and urban planning strategies [@hurlimann2012role]. Through methods such as Spatial Multi-Criteria Decision Analysis (S-MCDA) and typology development, planners and designers can better understand urban systems, evaluate trade-offs, and propose the correct targeted interventions.
+
+The ReBioClim project, funded by the Interreg Central Europe Program [@rebioclim2024], exemplifies this approach by focusing on revitalizing small urban streams. It additionally provides a framework where nature-based solutions can be identified to enhance biodiversity, mitigate climate change effects, and improve urban living conditions [@rebioclim_ioer2024]. Running from June 2024 to January 2027, the project addresses the challenges of urban stream restoration in four Central European cities, including Jablonec nad Nisou, the case targeted in this report.
+
+![ReBioClim Project Overview](Inserted_images/rebioclim_currentstate.png){width="600"}
+
+Over recent decades, Jablonec nad Nisou has experienced overbuilding, channelization, and neglect of its urban streams, leading to ecological degradation and reduced quality of life. Our objective is to quantitatively assess the current state of these waterways and identify areas with the highest potential for improvement. Through these efforts, we aim to provide a better understanding of where and how to restore the waterways and create green-blue corridors that offer cooling effects, improve air quality, and provide recreational spaces for residents.
+
+```{r fig.subcap="Jablonec nad Nisou and the Bila Nisa stream"}
+#| warning: false
+#| echo: false
+#| message: false
+library(leaflet)
+library(sf)
+
+# Read the stream GeoJSON without 
+stream <- st_read("Inserted_images/stream_for_interactivemap.geojson", quiet = TRUE)
+
+# Coordinates for Jablonec nad Nisou
+jablonec_coords <- c(lat = 50.7224, lng = 15.1708)
+
+# Render leaflet map
+leaflet() %>%
+  addTiles() %>%
+  addPolylines(
+    data = stream,
+    color = "blue",
+    weight = 3,
+    opacity = 0.8,
+    popup = "Bílá Nisa Stream"
+  ) %>%
+  addCircleMarkers(
+    lng = jablonec_coords["lng"],
+    lat = jablonec_coords["lat"],
+    radius = 6,
+    color = "red",
+    fillOpacity = 0.8,
+    label = "Jablonec nad Nisou"
+  ) %>%
+  addLegend(
+    position = "bottomright",
+    colors = c("blue", "red"),
+    labels = c("Bílá Nisa Stream", "Jablonec nad Nisou"),
+    title = "Legend",
+    opacity = 0.8
+  )
+```
+
+Our research centers on the Bílá Nisa stream, and will address the problems we have identified through the lens fo the three following goals: Biodiversity, Climate Adaptation, and Quality of Life. These goals, relevant to our location has led to our main research question:
+
+> *Where should urban stream restoration be prioritized in Jablonec nad Nisou to maximize biodiversity, climate adaptation, and quality of life?*
+
+Our derived subquestions, respective to each goal are then the following:
+
+> *Where can the ecological quality of the stream area be enhanced?*
+
+> *Which areas are the most in need for flood protection?Where can flood mitigation measures take place?*
+
+> *Where can improvements in quality of life balance stakeholder interests in areas around the stream?*
+
+//we will add how the report is structured here after.
+
+## Methodology
+
+A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data. [@dungan2002balanced] The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.
+
+### Definition of Spatial Units
+
+To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. On the other hand, [@burdziej2019using] uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
+
+Therefore, based on the size of Jablonec nad Nisou and the Bila Nisa stream as well as the following discussed principles affecting the conducted analysis, a spatial unit grid of 100 x 100 meters was chosen. The unit is used for consistency in the assignment of spatial indicators and facilitates the aggregation and comparison of data across the urban stream landscape. The 100 x 100m spatial unit is specific to the scale Jablonec nad Nisou, the resolution of the data collected and relevant literature on stream assessments.
+
+**Resolution and Data Acquisition Method**
+
+The resolution of spatial analysis is directly tied to the data acquisition method [@BARTESAGHIKOC2020103893]. While spaceborne remote sensing used for the measurement of some of our indicators when data availability was lacking is better suited for large-scale urban assessments, it often lacks the spatial precision needed for detailed micro climatic or ecological studies. On the other hand, biodiversity and quality of life data are generally acquired at larger scale and would require smaller spatial units. For example, the widely accepted walking range of 500 meters [@macioszek2022effect; @popp2004walking], or biodiversity connectivity of around 100m stretches, identified by [@RANTA2021106980]. Our method reflects this balance, using satellite data for broader patterns such as LST and impervious surfaces. We then supplement this with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few. The collected data for each respective goals can be found in the figures below.
+
+```{r}
+library(slickR)
+imgs <- c("Inserted_images/data_biodiversity.png",
+          "Inserted_images/climate_adaption.png",
+          "Inserted_images/qualityoflife_datacollected.png")
+
+slickR(imgs, height = 400, width = 700) +
+  settings(dots = TRUE)
+
+```
+
+**Scale-Specific Indicators for Stream Assessment**
+
+Urban stream analysis requires scale-appropriate methodologies. Different ecosystem services or hydrological characteristics demand different spatial extents. [@RANTA2021106980] uses for example 100m stretches for biological assessments and 500m buffers for hydromorphilogical evaluations.
+
+Therefore, when deciding on our scale, we considered our indicators and attempted to closely match them to retain a good representation of the spatial dynamics of the stream functions we aimed to analyze.
+
+**Impact of Scale on Detectable Effects**
+
+The spatial resolution of the data we collected significantly shapes the analytical results. Averaging the data collected within the chosen 100 x 100m cells allows for generalized insights, which we found best fitting. It may however still obscure localized effects such as even smaller micro climatic benefits of tree clusters or linear vegetation elements. We chose the trade off that best fits our and balances detail with analytical feasibility.
+
+// For the MCDA -\> add how we average and normalise values here?
+
+### Climate Adaptation
+
+### Biodiversity
+
+For air quality, relabeling the RGB values to legend.
+
+| Green Band Value | SO₂ Range (µg/m³) | Color        | Class Label | Class Value |
+|------------------|-------------------|--------------|-------------|-------------|
+| 168              | 0.0 – 0.1         | Dark Green   | Very Good   | 0           |
+| 201              | 0.1 – 0.2         | Light Green  | Good        | 1           |
+| 237              | 0.2 – 0.5         | Yellow       | Moderate    | 2           |
+| 204              | 0.5 – 1.0         | Light Orange | Poor        | 3           |
+| 102              | 1.0 – 2.0         | Dark Orange  | Very Poor   | 4           |
+| 0                | 2.0 – 5.0         | Red          | Hazardous   | 5           |
 
 ### MCDA
+
+#### Maps
+
+##### Biodiversity
+
+
+![Basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping%20(broad%20categories).pdf) ![Detailed basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping.pdf)
+
+![Zoning of large-scale protected areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Zoning%20of%20large-scale%20specially%20protected%20areas.pdf) ![Levels of protection in natural areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Levels%20of%20protection%20in%20large-scale%20specially%20protected%20natural%20areas%20(RED).png)
+
+![Road segment length, potential for road kills animals](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Road%20segment%20length%20per%20cell.png)
+
+![Types of greenery along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Types%20of%20greenery%20along%20B%C3%ADl%C3%A1%20Nisa.pdf)
+
+![Build up area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Build%20up%20area.png)
+
+![Diversity of ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Diversity%20of%20ecologically%20valuable%20habitats-01.png)
+
+![Ecological corridors](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Ecological%20corridors%20(%C3%9ASES).pdf) ![Ecological corridors normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Ecological%20corridors-01.png) ![Ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Proportion%20of%20ecologicaly%20valuable%20habitats%20surface%20area.png)
+
+![Categorization of flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Prevailing%20land-cover%20types%20(categorization%20of%20floodplains).pdf) ![Flood plain restoration](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Potential%20for%20natural%20floodplain%20restoration%20(categorization%20of%20floodplains).pdf) ![Biotopes along flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biotope%20value%20index%20(categorization%20of%20floodplains).pdf)
+
+![Flood plain biotope value](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Floodplain%20biotope%20value-01.png) ![Natural flood plain restoration normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Potential%20for%20natural%20floodplain%20restoration-01.png)
+
+##### Climate Adaptation
+
+Need to add map of Ruofan
+
+![Impervious surface](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Impervious_surface.pdf)
+
+![Land surface temperature](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Land_surface_temp.pdf)
+
+##### Quality of life
+For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
+
+For the first analysis, we look at the availability of essential public amenities like public functions and public green along the stream and how well accessible they are.
+
+![Public amenities along Bila Nisa stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20AMENITIES.png) ![Normalized map of public amenities](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20public%20amenities%20along%20Bila%20Nisa.png) ![Map showing public green along Bila Nisa stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20GREEN%20CLIP.png) ![Normalized map of public green availability along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20to%20Public%20Green%20along%20Bila%20Nisa.png) Secondly, we analyzed how well the urban stream is connected to the urban area through the street network and availability of public transport.
+
+![Angular integration of road network indicating local centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20ROADS%20INTEGRATION.png) ![Nominal map showing accessiblity to urban centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20through%20integrated%20roads%20along%20Bila%20Nisa.png) ![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20TRANSPORT.png) ![Access to public transport near the stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20Public%20Transport%20near%20Bila%20Nisa.png)
+
+Air pollution maps
+![Normalized BZP pollution](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20BZP.png)
+![Normalized BAP map](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20BAP.png)
+![SO2 pollution normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20SO2.png) ![NO2 pollution normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NO2.png)
+
+![Finedust PM10](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM10.png) ![Finedust PM25 normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM25.png)
+
+Urban heat stress
+![Normalized tree cover percentage](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20treecoverpercentage.png)
+![NDVI Map normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NDVI.png)
+
+#### Criteria Matrixes
+Using the Saaty matrix, each criteria are weighted against each other to give each criterion a priority based on their importance for urban stream restoration. Each topic has its own matrix to create a consistent assessment.
+
+![Biodiversity MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Biodiversity.pdf)
+
+![Climate Adaptation MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Climate%20Adaptation.pdf)
+
+![Quality of life MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Quality%20of%20Life.pdf)
+
 
 ### Typology construction
 
@@ -63,3 +221,4 @@ and start the report from the Introduction section below.
 
 ## Conclusion
 
+:::
