@@ -102,7 +102,7 @@ Our derived subquestions, respective to each goal are then the following:
 
 A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data. [@dungan2002balanced] The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.
 
-**Definition of Spatial Units**
+### Definition of Spatial Units
 
 To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. On the other hand, [@burdziej2019using] uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
 
