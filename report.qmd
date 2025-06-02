@@ -42,7 +42,7 @@ The ReBioClim project, funded by the Interreg Central Europe Program [@rebioclim
 
 ![ReBioClim Project Overview](Inserted_images/rebioclim_currentstate.png){width="600"}
 
-In this report, inspired by the ReBioClim project, we focus on the urban streams of Jablonec nad Nisou. Over recent decades, the city has experienced overbuilding, channelization, and neglect of its urban streams, leading to ecological degradation and reduced quality of life. Our objective is to quantitatively assess the current state of these waterways and identify areas with the highest potential for improvement. Through these efforts, we aim to provide a better understanding of where and how to restore the waterways and create green-blue corridors that offer cooling effects, improve air quality, and provide recreational spaces for residents.
+Over recent decades, Jablonec nad Nisou has experienced overbuilding, channelization, and neglect of its urban streams, leading to ecological degradation and reduced quality of life. Our objective is to quantitatively assess the current state of these waterways and identify areas with the highest potential for improvement. Through these efforts, we aim to provide a better understanding of where and how to restore the waterways and create green-blue corridors that offer cooling effects, improve air quality, and provide recreational spaces for residents.
 
 ```{r fig.subcap="Jablonec nad Nisou and the Bila Nisa stream"}
 #| warning: false
