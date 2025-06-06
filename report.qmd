@@ -139,21 +139,24 @@ The spatial resolution of the data we collected significantly shapes the analyti
 
 The data used in this study comes from many different sources and uses different units as discussed above. Therefore, to compare them evenly, all values need to be brought to the same scale, and normalized in order to later conduct K-means clustering to discover appropriate typologies. We therefore could not use one method for all data normalization. Instead, each topic or data map uses its own way of normalizing respective to the data acquisition and availability. For climate adaptation, values like temperature and air pollution were compared to limits from the EU or WHO. For biodiversity, we used scales that show how suitable or rich an area is for nature. For quality of life, we used standards such as walking distances or access to green areas. Each method is explained in the following sections under their respective topic or map that they relate to.
 
-
 ### Climate Adaptation
 
 ### Biodiversity
 
-For air quality, relabeling the RGB values to legend.
+### Quality of Life
 
-| Green Band Value | SO₂ Range (µg/m³) | Color        | Class Label | Class Value |
-|---------------|---------------|---------------|---------------|---------------|
-| 168              | 0.0 – 0.1         | Dark Green   | Very Good   | 0           |
-| 201              | 0.1 – 0.2         | Light Green  | Good        | 1           |
-| 237              | 0.2 – 0.5         | Yellow       | Moderate    | 2           |
-| 204              | 0.5 – 1.0         | Light Orange | Poor        | 3           |
-| 102              | 1.0 – 2.0         | Dark Orange  | Very Poor   | 4           |
-| 0                | 2.0 – 5.0         | Red          | Hazardous   | 5           |
+#### Pollution Normalization
+
+To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspitred by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants, while aligning with current regulatory and scientific guidance.
+
+| Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
+|------------|------------|------------|------------|------------|------------|
+| PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
+| PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
+| NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
+| BaP | *0.12 (indicative, EU)* | 1.0 | 0.06 | 1.0 | 0 – 1 |
+| BzN | 0.2 *(WHO guideline)* | 1.0 *(assumed)* | 0.1 | 1.0 | 0 – 1 |
+| SO₂ | 40 *(WHO 24h guideline)* | 125 *(EU 24h)* | 20 | 125 | 0 – 1 |
 
 ### MCDA
 
