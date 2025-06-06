@@ -149,10 +149,11 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 
 ::: {.callout-note collapse="true"}
 ## Normalized Impervious Table
+
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban cores; 0% = natural cover |
-::: 
+:::
 
 #### NDVI (Normalized Difference Vegetation Index)
 
@@ -160,9 +161,21 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 
 ::: {.callout-note collapse="true"}
 ## Normalized NDVI Table
+
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
+:::
+
+#### Tree-cover Percentage
+
+Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
+
+::: {.callout-note collapse="true"}
+## Normalized Tree Cover Table
+| Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
+|-----------------|-----------------|-----------------|----------------------|
+| Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
 #### Mean Night-Time Land Surface Temperature (LST)
@@ -171,8 +184,9 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 
 ::: {.callout-note collapse="true"}
 ## Normalized Mean LST table
+
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night |
 :::
 
@@ -184,8 +198,9 @@ To ensure comparability across pollutants, all air quality indicators were norma
 
 ::: {.callout-note collapse="true"}
 ## Normalized Pollution table
+
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -198,7 +213,8 @@ A then example calculation in Qgis for SO2 would be:
 
 ::: {.callout-note collapse="true"}
 ## Example calculation for SO2
-CASE WHEN "MAX_majority" IS NULL THEN NULL WHEN "MAX_majority" \< 20 THEN 0 WHEN "MAX_majority" \> 125 THEN 1 ELSE ("MAX_majority" - 20) / (125 - 20) END 
+
+CASE WHEN "MAX_majority" IS NULL THEN NULL WHEN "MAX_majority" \< 20 THEN 0 WHEN "MAX_majority" \> 125 THEN 1 ELSE ("MAX_majority" - 20) / (125 - 20) END
 :::
 
 However, as was later discovered, this approach led to all of the pollution data being qualified as 0. Given the Czech data is categorized differently and is given as aggregated annual values, a choice was made to use the same range given with the data (and its associated colours) when normalizing. Given that our analysis is context specific, changing the normalization will highlight the range in air quality within our given site. Whether the air quality is below or above the recommended values will no longer become the basis.
@@ -207,8 +223,9 @@ This simpler method yields the final table with the new normalization based on t
 
 ::: {.callout-note collapse="true"}
 ## New Normalized Pollution Table
+
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -216,7 +233,6 @@ This simpler method yields the final table with the new normalization based on t
 | NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
 | BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
 :::
-
 
 ### MCDA
 
