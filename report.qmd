@@ -143,6 +143,33 @@ The data used in this study comes from many different sources and uses different
 
 ### Biodiversity
 
+#### UHI indicator Normalization
+
+#### Impervious Surface Percentage
+
+Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
+
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|-------------|-------------|-------------|-------------|----------------------|
+| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban cores; 0% = natural cover |
+
+#### NDVI (Normalized Difference Vegetation Index)
+
+NDVI indicates vegetation health and coverage. We choose to collect the mean NDVI value averaged from the last 5 years.These values were collected from the sentinel-2 satellite using bands 2, 3 and 8. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
+
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                     |
+| --------- | ---------------------- | ----------------------- | ---------------------- | --------------------------------------------------------- |
+| NDVI      | 0.6                    | 0.0                     | 0 – 1 (inverted)       | Values >0.6 = dense vegetation; 0 = bare soil or built-up |
+
+
+#### Mean Night-Time Land Surface Temperature (LST)
+
+High night-time temperatures indicate poor cooling and urban heat retention. Risk increases with rising LST, especially during summer heatwaves. In our case the values were collected between the summer months of the year 2022 (june to August). This is due to data availability of the data collected from the Terra (EOS AM-1) and Aqua (EOS PM-1) satellites by NASA. This data source was chosen as it contained the highest possible usable data resolution of 1 by 1 km. Based on the collected data and ranges found in Jablonec nad Nisou, the following table was constructed. 
+| Indicator                | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                  |
+| ------------------------ | ---------------------- | ----------------------- | ---------------------- | ------------------------------------------------------ |
+| Mean Night-Time LST (°C) | 11°C                   | 16°C                    | 0 – 1                  | 
+
+
 ### Quality of Life
 
 #### Pollution Normalization
