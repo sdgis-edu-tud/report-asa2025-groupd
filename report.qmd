@@ -152,7 +152,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
 |---------------|---------------|---------------|---------------|---------------|
-| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban cores; 0% = natural cover |
+| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
 #### NDVI (Normalized Difference Vegetation Index)
@@ -187,7 +187,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
 |---------------|---------------|---------------|---------------|---------------|
-| Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night |
+| Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower.|
 :::
 
 ### Quality of Life
