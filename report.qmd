@@ -143,41 +143,35 @@ The data used in this study comes from many different sources and uses different
 
 ### Biodiversity
 
-#### UHI indicator Normalization
-
 #### Impervious Surface Percentage
 
-Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing. 
-
+Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|-------------|-------------|-------------|-------------|----------------------|
+|---------------|---------------|---------------|---------------|---------------|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban cores; 0% = natural cover |
 
 #### NDVI (Normalized Difference Vegetation Index)
 
-NDVI indicates vegetation health and coverage. The NDVI was collected  from the Sentinel-2 satellite using bands 2, 3 and 8. Then the mean NDVI was computed based on a temporal range of the last 5 years(between 01-01-2020 and 01-01-2025), the resolution of final NDVI is 10 by 10m. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
+NDVI indicates vegetation health and coverage. The NDVI was collected from the Sentinel-2 satellite using bands 2, 3 and 8. Then the mean NDVI was computed based on a temporal range of the last 5 years(between 01-01-2020 and 01-01-2025), the resolution of final NDVI is 10 by 10m. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                     |
-| --------- | ---------------------- | ----------------------- | ---------------------- | --------------------------------------------------------- |
-| NDVI      | 0.6                    | 0.0                     | 0 – 1 (inverted)       | Values >0.6 = dense vegetation; 0 = bare soil or built-up |
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|---------------|---------------|---------------|---------------|---------------|
+| NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 
 #### Mean Night-Time Land Surface Temperature (LST)
 
-High night-time temperatures indicate poor cooling and urban heat retention. The LST was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range. 
+High night-time temperatures indicate poor cooling and urban heat retention. The LST was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
 
-| Indicator                | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                  |
-| ------------------------ | ---------------------- | ----------------------- | ---------------------- | ------------------------------------------------------ |
-| Mean Night-Time LST (°C) | 11°C                   | 16°C                    | 0 – 1                  | 30°C = common threshold for urban heat stress at night |
-
-
-
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|---------------|---------------|---------------|---------------|---------------|
+| Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night |
 
 ### Quality of Life
 
 #### Pollution Normalization
 
-To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspitred by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
+To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspired by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
 |------------|------------|------------|------------|------------|------------|
@@ -187,6 +181,25 @@ To ensure comparability across pollutants, all air quality indicators were norma
 | BaP | *0.12 (indicative, EU)* | 1.0 | 0.06 | 1.0 | 0 – 1 |
 | BzN | 0.2 *(WHO guideline)* | 1.0 *(assumed)* | 0.1 | 1.0 | 0 – 1 |
 | SO₂ | 40 *(WHO 24h guideline)* | 125 *(EU 24h)* | 20 | 125 | 0 – 1 |
+
+A then example calculation in Qgis for SO2 would be:
+
+::: callout-note
+CASE WHEN "MAX_majority" IS NULL THEN NULL WHEN "MAX_majority" \< 20 THEN 0 WHEN "MAX_majority" \> 125 THEN 1 ELSE ("MAX_majority" - 20) / (125 - 20) END
+:::
+
+However, as was later discovered, this approach led to all of the pollution data being qualified as 0. Given the Czech data is categorized differently and is given as aggregated annual values, a choice was made to use the same range given with the data (and its associated colours) when normalizing. Given that our analysis is context specific, changing the normalization will highlight the range in air quality within our given site. Whether the air quality is below or above the recommended values will no longer become the basis.
+
+This simpler method yields the final table with the new normalization based on the input data classification is the following.
+
+| Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
+|---------------|---------------|---------------|---------------|---------------|
+| PM2.5 | 5 | 0 | 5 | `"MAX_max" / 5` |
+| SO₂ | 5 | 0 | 5 | `"MAX_max" / 5` |
+| BaP | 0.32 | 0 | 0.32 | `"MAX_max" / 0.32` |
+| PM10 | 6 | 0 | 6 | `"MAX_max" / 6` |
+| NO₂ | 7 | 0 | 7 | `"MAX_max" / 7` |
+| BzN | 0.5 | 0 | 0.5 | `"MAX_max" / 0.5` |
 
 ### MCDA
 
