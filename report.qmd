@@ -292,6 +292,92 @@ Using the Saaty matrix, each criteria are weighted against each other to give ea
 
 ![Quality of life MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Quality%20of%20Life.pdf)
 
+
+```{r fig.subcap="Jablonec nad Nisou and the Bila Nisa stream"}
+#| warning: false
+#| echo: false
+#| message: false
+library(leaflet)
+library(sf)
+library(dplyr)
+library(RColorBrewer)
+library(htmltools)
+
+# Set center coordinates
+jablonec_coords <- c(lat = 50.7224, lng = 15.1708)
+
+# List of files (assumes they are in "data" folder)
+files <- list.files("inserted_images/final_output_geopackages", pattern = "_final_newgrid\\.gpkg$", full.names = TRUE)
+
+# Initialize map
+m <- leaflet() %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  setView(lng = jablonec_coords["lng"], lat = jablonec_coords["lat"], zoom = 14)
+
+# For each GPKG file
+for (file in files) {
+  layer_name <- tools::file_path_sans_ext(basename(file))
+  gdf <- st_read(file, quiet = TRUE) %>%
+  st_transform(4326)
+  
+  # Drop geometry to find numeric columns between 0–1
+  numeric_cols <- st_drop_geometry(gdf) %>%
+    select(where(~ is.numeric(.x) && all(.x >= 0 & .x <= 1, na.rm = TRUE))) %>%
+    colnames()
+
+  # Assume only 1 normalized column per file
+  if (length(numeric_cols) != 1) next  # skip if none or ambiguous
+  norm_col <- numeric_cols[1]
+  
+  pal <- colorNumeric("YlGnBu", domain = gdf[[norm_col]], na.color = "transparent")
+
+  m <- m %>% addPolygons(
+    data = gdf,
+    fillColor = ~pal(get(norm_col)),
+    weight = 0.3,
+    color = "#222222",
+    opacity = 1,
+    fillOpacity = 1,
+    group = layer_name,
+    label = ~paste0(layer_name, ": ", round(get(norm_col), 2)),
+    options = pathOptions(className = "attribute-layer")  # custom class for filtering
+  )
+}
+
+# Add layer control
+m <- m %>% addLayersControl(
+  overlayGroups = tools::file_path_sans_ext(basename(files)),
+  options = layersControlOptions(collapsed = FALSE)
+)
+
+# Add brightness slider
+slider <- tags$div(
+  style = "position: absolute; top: 10px; right: 10px; z-index: 999; background: white; padding: 5px;",
+  tags$label("Brightness:"),
+  tags$input(id = "brightnessSlider", type = "range", min = 0.2, max = 1.5, step = 0.01, value = 1, style = "width: 150px;")
+)
+
+# Script to apply brightness only to polygon layers
+script <- tags$script(HTML(
+  "
+  document.getElementById('brightnessSlider').addEventListener('input', function() {
+    var brightness = this.value;
+    var layers = document.querySelectorAll('.attribute-layer');
+    layers.forEach(function(layer) {
+      layer.style.filter = 'brightness(' + brightness + ')';
+    });
+  });
+  "
+))
+
+# Render everything
+htmltools::browsable(tagList(m, slider, script))
+
+
+
+```
+
+
 ### Typology construction
 
 ## Results
