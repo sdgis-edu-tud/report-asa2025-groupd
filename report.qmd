@@ -142,6 +142,7 @@ The data used in this study comes from many different sources and uses different
 ### Climate Adaptation
 
 #### Floodplain
+Floodplain are flat, low-lying areas near a river or coast that is likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
 
 ## Normalized Flood risk Table
 
