@@ -146,7 +146,7 @@ The data used in this study comes from many different sources and uses different
 
 ### Maps
 
-##### Biodiversity
+#### Biodiversity
 
 ![Basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping%20(broad%20categories).pdf) ![Detailed basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping.pdf)
 
@@ -166,9 +166,9 @@ The data used in this study comes from many different sources and uses different
 
 ![Flood plain biotope value](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Floodplain%20biotope%20value-01.png) ![Natural flood plain restoration normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Potential%20for%20natural%20floodplain%20restoration-01.png)
 
-##### Climate Adaptation
+#### Climate Adaptation
 
-#### Mean Night-Time Land Surface Temperature (LST)
+##### Mean Night-Time Land Surface Temperature (LST)
 
 High night-time temperatures indicate poor cooling and urban heat retention. The LST was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
 
@@ -182,7 +182,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 
 
 ![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST.png)
-#### NDVI (Normalized Difference Vegetation Index)
+##### NDVI (Normalized Difference Vegetation Index)
 
 NDVI indicates vegetation health and coverage. The NDVI was collected from the Sentinel-2 satellite using bands 2, 3 and 8. Then the mean NDVI was computed based on a temporal range of the last 5 years(between 01-01-2020 and 01-01-2025), the resolution of final NDVI is 10 by 10m. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
 
@@ -196,7 +196,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 
 ![NDVI_norm](Inserted_images/Climate%20Adaptation/Bila%20Nisa%20(A3%20map)%20impervious.png)
 
-#### Impervious Surface Percentage
+##### Impervious Surface Percentage
 
 Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
 
@@ -210,7 +210,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 
 ![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI.png)
 
-#### Floodplain
+##### Floodplain
 Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
 
 ## Normalized Flood risk Table
@@ -226,7 +226,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 ![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
 
 
-##### Quality of life
+#### Quality of life
 
 For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
 
@@ -243,7 +243,7 @@ Air pollution maps ![Normalized BZP pollution](http://rstudio-server-edu.bk.tude
 Urban heat stress ![Normalized tree cover percentage](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20treecoverpercentage.png) ![NDVI Map normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NDVI.png)
 
 
-#### Tree-cover Percentage
+##### Tree-cover Percentage
 
 Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
 
@@ -255,7 +255,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
-#### Pollution Normalization
+##### Pollution Normalization
 
 To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspired by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
 
@@ -298,9 +298,6 @@ This simpler method yields the final table with the new normalization based on t
 :::
 
 
-<<<<<<< HEAD
-=======
-#### Maps
 
 ##### Biodiversity
 
@@ -345,7 +342,6 @@ Air pollution maps ![Normalized BZP pollution](http://rstudio-server-edu.bk.tude
 ![Finedust PM10](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM10.png) ![Finedust PM25 normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM25.png)
 
 Urban heat stress ![Normalized tree cover percentage](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20treecoverpercentage.png) ![NDVI Map normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NDVI.png)
->>>>>>> 7301f3fb34e60e4a23a1bff0eb7c33017d473cf3
 
 #### Criteria Matrixes
 
@@ -356,90 +352,6 @@ Using the Saaty matrix, each criteria are weighted against each other to give ea
 ![Climate Adaptation MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Climate%20Adaptation.pdf)
 
 ![Quality of life MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Quality%20of%20Life.pdf)
-
-```{r fig.subcap="Jablonec nad Nisou and the Bila Nisa stream"}
-#| warning: false
-#| echo: false
-#| message: false
-library(leaflet)
-library(sf)
-library(dplyr)
-library(RColorBrewer)
-library(htmltools)
-
-# Set center coordinates
-jablonec_coords <- c(lat = 50.7224, lng = 15.1708)
-
-# List of files (assumes they are in "data" folder)
-files <- list.files("inserted_images/final_output_geopackages", pattern = "_final_newgrid\\.gpkg$", full.names = TRUE)
-
-# Initialize map
-m <- leaflet() %>%
-  addProviderTiles(providers$CartoDB.Positron) %>%
-  setView(lng = jablonec_coords["lng"], lat = jablonec_coords["lat"], zoom = 14)
-
-# For each GPKG file
-for (file in files) {
-  layer_name <- tools::file_path_sans_ext(basename(file))
-  gdf <- st_read(file, quiet = TRUE) %>%
-  st_transform(4326)
-  
-  # Drop geometry to find numeric columns between 0–1
-  numeric_cols <- st_drop_geometry(gdf) %>%
-    select(where(~ is.numeric(.x) && all(.x >= 0 & .x <= 1, na.rm = TRUE))) %>%
-    colnames()
-
-  # Assume only 1 normalized column per file
-  if (length(numeric_cols) != 1) next  # skip if none or ambiguous
-  norm_col <- numeric_cols[1]
-  
-  pal <- colorNumeric("YlGnBu", domain = gdf[[norm_col]], na.color = "transparent")
-
-  m <- m %>% addPolygons(
-    data = gdf,
-    fillColor = ~pal(get(norm_col)),
-    weight = 0.3,
-    color = "#222222",
-    opacity = 1,
-    fillOpacity = 1,
-    group = layer_name,
-    label = ~paste0(layer_name, ": ", round(get(norm_col), 2)),
-    options = pathOptions(className = "attribute-layer")  # custom class for filtering
-  )
-}
-
-# Add layer control
-m <- m %>% addLayersControl(
-  overlayGroups = tools::file_path_sans_ext(basename(files)),
-  options = layersControlOptions(collapsed = FALSE)
-)
-
-# Add brightness slider
-slider <- tags$div(
-  style = "position: absolute; top: 10px; right: 10px; z-index: 999; background: white; padding: 5px;",
-  tags$label("Brightness:"),
-  tags$input(id = "brightnessSlider", type = "range", min = 0.2, max = 1.5, step = 0.01, value = 1, style = "width: 150px;")
-)
-
-# Script to apply brightness only to polygon layers
-script <- tags$script(HTML(
-  "
-  document.getElementById('brightnessSlider').addEventListener('input', function() {
-    var brightness = this.value;
-    var layers = document.querySelectorAll('.attribute-layer');
-    layers.forEach(function(layer) {
-      layer.style.filter = 'brightness(' + brightness + ')';
-    });
-  });
-  "
-))
-
-# Render everything
-htmltools::browsable(tagList(m, slider, script))
-
-
-
-```
 
 ### Typology construction
 
