@@ -143,7 +143,11 @@ The data used in this study comes from many different sources and uses different
 
 #### Floodplain
 
-Flood risk 
+## Normalized Flood risk Table
+
+| Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
+|---------------|---------------|---------------|---------------|---------------|
+| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 
 ### Biodiversity
 
@@ -265,7 +269,7 @@ This simpler method yields the final table with the new normalization based on t
 
 ##### Climate Adaptation
 
-![Floodplain](Inserted_images/Climate Adaptation/floodplain map-01.png)
+![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
 
 ![Impervious surface](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Impervious_surface.pdf)
 
