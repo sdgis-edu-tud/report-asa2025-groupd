@@ -114,9 +114,9 @@ The resolution of spatial analysis is directly tied to the data acquisition meth
 
 ```{r}
 library(slickR)
-imgs <- c("Inserted_images/data_biodiversity.png",
-          "Inserted_images/climate_adaption.png",
-          "Inserted_images/qualityoflife_datacollected.png")
+imgs <- c("Inserted_images/General Images/data_biodiversity.png",
+          "Inserted_images/General Images/climate_adaption.png",
+          "Inserted_images/General Images/qualityoflife_datacollected.png")
 
 slickR(imgs, height = 400, width = 700) +
   settings(dots = TRUE)
@@ -151,7 +151,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 ## Normalized Impervious Table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
@@ -163,7 +163,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 ## Normalized NDVI Table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
@@ -175,7 +175,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 ## Normalized Tree Cover Table
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
@@ -187,7 +187,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 ## Normalized Mean LST table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
@@ -201,7 +201,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 ## Normalized Pollution table
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -226,7 +226,7 @@ This simpler method yields the final table with the new normalization based on t
 ## New Normalized Pollution Table
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -566,7 +566,7 @@ To interpret the clustering results, we examine the centers of each cluster in t
 ### Typology description
 
 | Type | Impervious | Slope (°) | Crossing | Description |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | 1 | 0.76 | 6.2 | 0.67 | Urban area with high imperviousness and moderate traffic impact |
 | 2 | 0.07 | 19.4 | 0.29 | Steep natural area with minimal development |
 | 3 | 0.04 | 5.4 | 0.36 | Flat and near-natural stream surroundings |
