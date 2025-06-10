@@ -139,55 +139,34 @@ The spatial resolution of the data we collected significantly shapes the analyti
 
 The data used in this study comes from many different sources and uses different units as discussed above. Therefore, to compare them evenly, all values need to be brought to the same scale, and normalized in order to later conduct K-means clustering to discover appropriate typologies. We therefore could not use one method for all data normalization. Instead, each topic or data map uses its own way of normalizing respective to the data acquisition and availability. For climate adaptation, values like temperature and air pollution were compared to limits from the EU or WHO. For biodiversity, we used scales that show how suitable or rich an area is for nature. For quality of life, we used standards such as walking distances or access to green areas. Each method is explained in the following sections under their respective topic or map that they relate to.
 
-### Climate Adaptation
 
-#### Floodplain
+## Results
 
-Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
+### MCDA
 
-## Normalized Flood risk Table
+### Maps
 
-| Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|----|----|----|----|----|
-| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
+##### Biodiversity
 
-### Biodiversity
+![Basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping%20(broad%20categories).pdf) ![Detailed basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping.pdf)
 
-#### Impervious Surface Percentage
+![Zoning of large-scale protected areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Zoning%20of%20large-scale%20specially%20protected%20areas.pdf) ![Levels of protection in natural areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Levels%20of%20protection%20in%20large-scale%20specially%20protected%20natural%20areas%20(RED).png)
 
-Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
+![Road segment length, potential for road kills animals](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Road%20segment%20length%20per%20cell.png)
 
-::: {.callout-note collapse="true"}
-## Normalized Impervious Table
+![Types of greenery along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Types%20of%20greenery%20along%20B%C3%ADl%C3%A1%20Nisa.pdf)
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
-| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
-:::
+![Build up area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Build%20up%20area.png)
 
-#### NDVI (Normalized Difference Vegetation Index)
+![Diversity of ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Diversity%20of%20ecologically%20valuable%20habitats-01.png)
 
-NDVI indicates vegetation health and coverage. The NDVI was collected from the Sentinel-2 satellite using bands 2, 3 and 8. Then the mean NDVI was computed based on a temporal range of the last 5 years(between 01-01-2020 and 01-01-2025), the resolution of final NDVI is 10 by 10m. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
+![Ecological corridors](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Ecological%20corridors%20(%C3%9ASES).pdf) ![Ecological corridors normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Ecological%20corridors-01.png) ![Ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Proportion%20of%20ecologicaly%20valuable%20habitats%20surface%20area.png)
 
-::: {.callout-note collapse="true"}
-## Normalized NDVI Table
+![Categorization of flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Prevailing%20land-cover%20types%20(categorization%20of%20floodplains).pdf) ![Flood plain restoration](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Potential%20for%20natural%20floodplain%20restoration%20(categorization%20of%20floodplains).pdf) ![Biotopes along flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biotope%20value%20index%20(categorization%20of%20floodplains).pdf)
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
-| NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
-:::
+![Flood plain biotope value](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Floodplain%20biotope%20value-01.png) ![Natural flood plain restoration normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Potential%20for%20natural%20floodplain%20restoration-01.png)
 
-#### Tree-cover Percentage
-
-Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
-
-::: {.callout-note collapse="true"}
-## Normalized Tree Cover Table
-
-| Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|----|----|----|----|
-| Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
-:::
+##### Climate Adaptation
 
 #### Mean Night-Time Land Surface Temperature (LST)
 
@@ -197,11 +176,84 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 ## Normalized Mean LST table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
-### Quality of Life
+
+![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST.png)
+#### NDVI (Normalized Difference Vegetation Index)
+
+NDVI indicates vegetation health and coverage. The NDVI was collected from the Sentinel-2 satellite using bands 2, 3 and 8. Then the mean NDVI was computed based on a temporal range of the last 5 years(between 01-01-2020 and 01-01-2025), the resolution of final NDVI is 10 by 10m. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
+
+::: {.callout-note collapse="true"}
+## Normalized NDVI Table
+
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|---------------|---------------|---------------|---------------|---------------|
+| NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
+:::
+
+![NDVI_norm](Inserted_images/Climate%20Adaptation/Bila%20Nisa%20(A3%20map)%20impervious.png)
+
+#### Impervious Surface Percentage
+
+Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
+
+::: {.callout-note collapse="true"}
+## Normalized Impervious Table
+
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|---------------|---------------|---------------|---------------|---------------|
+| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
+:::
+
+![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI.png)
+
+#### Floodplain
+Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
+
+## Normalized Flood risk Table
+
+::: {.callout-note collapse="true"}
+
+| Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
+|---------------|---------------|---------------|---------------|---------------|
+| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
+
+:::
+
+![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
+
+
+##### Quality of life
+
+For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
+
+For the first analysis, we look at the availability of essential public amenities like public functions and public green along the stream and how well accessible they are.
+
+![Public amenities along Bila Nisa stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20AMENITIES.png) ![Normalized map of public amenities](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20public%20amenities%20along%20Bila%20Nisa.png) ![Map showing public green along Bila Nisa stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20GREEN%20CLIP.png) ![Normalized map of public green availability along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20to%20Public%20Green%20along%20Bila%20Nisa.png) Secondly, we analyzed how well the urban stream is connected to the urban area through the street network and availability of public transport.
+
+![Angular integration of road network indicating local centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20ROADS%20INTEGRATION.png) ![Nominal map showing accessiblity to urban centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20through%20integrated%20roads%20along%20Bila%20Nisa.png) ![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20TRANSPORT.png) ![Access to public transport near the stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20Public%20Transport%20near%20Bila%20Nisa.png)
+
+Air pollution maps ![Normalized BZP pollution](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20BZP.png) ![Normalized BAP map](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20BAP.png) ![SO2 pollution normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20SO2.png) ![NO2 pollution normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NO2.png)
+
+![Finedust PM10](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM10.png) ![Finedust PM25 normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM25.png)
+
+Urban heat stress ![Normalized tree cover percentage](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20treecoverpercentage.png) ![NDVI Map normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NDVI.png)
+
+
+#### Tree-cover Percentage
+
+Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
+
+::: {.callout-note collapse="true"}
+## Normalized Tree Cover Table
+
+| Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
+|------------------|------------------|------------------|------------------|
+| Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
+:::
 
 #### Pollution Normalization
 
@@ -211,7 +263,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 ## Normalized Pollution table
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -236,7 +288,7 @@ This simpler method yields the final table with the new normalization based on t
 ## New Normalized Pollution Table
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -245,51 +297,30 @@ This simpler method yields the final table with the new normalization based on t
 | BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
 :::
 
-### MCDA
 
+<<<<<<< HEAD
+=======
 #### Maps
 
 ##### Biodiversity
 
-# WHICH AREAS HAVE HIGH BIODIVERSITY VALUE?
+![Basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping%20(broad%20categories).pdf) ![Detailed basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping.pdf)
 
-![Floodplain Biotope Value (original data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png)
+![Zoning of large-scale protected areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Zoning%20of%20large-scale%20specially%20protected%20areas.pdf) ![Levels of protection in natural areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Levels%20of%20protection%20in%20large-scale%20specially%20protected%20natural%20areas%20(RED).png)
 
-![Floodplain Biotope Value (normalized data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png)
+![Road segment length, potential for road kills animals](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Road%20segment%20length%20per%20cell.png)
 
-![Diversity of Natural Habitats (original data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(original%20data).png)
+![Types of greenery along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Types%20of%20greenery%20along%20B%C3%ADl%C3%A1%20Nisa.pdf)
 
-![Diversity of Natural Habitats (normalized data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(normalized%20data).png)
+![Build up area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Build%20up%20area.png)
 
-![Proportion of Natural Habitat Area (original data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(original%20data).png)
+![Diversity of ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Diversity%20of%20ecologically%20valuable%20habitats-01.png)
 
-![Proportion of Natural Habitat Area (normalized data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(normalized%20data).png)
+![Ecological corridors](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Ecological%20corridors%20(%C3%9ASES).pdf) ![Ecological corridors normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Ecological%20corridors-01.png) ![Ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Proportion%20of%20ecologicaly%20valuable%20habitats%20surface%20area.png)
 
-# WHICH AREAS HAVE A HIGH LEVEL OF HUMAN ACTIVITY WHICH POSES A THREAT TO BIODIVERSITY?
+![Categorization of flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Prevailing%20land-cover%20types%20(categorization%20of%20floodplains).pdf) ![Flood plain restoration](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Potential%20for%20natural%20floodplain%20restoration%20(categorization%20of%20floodplains).pdf) ![Biotopes along flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biotope%20value%20index%20(categorization%20of%20floodplains).pdf)
 
-![Weighed Road Segment Length (original data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(original%20data).png)
-
-![Weighed Road Segment Length (normalized data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(normalized%20data).png)
-
-## I feel like something is wrong with the road segment length normalization... it isn't super accurate if I compare it to the original data, but I am not sure how else to normalize
-
-![Proportion of Built-up Area (original data)](Inserted_images/Biodiversity/Built-up%20area%20(original%20data).png)
-
-![Proportion of Built-up Area (normalized data)](Inserted_images/Biodiversity/Built-up%20area%20(normalized%20data).png)
-
-![Zones of Protected Natural Areas (original data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(original%20data).png)
-
-![Zones of Protected Natural Areas (normalized data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(normalized%20data).png)
-
-# WHICH AREAS PROVIDE OPPORTUNITY FOR IMPROVED BIODIVERSITY?
-
-![Ecological Corridors (original data)](Inserted_images/Biodiversity/Ecological%20corridors%20(original%20data).png)
-
-![Ecological Corridors (normalized data)](Inserted_images/Biodiversity/Ecological%20corridors%20(normalized%20data).png)
-
-![Potential for Natural Floodplain Restoration (original data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(original%20data).png)
-
-![Potential for Natural Floodplain Restoration (normalized data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(normalized%20data).png)
+![Flood plain biotope value](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Floodplain%20biotope%20value-01.png) ![Natural flood plain restoration normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Potential%20for%20natural%20floodplain%20restoration-01.png)
 
 ##### Climate Adaptation
 
@@ -314,6 +345,7 @@ Air pollution maps ![Normalized BZP pollution](http://rstudio-server-edu.bk.tude
 ![Finedust PM10](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM10.png) ![Finedust PM25 normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM25.png)
 
 Urban heat stress ![Normalized tree cover percentage](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20treecoverpercentage.png) ![NDVI Map normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NDVI.png)
+>>>>>>> 7301f3fb34e60e4a23a1bff0eb7c33017d473cf3
 
 #### Criteria Matrixes
 
@@ -598,7 +630,7 @@ To interpret the clustering results, we examine the centers of each cluster in t
 ### Typology description
 
 | Type | Impervious | Slope (°) | Crossing | Description |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | 1 | 0.76 | 6.2 | 0.67 | Urban area with high imperviousness and moderate traffic impact |
 | 2 | 0.07 | 19.4 | 0.29 | Steep natural area with minimal development |
 | 3 | 0.04 | 5.4 | 0.36 | Flat and near-natural stream surroundings |
@@ -632,7 +664,6 @@ grids$cluster_dist <- grid_distances
 
 This workflow can now be applied to your own dataset to explore meaningful typologies for planning and design. Enjoy clustering!
 
-## Results
 
 ## Discussion
 
