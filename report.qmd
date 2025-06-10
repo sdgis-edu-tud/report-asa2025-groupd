@@ -148,23 +148,60 @@ The data used in this study comes from many different sources and uses different
 
 #### Biodiversity
 
-![Basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping%20(broad%20categories).pdf) ![Detailed basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping.pdf)
+##### WHICH AREAS HAVE HIGH BIODIVERSITY VALUE?
 
-![Zoning of large-scale protected areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Zoning%20of%20large-scale%20specially%20protected%20areas.pdf) ![Levels of protection in natural areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Levels%20of%20protection%20in%20large-scale%20specially%20protected%20natural%20areas%20(RED).png)
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(slickR)
 
-![Road segment length, potential for road kills animals](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Road%20segment%20length%20per%20cell.png)
 
-![Types of greenery along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Types%20of%20greenery%20along%20B%C3%ADl%C3%A1%20Nisa.pdf)
+imgs <- c("Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png",
+          "Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png")
 
-![Build up area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Build%20up%20area.png)
+slickR(imgs, height = 800, width = 600) +
+  settings(dots = TRUE)
 
-![Diversity of ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Diversity%20of%20ecologically%20valuable%20habitats-01.png)
+```
 
-![Ecological corridors](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Ecological%20corridors%20(%C3%9ASES).pdf) ![Ecological corridors normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Ecological%20corridors-01.png) ![Ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Proportion%20of%20ecologicaly%20valuable%20habitats%20surface%20area.png)
 
-![Categorization of flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Prevailing%20land-cover%20types%20(categorization%20of%20floodplains).pdf) ![Flood plain restoration](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Potential%20for%20natural%20floodplain%20restoration%20(categorization%20of%20floodplains).pdf) ![Biotopes along flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biotope%20value%20index%20(categorization%20of%20floodplains).pdf)
+![Floodplain Biotope Value (original data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png)
 
-![Flood plain biotope value](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Floodplain%20biotope%20value-01.png) ![Natural flood plain restoration normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Potential%20for%20natural%20floodplain%20restoration-01.png)
+![Floodplain Biotope Value (normalized data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png)
+
+![Diversity of Natural Habitats (original data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(original%20data).png)
+
+![Diversity of Natural Habitats (normalized data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(normalized%20data).png)
+
+![Proportion of Natural Habitat Area (original data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(original%20data).png)
+
+![Proportion of Natural Habitat Area (normalized data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(normalized%20data).png)
+
+# WHICH AREAS HAVE A HIGH LEVEL OF HUMAN ACTIVITY WHICH POSES A THREAT TO BIODIVERSITY?
+
+![Weighed Road Segment Length (original data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(original%20data).png)
+
+![Weighed Road Segment Length (normalized data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(normalized%20data).png)
+
+## I feel like something is wrong with the road segment length normalization... it isn't super accurate if I compare it to the original data, but I am not sure how else to normalize
+
+![Proportion of Built-up Area (original data)](Inserted_images/Biodiversity/Built-up%20area%20(original%20data).png)
+
+![Proportion of Built-up Area (normalized data)](Inserted_images/Biodiversity/Built-up%20area%20(normalized%20data).png)
+
+![Zones of Protected Natural Areas (original data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(original%20data).png)
+
+![Zones of Protected Natural Areas (normalized data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(normalized%20data).png)
+
+![Ecological Corridors (original data)](Inserted_images/Biodiversity/Ecological%20corridors%20(original%20data).png)
+
+![Ecological Corridors (normalized data)](Inserted_images/Biodiversity/Ecological%20corridors%20(normalized%20data).png)
+
+![Potential for Natural Floodplain Restoration (original data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(original%20data).png)
+
+![Potential for Natural Floodplain Restoration (normalized data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(normalized%20data).png)
+
 
 #### Climate Adaptation
 
@@ -296,52 +333,6 @@ This simpler method yields the final table with the new normalization based on t
 | NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
 | BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
 :::
-
-
-
-##### Biodiversity
-
-![Basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping%20(broad%20categories).pdf) ![Detailed basic Habitats along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Basic%20habitat%20mapping.pdf)
-
-![Zoning of large-scale protected areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Zoning%20of%20large-scale%20specially%20protected%20areas.pdf) ![Levels of protection in natural areas](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Levels%20of%20protection%20in%20large-scale%20specially%20protected%20natural%20areas%20(RED).png)
-
-![Road segment length, potential for road kills animals](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Road%20segment%20length%20per%20cell.png)
-
-![Types of greenery along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Types%20of%20greenery%20along%20B%C3%ADl%C3%A1%20Nisa.pdf)
-
-![Build up area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Build%20up%20area.png)
-
-![Diversity of ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Diversity%20of%20ecologically%20valuable%20habitats-01.png)
-
-![Ecological corridors](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Ecological%20corridors%20(%C3%9ASES).pdf) ![Ecological corridors normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Ecological%20corridors-01.png) ![Ecologically valuable habitats](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Proportion%20of%20ecologicaly%20valuable%20habitats%20surface%20area.png)
-
-![Categorization of flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Prevailing%20land-cover%20types%20(categorization%20of%20floodplains).pdf) ![Flood plain restoration](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Potential%20for%20natural%20floodplain%20restoration%20(categorization%20of%20floodplains).pdf) ![Biotopes along flood plains](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biotope%20value%20index%20(categorization%20of%20floodplains).pdf)
-
-![Flood plain biotope value](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Floodplain%20biotope%20value-01.png) ![Natural flood plain restoration normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Biodiversity/Potential%20for%20natural%20floodplain%20restoration-01.png)
-
-##### Climate Adaptation
-
-![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
-
-![Impervious surface](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Impervious_surface.pdf)
-
-![Land surface temperature](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Land_surface_temp.pdf)
-
-##### Quality of life
-
-For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
-
-For the first analysis, we look at the availability of essential public amenities like public functions and public green along the stream and how well accessible they are.
-
-![Public amenities along Bila Nisa stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20AMENITIES.png) ![Normalized map of public amenities](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20public%20amenities%20along%20Bila%20Nisa.png) ![Map showing public green along Bila Nisa stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20GREEN%20CLIP.png) ![Normalized map of public green availability along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20to%20Public%20Green%20along%20Bila%20Nisa.png) Secondly, we analyzed how well the urban stream is connected to the urban area through the street network and availability of public transport.
-
-![Angular integration of road network indicating local centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20ROADS%20INTEGRATION.png) ![Nominal map showing accessiblity to urban centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20through%20integrated%20roads%20along%20Bila%20Nisa.png) ![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20TRANSPORT.png) ![Access to public transport near the stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20Public%20Transport%20near%20Bila%20Nisa.png)
-
-Air pollution maps ![Normalized BZP pollution](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20BZP.png) ![Normalized BAP map](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20BAP.png) ![SO2 pollution normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20SO2.png) ![NO2 pollution normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NO2.png)
-
-![Finedust PM10](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM10.png) ![Finedust PM25 normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM25.png)
-
-Urban heat stress ![Normalized tree cover percentage](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20treecoverpercentage.png) ![NDVI Map normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NDVI.png)
 
 #### Criteria Matrixes
 
