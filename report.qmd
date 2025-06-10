@@ -292,6 +292,20 @@ Tree cover density represents the percentage of land surface covered by trees wi
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(slickR)
+
+
+imgs <- c("Inserted_images/Biodiversity/Normalised_mean_Treecover.png", "Inserted_images/Biodiversity/Mean_treecover.png")
+
+slickR(imgs, height = 800, width = 600) +
+  settings(dots = TRUE)
+
+```
+
 ##### Pollution Normalization
 
 To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspired by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
@@ -333,6 +347,7 @@ This simpler method yields the final table with the new normalization based on t
 | NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
 | BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
 :::
+
 
 #### Criteria Matrixes
 
