@@ -141,6 +141,10 @@ The data used in this study comes from many different sources and uses different
 
 ### Climate Adaptation
 
+#### Floodplain
+
+Flood risk 
+
 ### Biodiversity
 
 #### Impervious Surface Percentage
@@ -261,7 +265,7 @@ This simpler method yields the final table with the new normalization based on t
 
 ##### Climate Adaptation
 
-Need to add map of Ruofan
+![Floodplain](Inserted_images/Climate Adaptation/floodplain map-01.png)
 
 ![Impervious surface](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Impervious_surface.pdf)
 
