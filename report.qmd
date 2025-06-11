@@ -139,7 +139,6 @@ The spatial resolution of the data we collected significantly shapes the analyti
 
 The data used in this study comes from many different sources and uses different units as discussed above. Therefore, to compare them evenly, all values need to be brought to the same scale, and normalized in order to later conduct K-means clustering to discover appropriate typologies. We therefore could not use one method for all data normalization. Instead, each topic or data map uses its own way of normalizing respective to the data acquisition and availability. For climate adaptation, values like temperature and air pollution were compared to limits from the EU or WHO. For biodiversity, we used scales that show how suitable or rich an area is for nature. For quality of life, we used standards such as walking distances or access to green areas. Each method is explained in the following sections under their respective topic or map that they relate to.
 
-
 ## Results
 
 ### MCDA
@@ -164,7 +163,6 @@ slickR(imgs, height = 800, width = 600) +
   settings(dots = TRUE)
 
 ```
-
 
 ![Floodplain Biotope Value (original data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png)
 
@@ -202,7 +200,6 @@ slickR(imgs, height = 800, width = 600) +
 
 ![Potential for Natural Floodplain Restoration (normalized data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(normalized%20data).png)
 
-
 #### Climate Adaptation
 
 ##### Mean Night-Time Land Surface Temperature (LST)
@@ -212,23 +209,21 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 ::: {.callout-note collapse="true"}
 ## Normalized Mean LST table
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+| Indicator                | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                                                                                                                             |
 |---------------|---------------|---------------|---------------|---------------|
-| Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
+| Mean Night-Time LST (°C) | 11°C                   | 16°C                    | 0 – 1                  | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
-
-![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST.png)
-##### NDVI (Normalized Difference Vegetation Index)
+![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST.png) \##### NDVI (Normalized Difference Vegetation Index)
 
 NDVI indicates vegetation health and coverage. The NDVI was collected from the Sentinel-2 satellite using bands 2, 3 and 8. Then the mean NDVI was computed based on a temporal range of the last 5 years(between 01-01-2020 and 01-01-2025), the resolution of final NDVI is 10 by 10m. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
 
 ::: {.callout-note collapse="true"}
 ## Normalized NDVI Table
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                      |
 |---------------|---------------|---------------|---------------|---------------|
-| NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
+| NDVI      | 0.6                    | 0.0                     | 0 – 1 (inverted)       | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
 ![NDVI_norm](Inserted_images/Climate%20Adaptation/Bila%20Nisa%20(A3%20map)%20impervious.png)
@@ -240,45 +235,71 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 ::: {.callout-note collapse="true"}
 ## Normalized Impervious Table
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+| Indicator              | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                                                                  |
 |---------------|---------------|---------------|---------------|---------------|
-| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
+| Impervious Surface (%) | 0%                     | 80%                     | 0 – 1                  | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
 ![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI.png)
 
 ##### Floodplain
+
 Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
 
 ## Normalized Flood risk Table
 
 ::: {.callout-note collapse="true"}
-
-| Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
+| Indicator      | Low Flood Risk (0)       | Middle Flood Risk (0.5) | High Flood Risk (1)       | Normalized Range (0-1) |
 |---------------|---------------|---------------|---------------|---------------|
-| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
-
+| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1                  |
 :::
 
 ![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
-
 
 #### Quality of life
 
 For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
 
-For the first analysis, we look at the availability of essential public amenities like public functions and public green along the stream and how well accessible they are.
+For the first analysis, we look at the availability of public amenities that supports urban life. like public functions and public green along the stream and how well accessible they are.
 
-![Public amenities along Bila Nisa stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20AMENITIES.png) ![Normalized map of public amenities](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20public%20amenities%20along%20Bila%20Nisa.png) ![Map showing public green along Bila Nisa stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20GREEN%20CLIP.png) ![Normalized map of public green availability along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20to%20Public%20Green%20along%20Bila%20Nisa.png) Secondly, we analyzed how well the urban stream is connected to the urban area through the street network and availability of public transport.
+![Public amenities along Bila Nisa stream](images/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png)
 
-![Angular integration of road network indicating local centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20ROADS%20INTEGRATION.png) ![Nominal map showing accessiblity to urban centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20through%20integrated%20roads%20along%20Bila%20Nisa.png) ![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MAP%20-%20PUBLIC%20TRANSPORT.png) ![Access to public transport near the stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/Access%20Public%20Transport%20near%20Bila%20Nisa.png)
+Based on these public amenities, data is normalized based on the diversity of public amenities and the size of the public areas, which indicates to what extent the area can be used by the population of Jablonec.
+
+First, the public amenities are clipped within the grid of the Bila Nisa stream. The clipped layer is overlayed in the grid creating a separate layer. The data is then normalized through adding a separate column, where the range of area and functions is used through the following functions. Using this formula, data is normalized to a 0 to 1 scale.
+
+![Normalized map size of public amenities](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Size%20of%20public%20areas%20normalized.png) ![Diversity of public amenities along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png) Apart from essential public amenities, the accessiblity of nature and public green offer comfort in urban areas and is an important factor to be taken into account. As stated in the case, ecological quality of the stream has been degregated through human activity, which also impacts the quality of life in the proximity of the stream. However, along the borders of the urban area, patches of green over access to public green.
+
+![Map showing public green along Bila Nisa stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20data%20input.png) The area of public green is then further normalized, through the following formula, thus normalizng the area on a scale from 0 to 1.
+
+("your_field" - min("your_field")) / (max("your_field") - min("your_field"))
+
+![Normalized map of public green availability along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20normalized.png)
+
+Apart from access to essential human needs along the stream, the Bila Nisa itself is a potential area where people can visit to get in touch with nature and a more comfortable urban environment, taken into account that the urban environment will be impacted further through the effect of climate change. Accessiblity to the stream is therefore an important indicator for quality of life. First, access to the Bila Nisa is analyzed through the road network of Jablonec nad Nisau. A space syntax is used to determine which roads are better integrated to the road network which determines which part of the stream are more centralized and better accessible.
+
+![Angular integration of road network indicating local centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20data%20input.png)
+
+The roads that fall within reach of the stream are clipped and used for further normalization. The clip is overlayed in the grid, and both the number of roads and degree if integration with the road network are taken into account in the normalization. Using the open field calculator, a new column is created for normalizing the data of the layer using the following formula:
+
+("sum_Atw2kM" - minimum("sum_Atw2kM")) / (maximum("sum_Atw2kM") - minimum("sum_Atw2kM"))
+
+Categorizing the layer with the newly calculated normalized column, the following map shows how urban centers North, central and South-west of the stream can be defined.
+
+![Nominal map showing accessiblity to urban centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20normalized.png)
+
+Apart from the road network, which primarily focusses on private mobility, public transport offers a good indication how the stream can be accessed from a more regional point of view. For this, a data layer from the ArcGIS web is found that represents the public transport network of Jablonec nad Nisau. A clip from this layer is made, which results in a couple of bus stops and a tram stops that fall within reach of the stream. To see how accessible the stream is from public transportation, service areas are used with a radius of 500m (bus stops) and 1000m (tram stops) based on the type of connection. Bus is more urban while the tram has a regional connection with the neighboring city of Liberec.
+
+![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png)
+Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created that calculates the data using a normalized scale from 0 to 1, using the range of opportunities.
+
+![Access to public transport near the stream normalilzed](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20along%20stream%20normalized.png)
 
 Air pollution maps ![Normalized BZP pollution](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20BZP.png) ![Normalized BAP map](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20BAP.png) ![SO2 pollution normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20SO2.png) ![NO2 pollution normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NO2.png)
 
 ![Finedust PM10](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM10.png) ![Finedust PM25 normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20PM25.png)
 
 Urban heat stress ![Normalized tree cover percentage](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20treecoverpercentage.png) ![NDVI Map normalized](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/midtermmaps_frederick/Bila%20Nisa%20(A3%20map)%20NDVI.png)
-
 
 ##### Tree-cover Percentage
 
@@ -287,9 +308,9 @@ Tree cover density represents the percentage of land surface covered by trees wi
 ::: {.callout-note collapse="true"}
 ## Normalized Tree Cover Table
 
-| Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
+| Variable          | Low Risk Threshold(0) | High Risk Threshold (1) | Notes                                   |
 |------------------|------------------|------------------|------------------|
-| Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
+| Tree Canopy Cover | \>75%                 | \<25%                   | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
 ```{r}
@@ -315,12 +336,12 @@ To ensure comparability across pollutants, all air quality indicators were norma
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
 |------------|------------|------------|------------|------------|------------|
-| PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
-| PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
-| NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
-| BaP | *0.12 (indicative, EU)* | 1.0 | 0.06 | 1.0 | 0 – 1 |
-| BzN | 0.2 *(WHO guideline)* | 1.0 *(assumed)* | 0.1 | 1.0 | 0 – 1 |
-| SO₂ | 40 *(WHO 24h guideline)* | 125 *(EU 24h)* | 20 | 125 | 0 – 1 |
+| PM2.5     | 5                          | 20               | 2.5                            | 20                           | 0 – 1                  |
+| PM10      | 15                         | 40               | 7.5                            | 40                           | 0 – 1                  |
+| NO₂       | 10                         | 40               | 5                              | 40                           | 0 – 1                  |
+| BaP       | *0.12 (indicative, EU)*    | 1.0              | 0.06                           | 1.0                          | 0 – 1                  |
+| BzN       | 0.2 *(WHO guideline)*      | 1.0 *(assumed)*  | 0.1                            | 1.0                          | 0 – 1                  |
+| SO₂       | 40 *(WHO 24h guideline)*   | 125 *(EU 24h)*   | 20                             | 125                          | 0 – 1                  |
 :::
 
 A then example calculation in Qgis for SO2 would be:
@@ -340,14 +361,13 @@ This simpler method yields the final table with the new normalization based on t
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
 |---------------|---------------|---------------|---------------|---------------|
-| PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
-| SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
-| BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
-| PM10 | 3 | 0 | 3 | `"MAX_max" / 3` |
-| NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
-| BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
+| PM2.5     | 2.5                       | 0                      | 5                       | `"MAX_max" / 2.5`     |
+| SO₂       | 2.5                       | 0                      | 5                       | `"MAX_max" / 2.5`     |
+| BaP       | 0.16                      | 0                      | 0.16                    | `"MAX_max" / 0.16`    |
+| PM10      | 3                         | 0                      | 3                       | `"MAX_max" / 3`       |
+| NO₂       | 3.5                       | 0                      | 3.5                     | `"MAX_max" / 3.5`     |
+| BzN       | 0.25                      | 0                      | 0.25                    | `"MAX_max" / 0.25`    |
 :::
-
 
 #### Criteria Matrixes
 
@@ -547,12 +567,12 @@ To interpret the clustering results, we examine the centers of each cluster in t
 
 ### Typology description
 
-| Type | Impervious | Slope (°) | Crossing | Description |
+| Type | Impervious | Slope (°) | Crossing | Description                                                     |
 |---------------|---------------|---------------|---------------|---------------|
-| 1 | 0.76 | 6.2 | 0.67 | Urban area with high imperviousness and moderate traffic impact |
-| 2 | 0.07 | 19.4 | 0.29 | Steep natural area with minimal development |
-| 3 | 0.04 | 5.4 | 0.36 | Flat and near-natural stream surroundings |
-| 4 | 0.57 | 6.4 | 3.88 | Urban stream corridor with high crossing disturbance |
+| 1    | 0.76       | 6.2       | 0.67     | Urban area with high imperviousness and moderate traffic impact |
+| 2    | 0.07       | 19.4      | 0.29     | Steep natural area with minimal development                     |
+| 3    | 0.04       | 5.4       | 0.36     | Flat and near-natural stream surroundings                       |
+| 4    | 0.57       | 6.4       | 3.88     | Urban stream corridor with high crossing disturbance            |
 
 ## Step 6. (Optional) Calculate distance to cluster center
 
@@ -581,7 +601,6 @@ grids$cluster_dist <- grid_distances
 -   (Optional) We calculated how close each grid is to its cluster center.
 
 This workflow can now be applied to your own dataset to explore meaningful typologies for planning and design. Enjoy clustering!
-
 
 ## Discussion
 
