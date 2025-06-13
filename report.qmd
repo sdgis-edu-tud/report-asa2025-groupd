@@ -247,7 +247,7 @@ This simpler method yields the final table with the new normalization based on t
 | BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
 :::
 
-======= \## Results
+## Results
 
 ### MCDA
 
@@ -308,7 +308,7 @@ This criteria looks at the same data as the diversity of natural habitats, categ
 
 ![Weighed Road Segment Length (normalized data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(normalized%20data).png)
 
-## I feel like something is wrong with the road segment length normalization... it isn't super accurate if I compare it to the original data, but I am not sure how else to normalize
+I feel like something is wrong with the road segment length normalization... it isn't super accurate if I compare it to the original data, but I am not sure how else to normalize
 
 The build-up area criteria utilizes the data on existing buildings from OpenStreetMap (2025) to estimate the level of human activity in each cell (OpenStreetMap, 2025). The 'intersection' function in QGIS split up the building polygons according to the grid lines. Afterwards, an 'overlap analysis' was conducted to calculate the percentage of area that is built-up within a given cell. In essence, the build-up area normalized value looks at the Floor Space Index (FSI) of each cell.
 
