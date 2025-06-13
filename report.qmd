@@ -273,6 +273,11 @@ slickR(imgs, height = 800, width = 600) +
 
 ```
 
+The floodplain biotope value criteria examines the ecological biotope value of the Bílá Nisa floodplains. This criteria uses the 'Categorization of Floodplains' layer taken from the Agency for Nature and Landscape Conservation of the Czech Republic. The layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value.
+(APOK ČR, 2022).
+
+The layer shows that most of the Bílá Nisa floodplain has negligible biotope value. However, some patches of moderate value remain which could be salvaged. To normalized this information, the moderate biotope value polygons were isolated and 'intersected' according to the grid lines. Then an 'overlap analysis' was conducted to calculate the percentage of area per cell that has moderate floodplain biotope value.
+
 ![Floodplain Biotope Value (original data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png)
 
 ![Floodplain Biotope Value (normalized data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png)
