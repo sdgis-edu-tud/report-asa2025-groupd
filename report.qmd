@@ -278,8 +278,6 @@ The floodplain biotope value criteria examines the ecological biotope value of t
 
 The layer shows that most of the Bílá Nisa floodplain has negligible biotope value. However, some patches of moderate value remain which could be salvaged. To normalized this information, the moderate biotope value polygons were isolated and 'intersected' according to the grid lines. Then an 'overlap analysis' was conducted to calculate the percentage of area per cell that has moderate floodplain biotope value.
 
-![Floodplain Biotope Value (original data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png)
-
 ![Floodplain Biotope Value (normalized data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png)
 
 ##### Diversity of Natural Habitats
@@ -296,15 +294,11 @@ Having weighed the data based on cell size, it now had to be normalized. All of 
 
 The map shows that there are no natural habitats in the inner city, only some in its edges. Most of the natural habitats are concentrated outside of city borders.
 
-![Diversity of Natural Habitats (original data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(original%20data).png)
-
 ![Diversity of Natural Habitats (normalized data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(normalized%20data).png)
 
 ##### Proportion of Natural Habitat Area
 
 This criteria looks at the same data as the diversity of natural habitats, categorized in broader natural habitat types (APOK ČR, 2025). The map shows a prominence of grasslands outside of the city, but there are also forests, shrubs and peat bogs. The polygons of these natural habitats were divided based on grid lines using the 'intersection' tool, and then an 'overlap analysis' was conducted to identify the cover area of these combined natural habitats in each cell. It can be seen that most of the natural habitats area actually concentrated further away from the stream.
-
-![Proportion of Natural Habitat Area (original data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(original%20data).png)
 
 ![Proportion of Natural Habitat Area (normalized data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(normalized%20data).png)
 
@@ -320,8 +314,6 @@ The road infrastructure was taken from OpenStreetMap and clipped to the grid. Th
 
 I realize now that this way of normalizing does not account for the difference in cell size...
 
-![Weighed Road Segment Length (original data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(original%20data).png)
-
 ![Weighed Road Segment Length (normalized data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(normalized%20data).png)
 
 ##### Proportion of Built-up Area
@@ -331,8 +323,6 @@ I feel like something is wrong with the road segment length normalization... it 
 The build-up area criteria utilizes the data on existing buildings from OpenStreetMap (2025) to estimate the level of human activity in each cell (OpenStreetMap, 2025). The 'intersection' function in QGIS split up the building polygons according to the grid lines. Afterwards, an 'overlap analysis' was conducted to calculate the percentage of area that is built-up within a given cell. In essence, the build-up area normalized value looks at the Floor Space Index (FSI) of each cell.
 
 The results of the normalized data on build-up area show that there is some level of build-up along most parts of the stream. There is a fairly high variation of build-up area along the stream in the inner city.
-
-![Proportion of Built-up Area (original data)](Inserted_images/Biodiversity/Built-up%20area%20(original%20data).png)
 
 ![Proportion of Built-up Area (normalized data)](Inserted_images/Biodiversity/Built-up%20area%20(normalized%20data).png)
 
@@ -346,8 +336,6 @@ The data used for this criteria is the 'Methodologically Unified Definition of T
 
 To normalize this data, the layer polygons were split up per cell using the 'intersect' function, and the 'overlap analysis' was conducted to identify the percentage of area per cell that is taken up by the ecological corridor polygon. In the resulting map (where 1 is 100% of the area and 0 is 0% of the area) key cells for ecological connectivity can be seen.
 
-![Ecological Corridors (original data)](Inserted_images/Biodiversity/Ecological%20corridors%20(original%20data).png)
-
 ![Ecological Corridors (normalized data)](Inserted_images/Biodiversity/Ecological%20corridors%20(normalized%20data).png)
 
 ##### Potential for Natural Floodplain Restoration
@@ -356,8 +344,6 @@ For the natural floodplain restoration potential criteria, the 'Categorization o
 
 To normalize this data, the polygons with medium and high potential for restoration were isolated. Since there are not many areas with floodplain restoration potential, and there is only one comparatively small patch of medium restoration potential, both medium and high potentials were considered as equal. The polygons were 'intersected' according to the grid lines, and then 'overlay analysis' was conducted to find the percentage of area with natural floodplain restoration for each cell. In the resulting map, key areas with higher potential for floodplain restoration can be seen both within and outside the city borders.
 
-![Potential for Natural Floodplain Restoration (original data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(original%20data).png)
-
 ![Potential for Natural Floodplain Restoration (normalized data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(normalized%20data).png)
 
 ##### Zones of Protected Natural Areas
@@ -365,8 +351,6 @@ To normalize this data, the polygons with medium and high potential for restorat
 Zones of protection of natural areas examine the level of legal protection which large-scale specially protected natural areas have. The zoning data was taken from Agency for Nature and Landscape Conservation of the Czech Republic (AOPK ČR, 2025, AOPK ČR, 2025). The dataset shows that there are some areas along the stream with Zone III and Zone IV levels of protection. Zone IV indicates a landscape management zone with the least strict protection, allowing for broader human activity, but still focusing on the preservation of ecological value. Zone III is a natural buffer zone where traditional and sustainable land use is still generally allowed. The map shows that mostly only the areas outside of the city borders have some level of protection.
 
 To process the data, the polygons were 'intercepted' based on the grid lines, then the 'overlap analysis' function calculated the percentage of area different protection zones took up in each grid cell. Using the field calculator, the majority (>50%) value in each cell size was identified and normalized. In case there was no majority, the average between two values with the highest percentage of area was taken. For example, if a cell was 45% zone III and 35% zone IV, then the final cell value is 0.5, because zone VI has the normalized value of 0.25 and zone III has the normalized value of 0.75.
-
-![Zones of Protected Natural Areas (original data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(original%20data).png)
 
 ![Zones of Protected Natural Areas (normalized data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(normalized%20data).png)
 
@@ -776,5 +760,22 @@ This workflow can now be applied to your own dataset to explore meaningful typol
 ## Conclusion
 
 ## Appendix
+
+![Floodplain Biotope Value (original data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png)
+
+![Diversity of Natural Habitats (original data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(original%20data).png)
+
+![Proportion of Natural Habitat Area (original data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(original%20data).png)
+
+![Weighed Road Segment Length (original data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(original%20data).png)
+
+![Proportion of Built-up Area (original data)](Inserted_images/Biodiversity/Built-up%20area%20(original%20data).png)
+
+![Ecological Corridors (original data)](Inserted_images/Biodiversity/Ecological%20corridors%20(original%20data).png)
+
+![Potential for Natural Floodplain Restoration (original data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(original%20data).png)
+
+![Zones of Protected Natural Areas (original data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(original%20data).png)
+
 
 :::
