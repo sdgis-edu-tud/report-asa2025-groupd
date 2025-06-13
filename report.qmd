@@ -754,4 +754,6 @@ This workflow can now be applied to your own dataset to explore meaningful typol
 
 ## Conclusion
 
+## Appendix
+
 :::
