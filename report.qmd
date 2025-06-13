@@ -255,7 +255,7 @@ This simpler method yields the final table with the new normalization based on t
 
 #### Biodiversity
 
-#### WHICH AREAS HAVE HIGH BIODIVERSITY VALUE?
+### WHICH AREAS HAVE HIGH BIODIVERSITY VALUE?
 
 ```{r}
 #| echo: false
@@ -308,7 +308,7 @@ This criteria looks at the same data as the diversity of natural habitats, categ
 
 ![Proportion of Natural Habitat Area (normalized data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(normalized%20data).png)
 
-# WHICH AREAS HAVE A HIGH LEVEL OF HUMAN ACTIVITY WHICH POSES A THREAT TO BIODIVERSITY?
+### WHICH AREAS HAVE A HIGH LEVEL OF HUMAN ACTIVITY WHICH POSES A THREAT TO BIODIVERSITY?
 
 ##### Weighed Road Segment Length
 
@@ -336,7 +336,7 @@ The results of the normalized data on build-up area show that there is some leve
 
 ![Proportion of Built-up Area (normalized data)](Inserted_images/Biodiversity/Built-up%20area%20(normalized%20data).png)
 
-# WHICH AREAS PROVIDE OPPORTUNITY FOR IMPROVED BIODIVERSITY?
+### WHICH AREAS PROVIDE OPPORTUNITY FOR IMPROVED BIODIVERSITY?
 
 ##### Ecological Corridors
 
