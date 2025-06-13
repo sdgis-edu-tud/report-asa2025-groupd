@@ -282,9 +282,23 @@ The layer shows that most of the Bílá Nisa floodplain has negligible biotope v
 
 ![Floodplain Biotope Value (normalized data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png)
 
+The diversity of natural habitats criteria examines the basic habitat mapping of the stream area retrieved from the Agency for Nature and Landscape Conservation of the Czech Republic (APOK ČR, 2025). This dataset maps the distribution of habitat types in the form of biomes. The detailed biomes are classified according to the Biotope Catalogue of The Czech Republic, and include biomes which are influenced by human activity (APOK ČR, 2010).
+
+For the analysis of the diversity of natural habitats, anthropogenic biomes (coded as X) have been excluded from the dataset, as those are generally less healthy and biodiverse than their natural native counterparts [SOURCE]. The original data map shows the detailed natural habitats along Bila Nisa which are less than 50% antrhropogenic.
+
+To normalize tha data, these natural habitat polygons were split up based on the grid lines using the 'intersection' function, and then each polygon was converted into a centroid. Afterwards, the 'join attributes by location (summary)' function was used to identify the number of unique habitat values in each cell. To address the difference in cell size between inside and outside city borders, the 'field calculator' function was used to weigh the number of unique habitats per cell size. Since the 50x50 meter grid cells have half the length and width of the 100x100 meter ones, the weighing chosen was to multiply the smaller grid cell value by 2 if there was more than one unique habitat in the cell.
+
+Other alternatives were also explored for weighing, such as squaring the value of the small cell or multiplying it by 4 to match the difference in surface area. However, the results of these weighing methods dramatically skewed the values in favor of the smaller cells, making it hard to compare values between the inner and outer city, and resulting in the most habitat-diverse areas being shown as being within the city borders, which does not accurately reflect the situation. Therefore a multiplication of 2 was found as the most accurate form of weighing.
+
+Having weighed the data based on cell size, it now had to be normalized. All of the values were then divided by the highest natural habitat diversity value of all the cells. The final results can be seen in the map, where dark brown is high habitat diversity and white means no natural habitats at all.
+
+The map shows that there are no natural habitats in the inner city, only some in its edges. Most of the natural habitats are concentrated outside of city borders.
+
 ![Diversity of Natural Habitats (original data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(original%20data).png)
 
 ![Diversity of Natural Habitats (normalized data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(normalized%20data).png)
+
+This criteria looks at the same data as the diversity of natural habitats, categorized in broader natural habitat types (APOK ČR, 2025). The map shows a prominence of grasslands outside of the city, but there are also forests, shrubs and peat bogs. The polygons of these natural habitats were divided based on grid lines using the 'intersection' tool, and then an 'overlap analysis' was conducted to identify the cover area of these combined natural habitats in each cell. It can be seen that most of the natural habitats area actually concentrated further away from the stream.
 
 ![Proportion of Natural Habitat Area (original data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(original%20data).png)
 
@@ -298,6 +312,10 @@ The layer shows that most of the Bílá Nisa floodplain has negligible biotope v
 
 ## I feel like something is wrong with the road segment length normalization... it isn't super accurate if I compare it to the original data, but I am not sure how else to normalize
 
+The build-up area criteria utilizes the data on existing buildings from OpenStreetMap (2025) to estimate the level of human activity in each cell (OpenStreetMap, 2025). The 'intersection' function in QGIS split up the building polygons according to the grid lines. Afterwards, an 'overlap analysis' was conducted to calculate the percentage of area that is built-up within a given cell. In essence, the build-up area normalized value looks at the Floor Space Index (FSI) of each cell.
+
+The results of the normalized data on build-up area show that there is some level of build-up along most parts of the stream. There is a fairly high variation of build-up area along the stream in the inner city.
+
 ![Proportion of Built-up Area (original data)](Inserted_images/Biodiversity/Built-up%20area%20(original%20data).png)
 
 ![Proportion of Built-up Area (normalized data)](Inserted_images/Biodiversity/Built-up%20area%20(normalized%20data).png)
@@ -308,9 +326,19 @@ The layer shows that most of the Bílá Nisa floodplain has negligible biotope v
 
 ![Zones of Protected Natural Areas (normalized data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(normalized%20data).png)
 
+Ecological corridors criteria looks at the defined ecological corridors to identify opportunities to not only improve the local biodiversity, but enhance the ecological network on the local, regional and inter-regional scale.
+
+The data used for this criteria is the 'Methodologically Unified Definition of The Territorial System of Ecological Stability' from the Agency for Nature and Landscape Conservation of the Czech Republic (AOPK ČR, 2025). The dataset methodologically determined all hierarchial levels and types of territories which are vital for ecological stability.
+
+To normalize this data, the layer polygons were split up per cell using the 'intersect' function, and the 'overlap analysis' was conducted to identify the percentage of area per cell that is taken up by the ecological corridor polygon. In the resulting map (where 1 is 100% of the area and 0 is 0% of the area) key cells for ecological connectivity can be seen.
+
 ![Ecological Corridors (original data)](Inserted_images/Biodiversity/Ecological%20corridors%20(original%20data).png)
 
 ![Ecological Corridors (normalized data)](Inserted_images/Biodiversity/Ecological%20corridors%20(normalized%20data).png)
+
+For this criteria, the 'Categorization of Floodplains' layer of the Agency for Nature and Landscape Conservation of the Czech Republic is used. As previously mentioned, the layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. Unfortunately, the source does not explicitly state the methodology of how these potentials were determined (APOK ČR, 2022).
+
+To normalize this data, the polygons with medium and high potential for restoration were isolated. Since there are not many areas with floodplain restoration potential, and there is only one comparatively small patch of medium restoration potential, both medium and high potentials were considered as equal. The polygons were 'intersected' according to the grid lines, and then 'overlay analysis' was conducted to find the percentage of area with natural floodplain restoration for each cell. In the resulting map, key areas with higher potential for floodplain restoration can be seen both within and outside the city borders.
 
 ![Potential for Natural Floodplain Restoration (original data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(original%20data).png)
 
