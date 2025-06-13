@@ -148,7 +148,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 ## Normalized Flood risk Table
 
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 
 ### Biodiversity
@@ -161,7 +161,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 ## Normalized Impervious Table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
@@ -175,7 +175,7 @@ NDVI
 ## Normalized NDVI Table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
@@ -187,7 +187,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 ## Normalized Tree Cover Table
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
@@ -199,7 +199,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 ## Normalized Mean LST table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
@@ -213,7 +213,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 ## Normalized Pollution table
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -238,7 +238,7 @@ This simpler method yields the final table with the new normalization based on t
 ## New Normalized Pollution Table
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -246,8 +246,8 @@ This simpler method yields the final table with the new normalization based on t
 | NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
 | BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
 :::
-=======
-## Results
+
+======= \## Results
 
 ### MCDA
 
@@ -272,8 +272,7 @@ slickR(imgs, height = 800, width = 600) +
 
 ```
 
-The floodplain biotope value criteria examines the ecological biotope value of the Bílá Nisa floodplains. This criteria uses the 'Categorization of Floodplains' layer taken from the Agency for Nature and Landscape Conservation of the Czech Republic. The layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value.
-(APOK ČR, 2022).
+The floodplain biotope value criteria examines the ecological biotope value of the Bílá Nisa floodplains. This criteria uses the 'Categorization of Floodplains' layer taken from the Agency for Nature and Landscape Conservation of the Czech Republic. The layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. (APOK ČR, 2022).
 
 The layer shows that most of the Bílá Nisa floodplain has negligible biotope value. However, some patches of moderate value remain which could be salvaged. To normalized this information, the moderate biotope value polygons were isolated and 'intersected' according to the grid lines. Then an 'overlap analysis' was conducted to calculate the percentage of area per cell that has moderate floodplain biotope value.
 
@@ -283,7 +282,7 @@ The layer shows that most of the Bílá Nisa floodplain has negligible biotope v
 
 The diversity of natural habitats criteria examines the basic habitat mapping of the stream area retrieved from the Agency for Nature and Landscape Conservation of the Czech Republic (APOK ČR, 2025). This dataset maps the distribution of habitat types in the form of biomes. The detailed biomes are classified according to the Biotope Catalogue of The Czech Republic, and include biomes which are influenced by human activity (APOK ČR, 2010).
 
-For the analysis of the diversity of natural habitats, anthropogenic biomes (coded as X) have been excluded from the dataset, as those are generally less healthy and biodiverse than their natural native counterparts [SOURCE]. The original data map shows the detailed natural habitats along Bila Nisa which are less than 50% antrhropogenic.
+For the analysis of the diversity of natural habitats, anthropogenic biomes (coded as X) have been excluded from the dataset, as those are generally less healthy and biodiverse than their natural native counterparts \[SOURCE\]. The original data map shows the detailed natural habitats along Bila Nisa which are less than 50% antrhropogenic.
 
 To normalize tha data, these natural habitat polygons were split up based on the grid lines using the 'intersection' function, and then each polygon was converted into a centroid. Afterwards, the 'join attributes by location (summary)' function was used to identify the number of unique habitat values in each cell. To address the difference in cell size between inside and outside city borders, the 'field calculator' function was used to weigh the number of unique habitats per cell size. Since the 50x50 meter grid cells have half the length and width of the 100x100 meter ones, the weighing chosen was to multiply the smaller grid cell value by 2 if there was more than one unique habitat in the cell.
 
@@ -356,9 +355,9 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 ::: {.callout-note collapse="true"}
 ## Normalized Mean LST table
 
-| Indicator                | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                                                                                                                             |
-|---------------|---------------|---------------|---------------|---------------|
-| Mean Night-Time LST (°C) | 11°C                   | 16°C                    | 0 – 1                  | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|----|----|----|----|----|
+| Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
 ![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST.png) \##### NDVI (Normalized Difference Vegetation Index)
@@ -368,9 +367,9 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 ::: {.callout-note collapse="true"}
 ## Normalized NDVI Table
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                      |
-|---------------|---------------|---------------|---------------|---------------|
-| NDVI      | 0.6                    | 0.0                     | 0 – 1 (inverted)       | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|----|----|----|----|----|
+| NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
 ![NDVI_norm](Inserted_images/Climate%20Adaptation/Bila%20Nisa%20(A3%20map)%20impervious.png)
@@ -382,9 +381,9 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 ::: {.callout-note collapse="true"}
 ## Normalized Impervious Table
 
-| Indicator              | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                                                                  |
-|---------------|---------------|---------------|---------------|---------------|
-| Impervious Surface (%) | 0%                     | 80%                     | 0 – 1                  | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|----|----|----|----|----|
+| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
 ![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI.png)
@@ -396,9 +395,9 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 ## Normalized Flood risk Table
 
 ::: {.callout-note collapse="true"}
-| Indicator      | Low Flood Risk (0)       | Middle Flood Risk (0.5) | High Flood Risk (1)       | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
-| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1                  |
+| Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
+|----|----|----|----|----|
+| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 :::
 
 ![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
@@ -437,8 +436,7 @@ Categorizing the layer with the newly calculated normalized column, the followin
 
 Apart from the road network, which primarily focusses on private mobility, public transport offers a good indication how the stream can be accessed from a more regional point of view. For this, a data layer from the ArcGIS web is found that represents the public transport network of Jablonec nad Nisau. A clip from this layer is made, which results in a couple of bus stops and a tram stops that fall within reach of the stream. To see how accessible the stream is from public transportation, service areas are used with a radius of 500m (bus stops) and 1000m (tram stops) based on the type of connection. Bus is more urban while the tram has a regional connection with the neighboring city of Liberec.
 
-![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png)
-Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created that calculates the data using a normalized scale from 0 to 1, using the range of opportunities.
+![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png) Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created that calculates the data using a normalized scale from 0 to 1, using the range of opportunities.
 
 ![Access to public transport near the stream normalilzed](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20along%20stream%20normalized.png)
 
@@ -455,9 +453,9 @@ Tree cover density represents the percentage of land surface covered by trees wi
 ::: {.callout-note collapse="true"}
 ## Normalized Tree Cover Table
 
-| Variable          | Low Risk Threshold(0) | High Risk Threshold (1) | Notes                                   |
-|------------------|------------------|------------------|------------------|
-| Tree Canopy Cover | \>75%                 | \<25%                   | 75% → 0 (low risk), 25% → 1 (high risk) |
+| Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
+|----|----|----|----|
+| Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
 ```{r}
@@ -482,13 +480,13 @@ To ensure comparability across pollutants, all air quality indicators were norma
 ## Normalized Pollution table
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|------------|------------|------------|------------|------------|------------|
-| PM2.5     | 5                          | 20               | 2.5                            | 20                           | 0 – 1                  |
-| PM10      | 15                         | 40               | 7.5                            | 40                           | 0 – 1                  |
-| NO₂       | 10                         | 40               | 5                              | 40                           | 0 – 1                  |
-| BaP       | *0.12 (indicative, EU)*    | 1.0              | 0.06                           | 1.0                          | 0 – 1                  |
-| BzN       | 0.2 *(WHO guideline)*      | 1.0 *(assumed)*  | 0.1                            | 1.0                          | 0 – 1                  |
-| SO₂       | 40 *(WHO 24h guideline)*   | 125 *(EU 24h)*   | 20                             | 125                          | 0 – 1                  |
+|----|----|----|----|----|----|
+| PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
+| PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
+| NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
+| BaP | *0.12 (indicative, EU)* | 1.0 | 0.06 | 1.0 | 0 – 1 |
+| BzN | 0.2 *(WHO guideline)* | 1.0 *(assumed)* | 0.1 | 1.0 | 0 – 1 |
+| SO₂ | 40 *(WHO 24h guideline)* | 125 *(EU 24h)* | 20 | 125 | 0 – 1 |
 :::
 
 A then example calculation in Qgis for SO2 would be:
@@ -507,13 +505,13 @@ This simpler method yields the final table with the new normalization based on t
 ## New Normalized Pollution Table
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|---------------|---------------|---------------|---------------|---------------|
-| PM2.5     | 2.5                       | 0                      | 5                       | `"MAX_max" / 2.5`     |
-| SO₂       | 2.5                       | 0                      | 5                       | `"MAX_max" / 2.5`     |
-| BaP       | 0.16                      | 0                      | 0.16                    | `"MAX_max" / 0.16`    |
-| PM10      | 3                         | 0                      | 3                       | `"MAX_max" / 3`       |
-| NO₂       | 3.5                       | 0                      | 3.5                     | `"MAX_max" / 3.5`     |
-| BzN       | 0.25                      | 0                      | 0.25                    | `"MAX_max" / 0.25`    |
+|----|----|----|----|----|
+| PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
+| SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
+| BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
+| PM10 | 3 | 0 | 3 | `"MAX_max" / 3` |
+| NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
+| BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
 :::
 
 #### Criteria Matrixes
@@ -714,12 +712,12 @@ To interpret the clustering results, we examine the centers of each cluster in t
 
 ### Typology description
 
-| Type | Impervious | Slope (°) | Crossing | Description                                                     |
-|---------------|---------------|---------------|---------------|---------------|
-| 1    | 0.76       | 6.2       | 0.67     | Urban area with high imperviousness and moderate traffic impact |
-| 2    | 0.07       | 19.4      | 0.29     | Steep natural area with minimal development                     |
-| 3    | 0.04       | 5.4       | 0.36     | Flat and near-natural stream surroundings                       |
-| 4    | 0.57       | 6.4       | 3.88     | Urban stream corridor with high crossing disturbance            |
+| Type | Impervious | Slope (°) | Crossing | Description |
+|----|----|----|----|----|
+| 1 | 0.76 | 6.2 | 0.67 | Urban area with high imperviousness and moderate traffic impact |
+| 2 | 0.07 | 19.4 | 0.29 | Steep natural area with minimal development |
+| 3 | 0.04 | 5.4 | 0.36 | Flat and near-natural stream surroundings |
+| 4 | 0.57 | 6.4 | 3.88 | Urban stream corridor with high crossing disturbance |
 
 ## Step 6. (Optional) Calculate distance to cluster center
 
