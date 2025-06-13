@@ -139,117 +139,7 @@ The spatial resolution of the data we collected significantly shapes the analyti
 
 The data used in this study comes from many different sources and uses different units as discussed above. Therefore, to compare them evenly, all values need to be brought to the same scale, and normalized in order to later conduct K-means clustering to discover appropriate typologies. We therefore could not use one method for all data normalization. Instead, each topic or data map uses its own way of normalizing respective to the data acquisition and availability. For climate adaptation, values like temperature and air pollution were compared to limits from the EU or WHO. For biodiversity, we used scales that show how suitable or rich an area is for nature. For quality of life, we used standards such as walking distances or access to green areas. Each method is explained in the following sections under their respective topic or map that they relate to.
 
-### Climate Adaptation
-
-#### Floodplain
-
-Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
-
-## Normalized Flood risk Table
-
-| Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
-| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
-
-### Biodiversity
-
-#### Impervious Surface Percentage
-
-Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
-
-::: {.callout-note collapse="true"}
-## Normalized Impervious Table
-
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
-| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
-:::
-
-#### NDVI (Normalized Difference Vegetation Index)
-
-NDVI indicates vegetation health and coverage. The NDVI was collected from the Sentinel-2 satellite using bands 2, 3 and 8. Then the mean NDVI was computed based on a temporal range of the last 5 years(between 01-01-2020 and 01-01-2025), the resolution of final NDVI is 10 by 10m. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
-
-NDVI
-
-::: {.callout-note collapse="true"}
-## Normalized NDVI Table
-
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
-| NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
-:::
-
-#### Tree-cover Percentage
-
-Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
-
-::: {.callout-note collapse="true"}
-## Normalized Tree Cover Table
-
-| Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|------------------|------------------|------------------|------------------|
-| Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
-:::
-
-#### Mean Night-Time Land Surface Temperature (LST)
-
-High night-time temperatures indicate poor cooling and urban heat retention. The LST was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
-
-::: {.callout-note collapse="true"}
-## Normalized Mean LST table
-
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
-| Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
-:::
-
-### Quality of Life
-
-#### Pollution Normalization
-
-To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspired by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
-
-::: {.callout-note collapse="true"}
-## Normalized Pollution table
-
-| Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|------------|------------|------------|------------|------------|------------|
-| PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
-| PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
-| NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
-| BaP | *0.12 (indicative, EU)* | 1.0 | 0.06 | 1.0 | 0 – 1 |
-| BzN | 0.2 *(WHO guideline)* | 1.0 *(assumed)* | 0.1 | 1.0 | 0 – 1 |
-| SO₂ | 40 *(WHO 24h guideline)* | 125 *(EU 24h)* | 20 | 125 | 0 – 1 |
-:::
-
-A then example calculation in Qgis for SO2 would be:
-
-::: {.callout-note collapse="true"}
-## Example calculation for SO2
-
-CASE WHEN "MAX_majority" IS NULL THEN NULL WHEN "MAX_majority" \< 20 THEN 0 WHEN "MAX_majority" \> 125 THEN 1 ELSE ("MAX_majority" - 20) / (125 - 20) END
-:::
-
-However, as was later discovered, this approach led to all of the pollution data being qualified as 0. Given the Czech data is categorized differently and is given as aggregated annual values, a choice was made to use the same range given with the data (and its associated colours) when normalizing. Given that our analysis is context specific, changing the normalization will highlight the range in air quality within our given site. Whether the air quality is below or above the recommended values will no longer become the basis.
-
-This simpler method yields the final table with the new normalization based on the input data classification is the following.
-
-::: {.callout-note collapse="true"}
-## New Normalized Pollution Table
-
-| Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|---------------|---------------|---------------|---------------|---------------|
-| PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
-| SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
-| BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
-| PM10 | 3 | 0 | 3 | `"MAX_max" / 3` |
-| NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
-| BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
-:::
-=======
 ## Results
-
-### MCDA
 
 ### Maps
 
@@ -515,6 +405,10 @@ This simpler method yields the final table with the new normalization based on t
 | NO₂       | 3.5                       | 0                      | 3.5                     | `"MAX_max" / 3.5`     |
 | BzN       | 0.25                      | 0                      | 0.25                    | `"MAX_max" / 0.25`    |
 :::
+
+
+### MCDA
+
 
 #### Criteria Matrixes
 
