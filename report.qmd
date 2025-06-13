@@ -757,6 +757,8 @@ This workflow can now be applied to your own dataset to explore meaningful typol
 
 ## Discussion
 
+The chosen methods conducted data analysis and normalization tried to account for the difference in grid cell size by weighing values based on cell size and choosing analysis methods which are not size-dependent (such as percentage of cover area). However, 
+
 ## Conclusion
 
 ## Appendix
