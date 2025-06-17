@@ -188,11 +188,6 @@ The spatial resolution of the data we collected significantly shapes the analyti
 
 The data used in this study comes from many different sources and uses different units as discussed above. Therefore, to compare them evenly, all values need to be brought to the same scale, and normalized in order to later conduct K-means clustering to discover appropriate typologies. We therefore could not use one method for all data normalization. Instead, each topic or data map uses its own way of normalizing respective to the data acquisition and availability. For climate adaptation, values like temperature and air pollution were compared to limits from the EU or WHO. For biodiversity, we used scales that show how suitable or rich an area is for nature. For quality of life, we used standards such as walking distances or access to green areas. Each method is explained in the following sections under their respective topic or map that they relate to.
 
-<<<<<<< HEAD
-### Climate Adaptation
-
-=======
->>>>>>> bce37a7731a9368b470cacce9adb864a050acb32
 ## Results
 
 ### MCDA
@@ -493,73 +488,11 @@ Quality of Life
 
 -   Access to stream
 
-<<<<<<< HEAD
+
 Here, we can visualize the normalized data that we are using for the Topology construction.
 
 ### Standardisation
-=======
-We begin by loading the necessary R packages.
 
-If you haven't installed these packages yet, remove the `#` and run the following chunk before continuing:
-
-```{r}
-#install.packages("sf") 
-#install.packages("dplyr")
-```
-
-::: callout-note
-Adding `#` at the beginning of a line of code will prevent that line from being executed. We use it here because we only need to run `install.packages()` once, when we install a package for the first time. After that we disable that line because we do not need to run it anymore.
-:::
-
-Next, load the required packages:
-
-```{r}
-library(sf) # for processing vector data 
-library(dplyr) # for selecting and transforming data
-library(plotly)
-library(cluster)
-```
-
-We first need to confirm that the project folder is an RStudio project. This will ensure that the working directory points to the project folder. You can confirm this with `getwd()`. Make sure you copied the prepared `grid_TC.gpkg` in the root of your working directory folder. Now we read the dataset from a GeoPackage file and display the first few rows using head():
-
-```{r}
-#getwd()
-grids <- st_read("inserted_images/final_output_geopackages/grid_ALLATTRIBUTES.gpkg", quiet = TRUE)
-
-# View the first few rows of the data
-head(grids)
-```
-
-We can check how many girds in the file.
-
-```{r}
-# Count how many grid units we have
-nrow(grids)
-```
-
-We can also visualize the data to have a better understanding visually.
-
-```{r}
-# Plot impervious
-plot(grids["Treec_norm"], border = NA, main = "Tree Cover")
-
-# Plot slope
-plot(grids["NDVI_norm"], border = NA, main = "NDVI")
-
-# Plot crossing
-plot(grids["Imper_norm"],  border = NA, 
-     #breaks = "quantile", 
-     main = "Impervious")
-```
-
-::: callout-note
-By default, `plot()` is using equal interval, which might make the differences hard to see. You can change the `breaks` type to show the visual difference more clearly.
-:::
-
-## Step 2. Standardization
->>>>>>> bce37a7731a9368b470cacce9adb864a050acb32
-
-We select the relevant features. These features are then standardized to ensure they contribute equally to the clustering algorithm.
 
 ## Determine the optimal K
 
