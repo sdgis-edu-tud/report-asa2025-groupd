@@ -32,7 +32,39 @@ editor: visual
 
 ```
 
-## Introduction
+**Table of contents:**
+
+1.  Introduction;
+2.  Methodology;
+    a.  Definition of Spatial Units;
+    b.  Resolution & Data Acquisition Method
+    c.  Scale-Specific Indicators for Stream Assessment
+    d.  Impact of Scale on Detectable Effects
+    e.  Normalization;
+3.  Spatial Multi-Criteria Decision Analysis (S-MCDA)
+    A.  Biodiversity;
+        a.  Which Areas Have High Biodiversity Value?
+        b.  Which Areas Have a High Level of Human Activity?
+        c.  Which Areas Provide Opportunity for Improved Biodiversity?
+    B.  Climate Adaptation;
+        a.  Which Areas Have Highest Flood Damage Risk?
+        b.  Which Areas Have The Most Impervious Surfaces?
+        c.   Which Areas Have Healthy Vegetation?
+    C.  Quality of Life;
+        a.  Which Areas Are Deprived of Public Facilities?
+        b.  Which Areas Lack Infrastructure to Access?
+        c.  Which Areas Can Be Physically Uncomfortable?
+    D.  Conclusion of S-MCDA;
+4.  K-Means Clustering Analysis;
+    a.  Research question;
+    b.  Methodology;
+    c.  Variables;
+    d.  Results;
+5.  Discussion;
+6.  Conclusion;
+7.  Appendix.
+
+## 1. Introduction
 
 Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss, and the demand for sustainable development [@nijkamp2013new]. According to [@article], in cities the impact of land use on fresh-water ecosystems is especially severe. As climate change is expected to increase the intensity and frequency of extreme weather events, solutions to combat these effects are urgently needed [@ourloglou2020assessing].
 
@@ -147,8 +179,6 @@ The spatial resolution of the data we collected significantly shapes the analyti
 ### Normalization
 
 The data used in this study comes from many different sources and uses different units as discussed above. Therefore, to compare them evenly, all values need to be brought to the same scale, and normalized in order to later conduct K-means clustering to discover appropriate typologies. We therefore could not use one method for all data normalization. Instead, each topic or data map uses its own way of normalizing respective to the data acquisition and availability. For climate adaptation, values like temperature and air pollution were compared to limits from the EU or WHO. For biodiversity, we used scales that show how suitable or rich an area is for nature. For quality of life, we used standards such as walking distances or access to green areas. Each method is explained in the following sections under their respective topic or map that they relate to.
-
-### Climate Adaptation
 
 ## Results
 
@@ -319,15 +349,15 @@ For quality of life, three main criteria have been developed according to the pa
 
 For the first analysis, we look at the availability of public amenities that supports urban life. like public functions and public green along the stream and how well accessible they are.
 
-![Public amenities along Bila Nisa stream](Inserted_images/Quality of Life/Bila Nisa Jablonec - Public amenities data input.png)
+![Public amenities along Bila Nisa stream](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png)
 
 Based on these public amenities, data is normalized based on the diversity of public amenities and the size of the public areas, which indicates to what extent the area can be used by the population of Jablonec.
 
 First, the public amenities are clipped within the grid of the Bila Nisa stream. The clipped layer is overlayed in the grid creating a separate layer. The data is then normalized through adding a separate column, where the range of area and functions is used through the following functions. Using this formula, data is normalized to a 0 to 1 scale.
 
-![Normalized map size of public amenities](Inserted_images/Quality of Life/Bila Nisa Jablonec - Size of public areas normalized.png) ![Diversity of public amenities along Bila Nisa](Inserted_images/Quality of Life/Bila Nisa Jablonec - Diversity public areas normalized.png) Apart from essential public amenities, the accessiblity of nature and public green offer comfort in urban areas and is an important factor to be taken into account. As stated in the case, ecological quality of the stream has been degregated through human activity, which also impacts the quality of life in the proximity of the stream. However, along the borders of the urban area, patches of green over access to public green.
+![Normalized map size of public amenities](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Size%20of%20public%20areas%20normalized.png) ![Diversity of public amenities along Bila Nisa](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png) Apart from essential public amenities, the accessiblity of nature and public green offer comfort in urban areas and is an important factor to be taken into account. As stated in the case, ecological quality of the stream has been degregated through human activity, which also impacts the quality of life in the proximity of the stream. However, along the borders of the urban area, patches of green over access to public green.
 
-![Map showing public green along Bila Nisa stream](Inserted_images/Quality of Life/Bila Nisa Jablonec - Access public green along stream data input.png) The area of public green is then further normalized, through the following formula, thus normalizng the area on a scale from 0 to 1.
+![Map showing public green along Bila Nisa stream](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20data%20input.png) The area of public green is then further normalized, through the following formula, thus normalizng the area on a scale from 0 to 1.
 
 ("your_field" - min("your_field")) / (max("your_field") - min("your_field"))
 
