@@ -534,6 +534,33 @@ Using the Saaty matrix, each criteria are weighted against each other to give ea
 
 ### Typology construction
 
+Our approach to out topology construction is embedded im our main reserach questions and goals. Based on our analysis we formulated the following guiding question for finding relevant topologies in Jablonec nad Nisou. 
+
+"which areas could serve different green-blue functions?"
+
+In order to answer this question and find suitable topologies, we perform a K-means Clustering with the following datasets - one per respective areas topic.
+
+Biodiverstiy:
+
+- Proportion of natural habitat
+
+
+Climate Adaptation:
+
+- Flood Impact Zones in Floodplains
+
+Quality of Life
+
+- Access to stream
+
+
+
+
+
+
+
+
+
 We begin by loading the necessary R packages.
 
 If you haven't installed these packages yet, remove the `#` and run the following chunk before continuing:
