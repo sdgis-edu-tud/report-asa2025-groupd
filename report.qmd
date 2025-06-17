@@ -51,15 +51,20 @@ Over recent decades, Jablonec nad Nisou has experienced overbuilding, channeliza
 library(leaflet)
 library(sf)
 
-# Read the stream GeoJSON without 
+# Read the stream GeoJSON
 stream <- st_read("Inserted_images/stream_for_interactivemap.geojson", quiet = TRUE)
 
 # Coordinates for Jablonec nad Nisou
 jablonec_coords <- c(lat = 50.7224, lng = 15.1708)
 
-# Render leaflet map
-leaflet() %>%
+# Render leaflet map with zoom control and max bounds
+leaflet(options = leafletOptions(minZoom = 12, maxZoom = 17)) %>%
   addTiles() %>%
+  setView(lng = jablonec_coords["lng"], lat = jablonec_coords["lat"], zoom = 13) %>%
+  setMaxBounds(
+    lat1 = 50.60, lng1 = 15.10,
+    lat2 = 50.80, lng2 = 15.24
+  ) %>%
   addPolylines(
     data = stream,
     color = "blue",
@@ -113,6 +118,9 @@ Therefore, based on the size of Jablonec nad Nisou and the Bila Nisa stream as w
 The resolution of spatial analysis is directly tied to the data acquisition method [@BARTESAGHIKOC2020103893]. While spaceborne remote sensing used for the measurement of some of our indicators when data availability was lacking is better suited for large-scale urban assessments, it often lacks the spatial precision needed for detailed micro climatic or ecological studies. On the other hand, biodiversity and quality of life data are generally acquired at larger scale and would require smaller spatial units. For example, the widely accepted walking range of 500 meters [@macioszek2022effect; @popp2004walking], or biodiversity connectivity of around 100m stretches, identified by [@RANTA2021106980]. Our method reflects this balance, using satellite data for broader patterns such as LST and impervious surfaces. We then supplement this with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few. The collected data for each respective goals can be found in the figures below.
 
 ```{r}
+#| warning: false
+#| echo: false
+#| message: false
 
 library(slickR)
 library(htmltools)
@@ -149,7 +157,6 @@ The spatial resolution of the data we collected significantly shapes the analyti
 The data used in this study comes from many different sources and uses different units as discussed above. Therefore, to compare them evenly, all values need to be brought to the same scale, and normalized in order to later conduct K-means clustering to discover appropriate typologies. We therefore could not use one method for all data normalization. Instead, each topic or data map uses its own way of normalizing respective to the data acquisition and availability. For climate adaptation, values like temperature and air pollution were compared to limits from the EU or WHO. For biodiversity, we used scales that show how suitable or rich an area is for nature. For quality of life, we used standards such as walking distances or access to green areas. Each method is explained in the following sections under their respective topic or map that they relate to.
 
 ### Climate Adaptation
-
 
 ## Results
 
@@ -260,7 +267,6 @@ To process the data, the polygons were 'intercepted' based on the grid lines, th
 
 #### Climate Adaptation
 
-
 ##### Mean Night-Time Land Surface Temperature (LST)
 
 High night-time temperatures indicate poor cooling and urban heat retention. The LST was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
@@ -353,7 +359,6 @@ Apart from the road network, which primarily focusses on private mobility, publi
 
 ![Access to public transport near the stream normalilzed](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20along%20stream%20normalized.png)
 
-
 ##### Tree-cover Percentage
 
 Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
@@ -422,7 +427,7 @@ This simpler method yields the final table with the new normalization based on t
 | BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
 :::
 
-#### Criteria Matrixes
+#### Criteria Matrices
 
 Using the Saaty matrix, each criteria are weighted against each other to give each criterion a priority based on their importance for urban stream restoration. Each topic has its own matrix to create a consistent assessment.
 
@@ -447,111 +452,88 @@ Biodiverstiy:
 Climate Adaptation:
 
 -   Flood Impact Zones in Floodplains
+-   NDVI
 
 Quality of Life
 
-<<<<<<< HEAD
 -   Access to stream
-=======
-- Access to stream
 
+Here, we can visualize the normalized data that we are using for the Topology construction.
 
->>>>>>> 36e80661034dabd5408421e67e18ac5f40ec9eb2
-
-We begin by loading the necessary R packages.
-
-If you haven't installed these packages yet, remove the `#` and run the following chunk before continuing:
-
-```{r}
-#install.packages("sf") 
-#install.packages("dplyr")
-```
-
-::: callout-note
-Adding `#` at the beginning of a line of code will prevent that line from being executed. We use it here because we only need to run `install.packages()` once, when we install a package for the first time. After that we disable that line because we do not need to run it anymore.
-:::
-
-Next, load the required packages:
-
-```{r}
-library(sf) # for processing vector data 
-library(dplyr) # for selecting and transforming data
-library(plotly)
-library(cluster)
-```
-
-We first need to confirm that the project folder is an RStudio project. This will ensure that the working directory points to the project folder. You can confirm this with `getwd()`. Make sure you copied the prepared `grid_TC.gpkg` in the root of your working directory folder. Now we read the dataset from a GeoPackage file and display the first few rows using head():
-
-```{r}
-#getwd()
-grids <- st_read("inserted_images/final_output_geopackages/grid_ALLATTRIBUTES.gpkg", quiet = TRUE)
-
-# View the first few rows of the data
-head(grids)
-```
-
-We can check how many girds in the file.
-
-```{r}
-# Count how many grid units we have
-nrow(grids)
-```
-
-We can also visualize the data to have a better understanding visually.
-
-```{r}
-# Plot impervious
-plot(grids["Treec_norm"], border = NA, main = "Tree Cover")
-
-# Plot slope
-plot(grids["NDVI_norm"], border = NA, main = "NDVI")
-
-# Plot crossing
-plot(grids["Imper_norm"],  border = NA, 
-     #breaks = "quantile", 
-     main = "Impervious")
-```
-
-::: callout-note
-By default, `plot()` is using equal interval, which might make the differences hard to see. You can change the `breaks` type to show the visual difference more clearly.
-:::
-
-## Step 2. Standardization
+### Standardisation
 
 We select the relevant features. These features are then standardized to ensure they contribute equally to the clustering algorithm.
 
-```{r}
-features <- grids |> 
-  select(Treec_norm, NDVI_norm, Imper_norm) |>
-  st_drop_geometry() # remove geometry column so we just keep a data table
-
-X_scaled <- scale(features) # Standardize (mean=0, sd=1) 
-
-head(X_scaled)
-```
-
-::: callout-note
-`|>` passes the result from the left expression to the right function.
-
-Even after selecting variables from an `sf` object, the geometry column is still there. Use `st_drop_geometry()` to remove it before applying functions like `scale()`.
-:::
-
-## Step 3: Determine the optimal K
+## Determine the optimal K
 
 We use the **elbow method** to choose a good number of clusters.
 
 For each value of `k` (e.g. 2 to 9), we run K-means and record a value called **inertia** : the total distance between points and their cluster centers. Lower inertia means tighter (better) clusters.
 
-```{r}
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+#install.packages("sf") 
+#install.packages("dplyr")
+#install.packages("plotly")
+#install.packages("cluster")
+
+
+library(sf) # for processing vector data 
+library(dplyr) # for selecting and transforming data
+library(plotly)
+library(cluster)
+library(ggplot2)
+
+
+#getwd()
+grids <- st_read("inserted_images/final_output_geopackages/TOPOLOGY_FINAL_ATTRIBUTES.gpkg", quiet = TRUE)
+
+# View the first few rows of the data
+#head(grids)
+
+##########################################################
+#Choose the insert Layers
+##########################################################
+
+# Plot impervious
+plot(grids["ROZ_unique"], border = NA, main = "Flood Impact Zones in Floodplains")
+
+# Plot slope
+plot(grids["NDVI_norm"], border = NA, main = "NDVI")
+
+# Plot crossing
+plot(grids["AccesstoStream_norm"],  border = NA, 
+     #breaks = "quantile", 
+     main = "Access to Stream")
+
+plot(grids["Percentage_habitat_n"], border = NA, main = "Proportion of Natural Habitat")
+
+##########################################################
+#Scale the Insert Layers
+##########################################################
+
+features <- grids |> 
+  select(ROZ_unique, NDVI_norm, AccesstoStream_norm, Percentage_habitat_n) |>
+  st_drop_geometry() # remove geometry column so we just keep a data table
+
+X_scaled <- scale(features) # Standardize (mean=0, sd=1) 
+
+#head(X_scaled)
+
+##########################################################
+#Calculate Inertia and Elbow
+##########################################################
+
+
 # Initialize an empty numeric vector to store inertia values 
 inertia <- numeric()
 
 # Try k values from 2 to 9
 k_values <- 2:9
 
-# Loop through each k value
+# Loop through each k value (here we can also add silhouette)
 for (k in k_values) {
-  km <- kmeans(X_scaled, centers = k, nstart = 20) 
+  km <- kmeans(X_scaled, centers = k, nstart = 50) 
   
   # tot.withinss is Total within-cluster sum of squares
   # This measures how compact the clusters are: lower is better.
@@ -561,7 +543,8 @@ for (k in k_values) {
 # Combine the results into a data frame for plotting
 elbow_df <- data.frame(k = k_values, inertia = inertia)
 
-print(elbow_df)
+#print(elbow_df)
+
 ```
 
 ::: callout-note
@@ -570,65 +553,122 @@ We suggest using a larger `nstart` value, such as 20 or 50, to get more reliable
 
 We can visualize how inertia changes with increasing k. After a certain point, adding more clusters doesn’t help much — the curve bends. That bend is called the *elbow point*, and we use it to choose the best k.
 
-```{r}
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+##########################################################
+# Plot the elbow -> we will choose 5 clusters
+##########################################################
+
 # Make the elbow plot
 plot(k_values, inertia,
      type = "b",                  # shown both points + lines 
      col = "darkblue",
      main = "Elbow Method")
+
+
 ```
 
-## Step 4. Run K-Means clustering
+Based on the elbow plot, we choose `k = 5` as a good number of clusters.\
+We now run the K-means algorithm and assign each grid to one of the five clusters. The following shows us the clusters formed along the Bila Nisa stream.
 
-Based on the elbow plot, we choose `k = 4` as a good number of clusters.\
-We now run the K-means algorithm and assign each grid to one of the four clusters.
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 
-```{r}
+##########################################################
+# Run the K means Clustering
+##########################################################
+
 # `set.seed()` sets the random number generator to a fixed state
 # Set the seed so the clustering result is always the same when re-run
 set.seed(0)  # The number 0 is just a fixed choice. You can also use 10, 345, etc.
 
 # Choose the number of clusters based on the elbow plot
-k <- 4
-
-# Run K-means clustering on the standardized data
+k <- 5
 kmeans_result <- kmeans(X_scaled, centers = k, nstart = 20)
-
-# Add the cluster labels to the spatial data
 grids$cluster <- as.factor(kmeans_result$cluster) # The result kmeans_result$cluster is a list of cluster labels (1 to 4), in the same order as the original rows in X_scaled and grids
 
-head(grids)
+#head(grids)
 
 # Show how many grids fall into each cluster
-print(table(grids$cluster))
-```
+#print(table(grids$cluster))
 
-Save the updated grid data (with cluster labels) to a new GeoPackage file. You can use it for further analysis and visualize.
+##########################################################
+# Run the K means Clustering
+##########################################################
 
-```{r}
-#st_write(grids, "grids_cluster.gpkg")
-```
+library(RColorBrewer)
 
-We can also visualize the spatial pattern.
+# Choose a palette and number of clusters
+k <- length(unique(grids$cluster))  
+my_colors <- brewer.pal(n = k, name = "Spectral") 
 
-```{r}
-# Plot clusters with base R
-plot(grids["cluster"], 
+# Assign colors to clusters
+cluster_colors <- my_colors
+names(cluster_colors) <- as.character(1:k)
+
+# Create color vector for plotting
+plot_colors <- cluster_colors[as.character(as.numeric(grids$cluster))]
+
+# Plot using base R
+plot(st_geometry(grids), 
+     col = plot_colors,
      main = "Spatial Pattern of Urban Stream Clusters", 
      border = NA)
+
+# Add legend
+legend("topright", 
+       legend = paste("Cluster", names(cluster_colors)), 
+       fill = cluster_colors, 
+       title = "Clusters",
+       bty = "n",
+       cex = 0.8)
 ```
 
-## Step 5. Interpret cluster centers
+To be able the visualize the distribution of the 5 clusters in 3D space, the following plot was created.
 
-Now we look at the center of each cluster. First, we check the values in standardized form. Then, we convert them back to the original units (e.g. degrees), so they are easier to understand.
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 
-```{r}
+##########################################################
+# Visualise the 3d plot of the Kmeans cluster
+##########################################################
+
+# For 3D plotly
+
+features$cluster <- grids$cluster
+features$color <- cluster_colors[as.character(features$cluster)]
+
+features$color <- cluster_colors[as.character(features$cluster)]
+
+plot_ly(
+  data = features,
+  x = ~ROZ_unique,
+  y = ~NDVI_norm,
+  z = ~AccesstoStream_norm,
+  color = ~cluster,
+  colors = cluster_colors,
+  type = "scatter3d",
+  mode = "markers",
+  marker = list(size = 3)
+) %>%
+  layout(
+    title = "3D Cluster Plot: Green-Blue Functionality Typology",
+    scene = list(
+      xaxis = list(title = "Flood Impact Zones"),
+      yaxis = list(title = "NDVI (Greenness)"),
+      zaxis = list(title = "Access to Stream")
+    )
+  )
+```
+
+## Interpreting the cluster centers
+
+Now we look at the center of each cluster. First, we check the values in standardized form. Then, we convert them back to the original units (e.g. degrees), so they are easier to understand. Then, to interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below summarizes the environmental characteristics of each cluster based on the original (unscaled) values. From these we can assign our created typology description, testing if they align with our initial set out goals and conjectures.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 # Get the cluster centers (in standardized form)
 scaled_centers <- kmeans_result$centers
 
 # Print them
-print("Cluster centers (standardized):")
-print(scaled_centers)
+#print("Cluster centers (standardized):")
+#print(scaled_centers)
 
 # Convert the centers back to original scale: x * SD + mean
 original_centers <- t(apply(
@@ -637,26 +677,19 @@ original_centers <- t(apply(
 ))
 
 # Print the real-world values
-print("Cluster centers (original):")
-print(original_centers)
+#print("Cluster centers (original):")
+#print(original_centers)
 
 ```
 
-To interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below summarizes the environmental characteristics of each cluster based on the original (unscaled) values.
+Additionally, we can calculate the distance to cluster center. This shows us a clearer picture of the distribution of points around their centers, identifying the spread of each cluster. This is helpful when determining the typologies which are most related. Histograms of each Cluster around their respective centers is shown below.
 
-### Typology description
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 
-| Type | Impervious | Slope (°) | Crossing | Description |
-|---------------|---------------|---------------|---------------|---------------|
-| 1 | 0.76 | 6.2 | 0.67 | Urban area with high imperviousness and moderate traffic impact |
-| 2 | 0.07 | 19.4 | 0.29 | Steep natural area with minimal development |
-| 3 | 0.04 | 5.4 | 0.36 | Flat and near-natural stream surroundings |
-| 4 | 0.57 | 6.4 | 3.88 | Urban stream corridor with high crossing disturbance |
+##########################################################
+# Compute distance to cluster center
+##########################################################
 
-## Step 6. (Optional) Calculate distance to cluster center
-
-```{r}
-## Step 6 (Optional): Compute distance to cluster center
 
 # Get the cluster center for each row, using the cluster assignment
 centroids_matrix <- kmeans_result$centers[kmeans_result$cluster, ]
@@ -667,22 +700,32 @@ grid_distances <- sqrt(rowSums((X_scaled - centroids_matrix)^2))
 # Save to grids
 grids$cluster_dist <- grid_distances
 
+# Histogram with density curve
+ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
+  geom_histogram(alpha = 0.6, bins = 30, position = "identity") +
+  facet_wrap(~cluster) +
+  scale_fill_manual(values = cluster_colors) +
+  theme_minimal() +
+  labs(
+    title = "Distance to Cluster Centers by Cluster",
+    x = "Euclidean Distance (standardized feature space)",
+    y = "Count"
+  )
 ```
 
-# Summary
+### Typology description
 
--   We prepared spatial data representing the surroundings of urban streams.
--   We selected key indicators for stream ecology: imperviousness, slope, and crossing frequency.
--   We standardized the data to ensure fair clustering.
--   We used the elbow method to decide the K.
--   We performed K-means clustering to identify distinct urban stream types.
--   We analyzed and interpreted each cluster using centroids.
--   (Optional) We calculated how close each grid is to its cluster center.
+| Type | Impervious | Slope (°) | Crossing | Description |
+|---------------|---------------|---------------|---------------|---------------|
+| 1 | 0.76 | 6.2 | 0.67 | Urban area with high imperviousness and moderate traffic impact |
+| 2 | 0.07 | 19.4 | 0.29 | Steep natural area with minimal development |
+| 3 | 0.04 | 5.4 | 0.36 | Flat and near-natural stream surroundings |
+| 4 | 0.57 | 6.4 | 3.88 | Urban stream corridor with high crossing disturbance |
 
-This workflow can now be applied to your own dataset to explore meaningful typologies for planning and design. Enjoy clustering!
+
+
 
 ## Discussion
-
 The chosen methods conducted data analysis and normalization tried to account for the difference in grid cell size by weighing values based on cell size and choosing analysis methods which are not size-dependent (such as percentage of cover area). However,
 
 ## Conclusion
