@@ -49,7 +49,7 @@ editor: visual
     B.  Climate Adaptation;
         a.  Which Areas Have Highest Flood Damage Risk?
         b.  Which Areas Have The Most Impervious Surfaces?
-        c.   Which Areas Have Healthy Vegetation?
+        c.  Which Areas Have Healthy Vegetation?
     C.  Quality of Life;
         a.  Which Areas Are Deprived of Public Facilities?
         b.  Which Areas Lack Infrastructure to Access?
@@ -469,32 +469,25 @@ Using the Saaty matrix, each criteria are weighted against each other to give ea
 
 ### Typology construction
 
-Our approach to out topology construction is embedded im our main reserach questions and goals. Based on our analysis we formulated the following guiding question for finding relevant topologies in Jablonec nad Nisou.
+Our approach to out topology construction is embedded in our main reserach questions and goals. Based on our analysis we formulated the following guiding question for finding relevant typologies in Jablonec nad Nisou.
 
-"which areas could serve different green-blue functions?"
+*"What spatial typologies emerge from key ecological and accessibility indicators along the stream corridor, and how can they inform targeted green-blue infrastructure interventions?"*
 
-In order to answer this question and find suitable topologies, we perform a K-means Clustering with the following datasets - one per respective areas topic.
+This question is grounded in the broader ambition to enhance ecosystem services, urban climate resilience, and quality of life through the strategic planning of nature-based solutions. To approach this, we identified from all of our indicators, 4 main key spatial indicators that reflect the multifunctionality of green-blue spaces. Each indicator was selected to represent a dimension of performance relevant to our project:
 
-Biodiverstiy:
+**Proportion of Natural Habitat (Biodiversity):** A higher share of natural habitat suggests greater ecological quality and potential for species support and connectivity.
 
--   Proportion of natural habitat
+**Normalized Difference Vegetation Index (NDVI) (Climate Adaptation)**: NDVI serves as a proxy for vegetative health and biomass, contributing to climate regulation, shading, and evapotranspiration.
 
-Climate Adaptation:
+**Flood Impact Zones in Floodplains (Climate Adaptation):** Areas exposed to flood risk offer opportunities for flood-resilient design, such as for example wetland restoration or floodable parks.
 
--   Flood Impact Zones in Floodplains
--   NDVI
+**Access to Stream (Quality of Life):** Stream accessibility reflects the potential for recreation, well-being, and nature connection for residents, which at the moment due to stakeholder conflicts may be lacking.
 
-Quality of Life
+By combining these indicators, we aim to capture both the ecological aspects and human functionality of areas along the stream. This will enable us to cluster similar grid cells into meaningful typologies relevant to our research. We believe that the typologies will support decision making for where to preserver, intervene or enhance the multifunctional green-blue spaces along the Bila Nisa stream.
 
--   Access to stream
+To begin our typology construction, we chose to perform K-means clustering. The following section will guide you through the process we took to reach the typologies.
 
-
-Here, we can visualize the normalized data that we are using for the Topology construction.
-
-### Standardisation
-
-
-## Determine the optimal K
+The first step of conducting K-means clustering involves standardizing our normalized input data.
 
 We use the **elbow method** to choose a good number of clusters.
 
@@ -752,10 +745,8 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 | 3 | 0.04 | 5.4 | 0.36 | Flat and near-natural stream surroundings |
 | 4 | 0.57 | 6.4 | 3.88 | Urban stream corridor with high crossing disturbance |
 
-
-
-
 ## Discussion
+
 The chosen methods conducted data analysis and normalization tried to account for the difference in grid cell size by weighing values based on cell size and choosing analysis methods which are not size-dependent (such as percentage of cover area). However,
 
 ## Conclusion
