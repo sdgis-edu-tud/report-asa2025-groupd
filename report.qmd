@@ -305,7 +305,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 ## Normalized Mean LST table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
@@ -317,7 +317,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 ## Normalized NDVI Table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
@@ -331,7 +331,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 ## Normalized Impervious Table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
@@ -345,7 +345,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 ::: {.callout-note collapse="true"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 :::
 
@@ -397,7 +397,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 ## Normalized Tree Cover Table
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
@@ -423,7 +423,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 ## Normalized Pollution table
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -448,7 +448,7 @@ This simpler method yields the final table with the new normalization based on t
 ## New Normalized Pollution Table
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -705,7 +705,6 @@ original_centers <- t(apply(
 
 ```
 
-
 Additionally, it is also clear that each grid cell will not be as representational of it's typology. This can be visualised depending on it;s distance to the cluster center. This shows us a clearer picture of the distribution of points around their centers, identifying the spread of each cluster. This is helpful when determining the typologies which are most related. Histograms of each Cluster around their respective centers is shown below.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
@@ -739,41 +738,7 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 #print(grid_distances)
 ```
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-
-##########################################################
-# Display distance to cluster centers
-##########################################################
-
-
-# Ensure cluster is a factor
-grids$cluster <- as.factor(kmeans_result$cluster)
-
-# Select the top 5 closest tiles to center per cluster
-top_tiles <- grids |>
-  group_by(cluster) |>
-  slice_min(order_by = cluster_dist, n = 5, with_ties = FALSE) |>
-  ungroup()
-
-# Plot only those top tiles
-ggplot(top_tiles) +
-  geom_sf(aes(fill = cluster), color = "white", size = 0.2) +
-  scale_fill_manual(values = cluster_colors) +
-  theme_void() +  # removes lat/lon grid, axes, and background
-  labs(
-    title = "Top 5 Closest Tiles per Cluster Center",
-    fill = "Cluster"
-  ) +
-  theme(
-    plot.title = element_text(face = "bold", hjust = 0.5)
-  )
-
-
-#st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
-
-
-
-```
+![Distance to each cluster center for each respective cluster](Inserted_images/distance_to_cluster_center.png)
 
 Let's plot Polar charts of each cluster formed to help visualise what typological counterpart each cluster would represent. Based from these charts we can assign each cluster a correct typology.
 
@@ -846,19 +811,21 @@ legend(
 # Reset graphical parameters
 par(op)
 
+
+
 ```
 
 Based on this we have assigned the following descriptions to each typology.
 
 ### Typology description
 
-| Type | Impervious | Slope (°) | Crossing | Description |
-|----|----|----|----|----|
-| 1 | 0.76 | 6.2 | 0.67 | Urban area with high imperviousness and moderate traffic impact |
-| 2 | 0.07 | 19.4 | 0.29 | Steep natural area with minimal development |
-| 3 | 0.04 | 5.4 | 0.36 | Flat and near-natural stream surroundings |
-| 4 | 0.57 | 6.4 | 3.88 | Urban stream corridor with high crossing disturbance |
-
+| Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
+|--------|--------|--------|--------|--------|-----------------------------------|
+| 1 (Red) | **High** | Low | Medium | Low | Ecologically valuable but inaccessible zone, suitable for habitat conservation. |
+| 2 (Orange) | Medium | Medium | Medium | **High** | Accessible vegetated corridor, ideal for recreational enhancement and nature connection. |
+| 3 (Yellow) | Medium | **High** | Medium | Medium | Healthy vegetation and moderate access, suitable for resilience interventions. |
+| 4 (Green) | Medium | Medium | Medium | Medium | Balanced typology with moderate performance across all indicators — potential for multifunctional space improvement. |
+| 5 (Blue) | Low | Low | **High** | Low | Flood-prone zone with limited vegetation and access, suitable for flood-resilient nature-based solutions like wetlands. |
 
 ## Discussion
 
