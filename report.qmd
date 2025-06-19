@@ -645,7 +645,7 @@ legend("topright",
        cex = 0.8)
 ```
 
-To be able the visualize the distribution of the 5 clusters in 3D space, the following plot was created.
+To be able the visualize the distribution of the 5 clusters in 3D space, the following plot was created. As we have 4 indicators, and we cannot easily visualize the 4 dimensional representation of our clustering. When deciding on which indicators to use for the axis, we inspected all possible options and chose the most appealing visual representation which spatially distributed the clusters the best. 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -662,7 +662,7 @@ features$color <- cluster_colors[as.character(features$cluster)]
 
 plot_ly(
   data = features,
-  x = ~ROZ_unique,
+  x = ~Percentage_habitat_n,
   y = ~NDVI_norm,
   z = ~AccesstoStream_norm,
   color = ~cluster,
@@ -674,7 +674,7 @@ plot_ly(
   layout(
     title = "3D Cluster Plot: Green-Blue Functionality Typology",
     scene = list(
-      xaxis = list(title = "Flood Impact Zones"),
+      xaxis = list(title = "Proportion of Natural Habitat"),
       yaxis = list(title = "NDVI (Greenness)"),
       zaxis = list(title = "Access to Stream")
     )
