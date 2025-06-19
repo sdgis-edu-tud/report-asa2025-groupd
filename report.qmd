@@ -305,7 +305,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 ## Normalized Mean LST table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
@@ -317,7 +317,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 ## Normalized NDVI Table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
@@ -331,7 +331,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 ## Normalized Impervious Table
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
@@ -345,7 +345,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 ::: {.callout-note collapse="true"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 :::
 
@@ -397,7 +397,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 ## Normalized Tree Cover Table
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
@@ -423,7 +423,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 ## Normalized Pollution table
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -448,7 +448,7 @@ This simpler method yields the final table with the new normalization based on t
 ## New Normalized Pollution Table
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -645,7 +645,7 @@ legend("topright",
        cex = 0.8)
 ```
 
-To be able the visualize the distribution of the 5 clusters in 3D space, the following plot was created. As we have 4 indicators, and we cannot easily visualize the 4 dimensional representation of our clustering. When deciding on which indicators to use for the axis, we inspected all possible options and chose the most appealing visual representation which spatially distributed the clusters the best. 
+To be able the visualize the distribution of the 5 clusters in 3D space, the following plot was created. As we have 4 indicators, and we cannot easily visualize the 4 dimensional representation of our clustering. When deciding on which indicators to use for the axis, we inspected all possible options and chose the most appealing visual representation which spatially distributed the clusters the best.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -705,7 +705,8 @@ original_centers <- t(apply(
 
 ```
 
-Additionally, we can calculate the distance to cluster center. This shows us a clearer picture of the distribution of points around their centers, identifying the spread of each cluster. This is helpful when determining the typologies which are most related. Histograms of each Cluster around their respective centers is shown below.
+
+Additionally, it is also clear that each grid cell will not be as representational of it's typology. This can be visualised depending on it;s distance to the cluster center. This shows us a clearer picture of the distribution of points around their centers, identifying the spread of each cluster. This is helpful when determining the typologies which are most related. Histograms of each Cluster around their respective centers is shown below.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -734,16 +735,130 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
     x = "Euclidean Distance (standardized feature space)",
     y = "Count"
   )
+
+#print(grid_distances)
 ```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+##########################################################
+# Display distance to cluster centers
+##########################################################
+
+
+# Ensure cluster is a factor
+grids$cluster <- as.factor(kmeans_result$cluster)
+
+# Select the top 5 closest tiles to center per cluster
+top_tiles <- grids |>
+  group_by(cluster) |>
+  slice_min(order_by = cluster_dist, n = 5, with_ties = FALSE) |>
+  ungroup()
+
+# Plot only those top tiles
+ggplot(top_tiles) +
+  geom_sf(aes(fill = cluster), color = "white", size = 0.2) +
+  scale_fill_manual(values = cluster_colors) +
+  theme_void() +  # removes lat/lon grid, axes, and background
+  labs(
+    title = "Top 5 Closest Tiles per Cluster Center",
+    fill = "Cluster"
+  ) +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5)
+  )
+
+
+#st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
+
+
+
+```
+
+Let's plot Polar charts of each cluster formed to help visualise what typological counterpart each cluster would represent. Based from these charts we can assign each cluster a correct typology.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+##########################################################
+# Create Radar Charts for the 5 Typologies
+##########################################################
+
+# Install and load necessary packages
+if (!require("fmsb")) install.packages("fmsb")
+library(fmsb)
+
+# Prepare the data for radar chart
+radar_data <- as.data.frame(original_centers)
+
+# Add column names (simplified without spaces to avoid issues)
+colnames(radar_data) <- c("Flood_Zone", "NDVI", "Stream_Access", "Natural_Habitat")
+
+# To use fmsb, we need to add max and min of each variable to the dataframe
+max_min <- data.frame(
+  Flood_Zone = c(max(radar_data$Flood_Zone), min(radar_data$Flood_Zone)),
+  NDVI = c(max(radar_data$NDVI), min(radar_data$NDVI)),
+  Stream_Access = c(max(radar_data$Stream_Access), min(radar_data$Stream_Access)),
+  Natural_Habitat = c(max(radar_data$Natural_Habitat), min(radar_data$Natural_Habitat))
+)
+
+rownames(max_min) <- c("Max", "Min")
+
+# Combine the max_min with the data
+radar_data <- rbind(max_min, radar_data)
+
+# Set colors for each cluster
+colors_radar <- cluster_colors
+
+# Set graphic parameters
+op <- par(mar = c(2, 2, 4, 2),  # Bottom, Left, Top, Right margins
+          cex.main = 1.5)        # Larger title font size
+
+# Create the radar chart
+radarchart(
+  radar_data,
+  axistype = 1,
+  seg = 3,
+  title = "All Clusters Comparison",
+  pcol = colors_radar,
+  plwd = 2,
+  plty = 1,
+  cglcol = "grey",
+  cglty = 1,
+  axislabcol = "grey",
+  caxislabels = seq(min(radar_data[2,]), max(radar_data[1,]), length.out = 4),
+  cglwd = 0.8,
+  vlcex = 1, 
+  calcex = 0.5
+)
+
+
+legend(
+  "topright",
+  legend = paste("Cluster", 1:k),
+  bty = "n",
+  pch = 20,
+  col = colors_radar,
+  text.col = "black",
+  cex = 1,  
+  pt.cex = 2
+)
+
+# Reset graphical parameters
+par(op)
+
+```
+
+Based on this we have assigned the following descriptions to each typology.
 
 ### Typology description
 
 | Type | Impervious | Slope (°) | Crossing | Description |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | 1 | 0.76 | 6.2 | 0.67 | Urban area with high imperviousness and moderate traffic impact |
 | 2 | 0.07 | 19.4 | 0.29 | Steep natural area with minimal development |
 | 3 | 0.04 | 5.4 | 0.36 | Flat and near-natural stream surroundings |
 | 4 | 0.57 | 6.4 | 3.88 | Urban stream corridor with high crossing disturbance |
+
 
 ## Discussion
 
