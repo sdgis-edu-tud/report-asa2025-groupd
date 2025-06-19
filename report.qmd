@@ -735,6 +735,8 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
     y = "Count"
   )
 
+st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
+
 #print(grid_distances)
 ```
 
@@ -819,13 +821,14 @@ Based on this we have assigned the following descriptions to each typology.
 
 ### Typology description
 
-| Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|--------|--------|--------|--------|--------|-----------------------------------|
-| 1 (Red) | **High** | Low | Medium | Low | Ecologically valuable but inaccessible zone, suitable for habitat conservation. |
-| 2 (Orange) | Medium | Medium | Medium | **High** | Accessible vegetated corridor, ideal for recreational enhancement and nature connection. |
-| 3 (Yellow) | Medium | **High** | Medium | Medium | Healthy vegetation and moderate access, suitable for resilience interventions. |
-| 4 (Green) | Medium | Medium | Medium | Medium | Balanced typology with moderate performance across all indicators — potential for multifunctional space improvement. |
-| 5 (Blue) | Low | Low | **High** | Low | Flood-prone zone with limited vegetation and access, suitable for flood-resilient nature-based solutions like wetlands. |
+| Type (Cluster) | Natural Habitat | NDVI     | Flood Zone | Stream Access | Description                                                                                                                           |
+| -------------- | --------------- | -------- | ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| 1 (Red)        | **High**        | **High** | Low        | Low           | Ecologically rich and vegetated zone with limited access and low flood risk — prioritize **conservation and biodiversity corridors**. |
+| 2 (Orange)     | Low             | Low      | Low        | **High**      | High-access area with limited vegetation or habitat — potential for **urban greening or recreational upgrades**.                      |
+| 3 (Yellow)     | Low             | Moderate | Low        | Low           | Sparse ecological value but some vegetation — suitable for **buffer zones or low-impact enhancement**.                                |
+| 4 (Green)      | Moderate        | Moderate | Moderate   | Moderate      | Balanced profile — ideal candidate for **multifunctional green-blue infrastructure**.                                                 |
+| 5 (Blue)       | Low             | Low      | **High**   | Low           | Flood-exposed, degraded zone — prioritize **wetland restoration or flood-resilient interventions**.                                   |
+
 
 ## Discussion
 
