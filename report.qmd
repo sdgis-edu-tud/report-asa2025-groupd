@@ -680,69 +680,7 @@ plot_ly(
     )
   )
 ```
-
-## Interpreting the cluster centers
-
-Now we look at the center of each cluster. First, we check the values in standardized form. Then, we convert them back to the original units (e.g. degrees), so they are easier to understand. Then, to interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below summarizes the environmental characteristics of each cluster based on the original (unscaled) values. From these we can assign our created typology description, testing if they align with our initial set out goals and conjectures.
-
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-# Get the cluster centers (in standardized form)
-scaled_centers <- kmeans_result$centers
-
-# Print them
-#print("Cluster centers (standardized):")
-#print(scaled_centers)
-
-# Convert the centers back to original scale: x * SD + mean
-original_centers <- t(apply(
-  scaled_centers, 1, 
-  function(x) x * attr(X_scaled, "scaled:scale") + attr(X_scaled, "scaled:center")
-))
-
-# Print the real-world values
-#print("Cluster centers (original):")
-#print(original_centers)
-
-```
-
-Additionally, it is also clear that each grid cell will not be as representational of it's typology. This can be visualised depending on it;s distance to the cluster center. This shows us a clearer picture of the distribution of points around their centers, identifying the spread of each cluster. This is helpful when determining the typologies which are most related. Histograms of each Cluster around their respective centers is shown below.
-
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-
-##########################################################
-# Compute distance to cluster center
-##########################################################
-
-
-# Get the cluster center for each row, using the cluster assignment
-centroids_matrix <- kmeans_result$centers[kmeans_result$cluster, ]
-
-# Calculate Euclidean distance between each point and its assigned cluster center
-grid_distances <- sqrt(rowSums((X_scaled - centroids_matrix)^2))
-
-# Save to grids
-grids$cluster_dist <- grid_distances
-
-# Histogram with density curve
-ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
-  geom_histogram(alpha = 0.6, bins = 30, position = "identity") +
-  facet_wrap(~cluster) +
-  scale_fill_manual(values = cluster_colors) +
-  theme_minimal() +
-  labs(
-    title = "Distance to Cluster Centers by Cluster",
-    x = "Euclidean Distance (standardized feature space)",
-    y = "Count"
-  )
-
-st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
-
-#print(grid_distances)
-```
-
-![Distance to each cluster center for each respective cluster](Inserted_images/distance_to_cluster_center.png)
-
-Let's plot Polar charts of each cluster formed to help visualise what typological counterpart each cluster would represent. Based from these charts we can assign each cluster a correct typology.
+Therefore, to ensure another representation of each cluster in respect to their indicator we can plot Polar charts. This can help visualise the 4 dimensional nature and what typological counterpart each cluster would represent. Based from these charts we can assign each cluster a correct typology.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -817,9 +755,72 @@ par(op)
 
 ```
 
-Based on this we have assigned the following descriptions to each typology.
+## Interpreting the cluster centers
+
+Now we look at the center of each cluster. First, we check the values in standardized form. Then, we convert them back to the original units (e.g. degrees), so they are easier to understand. Then, to interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below summarizes the environmental characteristics of each cluster based on the original (unscaled) values. From these we can assign our created typology description, testing if they align with our initial set out goals and conjectures.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+# Get the cluster centers (in standardized form)
+scaled_centers <- kmeans_result$centers
+
+# Print them
+#print("Cluster centers (standardized):")
+#print(scaled_centers)
+
+# Convert the centers back to original scale: x * SD + mean
+original_centers <- t(apply(
+  scaled_centers, 1, 
+  function(x) x * attr(X_scaled, "scaled:scale") + attr(X_scaled, "scaled:center")
+))
+
+# Print the real-world values
+#print("Cluster centers (original):")
+#print(original_centers)
+
+```
+
+Additionally, it is also clear that each grid cell will not be as representational of it's typology. This can be visualised depending on it;s distance to the cluster center. This shows us a clearer picture of the distribution of points around their centers, identifying the spread of each cluster. This is helpful when determining the typologies which are most related. Histograms of each Cluster around their respective centers is shown below.
+
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+
+##########################################################
+# Compute distance to cluster center
+##########################################################
+
+
+# Get the cluster center for each row, using the cluster assignment
+centroids_matrix <- kmeans_result$centers[kmeans_result$cluster, ]
+
+# Calculate Euclidean distance between each point and its assigned cluster center
+grid_distances <- sqrt(rowSums((X_scaled - centroids_matrix)^2))
+
+# Save to grids
+grids$cluster_dist <- grid_distances
+
+# Histogram with density curve
+ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
+  geom_histogram(alpha = 0.6, bins = 30, position = "identity") +
+  facet_wrap(~cluster) +
+  scale_fill_manual(values = cluster_colors) +
+  theme_minimal() +
+  labs(
+    title = "Distance to Cluster Centers by Cluster",
+    x = "Euclidean Distance (standardized feature space)",
+    y = "Count"
+  )
+
+st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
+
+#print(grid_distances)
+```
+
+![Distance to each cluster center for each respective cluster](Inserted_images/distance_to_cluster_center.png)
+
 
 ### Typology description
+
+Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions. 
+
 
 | Type (Cluster) | Natural Habitat | NDVI     | Flood Zone | Stream Access | Description                                                                                                                           |
 | -------------- | --------------- | -------- | ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
