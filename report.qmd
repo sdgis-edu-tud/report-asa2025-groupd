@@ -66,7 +66,7 @@ editor: visual
 
 ## 1. Introduction
 
-Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss, and the demand for sustainable development [@nijkamp2013new]. According to [@article], in cities the impact of land use on fresh-water ecosystems is especially severe. As climate change is expected to increase the intensity and frequency of extreme weather events, solutions to combat these effects are urgently needed [@ourloglou2020assessing].
+Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss, and the demand for sustainable development [@nijkamp2013new]. According to @article, in cities the impact of land use on fresh-water ecosystems is especially severe. As climate change is expected to increase the intensity and frequency of extreme weather events, solutions to combat these effects are urgently needed [@ourloglou2020assessing].
 
 A good solution is through urban streams. Urban streams are expected to have an important role in the mitigation of climate change by buffering extreme temperatures and prevent floods. More importantly, finding nature-based solutions are key and can restore existing strained water systems [@ourloglou2020assessing]. In this context, spatial analytics can play a crucial role in informing climate adaptation and urban planning strategies [@hurlimann2012role]. Through methods such as Spatial Multi-Criteria Decision Analysis (S-MCDA) and typology development, planners and designers can better understand urban systems, evaluate trade-offs, and propose the correct targeted interventions.
 
@@ -137,11 +137,11 @@ Our derived subquestions, respective to each goal are then the following:
 
 ## Methodology
 
-A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data. [@dungan2002balanced] The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.
+A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data[@dungan2002balanced]. The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.
 
 ### Definition of Spatial Units
 
-To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. On the other hand, [@burdziej2019using] uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
+To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. On the other hand, @burdziej2019using uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
 
 Therefore, based on the size of Jablonec nad Nisou and the Bila Nisa stream as well as the following discussed principles affecting the conducted analysis, a spatial unit grid of 100 x 100 meters was chosen for part of the stream which is situated outside of the city. The unit is used for consistency in the assignment of spatial indicators and facilitates the aggregation and comparison of data across the urban stream landscape. Because the project is about urban stream restoration a grid size of 50 x 50 meters is used to give more detail and accuracy for the analysis of the urban part of the stream. The 100 x 100m spatial unit is specific to the scale Jablonec nad Nisou, the resolution of the data collected and relevant literature on stream assessments.
 
@@ -692,6 +692,34 @@ Therefore, to ensure another representation of each cluster in respect to their 
 if (!require("fmsb")) install.packages("fmsb")
 library(fmsb)
 
+# Get the cluster centers (in standardized form)
+scaled_centers <- kmeans_result$centers
+
+# Print them
+#print("Cluster centers (standardized):")
+#print(scaled_centers)
+
+# Convert the centers back to original scale: x * SD + mean
+original_centers <- t(apply(
+  scaled_centers, 1, 
+  function(x) x * attr(X_scaled, "scaled:scale") + attr(X_scaled, "scaled:center")
+))
+
+# Print the real-world values
+#print("Cluster centers (original):")
+#print(original_centers)
+
+
+# Get the cluster center for each row, using the cluster assignment
+centroids_matrix <- kmeans_result$centers[kmeans_result$cluster, ]
+
+# Calculate Euclidean distance between each point and its assigned cluster center
+grid_distances <- sqrt(rowSums((X_scaled - centroids_matrix)^2))
+
+# Save to grids
+grids$cluster_dist <- grid_distances
+
+
 # Prepare the data for radar chart
 radar_data <- as.data.frame(original_centers)
 
@@ -759,26 +787,6 @@ par(op)
 
 Now we look at the center of each cluster. First, we check the values in standardized form. Then, we convert them back to the original units (e.g. degrees), so they are easier to understand. Then, to interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below summarizes the environmental characteristics of each cluster based on the original (unscaled) values. From these we can assign our created typology description, testing if they align with our initial set out goals and conjectures.
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
-# Get the cluster centers (in standardized form)
-scaled_centers <- kmeans_result$centers
-
-# Print them
-#print("Cluster centers (standardized):")
-#print(scaled_centers)
-
-# Convert the centers back to original scale: x * SD + mean
-original_centers <- t(apply(
-  scaled_centers, 1, 
-  function(x) x * attr(X_scaled, "scaled:scale") + attr(X_scaled, "scaled:center")
-))
-
-# Print the real-world values
-#print("Cluster centers (original):")
-#print(original_centers)
-
-```
-
 Additionally, it is also clear that each grid cell will not be as representational of it's typology. This can be visualised depending on it;s distance to the cluster center. This shows us a clearer picture of the distribution of points around their centers, identifying the spread of each cluster. This is helpful when determining the typologies which are most related. Histograms of each Cluster around their respective centers is shown below.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
@@ -787,15 +795,6 @@ Additionally, it is also clear that each grid cell will not be as representation
 # Compute distance to cluster center
 ##########################################################
 
-
-# Get the cluster center for each row, using the cluster assignment
-centroids_matrix <- kmeans_result$centers[kmeans_result$cluster, ]
-
-# Calculate Euclidean distance between each point and its assigned cluster center
-grid_distances <- sqrt(rowSums((X_scaled - centroids_matrix)^2))
-
-# Save to grids
-grids$cluster_dist <- grid_distances
 
 # Histogram with density curve
 ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
@@ -809,7 +808,7 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
     y = "Count"
   )
 
-st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
+#st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
 
 #print(grid_distances)
 ```
