@@ -132,7 +132,7 @@ Our derived sub-questions, respective to each goal are then the following:
 
 > *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
 
-//we will add how the report is structured here after.
+add figure
 
 ## 2. Methodology
 
@@ -191,9 +191,17 @@ The data used in this study comes from many different sources and uses different
 
 ### 3.A. Biodiversity
 
-The biodiversity chapter aims to follow the following sub-question: \> *Where can the ecological quality of the stream area be enhanced?*
+The biodiversity chapter aims to follow the following sub-question:
 
-This question is further divided into the following questions: \> *Which Areas Have High Biodiversity Value?* \> *Which Areas Have a High Level of Human Activity?* \> *Which Areas Provide Opportunity for Improved Biodiversity?*
+> *Where can the ecological quality of the stream area be enhanced?*
+
+This question is further divided into the following questions:
+
+> *Which Areas Have High Biodiversity Value?*
+
+> *Which Areas Have a High Level of Human Activity?*
+
+> *Which Areas Provide Opportunity for Improved Biodiversity?*
 
 #### Which Areas Have High Biodiversity Value?
 
@@ -304,9 +312,17 @@ Using the Saaty matrix, each criterion is weighted against each other to give ea
 
 ### 3.B. Climate Adaptation
 
-The climate adaptation chapter aims to follow the following sub-question: \> *Where along the stream can flood mitigation measures take place?*
+The climate adaptation chapter aims to follow the following sub-question:
 
-This question is further divided into the following questions: \> *Which Areas Have Highest Flood Damage Risk?* \> *Which Areas Have The Most Impervious Surfaces?* \> *Which Areas Have Healthy Vegetation?*
+> *Where along the stream can flood mitigation measures take place?*
+
+This question is further divided into the following questions:
+
+> *Which Areas Have Highest Flood Damage Risk?*
+
+> *Which Areas Have The Most Impervious Surfaces?*
+
+> *Which Areas Have Healthy Vegetation?*
 
 #### Which Areas Have Highest Flood Damage Risk?
 
@@ -318,7 +334,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 ::: {.callout-note collapse="true"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 :::
 
@@ -334,7 +350,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 *Normalized Impervious Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
@@ -348,7 +364,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 *Normalized Mean LST table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
@@ -364,7 +380,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 *Normalized NDVI Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
@@ -378,9 +394,17 @@ Using the Saaty matrix, each criterion is weighted against each other to give ea
 
 ### 3.C. Quality of life
 
-The climate adaptation chapter aims to follow the following sub-question: \> *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
+The climate adaptation chapter aims to follow the following sub-question:
 
-This question is further divided into the following questions: \> *Which Areas Are Deprived of Public Facilities?* \> *Which Areas Lack Infrastructure to Access?* \> *Which Areas Can Be Physically Uncomfortable?*
+> *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
+
+This question is further divided into the following questions:
+
+> *Which Areas Are Deprived of Public Facilities?*
+
+> *Which Areas Lack Infrastructure to Access?*
+
+> *Which Areas Can Be Physically Uncomfortable?*
 
 For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
 
@@ -442,7 +466,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 *Normalized Pollution table*
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -467,7 +491,7 @@ This simpler method yields the final table with the new normalization based on t
 *New Normalized Pollution Table*
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -484,7 +508,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 *Normalized Tree Cover Table*
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
@@ -872,7 +896,7 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions.
 
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | 1 (Red) | **High** | **High** | Low | Low | Ecologically rich and vegetated zone with limited access and low flood risk — prioritize **conservation and biodiversity corridors**. |
 | 2 (Orange) | Low | Low | Low | **High** | High-access area with limited vegetation or habitat — potential for **urban greening or recreational upgrades**. |
 | 3 (Yellow) | Low | Moderate | Low | Low | Sparse ecological value but some vegetation — suitable for **buffer zones or low-impact enhancement**. |
