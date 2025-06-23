@@ -209,7 +209,7 @@ slickR(imgs, height = 800, width = 600) +
 
 ```
 
-##### Floodplain Biotope Value
+**Floodplain Biotope Value**
 
 The floodplain biotope value criteria examines the ecological biotope value of the Bílá Nisa floodplains. This criteria uses the 'Categorization of Floodplains' layer taken from the Agency for Nature and Landscape Conservation of the Czech Republic. The layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. (APOK ČR, 2022).
 
@@ -217,7 +217,7 @@ The layer shows that most of the Bílá Nisa floodplain has negligible biotope v
 
 ![Floodplain Biotope Value (normalized data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png)
 
-##### Diversity of Natural Habitats
+**Diversity of Natural Habitats**
 
 The diversity of natural habitats criteria examines the basic habitat mapping of the stream area retrieved from the Agency for Nature and Landscape Conservation of the Czech Republic (APOK ČR, 2025). This dataset maps the distribution of habitat types in the form of biomes. The detailed biomes are classified according to the Biotope Catalogue of The Czech Republic, and include biomes which are influenced by human activity (APOK ČR, 2010).
 
@@ -233,15 +233,15 @@ The map shows that there are no natural habitats in the inner city, only some in
 
 ![Diversity of Natural Habitats (normalized data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(normalized%20data).png)
 
-##### Proportion of Natural Habitat Area
+**Proportion of Natural Habitat Area**
 
 This criteria looks at the same data as the diversity of natural habitats, categorized in broader natural habitat types (APOK ČR, 2025). The map shows a prominence of grasslands outside of the city, but there are also forests, shrubs and peat bogs. The polygons of these natural habitats were divided based on grid lines using the 'intersection' tool, and then an 'overlap analysis' was conducted to identify the cover area of these combined natural habitats in each cell. It can be seen that most of the natural habitats area actually concentrated further away from the stream.
 
 ![Proportion of Natural Habitat Area (normalized data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(normalized%20data).png)
 
-####  Which Areas Have a High Level of Human Activity?
+#### Which Areas Have a High Level of Human Activity?
 
-##### Weighed Road Segment Length
+**Weighed Road Segment Length**
 
 Roads act as physical barriers for wildlife, deterring animals from crossing, thereby fragmenting ecosystems, limiting migration and making them less resilient. Furthermore, even slow traffic roads increase the threat of bugs or animals being hit or run over by a car. Meanwhile diffuse pollution from tyre particles, gas leaks and window cleaning fluids threaten the health of ecosystems.
 
@@ -253,7 +253,7 @@ I realize now that this way of normalizing does not account for the difference i
 
 ![Weighed Road Segment Length (normalized data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(normalized%20data).png)
 
-##### Proportion of Built-up Area
+**Proportion of Built-up Area**
 
 I feel like something is wrong with the road segment length normalization... it isn't super accurate if I compare it to the original data, but I am not sure how else to normalize
 
@@ -265,7 +265,7 @@ The results of the normalized data on build-up area show that there is some leve
 
 #### Which Areas Provide Opportunity for Improved Biodiversity?
 
-##### Ecological Corridors
+**Ecological Corridors**
 
 Ecological corridors criteria looks at the defined ecological corridors to identify opportunities to not only improve the local biodiversity, but enhance the ecological network on the local, regional and inter-regional scale.
 
@@ -275,7 +275,7 @@ To normalize this data, the layer polygons were split up per cell using the 'int
 
 ![Ecological Corridors (normalized data)](Inserted_images/Biodiversity/Ecological%20corridors%20(normalized%20data).png)
 
-##### Potential for Natural Floodplain Restoration
+**Potential for Natural Floodplain Restoration**
 
 For the natural floodplain restoration potential criteria, the 'Categorization of Floodplains' layer of the Agency for Nature and Landscape Conservation of the Czech Republic is used. As previously mentioned, the layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. Unfortunately, the source does not explicitly state the methodology of how these potentials were determined (APOK ČR, 2022).
 
@@ -283,7 +283,7 @@ To normalize this data, the polygons with medium and high potential for restorat
 
 ![Potential for Natural Floodplain Restoration (normalized data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(normalized%20data).png)
 
-##### Zones of Protected Natural Areas
+**Zones of Protected Natural Areas**
 
 Zones of protection of natural areas examine the level of legal protection which large-scale specially protected natural areas have. The zoning data was taken from Agency for Nature and Landscape Conservation of the Czech Republic (AOPK ČR, 2025, AOPK ČR, 2025). The dataset shows that there are some areas along the stream with Zone III and Zone IV levels of protection. Zone IV indicates a landscape management zone with the least strict protection, allowing for broader human activity, but still focusing on the preservation of ecological value. Zone III is a natural buffer zone where traditional and sustainable land use is still generally allowed. The map shows that mostly only the areas outside of the city borders have some level of protection.
 
@@ -295,11 +295,11 @@ To process the data, the polygons were 'intercepted' based on the grid lines, th
 
 #### Which Areas Have Highest Flood Damage Risk?
 
-##### Floodplain
+**Flood Impact Zones in Floodplains**
 
 Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
 
-## Normalized Flood risk Table
+*Normalized Flood risk Table*
 
 ::: {.callout-note collapse="true"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
@@ -309,19 +309,28 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 ![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
 
-
 #### Which Areas Have The Most Impervious Surfaces?
 
+**Impervious Surface Percentage**
 
-#### Which Areas Have Healthy Vegetation?
+Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
 
+::: {.callout-note collapse="true"}
+*Normalized Impervious Table*
 
-##### Mean Night-Time Land Surface Temperature (LST)
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|---------------|---------------|---------------|---------------|---------------|
+| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
+:::
+
+![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI.png)
+
+**Mean Night-Time Land Surface Temperature (LST)**
 
 High night-time temperatures indicate poor cooling and urban heat retention. The LST was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
 
 ::: {.callout-note collapse="true"}
-## Normalized Mean LST table
+*Normalized Mean LST table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
 |---------------|---------------|---------------|---------------|---------------|
@@ -330,10 +339,14 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 
 ![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST.png) \##### NDVI (Normalized Difference Vegetation Index)
 
+#### Which Areas Have Healthy Vegetation?
+
+**Normalized Difference Vegetation Index (NDVI)**
+
 NDVI indicates vegetation health and coverage. The NDVI was collected from the Sentinel-2 satellite using bands 2, 3 and 8. Then the mean NDVI was computed based on a temporal range of the last 5 years(between 01-01-2020 and 01-01-2025), the resolution of final NDVI is 10 by 10m. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
 
 ::: {.callout-note collapse="true"}
-## Normalized NDVI Table
+*Normalized NDVI Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
 |---------------|---------------|---------------|---------------|---------------|
@@ -341,20 +354,6 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 :::
 
 ![NDVI_norm](Inserted_images/Climate%20Adaptation/Bila%20Nisa%20(A3%20map)%20impervious.png)
-
-##### Impervious Surface Percentage
-
-Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
-
-::: {.callout-note collapse="true"}
-## Normalized Impervious Table
-
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
-| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
-:::
-
-![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI.png)
 
 ### 3.C. Quality of life
 
@@ -826,7 +825,7 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions.
 
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|-----------|-----------|-----------|-----------|-----------|-------------------|
+|------------|------------|------------|------------|------------|------------|
 | 1 (Red) | **High** | **High** | Low | Low | Ecologically rich and vegetated zone with limited access and low flood risk — prioritize **conservation and biodiversity corridors**. |
 | 2 (Orange) | Low | Low | Low | **High** | High-access area with limited vegetation or habitat — potential for **urban greening or recreational upgrades**. |
 | 3 (Yellow) | Low | Moderate | Low | Low | Sparse ecological value but some vegetation — suitable for **buffer zones or low-impact enhancement**. |
