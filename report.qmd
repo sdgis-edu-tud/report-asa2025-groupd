@@ -55,11 +55,10 @@ editor: visual
         b.  Which Areas Lack Infrastructure to Access?
         c.  Which Areas Can Be Physically Uncomfortable?
     D.  Conclusion of S-MCDA;
-4.  K-Means Clustering Analysis;
-    a.  Research question;
+4.  Typology Construction;
+    a.  Research Question & Variables;
     b.  Methodology;
-    c.  Variables;
-    d.  Results;
+    c.  Results;
 5.  Discussion;
 6.  Conclusion;
 7.  Appendix.
@@ -123,29 +122,29 @@ leaflet(options = leafletOptions(minZoom = 12, maxZoom = 17)) %>%
 
 Our research centers on the Bílá Nisa stream, and will address the problems we have identified through the lens fo the three following goals: Biodiversity, Climate Adaptation, and Quality of Life. These goals, relevant to our location has led to our main research question:
 
-> *Where should urban stream restoration be prioritized in Jablonec nad Nisou to maximize biodiversity, climate adaptation, and quality of life?*
+> *How can an integrated urban stream restoration project in Jablonec nad Nisou balance diverse stakeholder interests by identifying areas where improvement in biodiversity, flood risk reduction, and improvements in quality of life can take place?*
 
-Our derived subquestions, respective to each goal are then the following:
+Our derived sub-questions, respective to each goal are then the following:
 
 > *Where can the ecological quality of the stream area be enhanced?*
 
-> *Which areas are the most in need for flood protection?Where can flood mitigation measures take place?*
+> *Where along the stream can flood mitigation measures take place?*
 
-> *Where can improvements in quality of life balance stakeholder interests in areas around the stream?*
+> *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
 
-//we will add how the report is structured here after.
+! add figure explaining workflow of project -\> key problems -\> research questions -\> sub-questions
 
-## Methodology
+## 2. Methodology
 
 A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data[@dungan2002balanced]. The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.
 
-### Definition of Spatial Units
+### 2.a. Definition of Spatial Units
 
 To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. On the other hand, @burdziej2019using uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
 
 Therefore, based on the size of Jablonec nad Nisou and the Bila Nisa stream as well as the following discussed principles affecting the conducted analysis, a spatial unit grid of 100 x 100 meters was chosen for part of the stream which is situated outside of the city. The unit is used for consistency in the assignment of spatial indicators and facilitates the aggregation and comparison of data across the urban stream landscape. Because the project is about urban stream restoration a grid size of 50 x 50 meters is used to give more detail and accuracy for the analysis of the urban part of the stream. The 100 x 100m spatial unit is specific to the scale Jablonec nad Nisou, the resolution of the data collected and relevant literature on stream assessments.
 
-### Resolution and Data Acquisition Method
+### 2.b. Resolution and Data Acquisition Method
 
 The resolution of spatial analysis is directly tied to the data acquisition method [@BARTESAGHIKOC2020103893]. While spaceborne remote sensing used for the measurement of some of our indicators when data availability was lacking is better suited for large-scale urban assessments, it often lacks the spatial precision needed for detailed micro climatic or ecological studies. On the other hand, biodiversity and quality of life data are generally acquired at larger scale and would require smaller spatial units. For example, the widely accepted walking range of 500 meters [@macioszek2022effect; @popp2004walking], or biodiversity connectivity of around 100m stretches, identified by [@RANTA2021106980]. Our method reflects this balance, using satellite data for broader patterns such as LST and impervious surfaces. We then supplement this with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few. The collected data for each respective goals can be found in the figures below.
 
@@ -172,31 +171,45 @@ slickR(obj = img_tags) +
 
 ```
 
-### Scale-Specific Indicators for Stream Assessment
+### 2.c. Scale-Specific Indicators for Stream Assessment
 
 Urban stream analysis requires scale-appropriate methodologies. Different ecosystem services or hydrological characteristics demand different spatial extents. [@RANTA2021106980] uses for example 100m stretches for biological assessments and 500m buffers for hydromorphilogical evaluations.
 
 Therefore, when deciding on our scale, we considered our indicators and attempted to closely match them to retain a good representation of the spatial dynamics of the stream functions we aimed to analyze.
 
-### Impact of Scale on Detectable Effects
+### 2.d. Impact of Scale on Detectable Effects
 
 The spatial resolution of the data we collected significantly shapes the analytical results. Averaging the data collected within the chosen 100 x 100m cells allows for generalized insights, which we found best fitting. It may however still obscure localized effects such as even smaller micro climatic benefits of tree clusters or linear vegetation elements. We chose the trade off that best fits our and balances detail with analytical feasibility.
 
 // For the MCDA -\> add how we average and normalise values here?
 
-### Normalization
+### 2.e. Normalization
 
 The data used in this study comes from many different sources and uses different units as discussed above. Therefore, to compare them evenly, all values need to be brought to the same scale, and normalized in order to later conduct K-means clustering to discover appropriate typologies. We therefore could not use one method for all data normalization. Instead, each topic or data map uses its own way of normalizing respective to the data acquisition and availability. For climate adaptation, values like temperature and air pollution were compared to limits from the EU or WHO. For biodiversity, we used scales that show how suitable or rich an area is for nature. For quality of life, we used standards such as walking distances or access to green areas. Each method is explained in the following sections under their respective topic or map that they relate to.
 
-## Results
+## 3. Spatial Multi-Criteria Decision Analysis (S-MCDA)
 
-### MCDA
+! introduction
 
-### Maps
+### 3.A. Biodiversity
 
-#### Biodiversity
+! introduction
 
-### WHICH AREAS HAVE HIGH BIODIVERSITY VALUE?
+The biodiversity chapter aims to follow the following sub-question:
+
+> *Where can the ecological quality of the stream area be enhanced?*
+
+This question is further divided into the following questions:
+
+> *Which Areas Have High Biodiversity Value?*
+
+> *Which Areas Have a High Level of Human Activity?*
+
+> *Which Areas Provide Opportunity for Improved Biodiversity?*
+
+#### Which Areas Have High Biodiversity Value?
+
+! introduction
 
 ```{r}
 #| echo: false
@@ -213,17 +226,17 @@ slickR(imgs, height = 800, width = 600) +
 
 ```
 
-##### Floodplain Biotope Value
+***Floodplain Biotope Value***
 
-The floodplain biotope value criteria examines the ecological biotope value of the Bílá Nisa floodplains. This criteria uses the 'Categorization of Floodplains' layer taken from the Agency for Nature and Landscape Conservation of the Czech Republic. The layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. (APOK ČR, 2022).
+The floodplain biotope value criterion examines the ecological biotope value of the Bílá Nisa floodplains. This criterion uses the 'Categorization of Floodplains' layer taken from the Agency for Nature and Landscape Conservation of the Czech Republic. The layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. (APOK ČR, 2022).
 
 The layer shows that most of the Bílá Nisa floodplain has negligible biotope value. However, some patches of moderate value remain which could be salvaged. To normalized this information, the moderate biotope value polygons were isolated and 'intersected' according to the grid lines. Then an 'overlap analysis' was conducted to calculate the percentage of area per cell that has moderate floodplain biotope value.
 
 ![Floodplain Biotope Value (normalized data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png)
 
-##### Diversity of Natural Habitats
+***Diversity of Natural Habitats***
 
-The diversity of natural habitats criteria examines the basic habitat mapping of the stream area retrieved from the Agency for Nature and Landscape Conservation of the Czech Republic (APOK ČR, 2025). This dataset maps the distribution of habitat types in the form of biomes. The detailed biomes are classified according to the Biotope Catalogue of The Czech Republic, and include biomes which are influenced by human activity (APOK ČR, 2010).
+The diversity of natural habitats criterion examines the basic habitat mapping of the stream area retrieved from the Agency for Nature and Landscape Conservation of the Czech Republic (APOK ČR, 2025). This dataset maps the distribution of habitat types in the form of biomes. The detailed biomes are classified according to the Biotope Catalogue of The Czech Republic, and include biomes which are influenced by human activity (APOK ČR, 2010).
 
 For the analysis of the diversity of natural habitats, anthropogenic biomes (coded as X) have been excluded from the dataset, as those are generally less healthy and biodiverse than their natural native counterparts \[SOURCE\]. The original data map shows the detailed natural habitats along Bila Nisa which are less than 50% antrhropogenic.
 
@@ -237,19 +250,23 @@ The map shows that there are no natural habitats in the inner city, only some in
 
 ![Diversity of Natural Habitats (normalized data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(normalized%20data).png)
 
-##### Proportion of Natural Habitat Area
+***Proportion of Natural Habitat Area***
 
-This criteria looks at the same data as the diversity of natural habitats, categorized in broader natural habitat types (APOK ČR, 2025). The map shows a prominence of grasslands outside of the city, but there are also forests, shrubs and peat bogs. The polygons of these natural habitats were divided based on grid lines using the 'intersection' tool, and then an 'overlap analysis' was conducted to identify the cover area of these combined natural habitats in each cell. It can be seen that most of the natural habitats area actually concentrated further away from the stream.
+This criterion looks at the same data as the diversity of natural habitats, categorized in broader natural habitat types (APOK ČR, 2025). The map shows a prominence of grasslands outside of the city, but there are also forests, shrubs and peat bogs. The polygons of these natural habitats were divided based on grid lines using the 'intersection' tool, and then an 'overlap analysis' was conducted to identify the cover area of these combined natural habitats in each cell. It can be seen that most of the natural habitats area actually concentrated further away from the stream.
 
 ![Proportion of Natural Habitat Area (normalized data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(normalized%20data).png)
 
-### WHICH AREAS HAVE A HIGH LEVEL OF HUMAN ACTIVITY WHICH POSES A THREAT TO BIODIVERSITY?
+#### Which Areas Have a High Level of Human Activity?
 
-##### Weighed Road Segment Length
+! introduction
+
+These normalized values are inverted (elaborate).
+
+***Weighed Road Segment Length***
 
 Roads act as physical barriers for wildlife, deterring animals from crossing, thereby fragmenting ecosystems, limiting migration and making them less resilient. Furthermore, even slow traffic roads increase the threat of bugs or animals being hit or run over by a car. Meanwhile diffuse pollution from tyre particles, gas leaks and window cleaning fluids threaten the health of ecosystems.
 
-Therefore this criteria looks at the existing road infrastructure and its speed limits, aiming to grasp the level of harm that vehicles and road infrastructure may cause to the biodiversity. The criteria looks at data of road length per cell, as well as its speed limit to estimate the impact that the roads would have on biodiversity in a given cell.
+Therefore this criterion looks at the existing road infrastructure and its speed limits, aiming to grasp the level of harm that vehicles and road infrastructure may cause to the biodiversity. The criterion looks at data of road length per cell, as well as its speed limit to estimate the impact that the roads would have on biodiversity in a given cell.
 
 The road infrastructure was taken from OpenStreetMap and clipped to the grid. The road segments were then 'intersected' according to the grid lines and the segments were weighed based on their speed limit, as well as its lenght. The line segment length was multiplied by its speed limit to adjust for the impact that vehicle speeds would have on the biodiversity. Each line segment was then converted into a centroid, and the 'join attributes by location (summary)' function was used to find the sum of all of the given values within a cell. Then the data was normalized by dividing all values by the highest value.
 
@@ -257,37 +274,39 @@ I realize now that this way of normalizing does not account for the difference i
 
 ![Weighed Road Segment Length (normalized data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(normalized%20data).png)
 
-##### Proportion of Built-up Area
+***Proportion of Built-up Area***
 
 I feel like something is wrong with the road segment length normalization... it isn't super accurate if I compare it to the original data, but I am not sure how else to normalize
 
-The build-up area criteria utilizes the data on existing buildings from OpenStreetMap (2025) to estimate the level of human activity in each cell (OpenStreetMap, 2025). The 'intersection' function in QGIS split up the building polygons according to the grid lines. Afterwards, an 'overlap analysis' was conducted to calculate the percentage of area that is built-up within a given cell. In essence, the build-up area normalized value looks at the Floor Space Index (FSI) of each cell.
+The build-up area criterion utilizes the data on existing buildings from OpenStreetMap (2025) to estimate the level of human activity in each cell (OpenStreetMap, 2025). The 'intersection' function in QGIS split up the building polygons according to the grid lines. Afterwards, an 'overlap analysis' was conducted to calculate the percentage of area that is built-up within a given cell. In essence, the build-up area normalized value looks at the Floor Space Index (FSI) of each cell.
 
 The results of the normalized data on build-up area show that there is some level of build-up along most parts of the stream. There is a fairly high variation of build-up area along the stream in the inner city.
 
 ![Proportion of Built-up Area (normalized data)](Inserted_images/Biodiversity/Built-up%20area%20(normalized%20data).png)
 
-### WHICH AREAS PROVIDE OPPORTUNITY FOR IMPROVED BIODIVERSITY?
+#### Which Areas Provide Opportunity for Improved Biodiversity?
 
-##### Ecological Corridors
+! introduction
 
-Ecological corridors criteria looks at the defined ecological corridors to identify opportunities to not only improve the local biodiversity, but enhance the ecological network on the local, regional and inter-regional scale.
+***Ecological Corridors***
 
-The data used for this criteria is the 'Methodologically Unified Definition of The Territorial System of Ecological Stability' from the Agency for Nature and Landscape Conservation of the Czech Republic (AOPK ČR, 2025). The dataset methodologically determined all hierarchial levels and types of territories which are vital for ecological stability.
+Ecological corridors criterion looks at the defined ecological corridors to identify opportunities to not only improve the local biodiversity, but enhance the ecological network on the local, regional and inter-regional scale.
+
+The data used for this criterion is the 'Methodologically Unified Definition of The Territorial System of Ecological Stability' from the Agency for Nature and Landscape Conservation of the Czech Republic (AOPK ČR, 2025). The dataset methodologically determined all hierarchial levels and types of territories which are vital for ecological stability.
 
 To normalize this data, the layer polygons were split up per cell using the 'intersect' function, and the 'overlap analysis' was conducted to identify the percentage of area per cell that is taken up by the ecological corridor polygon. In the resulting map (where 1 is 100% of the area and 0 is 0% of the area) key cells for ecological connectivity can be seen.
 
 ![Ecological Corridors (normalized data)](Inserted_images/Biodiversity/Ecological%20corridors%20(normalized%20data).png)
 
-##### Potential for Natural Floodplain Restoration
+***Potential for Natural Floodplain Restoration***
 
-For the natural floodplain restoration potential criteria, the 'Categorization of Floodplains' layer of the Agency for Nature and Landscape Conservation of the Czech Republic is used. As previously mentioned, the layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. Unfortunately, the source does not explicitly state the methodology of how these potentials were determined (APOK ČR, 2022).
+For the natural floodplain restoration potential criterion, the 'Categorization of Floodplains' layer of the Agency for Nature and Landscape Conservation of the Czech Republic is used. As previously mentioned, the layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. Unfortunately, the source does not explicitly state the methodology of how these potentials were determined (APOK ČR, 2022).
 
 To normalize this data, the polygons with medium and high potential for restoration were isolated. Since there are not many areas with floodplain restoration potential, and there is only one comparatively small patch of medium restoration potential, both medium and high potentials were considered as equal. The polygons were 'intersected' according to the grid lines, and then 'overlay analysis' was conducted to find the percentage of area with natural floodplain restoration for each cell. In the resulting map, key areas with higher potential for floodplain restoration can be seen both within and outside the city borders.
 
 ![Potential for Natural Floodplain Restoration (normalized data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(normalized%20data).png)
 
-##### Zones of Protected Natural Areas
+***Zones of Protected Natural Areas***
 
 Zones of protection of natural areas examine the level of legal protection which large-scale specially protected natural areas have. The zoning data was taken from Agency for Nature and Landscape Conservation of the Czech Republic (AOPK ČR, 2025, AOPK ČR, 2025). The dataset shows that there are some areas along the stream with Zone III and Zone IV levels of protection. Zone IV indicates a landscape management zone with the least strict protection, allowing for broader human activity, but still focusing on the preservation of ecological value. Zone III is a natural buffer zone where traditional and sustainable land use is still generally allowed. The map shows that mostly only the areas outside of the city borders have some level of protection.
 
@@ -295,53 +314,37 @@ To process the data, the polygons were 'intercepted' based on the grid lines, th
 
 ![Zones of Protected Natural Areas (normalized data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(normalized%20data).png)
 
-#### Climate Adaptation
+#### Biodiversity Criteria Maxtrix
 
-##### Mean Night-Time Land Surface Temperature (LST)
+Using the Saaty matrix, each criterion is weighted against each other to give each criterion a priority based on their importance for urban stream restoration. Each topic (biodiversity, climate adaptation and quality of life) has its own matrix to create a consistent assessment.
 
-High night-time temperatures indicate poor cooling and urban heat retention. The LST was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
+![Biodiversity MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Biodiversity.pdf)
 
-::: {.callout-note collapse="true"}
-## Normalized Mean LST table
+### 3.B. Climate Adaptation
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
-| Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
-:::
+! introduction
 
-![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST.png) \##### NDVI (Normalized Difference Vegetation Index)
+The climate adaptation chapter aims to follow the following sub-question:
 
-NDVI indicates vegetation health and coverage. The NDVI was collected from the Sentinel-2 satellite using bands 2, 3 and 8. Then the mean NDVI was computed based on a temporal range of the last 5 years(between 01-01-2020 and 01-01-2025), the resolution of final NDVI is 10 by 10m. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
+> *Where along the stream can flood mitigation measures take place?*
 
-::: {.callout-note collapse="true"}
-## Normalized NDVI Table
+This question is further divided into the following questions:
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
-| NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
-:::
+> *Which Areas Have Highest Flood Damage Risk?*
 
-![NDVI_norm](Inserted_images/Climate%20Adaptation/Bila%20Nisa%20(A3%20map)%20impervious.png)
+> *Which Areas Have The Most Impervious Surfaces?*
 
-##### Impervious Surface Percentage
+> *Which Areas Have Healthy Vegetation?*
 
-Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
+#### Which Areas Have Highest Flood Damage Risk?
 
-::: {.callout-note collapse="true"}
-## Normalized Impervious Table
+! introduction
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
-| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
-:::
-
-![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI.png)
-
-##### Floodplain
+***Flood Impact Zones in Floodplains***
 
 Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
 
-## Normalized Flood risk Table
+*Normalized Flood risk Table*
 
 ::: {.callout-note collapse="true"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
@@ -351,11 +354,97 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 ![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
 
-#### Quality of life
+#### Which Areas Have The Most Impervious Surfaces?
+
+! introduction
+
+***Impervious Surface Percentage***
+
+Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
+
+::: {.callout-note collapse="true"}
+*Normalized Impervious Table*
+
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|---------------|---------------|---------------|---------------|---------------|
+| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
+:::
+
+![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI.png)
+
+***Mean Night-Time Land Surface Temperature (LST)***
+
+High night-time temperatures indicate poor cooling and urban heat retention. The LST was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
+
+::: {.callout-note collapse="true"}
+*Normalized Mean LST table*
+
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|---------------|---------------|---------------|---------------|---------------|
+| Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
+:::
+
+![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST.png) \##### NDVI (Normalized Difference Vegetation Index)
+
+#### Which Areas Have Healthy Vegetation?
+
+! introduction
+
+***Normalized Difference Vegetation Index (NDVI)***
+
+NDVI indicates vegetation health and coverage. The NDVI was collected from the Sentinel-2 satellite using bands 2, 3 and 8. Then the mean NDVI was computed based on a temporal range of the last 5 years(between 01-01-2020 and 01-01-2025), the resolution of final NDVI is 10 by 10m. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
+
+::: {.callout-note collapse="true"}
+*Normalized NDVI Table*
+
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+|---------------|---------------|---------------|---------------|---------------|
+| NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
+:::
+
+![NDVI_norm](Inserted_images/Climate%20Adaptation/Bila%20Nisa%20(A3%20map)%20impervious.png)
+
+#### Climate Adaptation Criteria Maxtrix
+
+Using the Saaty matrix, each criterion is weighted against each other to give each criterion a priority based on their importance for urban stream restoration.
+
+![Climate Adaptation MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Climate%20Adaptation.pdf)
+
+### 3.C. Quality of life
+
+! introduction
+
+The climate adaptation chapter aims to follow the following sub-question:
+
+> *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
+
+This question is further divided into the following questions:
+
+> *Which Areas Are Deprived of Public Facilities?*
+
+> *Which Areas Lack Infrastructure to Access?*
+
+> *Which Areas Can Be Physically Uncomfortable?*
 
 For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
 
 For the first analysis, we look at the availability of public amenities that supports urban life. like public functions and public green along the stream and how well accessible they are.
+
+#### Which Areas Are Deprived of Public Facilities?
+
+! introduction
+
+***Access to Public Green Space***
+
+Apart from essential public amenities, the accessiblity of nature and public green offer comfort in urban areas and is an important factor to be taken into account. As stated in the case, ecological quality of the stream has been degregated through human activity, which also impacts the quality of life in the proximity of the stream. However, along the borders of the urban area, patches of green over access to public green.
+
+![Map showing public green along Bila Nisa stream](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20data%20input.png) The area of public green is then further normalized, through the following formula, thus normalizng the area on a scale from 0 to 1.
+
+("your_field" - min("your_field")) / (max("your_field") - min("your_field"))
+
+![Normalized map of public green availability along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20normalized.png)
+
+***Access to Public Amenities***
 
 ![Public amenities along Bila Nisa stream](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png)
 
@@ -363,13 +452,13 @@ Based on these public amenities, data is normalized based on the diversity of pu
 
 First, the public amenities are clipped within the grid of the Bila Nisa stream. The clipped layer is overlayed in the grid creating a separate layer. The data is then normalized through adding a separate column, where the range of area and functions is used through the following functions. Using this formula, data is normalized to a 0 to 1 scale.
 
-![Normalized map size of public amenities](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Size%20of%20public%20areas%20normalized.png) ![Diversity of public amenities along Bila Nisa](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png) Apart from essential public amenities, the accessiblity of nature and public green offer comfort in urban areas and is an important factor to be taken into account. As stated in the case, ecological quality of the stream has been degregated through human activity, which also impacts the quality of life in the proximity of the stream. However, along the borders of the urban area, patches of green over access to public green.
+![Normalized map size of public amenities](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Size%20of%20public%20areas%20normalized.png) ![Diversity of public amenities along Bila Nisa](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png)
 
-![Map showing public green along Bila Nisa stream](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20data%20input.png) The area of public green is then further normalized, through the following formula, thus normalizng the area on a scale from 0 to 1.
+#### Which Areas Lack Infrastructure to Access?
 
-("your_field" - min("your_field")) / (max("your_field") - min("your_field"))
+! introduction
 
-![Normalized map of public green availability along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20normalized.png)
+***Access to Stream***
 
 Apart from access to essential human needs along the stream, the Bila Nisa itself is a potential area where people can visit to get in touch with nature and a more comfortable urban environment, taken into account that the urban environment will be impacted further through the effect of climate change. Accessiblity to the stream is therefore an important indicator for quality of life. First, access to the Bila Nisa is analyzed through the road network of Jablonec nad Nisau. A space syntax is used to determine which roads are better integrated to the road network which determines which part of the stream are more centralized and better accessible.
 
@@ -383,18 +472,66 @@ Categorizing the layer with the newly calculated normalized column, the followin
 
 ![Nominal map showing accessiblity to urban centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20normalized.png)
 
+***Access to Public Transport***
+
 Apart from the road network, which primarily focusses on private mobility, public transport offers a good indication how the stream can be accessed from a more regional point of view. For this, a data layer from the ArcGIS web is found that represents the public transport network of Jablonec nad Nisau. A clip from this layer is made, which results in a couple of bus stops and a tram stops that fall within reach of the stream. To see how accessible the stream is from public transportation, service areas are used with a radius of 500m (bus stops) and 1000m (tram stops) based on the type of connection. Bus is more urban while the tram has a regional connection with the neighboring city of Liberec.
 
 ![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png) Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created that calculates the data using a normalized scale from 0 to 1, using the range of opportunities.
 
 ![Access to public transport near the stream normalilzed](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20along%20stream%20normalized.png)
 
-##### Tree-cover Percentage
+#### Which Areas Can Be Physically Uncomfortable?
+
+! introduction
+
+***Air Pollution***
+
+To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspired by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
+
+::: {.callout-note collapse="true"}
+*Normalized Pollution table*
+
+| Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
+|------------|------------|------------|------------|------------|------------|
+| PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
+| PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
+| NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
+| BaP | *0.12 (indicative, EU)* | 1.0 | 0.06 | 1.0 | 0 – 1 |
+| BzN | 0.2 *(WHO guideline)* | 1.0 *(assumed)* | 0.1 | 1.0 | 0 – 1 |
+| SO₂ | 40 *(WHO 24h guideline)* | 125 *(EU 24h)* | 20 | 125 | 0 – 1 |
+:::
+
+A then example calculation in Qgis for SO2 would be:
+
+::: {.callout-note collapse="true"}
+*Example calculation for SO2*
+
+CASE WHEN "MAX_majority" IS NULL THEN NULL WHEN "MAX_majority" \< 20 THEN 0 WHEN "MAX_majority" \> 125 THEN 1 ELSE ("MAX_majority" - 20) / (125 - 20) END
+:::
+
+However, as was later discovered, this approach led to all of the pollution data being qualified as 0. Given the Czech data is categorized differently and is given as aggregated annual values, a choice was made to use the same range given with the data (and its associated colours) when normalizing. Given that our analysis is context specific, changing the normalization will highlight the range in air quality within our given site. Whether the air quality is below or above the recommended values will no longer become the basis.
+
+This simpler method yields the final table with the new normalization based on the input data classification is the following.
+
+::: {.callout-note collapse="true"}
+*New Normalized Pollution Table*
+
+| Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
+|---------------|---------------|---------------|---------------|---------------|
+| PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
+| SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
+| BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
+| PM10 | 3 | 0 | 3 | `"MAX_max" / 3` |
+| NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
+| BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
+:::
+
+***Percentage of Tree Cover***
 
 Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
 
 ::: {.callout-note collapse="true"}
-## Normalized Tree Cover Table
+*Normalized Tree Cover Table*
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
 |------------------|------------------|------------------|------------------|
@@ -415,61 +552,21 @@ slickR(imgs, height = 800, width = 600) +
 
 ```
 
-##### Pollution Normalization
+#### Quality of Life Criteria Maxtrix
 
-To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspired by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
-
-::: {.callout-note collapse="true"}
-## Normalized Pollution table
-
-| Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|------------|------------|------------|------------|------------|------------|
-| PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
-| PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
-| NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
-| BaP | *0.12 (indicative, EU)* | 1.0 | 0.06 | 1.0 | 0 – 1 |
-| BzN | 0.2 *(WHO guideline)* | 1.0 *(assumed)* | 0.1 | 1.0 | 0 – 1 |
-| SO₂ | 40 *(WHO 24h guideline)* | 125 *(EU 24h)* | 20 | 125 | 0 – 1 |
-:::
-
-A then example calculation in Qgis for SO2 would be:
-
-::: {.callout-note collapse="true"}
-## Example calculation for SO2
-
-CASE WHEN "MAX_majority" IS NULL THEN NULL WHEN "MAX_majority" \< 20 THEN 0 WHEN "MAX_majority" \> 125 THEN 1 ELSE ("MAX_majority" - 20) / (125 - 20) END
-:::
-
-However, as was later discovered, this approach led to all of the pollution data being qualified as 0. Given the Czech data is categorized differently and is given as aggregated annual values, a choice was made to use the same range given with the data (and its associated colours) when normalizing. Given that our analysis is context specific, changing the normalization will highlight the range in air quality within our given site. Whether the air quality is below or above the recommended values will no longer become the basis.
-
-This simpler method yields the final table with the new normalization based on the input data classification is the following.
-
-::: {.callout-note collapse="true"}
-## New Normalized Pollution Table
-
-| Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|---------------|---------------|---------------|---------------|---------------|
-| PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
-| SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
-| BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
-| PM10 | 3 | 0 | 3 | `"MAX_max" / 3` |
-| NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
-| BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
-:::
-
-#### Criteria Matrices
-
-Using the Saaty matrix, each criteria are weighted against each other to give each criterion a priority based on their importance for urban stream restoration. Each topic has its own matrix to create a consistent assessment.
-
-![Biodiversity MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Biodiversity.pdf)
-
-![Climate Adaptation MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Climate%20Adaptation.pdf)
+Using the Saaty matrix, each criterion is weighted against each other to give each criterion a priority based on their importance for urban stream restoration.
 
 ![Quality of life MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Quality%20of%20Life.pdf)
 
-### Typology construction
+### 3.D. S-MCDA Conclusion
+
+Short recap, key findings, recommendations
+
+## 4. Typology Construction
 
 Our approach to out topology construction is embedded in our main reserach questions and goals. Based on our analysis we formulated the following guiding question for finding relevant typologies in Jablonec nad Nisou.
+
+### 4.a. Research Question & Variables
 
 *"What spatial typologies emerge from key ecological and accessibility indicators along the stream corridor, and how can they inform targeted green-blue infrastructure interventions?"*
 
@@ -484,6 +581,8 @@ This question is grounded in the broader ambition to enhance ecosystem services,
 **Access to Stream (Quality of Life):** Stream accessibility reflects the potential for recreation, well-being, and nature connection for residents, which at the moment due to stakeholder conflicts may be lacking.
 
 By combining these indicators, we aim to capture both the ecological aspects and human functionality of areas along the stream. This will enable us to cluster similar grid cells into meaningful typologies relevant to our research. We believe that the typologies will support decision making for where to preserver, intervene or enhance the multifunctional green-blue spaces along the Bila Nisa stream.
+
+### 4.b. Methodology
 
 To begin our typology construction, we chose to perform K-means clustering. The following section will guide you through the process we took to reach the typologies.
 
@@ -680,6 +779,7 @@ plot_ly(
     )
   )
 ```
+
 Therefore, to ensure another representation of each cluster in respect to their indicator we can plot Polar charts. This can help visualise the 4 dimensional nature and what typological counterpart each cluster would represent. Based from these charts we can assign each cluster a correct typology.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
@@ -787,7 +887,9 @@ dev.off()
 
 ```
 
-## Interpreting the cluster centers
+### 4.c. Results
+
+**Interpreting the cluster centers**
 
 Now we look at the center of each cluster. First, we check the values in standardized form. Then, we convert them back to the original units (e.g. degrees), so they are easier to understand. Then, to interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below summarizes the environmental characteristics of each cluster based on the original (unscaled) values. From these we can assign our created typology description, testing if they align with our initial set out goals and conjectures.
 
@@ -822,28 +924,25 @@ ggsave(filename = "../Inserted_images/cluster_distances_histogram.png", plot = p
 
 ![Distance to each cluster center for each respective cluster](Inserted_images/distance_to_cluster_center.png)
 
+**Typology description**
 
-### Typology description
+Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions.
 
-Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions. 
+| Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
+|------------|------------|------------|------------|------------|------------|
+| 1 (Red) | **High** | **High** | Low | Low | Ecologically rich and vegetated zone with limited access and low flood risk — prioritize **conservation and biodiversity corridors**. |
+| 2 (Orange) | Low | Low | Low | **High** | High-access area with limited vegetation or habitat — potential for **urban greening or recreational upgrades**. |
+| 3 (Yellow) | Low | Moderate | Low | Low | Sparse ecological value but some vegetation — suitable for **buffer zones or low-impact enhancement**. |
+| 4 (Green) | Moderate | Moderate | Moderate | Moderate | Balanced profile — ideal candidate for **multifunctional green-blue infrastructure**. |
+| 5 (Blue) | Low | Low | **High** | Low | Flood-exposed, degraded zone — prioritize **wetland restoration or flood-resilient interventions**. |
 
+## 5. Discussion
 
-| Type (Cluster) | Natural Habitat | NDVI     | Flood Zone | Stream Access | Description                                                                                                                           |
-| -------------- | --------------- | -------- | ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| 1 (Red)        | **High**        | **High** | Low        | Low           | Ecologically rich and vegetated zone with limited access and low flood risk — prioritize **conservation and biodiversity corridors**. |
-| 2 (Orange)     | Low             | Low      | Low        | **High**      | High-access area with limited vegetation or habitat — potential for **urban greening or recreational upgrades**.                      |
-| 3 (Yellow)     | Low             | Moderate | Low        | Low           | Sparse ecological value but some vegetation — suitable for **buffer zones or low-impact enhancement**.                                |
-| 4 (Green)      | Moderate        | Moderate | Moderate   | Moderate      | Balanced profile — ideal candidate for **multifunctional green-blue infrastructure**.                                                 |
-| 5 (Blue)       | Low             | Low      | **High**   | Low           | Flood-exposed, degraded zone — prioritize **wetland restoration or flood-resilient interventions**.                                   |
+The chosen methods conducted data analysis and normalization tried to account for the difference in grid cell size by weighing values based on cell size and choosing analysis methods which are not size-dependent (such as percentage of cover area). However...
 
+## 6. Conclusion
 
-## Discussion
-
-The chosen methods conducted data analysis and normalization tried to account for the difference in grid cell size by weighing values based on cell size and choosing analysis methods which are not size-dependent (such as percentage of cover area). However,
-
-## Conclusion
-
-## Appendix
+## 7. Appendix
 
 ![Floodplain Biotope Value (original data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png)
 
@@ -860,5 +959,3 @@ The chosen methods conducted data analysis and normalization tried to account fo
 ![Potential for Natural Floodplain Restoration (original data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(original%20data).png)
 
 ![Zones of Protected Natural Areas (original data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(original%20data).png)
-
-:::
