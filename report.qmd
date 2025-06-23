@@ -191,14 +191,9 @@ The data used in this study comes from many different sources and uses different
 
 ### 3.A. Biodiversity
 
-The biodiversity chapter aims to follow the following sub-question:
-> *Where can the ecological quality of the stream area be enhanced?*
+The biodiversity chapter aims to follow the following sub-question: \> *Where can the ecological quality of the stream area be enhanced?*
 
-This question is further divided into the following questions:
-> *Which Areas Have High Biodiversity Value?*
-> *Which Areas Have a High Level of Human Activity?*
-> *Which Areas Provide Opportunity for Improved Biodiversity?*
-
+This question is further divided into the following questions: \> *Which Areas Have High Biodiversity Value?* \> *Which Areas Have a High Level of Human Activity?* \> *Which Areas Provide Opportunity for Improved Biodiversity?*
 
 #### Which Areas Have High Biodiversity Value?
 
@@ -219,7 +214,7 @@ slickR(imgs, height = 800, width = 600) +
 
 ***Floodplain Biotope Value***
 
-The floodplain biotope value criteria examines the ecological biotope value of the Bílá Nisa floodplains. This criteria uses the 'Categorization of Floodplains' layer taken from the Agency for Nature and Landscape Conservation of the Czech Republic. The layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. (APOK ČR, 2022).
+The floodplain biotope value criterion examines the ecological biotope value of the Bílá Nisa floodplains. This criterion uses the 'Categorization of Floodplains' layer taken from the Agency for Nature and Landscape Conservation of the Czech Republic. The layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. (APOK ČR, 2022).
 
 The layer shows that most of the Bílá Nisa floodplain has negligible biotope value. However, some patches of moderate value remain which could be salvaged. To normalized this information, the moderate biotope value polygons were isolated and 'intersected' according to the grid lines. Then an 'overlap analysis' was conducted to calculate the percentage of area per cell that has moderate floodplain biotope value.
 
@@ -227,7 +222,7 @@ The layer shows that most of the Bílá Nisa floodplain has negligible biotope v
 
 ***Diversity of Natural Habitats***
 
-The diversity of natural habitats criteria examines the basic habitat mapping of the stream area retrieved from the Agency for Nature and Landscape Conservation of the Czech Republic (APOK ČR, 2025). This dataset maps the distribution of habitat types in the form of biomes. The detailed biomes are classified according to the Biotope Catalogue of The Czech Republic, and include biomes which are influenced by human activity (APOK ČR, 2010).
+The diversity of natural habitats criterion examines the basic habitat mapping of the stream area retrieved from the Agency for Nature and Landscape Conservation of the Czech Republic (APOK ČR, 2025). This dataset maps the distribution of habitat types in the form of biomes. The detailed biomes are classified according to the Biotope Catalogue of The Czech Republic, and include biomes which are influenced by human activity (APOK ČR, 2010).
 
 For the analysis of the diversity of natural habitats, anthropogenic biomes (coded as X) have been excluded from the dataset, as those are generally less healthy and biodiverse than their natural native counterparts \[SOURCE\]. The original data map shows the detailed natural habitats along Bila Nisa which are less than 50% antrhropogenic.
 
@@ -243,7 +238,7 @@ The map shows that there are no natural habitats in the inner city, only some in
 
 ***Proportion of Natural Habitat Area***
 
-This criteria looks at the same data as the diversity of natural habitats, categorized in broader natural habitat types (APOK ČR, 2025). The map shows a prominence of grasslands outside of the city, but there are also forests, shrubs and peat bogs. The polygons of these natural habitats were divided based on grid lines using the 'intersection' tool, and then an 'overlap analysis' was conducted to identify the cover area of these combined natural habitats in each cell. It can be seen that most of the natural habitats area actually concentrated further away from the stream.
+This criterion looks at the same data as the diversity of natural habitats, categorized in broader natural habitat types (APOK ČR, 2025). The map shows a prominence of grasslands outside of the city, but there are also forests, shrubs and peat bogs. The polygons of these natural habitats were divided based on grid lines using the 'intersection' tool, and then an 'overlap analysis' was conducted to identify the cover area of these combined natural habitats in each cell. It can be seen that most of the natural habitats area actually concentrated further away from the stream.
 
 ![Proportion of Natural Habitat Area (normalized data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(normalized%20data).png)
 
@@ -255,7 +250,7 @@ These normalized values are inverted (elaborate).
 
 Roads act as physical barriers for wildlife, deterring animals from crossing, thereby fragmenting ecosystems, limiting migration and making them less resilient. Furthermore, even slow traffic roads increase the threat of bugs or animals being hit or run over by a car. Meanwhile diffuse pollution from tyre particles, gas leaks and window cleaning fluids threaten the health of ecosystems.
 
-Therefore this criteria looks at the existing road infrastructure and its speed limits, aiming to grasp the level of harm that vehicles and road infrastructure may cause to the biodiversity. The criteria looks at data of road length per cell, as well as its speed limit to estimate the impact that the roads would have on biodiversity in a given cell.
+Therefore this criterion looks at the existing road infrastructure and its speed limits, aiming to grasp the level of harm that vehicles and road infrastructure may cause to the biodiversity. The criterion looks at data of road length per cell, as well as its speed limit to estimate the impact that the roads would have on biodiversity in a given cell.
 
 The road infrastructure was taken from OpenStreetMap and clipped to the grid. The road segments were then 'intersected' according to the grid lines and the segments were weighed based on their speed limit, as well as its lenght. The line segment length was multiplied by its speed limit to adjust for the impact that vehicle speeds would have on the biodiversity. Each line segment was then converted into a centroid, and the 'join attributes by location (summary)' function was used to find the sum of all of the given values within a cell. Then the data was normalized by dividing all values by the highest value.
 
@@ -267,7 +262,7 @@ I realize now that this way of normalizing does not account for the difference i
 
 I feel like something is wrong with the road segment length normalization... it isn't super accurate if I compare it to the original data, but I am not sure how else to normalize
 
-The build-up area criteria utilizes the data on existing buildings from OpenStreetMap (2025) to estimate the level of human activity in each cell (OpenStreetMap, 2025). The 'intersection' function in QGIS split up the building polygons according to the grid lines. Afterwards, an 'overlap analysis' was conducted to calculate the percentage of area that is built-up within a given cell. In essence, the build-up area normalized value looks at the Floor Space Index (FSI) of each cell.
+The build-up area criterion utilizes the data on existing buildings from OpenStreetMap (2025) to estimate the level of human activity in each cell (OpenStreetMap, 2025). The 'intersection' function in QGIS split up the building polygons according to the grid lines. Afterwards, an 'overlap analysis' was conducted to calculate the percentage of area that is built-up within a given cell. In essence, the build-up area normalized value looks at the Floor Space Index (FSI) of each cell.
 
 The results of the normalized data on build-up area show that there is some level of build-up along most parts of the stream. There is a fairly high variation of build-up area along the stream in the inner city.
 
@@ -277,9 +272,9 @@ The results of the normalized data on build-up area show that there is some leve
 
 ***Ecological Corridors***
 
-Ecological corridors criteria looks at the defined ecological corridors to identify opportunities to not only improve the local biodiversity, but enhance the ecological network on the local, regional and inter-regional scale.
+Ecological corridors criterion looks at the defined ecological corridors to identify opportunities to not only improve the local biodiversity, but enhance the ecological network on the local, regional and inter-regional scale.
 
-The data used for this criteria is the 'Methodologically Unified Definition of The Territorial System of Ecological Stability' from the Agency for Nature and Landscape Conservation of the Czech Republic (AOPK ČR, 2025). The dataset methodologically determined all hierarchial levels and types of territories which are vital for ecological stability.
+The data used for this criterion is the 'Methodologically Unified Definition of The Territorial System of Ecological Stability' from the Agency for Nature and Landscape Conservation of the Czech Republic (AOPK ČR, 2025). The dataset methodologically determined all hierarchial levels and types of territories which are vital for ecological stability.
 
 To normalize this data, the layer polygons were split up per cell using the 'intersect' function, and the 'overlap analysis' was conducted to identify the percentage of area per cell that is taken up by the ecological corridor polygon. In the resulting map (where 1 is 100% of the area and 0 is 0% of the area) key cells for ecological connectivity can be seen.
 
@@ -287,7 +282,7 @@ To normalize this data, the layer polygons were split up per cell using the 'int
 
 ***Potential for Natural Floodplain Restoration***
 
-For the natural floodplain restoration potential criteria, the 'Categorization of Floodplains' layer of the Agency for Nature and Landscape Conservation of the Czech Republic is used. As previously mentioned, the layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. Unfortunately, the source does not explicitly state the methodology of how these potentials were determined (APOK ČR, 2022).
+For the natural floodplain restoration potential criterion, the 'Categorization of Floodplains' layer of the Agency for Nature and Landscape Conservation of the Czech Republic is used. As previously mentioned, the layer was developed as a practical decision-making tool to aid for the protection of significant landscape elements in the country by identifying their characteristics and value. Unfortunately, the source does not explicitly state the methodology of how these potentials were determined (APOK ČR, 2022).
 
 To normalize this data, the polygons with medium and high potential for restoration were isolated. Since there are not many areas with floodplain restoration potential, and there is only one comparatively small patch of medium restoration potential, both medium and high potentials were considered as equal. The polygons were 'intersected' according to the grid lines, and then 'overlay analysis' was conducted to find the percentage of area with natural floodplain restoration for each cell. In the resulting map, key areas with higher potential for floodplain restoration can be seen both within and outside the city borders.
 
@@ -303,19 +298,15 @@ To process the data, the polygons were 'intercepted' based on the grid lines, th
 
 #### Biodiversity Criteria Maxtrix
 
-Using the Saaty matrix, each criteria are weighted against each other to give each criterion a priority based on their importance for urban stream restoration. Each topic (biodiversity, climate adaptation and quality of life) has its own matrix to create a consistent assessment.
+Using the Saaty matrix, each criterion is weighted against each other to give each criterion a priority based on their importance for urban stream restoration. Each topic (biodiversity, climate adaptation and quality of life) has its own matrix to create a consistent assessment.
 
 ![Biodiversity MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Biodiversity.pdf)
 
 ### 3.B. Climate Adaptation
 
-The climate adaptation chapter aims to follow the following sub-question:
-> *Where along the stream can flood mitigation measures take place?*
+The climate adaptation chapter aims to follow the following sub-question: \> *Where along the stream can flood mitigation measures take place?*
 
-This question is further divided into the following questions:
-> *Which Areas Have Highest Flood Damage Risk?*
-> *Which Areas Have The Most Impervious Surfaces?*
-> *Which Areas Have Healthy Vegetation?*
+This question is further divided into the following questions: \> *Which Areas Have Highest Flood Damage Risk?* \> *Which Areas Have The Most Impervious Surfaces?* \> *Which Areas Have Healthy Vegetation?*
 
 #### Which Areas Have Highest Flood Damage Risk?
 
@@ -381,19 +372,15 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 
 #### Climate Adaptation Criteria Maxtrix
 
-Using the Saaty matrix, each criteria are weighted against each other to give each criterion a priority based on their importance for urban stream restoration.
+Using the Saaty matrix, each criterion is weighted against each other to give each criterion a priority based on their importance for urban stream restoration.
 
 ![Climate Adaptation MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Climate%20Adaptation.pdf)
 
 ### 3.C. Quality of life
 
-The climate adaptation chapter aims to follow the following sub-question:
-> *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
+The climate adaptation chapter aims to follow the following sub-question: \> *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
 
-This question is further divided into the following questions:
-> *Which Areas Are Deprived of Public Facilities?*
-> *Which Areas Lack Infrastructure to Access?*
-> *Which Areas Can Be Physically Uncomfortable?*
+This question is further divided into the following questions: \> *Which Areas Are Deprived of Public Facilities?* \> *Which Areas Lack Infrastructure to Access?* \> *Which Areas Can Be Physically Uncomfortable?*
 
 For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
 
@@ -517,7 +504,7 @@ slickR(imgs, height = 800, width = 600) +
 
 #### Quality of Life Criteria Maxtrix
 
-Using the Saaty matrix, each criteria are weighted against each other to give each criterion a priority based on their importance for urban stream restoration.
+Using the Saaty matrix, each criterion is weighted against each other to give each criterion a priority based on their importance for urban stream restoration.
 
 ![Quality of life MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Quality%20of%20Life.pdf)
 
