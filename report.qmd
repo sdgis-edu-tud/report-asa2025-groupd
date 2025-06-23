@@ -241,6 +241,8 @@ This criteria looks at the same data as the diversity of natural habitats, categ
 
 #### Which Areas Have a High Level of Human Activity?
 
+These normalized values are inverted (elaborate).
+
 **Weighed Road Segment Length**
 
 Roads act as physical barriers for wildlife, deterring animals from crossing, thereby fragmenting ecosystems, limiting migration and making them less resilient. Furthermore, even slow traffic roads increase the threat of bugs or animals being hit or run over by a car. Meanwhile diffuse pollution from tyre particles, gas leaks and window cleaning fluids threaten the health of ecosystems.
@@ -361,19 +363,32 @@ For quality of life, three main criteria have been developed according to the pa
 
 For the first analysis, we look at the availability of public amenities that supports urban life. like public functions and public green along the stream and how well accessible they are.
 
-![Public amenities along Bila Nisa stream](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png)
+#### Which Areas Are Deprived of Public Facilities?
 
-Based on these public amenities, data is normalized based on the diversity of public amenities and the size of the public areas, which indicates to what extent the area can be used by the population of Jablonec.
+**Access to Public Green Space**
 
-First, the public amenities are clipped within the grid of the Bila Nisa stream. The clipped layer is overlayed in the grid creating a separate layer. The data is then normalized through adding a separate column, where the range of area and functions is used through the following functions. Using this formula, data is normalized to a 0 to 1 scale.
-
-![Normalized map size of public amenities](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Size%20of%20public%20areas%20normalized.png) ![Diversity of public amenities along Bila Nisa](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png) Apart from essential public amenities, the accessiblity of nature and public green offer comfort in urban areas and is an important factor to be taken into account. As stated in the case, ecological quality of the stream has been degregated through human activity, which also impacts the quality of life in the proximity of the stream. However, along the borders of the urban area, patches of green over access to public green.
+Apart from essential public amenities, the accessiblity of nature and public green offer comfort in urban areas and is an important factor to be taken into account. As stated in the case, ecological quality of the stream has been degregated through human activity, which also impacts the quality of life in the proximity of the stream. However, along the borders of the urban area, patches of green over access to public green.
 
 ![Map showing public green along Bila Nisa stream](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20data%20input.png) The area of public green is then further normalized, through the following formula, thus normalizng the area on a scale from 0 to 1.
 
 ("your_field" - min("your_field")) / (max("your_field") - min("your_field"))
 
 ![Normalized map of public green availability along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20normalized.png)
+
+**Access to Public Amenities**
+
+![Public amenities along Bila Nisa stream](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png)
+
+Based on these public amenities, data is normalized based on the diversity of public amenities and the size of the public areas, which indicates to what extent the area can be used by the population of Jablonec.
+
+First, the public amenities are clipped within the grid of the Bila Nisa stream. The clipped layer is overlayed in the grid creating a separate layer. The data is then normalized through adding a separate column, where the range of area and functions is used through the following functions. Using this formula, data is normalized to a 0 to 1 scale.
+
+![Normalized map size of public amenities](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Size%20of%20public%20areas%20normalized.png) ![Diversity of public amenities along Bila Nisa](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png) 
+
+
+#### Which Areas Lack Infrastructure to Access?
+
+**Access to Stream**
 
 Apart from access to essential human needs along the stream, the Bila Nisa itself is a potential area where people can visit to get in touch with nature and a more comfortable urban environment, taken into account that the urban environment will be impacted further through the effect of climate change. Accessiblity to the stream is therefore an important indicator for quality of life. First, access to the Bila Nisa is analyzed through the road network of Jablonec nad Nisau. A space syntax is used to determine which roads are better integrated to the road network which determines which part of the stream are more centralized and better accessible.
 
@@ -387,39 +402,17 @@ Categorizing the layer with the newly calculated normalized column, the followin
 
 ![Nominal map showing accessiblity to urban centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20normalized.png)
 
+**Access to Public Transport**
+
 Apart from the road network, which primarily focusses on private mobility, public transport offers a good indication how the stream can be accessed from a more regional point of view. For this, a data layer from the ArcGIS web is found that represents the public transport network of Jablonec nad Nisau. A clip from this layer is made, which results in a couple of bus stops and a tram stops that fall within reach of the stream. To see how accessible the stream is from public transportation, service areas are used with a radius of 500m (bus stops) and 1000m (tram stops) based on the type of connection. Bus is more urban while the tram has a regional connection with the neighboring city of Liberec.
 
 ![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png) Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created that calculates the data using a normalized scale from 0 to 1, using the range of opportunities.
 
 ![Access to public transport near the stream normalilzed](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20along%20stream%20normalized.png)
 
-##### Tree-cover Percentage
+#### Which Areas Can Be Physically Uncomfortable?
 
-Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
-
-::: {.callout-note collapse="true"}
-## Normalized Tree Cover Table
-
-| Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|------------------|------------------|------------------|------------------|
-| Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
-:::
-
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-library(slickR)
-
-
-imgs <- c("Inserted_images/Biodiversity/Normalised_mean_Treecover.png", "Inserted_images/Biodiversity/Mean_treecover.png")
-
-slickR(imgs, height = 800, width = 600) +
-  settings(dots = TRUE)
-
-```
-
-##### Pollution Normalization
+**Air Pollution**
 
 To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspired by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
 
@@ -460,6 +453,33 @@ This simpler method yields the final table with the new normalization based on t
 | NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
 | BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
 :::
+
+
+**Percentage of Tree Cover**
+
+Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
+
+::: {.callout-note collapse="true"}
+## Normalized Tree Cover Table
+
+| Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
+|------------------|------------------|------------------|------------------|
+| Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
+:::
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(slickR)
+
+
+imgs <- c("Inserted_images/Biodiversity/Normalised_mean_Treecover.png", "Inserted_images/Biodiversity/Mean_treecover.png")
+
+slickR(imgs, height = 800, width = 600) +
+  settings(dots = TRUE)
+
+```
 
 #### Criteria Matrices
 
