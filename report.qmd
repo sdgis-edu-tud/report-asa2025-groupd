@@ -742,6 +742,9 @@ radar_data <- rbind(max_min, radar_data)
 # Set colors for each cluster
 colors_radar <- cluster_colors
 
+png(filename = "../../Inserted_images/radar_chart_clusters.png", width = 800, height = 600, res = 120)
+
+
 # Set graphic parameters
 op <- par(mar = c(2, 2, 4, 2),  # Bottom, Left, Top, Right margins
           cex.main = 1.5)        # Larger title font size
@@ -779,6 +782,7 @@ legend(
 # Reset graphical parameters
 par(op)
 
+dev.off()
 
 
 ```
@@ -808,7 +812,10 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
     y = "Count"
   )
 
-#st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
+st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
+
+ggsave(filename = "../Inserted_images/cluster_distances_histogram.png", plot = p, width = 8, height = 6, dpi = 300)
+
 
 #print(grid_distances)
 ```
