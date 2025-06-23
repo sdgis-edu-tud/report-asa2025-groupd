@@ -842,8 +842,6 @@ radar_data <- rbind(max_min, radar_data)
 # Set colors for each cluster
 colors_radar <- cluster_colors
 
-png(filename = "../../Inserted_images/radar_chart_clusters.png", width = 800, height = 600, res = 120)
-
 
 # Set graphic parameters
 op <- par(mar = c(2, 2, 4, 2),  # Bottom, Left, Top, Right margins
@@ -882,9 +880,6 @@ legend(
 # Reset graphical parameters
 par(op)
 
-dev.off()
-
-
 ```
 
 ### 4.c. Results
@@ -916,9 +911,6 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 
 st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
 
-ggsave(filename = "../Inserted_images/cluster_distances_histogram.png", plot = p, width = 8, height = 6, dpi = 300)
-
-
 #print(grid_distances)
 ```
 
@@ -930,11 +922,11 @@ Based on this we have assigned the following descriptions to each typology and o
 
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
 |------------|------------|------------|------------|------------|------------|
-| 1 (Red) | **High** | **High** | Low | Low | Ecologically rich and vegetated zone with limited access and low flood risk — prioritize **conservation and biodiversity corridors**. |
-| 2 (Orange) | Low | Low | Low | **High** | High-access area with limited vegetation or habitat — potential for **urban greening or recreational upgrades**. |
-| 3 (Yellow) | Low | Moderate | Low | Low | Sparse ecological value but some vegetation — suitable for **buffer zones or low-impact enhancement**. |
-| 4 (Green) | Moderate | Moderate | Moderate | Moderate | Balanced profile — ideal candidate for **multifunctional green-blue infrastructure**. |
-| 5 (Blue) | Low | Low | **High** | Low | Flood-exposed, degraded zone — prioritize **wetland restoration or flood-resilient interventions**. |
+| 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function.​ |
+| 2 (Orange) | Low | Low | Low | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.**​ |
+| 3 (Yellow) | Low | Moderate | Low | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility. This is suitable for **buffer zones or low-impact enhancement.**​ |
+| 4 (Green) | Moderate | Moderate | Moderate | Moderate | Although these areas are classified as having **high natural habitat**, they exhibit **low vegetation health or cover**. Stream access is also limited. This could indicate sparse but valuable habitats.​ |
+| 5 (Blue) | Low | Low | **High** | Low | Flood-exposed, degraded zone. Here we can prioritize **wetland restoration or flood-resilient interventions.**​ |
 
 ## 5. Discussion
 
