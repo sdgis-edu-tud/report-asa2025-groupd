@@ -139,13 +139,13 @@ Our derived subquestions, respective to each goal are then the following:
 
 A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data[@dungan2002balanced]. The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.
 
-### Definition of Spatial Units
+### 2.a. Definition of Spatial Units
 
 To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. On the other hand, @burdziej2019using uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
 
 Therefore, based on the size of Jablonec nad Nisou and the Bila Nisa stream as well as the following discussed principles affecting the conducted analysis, a spatial unit grid of 100 x 100 meters was chosen for part of the stream which is situated outside of the city. The unit is used for consistency in the assignment of spatial indicators and facilitates the aggregation and comparison of data across the urban stream landscape. Because the project is about urban stream restoration a grid size of 50 x 50 meters is used to give more detail and accuracy for the analysis of the urban part of the stream. The 100 x 100m spatial unit is specific to the scale Jablonec nad Nisou, the resolution of the data collected and relevant literature on stream assessments.
 
-### Resolution and Data Acquisition Method
+### 2.b. Resolution and Data Acquisition Method
 
 The resolution of spatial analysis is directly tied to the data acquisition method [@BARTESAGHIKOC2020103893]. While spaceborne remote sensing used for the measurement of some of our indicators when data availability was lacking is better suited for large-scale urban assessments, it often lacks the spatial precision needed for detailed micro climatic or ecological studies. On the other hand, biodiversity and quality of life data are generally acquired at larger scale and would require smaller spatial units. For example, the widely accepted walking range of 500 meters [@macioszek2022effect; @popp2004walking], or biodiversity connectivity of around 100m stretches, identified by [@RANTA2021106980]. Our method reflects this balance, using satellite data for broader patterns such as LST and impervious surfaces. We then supplement this with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few. The collected data for each respective goals can be found in the figures below.
 
@@ -172,27 +172,27 @@ slickR(obj = img_tags) +
 
 ```
 
-### Scale-Specific Indicators for Stream Assessment
+### 2.c. Scale-Specific Indicators for Stream Assessment
 
 Urban stream analysis requires scale-appropriate methodologies. Different ecosystem services or hydrological characteristics demand different spatial extents. [@RANTA2021106980] uses for example 100m stretches for biological assessments and 500m buffers for hydromorphilogical evaluations.
 
 Therefore, when deciding on our scale, we considered our indicators and attempted to closely match them to retain a good representation of the spatial dynamics of the stream functions we aimed to analyze.
 
-### Impact of Scale on Detectable Effects
+### 2.d. Impact of Scale on Detectable Effects
 
 The spatial resolution of the data we collected significantly shapes the analytical results. Averaging the data collected within the chosen 100 x 100m cells allows for generalized insights, which we found best fitting. It may however still obscure localized effects such as even smaller micro climatic benefits of tree clusters or linear vegetation elements. We chose the trade off that best fits our and balances detail with analytical feasibility.
 
 // For the MCDA -\> add how we average and normalise values here?
 
-### Normalization
+### 2.e. Normalization
 
 The data used in this study comes from many different sources and uses different units as discussed above. Therefore, to compare them evenly, all values need to be brought to the same scale, and normalized in order to later conduct K-means clustering to discover appropriate typologies. We therefore could not use one method for all data normalization. Instead, each topic or data map uses its own way of normalizing respective to the data acquisition and availability. For climate adaptation, values like temperature and air pollution were compared to limits from the EU or WHO. For biodiversity, we used scales that show how suitable or rich an area is for nature. For quality of life, we used standards such as walking distances or access to green areas. Each method is explained in the following sections under their respective topic or map that they relate to.
 
 ## 3. Spatial Multi-Criteria Decision Analysis (S-MCDA)
 
-#### Biodiversity
+### 3.A. Biodiversity
 
-### WHICH AREAS HAVE HIGH BIODIVERSITY VALUE?
+#### Which Areas Have High Biodiversity Value?
 
 ```{r}
 #| echo: false
@@ -239,7 +239,7 @@ This criteria looks at the same data as the diversity of natural habitats, categ
 
 ![Proportion of Natural Habitat Area (normalized data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(normalized%20data).png)
 
-### WHICH AREAS HAVE A HIGH LEVEL OF HUMAN ACTIVITY WHICH POSES A THREAT TO BIODIVERSITY?
+####  Which Areas Have a High Level of Human Activity?
 
 ##### Weighed Road Segment Length
 
@@ -263,7 +263,7 @@ The results of the normalized data on build-up area show that there is some leve
 
 ![Proportion of Built-up Area (normalized data)](Inserted_images/Biodiversity/Built-up%20area%20(normalized%20data).png)
 
-### WHICH AREAS PROVIDE OPPORTUNITY FOR IMPROVED BIODIVERSITY?
+#### Which Areas Provide Opportunity for Improved Biodiversity?
 
 ##### Ecological Corridors
 
@@ -291,7 +291,30 @@ To process the data, the polygons were 'intercepted' based on the grid lines, th
 
 ![Zones of Protected Natural Areas (normalized data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(normalized%20data).png)
 
-#### Climate Adaptation
+### 3.B. Climate Adaptation
+
+#### Which Areas Have Highest Flood Damage Risk?
+
+##### Floodplain
+
+Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
+
+## Normalized Flood risk Table
+
+::: {.callout-note collapse="true"}
+| Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
+|---------------|---------------|---------------|---------------|---------------|
+| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
+:::
+
+![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
+
+
+#### Which Areas Have The Most Impervious Surfaces?
+
+
+#### Which Areas Have Healthy Vegetation?
+
 
 ##### Mean Night-Time Land Surface Temperature (LST)
 
@@ -333,21 +356,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 
 ![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI.png)
 
-##### Floodplain
-
-Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
-
-## Normalized Flood risk Table
-
-::: {.callout-note collapse="true"}
-| Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
-| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
-:::
-
-![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
-
-#### Quality of life
+### 3.C. Quality of life
 
 For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
 
@@ -817,7 +826,7 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions.
 
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|-------|-------|-------|-------|-------|------------------------------------|
+|-----------|-----------|-----------|-----------|-----------|-------------------|
 | 1 (Red) | **High** | **High** | Low | Low | Ecologically rich and vegetated zone with limited access and low flood risk — prioritize **conservation and biodiversity corridors**. |
 | 2 (Orange) | Low | Low | Low | **High** | High-access area with limited vegetation or habitat — potential for **urban greening or recreational upgrades**. |
 | 3 (Yellow) | Low | Moderate | Low | Low | Sparse ecological value but some vegetation — suitable for **buffer zones or low-impact enhancement**. |
