@@ -132,7 +132,7 @@ Our derived sub-questions, respective to each goal are then the following:
 
 > *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
 
-add figure
+! add figure explaining workflow of project -\> key problems -\> research questions -\> sub-questions
 
 ## 2. Methodology
 
@@ -189,7 +189,11 @@ The data used in this study comes from many different sources and uses different
 
 ## 3. Spatial Multi-Criteria Decision Analysis (S-MCDA)
 
+! introduction
+
 ### 3.A. Biodiversity
+
+! introduction
 
 The biodiversity chapter aims to follow the following sub-question:
 
@@ -204,6 +208,8 @@ This question is further divided into the following questions:
 > *Which Areas Provide Opportunity for Improved Biodiversity?*
 
 #### Which Areas Have High Biodiversity Value?
+
+! introduction
 
 ```{r}
 #| echo: false
@@ -252,6 +258,8 @@ This criterion looks at the same data as the diversity of natural habitats, cate
 
 #### Which Areas Have a High Level of Human Activity?
 
+! introduction
+
 These normalized values are inverted (elaborate).
 
 ***Weighed Road Segment Length***
@@ -277,6 +285,8 @@ The results of the normalized data on build-up area show that there is some leve
 ![Proportion of Built-up Area (normalized data)](Inserted_images/Biodiversity/Built-up%20area%20(normalized%20data).png)
 
 #### Which Areas Provide Opportunity for Improved Biodiversity?
+
+! introduction
 
 ***Ecological Corridors***
 
@@ -312,6 +322,8 @@ Using the Saaty matrix, each criterion is weighted against each other to give ea
 
 ### 3.B. Climate Adaptation
 
+! introduction
+
 The climate adaptation chapter aims to follow the following sub-question:
 
 > *Where along the stream can flood mitigation measures take place?*
@@ -326,6 +338,8 @@ This question is further divided into the following questions:
 
 #### Which Areas Have Highest Flood Damage Risk?
 
+! introduction
+
 ***Flood Impact Zones in Floodplains***
 
 Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
@@ -334,13 +348,15 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 ::: {.callout-note collapse="true"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 :::
 
 ![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
 
 #### Which Areas Have The Most Impervious Surfaces?
+
+! introduction
 
 ***Impervious Surface Percentage***
 
@@ -350,7 +366,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 *Normalized Impervious Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
@@ -364,13 +380,15 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 *Normalized Mean LST table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
 ![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST.png) \##### NDVI (Normalized Difference Vegetation Index)
 
 #### Which Areas Have Healthy Vegetation?
+
+! introduction
 
 ***Normalized Difference Vegetation Index (NDVI)***
 
@@ -380,7 +398,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 *Normalized NDVI Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
@@ -393,6 +411,8 @@ Using the Saaty matrix, each criterion is weighted against each other to give ea
 ![Climate Adaptation MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Climate%20Adaptation.pdf)
 
 ### 3.C. Quality of life
+
+! introduction
 
 The climate adaptation chapter aims to follow the following sub-question:
 
@@ -411,6 +431,8 @@ For quality of life, three main criteria have been developed according to the pa
 For the first analysis, we look at the availability of public amenities that supports urban life. like public functions and public green along the stream and how well accessible they are.
 
 #### Which Areas Are Deprived of Public Facilities?
+
+! introduction
 
 ***Access to Public Green Space***
 
@@ -433,6 +455,8 @@ First, the public amenities are clipped within the grid of the Bila Nisa stream.
 ![Normalized map size of public amenities](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Size%20of%20public%20areas%20normalized.png) ![Diversity of public amenities along Bila Nisa](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png)
 
 #### Which Areas Lack Infrastructure to Access?
+
+! introduction
 
 ***Access to Stream***
 
@@ -458,6 +482,8 @@ Apart from the road network, which primarily focusses on private mobility, publi
 
 #### Which Areas Can Be Physically Uncomfortable?
 
+! introduction
+
 ***Air Pollution***
 
 To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspired by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
@@ -466,7 +492,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 *Normalized Pollution table*
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -491,7 +517,7 @@ This simpler method yields the final table with the new normalization based on t
 *New Normalized Pollution Table*
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -508,7 +534,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 *Normalized Tree Cover Table*
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
@@ -896,7 +922,7 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions.
 
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | 1 (Red) | **High** | **High** | Low | Low | Ecologically rich and vegetated zone with limited access and low flood risk — prioritize **conservation and biodiversity corridors**. |
 | 2 (Orange) | Low | Low | Low | **High** | High-access area with limited vegetation or habitat — potential for **urban greening or recreational upgrades**. |
 | 3 (Yellow) | Low | Moderate | Low | Low | Sparse ecological value but some vegetation — suitable for **buffer zones or low-impact enhancement**. |
@@ -926,5 +952,3 @@ The chosen methods conducted data analysis and normalization tried to account fo
 ![Potential for Natural Floodplain Restoration (original data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(original%20data).png)
 
 ![Zones of Protected Natural Areas (original data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(original%20data).png)
-
-:::
