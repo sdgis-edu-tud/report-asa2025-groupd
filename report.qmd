@@ -135,7 +135,7 @@ Our derived subquestions, respective to each goal are then the following:
 
 //we will add how the report is structured here after.
 
-## Methodology
+## 2. Methodology
 
 A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data[@dungan2002balanced]. The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.
 
@@ -188,11 +188,7 @@ The spatial resolution of the data we collected significantly shapes the analyti
 
 The data used in this study comes from many different sources and uses different units as discussed above. Therefore, to compare them evenly, all values need to be brought to the same scale, and normalized in order to later conduct K-means clustering to discover appropriate typologies. We therefore could not use one method for all data normalization. Instead, each topic or data map uses its own way of normalizing respective to the data acquisition and availability. For climate adaptation, values like temperature and air pollution were compared to limits from the EU or WHO. For biodiversity, we used scales that show how suitable or rich an area is for nature. For quality of life, we used standards such as walking distances or access to green areas. Each method is explained in the following sections under their respective topic or map that they relate to.
 
-## Results
-
-### MCDA
-
-### Maps
+## 3. Spatial Multi-Criteria Decision Analysis (S-MCDA)
 
 #### Biodiversity
 
@@ -467,7 +463,7 @@ Using the Saaty matrix, each criteria are weighted against each other to give ea
 
 ![Quality of life MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Quality%20of%20Life.pdf)
 
-### Typology construction
+## 4. Typology Construction
 
 Our approach to out topology construction is embedded in our main reserach questions and goals. Based on our analysis we formulated the following guiding question for finding relevant typologies in Jablonec nad Nisou.
 
@@ -680,6 +676,7 @@ plot_ly(
     )
   )
 ```
+
 Therefore, to ensure another representation of each cluster in respect to their indicator we can plot Polar charts. This can help visualise the 4 dimensional nature and what typological counterpart each cluster would represent. Based from these charts we can assign each cluster a correct typology.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
@@ -815,28 +812,25 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 
 ![Distance to each cluster center for each respective cluster](Inserted_images/distance_to_cluster_center.png)
 
-
 ### Typology description
 
-Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions. 
+Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions.
 
+| Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
+|-------|-------|-------|-------|-------|------------------------------------|
+| 1 (Red) | **High** | **High** | Low | Low | Ecologically rich and vegetated zone with limited access and low flood risk — prioritize **conservation and biodiversity corridors**. |
+| 2 (Orange) | Low | Low | Low | **High** | High-access area with limited vegetation or habitat — potential for **urban greening or recreational upgrades**. |
+| 3 (Yellow) | Low | Moderate | Low | Low | Sparse ecological value but some vegetation — suitable for **buffer zones or low-impact enhancement**. |
+| 4 (Green) | Moderate | Moderate | Moderate | Moderate | Balanced profile — ideal candidate for **multifunctional green-blue infrastructure**. |
+| 5 (Blue) | Low | Low | **High** | Low | Flood-exposed, degraded zone — prioritize **wetland restoration or flood-resilient interventions**. |
 
-| Type (Cluster) | Natural Habitat | NDVI     | Flood Zone | Stream Access | Description                                                                                                                           |
-| -------------- | --------------- | -------- | ---------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| 1 (Red)        | **High**        | **High** | Low        | Low           | Ecologically rich and vegetated zone with limited access and low flood risk — prioritize **conservation and biodiversity corridors**. |
-| 2 (Orange)     | Low             | Low      | Low        | **High**      | High-access area with limited vegetation or habitat — potential for **urban greening or recreational upgrades**.                      |
-| 3 (Yellow)     | Low             | Moderate | Low        | Low           | Sparse ecological value but some vegetation — suitable for **buffer zones or low-impact enhancement**.                                |
-| 4 (Green)      | Moderate        | Moderate | Moderate   | Moderate      | Balanced profile — ideal candidate for **multifunctional green-blue infrastructure**.                                                 |
-| 5 (Blue)       | Low             | Low      | **High**   | Low           | Flood-exposed, degraded zone — prioritize **wetland restoration or flood-resilient interventions**.                                   |
-
-
-## Discussion
+## 5. Discussion
 
 The chosen methods conducted data analysis and normalization tried to account for the difference in grid cell size by weighing values based on cell size and choosing analysis methods which are not size-dependent (such as percentage of cover area). However,
 
-## Conclusion
+## 6. Conclusion
 
-## Appendix
+## 7. Appendix
 
 ![Floodplain Biotope Value (original data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png)
 
