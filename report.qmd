@@ -305,7 +305,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 ::: {.callout-note collapse="true"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 :::
 
@@ -321,7 +321,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 *Normalized Impervious Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
@@ -335,7 +335,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 *Normalized Mean LST table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
@@ -351,7 +351,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 *Normalized NDVI Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
@@ -383,8 +383,7 @@ Based on these public amenities, data is normalized based on the diversity of pu
 
 First, the public amenities are clipped within the grid of the Bila Nisa stream. The clipped layer is overlayed in the grid creating a separate layer. The data is then normalized through adding a separate column, where the range of area and functions is used through the following functions. Using this formula, data is normalized to a 0 to 1 scale.
 
-![Normalized map size of public amenities](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Size%20of%20public%20areas%20normalized.png) ![Diversity of public amenities along Bila Nisa](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png) 
-
+![Normalized map size of public amenities](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Size%20of%20public%20areas%20normalized.png) ![Diversity of public amenities along Bila Nisa](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png)
 
 #### Which Areas Lack Infrastructure to Access?
 
@@ -420,7 +419,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 ## Normalized Pollution table
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -445,7 +444,7 @@ This simpler method yields the final table with the new normalization based on t
 ## New Normalized Pollution Table
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -453,7 +452,6 @@ This simpler method yields the final table with the new normalization based on t
 | NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
 | BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
 :::
-
 
 **Percentage of Tree Cover**
 
@@ -463,7 +461,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 ## Normalized Tree Cover Table
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
@@ -845,7 +843,7 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions.
 
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | 1 (Red) | **High** | **High** | Low | Low | Ecologically rich and vegetated zone with limited access and low flood risk — prioritize **conservation and biodiversity corridors**. |
 | 2 (Orange) | Low | Low | Low | **High** | High-access area with limited vegetation or habitat — potential for **urban greening or recreational upgrades**. |
 | 3 (Yellow) | Low | Moderate | Low | Low | Sparse ecological value but some vegetation — suitable for **buffer zones or low-impact enhancement**. |
