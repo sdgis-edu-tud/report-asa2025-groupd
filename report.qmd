@@ -55,11 +55,10 @@ editor: visual
         b.  Which Areas Lack Infrastructure to Access?
         c.  Which Areas Can Be Physically Uncomfortable?
     D.  Conclusion of S-MCDA;
-4.  K-Means Clustering Analysis;
-    a.  Research question;
+4.  Typology Construction;
+    a.  Research Question & Variables;
     b.  Methodology;
-    c.  Variables;
-    d.  Results;
+    c.  Results;
 5.  Discussion;
 6.  Conclusion;
 7.  Appendix.
@@ -123,15 +122,15 @@ leaflet(options = leafletOptions(minZoom = 12, maxZoom = 17)) %>%
 
 Our research centers on the Bílá Nisa stream, and will address the problems we have identified through the lens fo the three following goals: Biodiversity, Climate Adaptation, and Quality of Life. These goals, relevant to our location has led to our main research question:
 
-> *Where should urban stream restoration be prioritized in Jablonec nad Nisou to maximize biodiversity, climate adaptation, and quality of life?*
+> *How can an integrated urban stream restoration project in Jablonec nad Nisou balance diverse stakeholder interests by identifying areas where improvement in biodiversity, flood risk reduction, and improvements in quality of life can take place?*
 
-Our derived subquestions, respective to each goal are then the following:
+Our derived sub-questions, respective to each goal are then the following:
 
 > *Where can the ecological quality of the stream area be enhanced?*
 
-> *Which areas are the most in need for flood protection?Where can flood mitigation measures take place?*
+> *Where along the stream can flood mitigation measures take place?*
 
-> *Where can improvements in quality of life balance stakeholder interests in areas around the stream?*
+> *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
 
 //we will add how the report is structured here after.
 
@@ -191,6 +190,15 @@ The data used in this study comes from many different sources and uses different
 ## 3. Spatial Multi-Criteria Decision Analysis (S-MCDA)
 
 ### 3.A. Biodiversity
+
+The biodiversity chapter aims to follow the following sub-question:
+> *Where can the ecological quality of the stream area be enhanced?*
+
+This question is further divided into the following questions:
+> *Which Areas Have High Biodiversity Value?*
+> *Which Areas Have a High Level of Human Activity?*
+> *Which Areas Provide Opportunity for Improved Biodiversity?*
+
 
 #### Which Areas Have High Biodiversity Value?
 
@@ -301,6 +309,14 @@ Using the Saaty matrix, each criteria are weighted against each other to give ea
 
 ### 3.B. Climate Adaptation
 
+The climate adaptation chapter aims to follow the following sub-question:
+> *Where along the stream can flood mitigation measures take place?*
+
+This question is further divided into the following questions:
+> *Which Areas Have Highest Flood Damage Risk?*
+> *Which Areas Have The Most Impervious Surfaces?*
+> *Which Areas Have Healthy Vegetation?*
+
 #### Which Areas Have Highest Flood Damage Risk?
 
 ***Flood Impact Zones in Floodplains***
@@ -371,6 +387,14 @@ Using the Saaty matrix, each criteria are weighted against each other to give ea
 
 ### 3.C. Quality of life
 
+The climate adaptation chapter aims to follow the following sub-question:
+> *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
+
+This question is further divided into the following questions:
+> *Which Areas Are Deprived of Public Facilities?*
+> *Which Areas Lack Infrastructure to Access?*
+> *Which Areas Can Be Physically Uncomfortable?*
+
 For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
 
 For the first analysis, we look at the availability of public amenities that supports urban life. like public functions and public green along the stream and how well accessible they are.
@@ -428,7 +452,7 @@ Apart from the road network, which primarily focusses on private mobility, publi
 To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspired by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
 
 ::: {.callout-note collapse="true"}
-## Normalized Pollution table
+*Normalized Pollution table*
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
 |------------|------------|------------|------------|------------|------------|
@@ -443,7 +467,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 A then example calculation in Qgis for SO2 would be:
 
 ::: {.callout-note collapse="true"}
-## Example calculation for SO2
+*Example calculation for SO2*
 
 CASE WHEN "MAX_majority" IS NULL THEN NULL WHEN "MAX_majority" \< 20 THEN 0 WHEN "MAX_majority" \> 125 THEN 1 ELSE ("MAX_majority" - 20) / (125 - 20) END
 :::
@@ -453,7 +477,7 @@ However, as was later discovered, this approach led to all of the pollution data
 This simpler method yields the final table with the new normalization based on the input data classification is the following.
 
 ::: {.callout-note collapse="true"}
-## New Normalized Pollution Table
+*New Normalized Pollution Table*
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
 |---------------|---------------|---------------|---------------|---------------|
@@ -505,6 +529,8 @@ Short recap, key findings, recommendations
 
 Our approach to out topology construction is embedded in our main reserach questions and goals. Based on our analysis we formulated the following guiding question for finding relevant typologies in Jablonec nad Nisou.
 
+### 4.a. Research Question & Variables
+
 *"What spatial typologies emerge from key ecological and accessibility indicators along the stream corridor, and how can they inform targeted green-blue infrastructure interventions?"*
 
 This question is grounded in the broader ambition to enhance ecosystem services, urban climate resilience, and quality of life through the strategic planning of nature-based solutions. To approach this, we identified from all of our indicators, 4 main key spatial indicators that reflect the multifunctionality of green-blue spaces. Each indicator was selected to represent a dimension of performance relevant to our project:
@@ -518,6 +544,8 @@ This question is grounded in the broader ambition to enhance ecosystem services,
 **Access to Stream (Quality of Life):** Stream accessibility reflects the potential for recreation, well-being, and nature connection for residents, which at the moment due to stakeholder conflicts may be lacking.
 
 By combining these indicators, we aim to capture both the ecological aspects and human functionality of areas along the stream. This will enable us to cluster similar grid cells into meaningful typologies relevant to our research. We believe that the typologies will support decision making for where to preserver, intervene or enhance the multifunctional green-blue spaces along the Bila Nisa stream.
+
+### 4.b. Methodology
 
 To begin our typology construction, we chose to perform K-means clustering. The following section will guide you through the process we took to reach the typologies.
 
@@ -818,7 +846,9 @@ par(op)
 
 ```
 
-## Interpreting the cluster centers
+### 4.c. Results
+
+**Interpreting the cluster centers**
 
 Now we look at the center of each cluster. First, we check the values in standardized form. Then, we convert them back to the original units (e.g. degrees), so they are easier to understand. Then, to interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below summarizes the environmental characteristics of each cluster based on the original (unscaled) values. From these we can assign our created typology description, testing if they align with our initial set out goals and conjectures.
 
@@ -850,7 +880,7 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 
 ![Distance to each cluster center for each respective cluster](Inserted_images/distance_to_cluster_center.png)
 
-### Typology description
+**Typology description**
 
 Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions.
 
@@ -864,7 +894,7 @@ Based on this we have assigned the following descriptions to each typology and o
 
 ## 5. Discussion
 
-The chosen methods conducted data analysis and normalization tried to account for the difference in grid cell size by weighing values based on cell size and choosing analysis methods which are not size-dependent (such as percentage of cover area). However,
+The chosen methods conducted data analysis and normalization tried to account for the difference in grid cell size by weighing values based on cell size and choosing analysis methods which are not size-dependent (such as percentage of cover area). However...
 
 ## 6. Conclusion
 
