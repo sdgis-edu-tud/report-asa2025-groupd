@@ -922,7 +922,7 @@ Based on this we have assigned the following descriptions to each typology and o
 
 ::: {style="font-size: 0.85em"}
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|----------|----------|----------|----------|----------|--------------------------|
+|----|----|----|----|----|-----------------|
 | 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function.​ |
 | 2 (Orange) | Low | Moderate | Moderate | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.**​ |
 | 3 (Yellow) | Low | Low | Moderate | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility. This is suitable for **buffer zones or low-impact enhancement.**​ |
@@ -943,7 +943,7 @@ imgs <- c("Inserted_images/Cluster_Maps/Distance_to_cluster_center.png",
           "Inserted_images/Cluster_Maps/top5_gridcells.png")
 
 slickR(imgs, height = 800, width = 500) +
-  settings(dots = TRUE)
+  settings(dots = TRUE, autoplay = TRUE, infinite = TRUE)
 
 ```
 
@@ -1003,18 +1003,66 @@ The chosen methods conducted data analysis and normalization tried to account fo
 
 ## 7. Appendix
 
-![Floodplain Biotope Value (original data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png)
+```{r}
+#| warning: false
+#| echo: false
+#| message: false
 
-![Diversity of Natural Habitats (original data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(original%20data).png)
+library(htmltools)
 
-![Proportion of Natural Habitat Area (original data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(original%20data).png)
+imgs <- c(
+  "Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png",
+  "Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(original%20data).png",
+  "Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(original%20data).png",
+  "Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(original%20data).png",
+  "Inserted_images/Biodiversity/Built-up%20area%20(original%20data).png",
+  "Inserted_images/Biodiversity/Ecological%20corridors%20(original%20data).png",
+  "Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(original%20data).png",
+  "Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(original%20data).png"
+)
 
-![Weighed Road Segment Length (original data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(original%20data).png)
+titles <- c(
+  "Floodplain biotope value (original data)",
+  "Diversity of natural habitats (original data)",
+  "Natural habitat cover area (original data)",
+  "Weighted road segment length (original data)",
+  "Built-up area (original data)",
+  "Ecological corridors (original data)",
+  "Floodplain restoration potential (original data)",
+  "Protected natural zones (original data)"
+)
 
-![Proportion of Built-up Area (original data)](Inserted_images/Biodiversity/Built-up%20area%20(original%20data).png)
+# Create a grid of images with titles and fullscreen support
+image_grid <- div(
+  style = "display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;",
+  Map(function(img, title) {
+    div(
+      style = "max-width: 18%; text-align: center;",
+      tags$img(
+        src = img,
+        style = "width: 100%; cursor: pointer; border: 1px solid #ccc; border-radius: 8px;",
+        onclick = sprintf("openFullscreen(this)")
+      ),
+      tags$p(title, style = "font-size: 0.85em; margin-top: 6px;")
+    )
+  }, imgs, titles)
+)
 
-![Ecological Corridors (original data)](Inserted_images/Biodiversity/Ecological%20corridors%20(original%20data).png)
+# Add fullscreen JavaScript function
+fullscreen_script <- tags$script(HTML("
+  function openFullscreen(el) {
+    if (el.requestFullscreen) {
+      el.requestFullscreen();
+    } else if (el.webkitRequestFullscreen) { /* Safari */
+      el.webkitRequestFullscreen();
+    } else if (el.msRequestFullscreen) { /* IE11 */
+      el.msRequestFullscreen();
+    }
+  }
+"))
 
-![Potential for Natural Floodplain Restoration (original data)](Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(original%20data).png)
+# Render everything
+browsable(tagList(image_grid, fullscreen_script))
 
-![Zones of Protected Natural Areas (original data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(original%20data).png)
+
+```
