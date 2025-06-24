@@ -928,6 +928,50 @@ Based on this we have assigned the following descriptions to each typology and o
 | 4 (Green) | Moderate | Moderate | Moderate | Moderate | Although these areas are classified as having **high natural habitat**, they exhibit **low vegetation health or cover**. Stream access is also limited. This could indicate sparse but valuable habitats.​ |
 | 5 (Blue) | Low | Low | **High** | Low | Flood-exposed, degraded zone. Here we can prioritize **wetland restoration or flood-resilient interventions.**​ |
 
+```{r}
+#| warning: false
+#| echo: false
+#| message: false
+
+library(htmltools)
+
+imgs <- c("Inserted_images/Cluster_Maps/Cluster_1.png",
+          "Inserted_images/Cluster_Maps/Cluster_2.png",
+          "Inserted_images/Cluster_Maps/Cluster_3.png",
+          "Inserted_images/Cluster_Maps/Cluster_4.png",
+          "Inserted_images/Cluster_Maps/Cluster_5.png")
+
+# Create a grid of images with onclick fullscreen support
+image_grid <- div(
+  style = "display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;",
+  lapply(imgs, function(img) {
+    tags$img(
+      src = img,
+      style = "max-width: 18%; cursor: pointer; border: 1px solid #ccc; border-radius: 8px;",
+      onclick = sprintf("openFullscreen(this)")
+    )
+  })
+)
+
+# Add fullscreen JavaScript function
+fullscreen_script <- tags$script(HTML("
+  function openFullscreen(el) {
+    if (el.requestFullscreen) {
+      el.requestFullscreen();
+    } else if (el.webkitRequestFullscreen) { /* Safari */
+      el.webkitRequestFullscreen();
+    } else if (el.msRequestFullscreen) { /* IE11 */
+      el.msRequestFullscreen();
+    }
+  }
+"))
+
+# Render all together
+browsable(tagList(image_grid, fullscreen_script))
+
+
+```
+
 ## 5. Discussion
 
 The chosen methods conducted data analysis and normalization tried to account for the difference in grid cell size by weighing values based on cell size and choosing analysis methods which are not size-dependent (such as percentage of cover area). However...
