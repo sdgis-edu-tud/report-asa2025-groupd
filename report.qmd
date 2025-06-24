@@ -932,6 +932,24 @@ Based on this we have assigned the following descriptions to each typology and o
 
 </div>
 
+**Identifying where the clusters are located and which are closest to their cluster centers**
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(slickR)
+
+
+imgs <- c("Inserted_images/Cluster_Maps/Distance_to_cluster_center.png",
+          "Inserted_images/Cluster_Maps/top5_gridcells.png")
+
+slickR(imgs, height = 800, width = 500) +
+  settings(dots = TRUE)
+
+```
+
+
 **Visualizing the Five Grid Cells Closest to their cluster centers**
 
 In the maps below, we visualize each cluster and its grid cell which is closest to the center of its cluster.
