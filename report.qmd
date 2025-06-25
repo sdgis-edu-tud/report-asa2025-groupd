@@ -36,10 +36,10 @@ editor: visual
 
 1.  Introduction;
 2.  Methodology;
-    a.  Definition of Spatial Units;
-    b.  Resolution & Data Acquisition Method
-    c.  Scale-Specific Indicators for Stream Assessment
-    d.  Impact of Scale on Detectable Effects
+    a.  Spatial Multi-Criteria Decision Analysis (S-MCDA)
+    b.  Typology Construction (K-Means Clustering)
+    c.  Definition of Spatial Units;
+    d.  Resolution and Data Acquisition Methods
     e.  Normalization;
 3.  Spatial Multi-Criteria Decision Analysis (S-MCDA)
     A.  Biodiversity;
@@ -132,21 +132,39 @@ Our derived sub-questions, respective to each goal are then the following:
 
 > *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
 
-![Workflow chart](Inserted_images/General Images/Problem statement & research question (workflow).jpg)
+![Workflow chart](Inserted_images/General%20Images/Problem%20statement%20&%20research%20question%20(workflow).jpg)
 
 ## 2. Methodology
 
-A important foundation for applying spatial analytics in urban environments is in the careful definition of the area of interest (AOI) and the spatial units used for analysis. The decisions regarding spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from spatial data[@dungan2002balanced]. The justification of our area of interest and chosen spatial unit is structured around principles derived from literature, geographical context and data availability. Furthermore, in order to apply a S-MCDA normalized values at a comparable scale are needed, further emphasizing the importance of defining an appropriate spatial unit.
+Methodological decisions such as the spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from the spatial analysis results [@dungan2002balanced]. The description of methodology makes it possible to reproduce the conducted analysis and provides critical context for interpreting results. The decisions made for the analysis methodology are structured around principles derived from literature, geographical context and data availability.
 
-### 2.a. Definition of Spatial Units
+### 2.a. Spatial Multi-Criteria Decision Analysis (S-MCDA)
 
-To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. For example, urban heat island and green infrastructure studies have shown to use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. On the other hand, @burdziej2019using uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
+S-MCDA is an analytical process which specifically considers numerous objectives and criteria. It aggregates diverse data types and conflicting perspectives into synthetic results which can be used for a structured decision-making process. In the case of this report, the objectives are ecological improvement, flood protection and balancing stakeholder interests (see previous chapter). The specific criteria are named in Chapter 3: Spatial Multi-Criteria Decision Analysis.
 
-Therefore, based on the size of Jablonec nad Nisou and the Bila Nisa stream as well as the following discussed principles affecting the conducted analysis, a spatial unit grid of 100 x 100 meters was chosen for part of the stream which is situated outside of the city. The unit is used for consistency in the assignment of spatial indicators and facilitates the aggregation and comparison of data across the urban stream landscape. Because the project is about urban stream restoration a grid size of 50 x 50 meters is used to give more detail and accuracy for the analysis of the urban part of the stream. The 100 x 100m spatial unit is specific to the scale Jablonec nad Nisou, the resolution of the data collected and relevant literature on stream assessments.
+### 2.b. Typology Construction (K-Means Clustering)
 
-### 2.b. Resolution and Data Acquisition Method
+After conducting S-MCDA, the next step is to conduct a typology construction. This analysis looks at the different attributes of urban spaces and identifies spatial patterns and group them. This makes it possible to quantitatively compare the performance of different typologies to formulate different design intervention recommendations. For this report, the typology construction utilizes K-means cluster analysis, which identifies clusters by minimizing the sum of distances between the data points and their respective centroids (cluster centers).
 
-The resolution of spatial analysis is directly tied to the data acquisition method [@BARTESAGHIKOC2020103893]. While spaceborne remote sensing used for the measurement of some of our indicators when data availability was lacking is better suited for large-scale urban assessments, it often lacks the spatial precision needed for detailed micro climatic or ecological studies. On the other hand, biodiversity and quality of life data are generally acquired at larger scale and would require smaller spatial units. For example, the widely accepted walking range of 500 meters [@macioszek2022effect; @popp2004walking], or biodiversity connectivity of around 100m stretches, identified by [@RANTA2021106980]. Our method reflects this balance, using satellite data for broader patterns such as LST and impervious surfaces. We then supplement this with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few. The collected data for each respective goals can be found in the figures below.
+### 2.c. Definition of Spatial Units
+
+To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. The unit is used for consistency in the assignment of spatial indicators. It also facilitates the aggregation and comparison of data across the urban landscape. For example, studies on urban heat island and green infrastructure use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. Alternatively, @burdziej2019using uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
+
+The definition of the spatial units was decided based on the size of Jablonec nad Nisou and the Bílá Nisa stream. A 100-meter radius buffer around the stream was selected, over which a grid of 100x100 meters was overlayed. This proved to be a good level of detail for the spatial analysis of the stream in the rural areas, while also being compatible with the available spatial raster data for the area. However, in the urban area of Jablonec and Nisou, the variation in spatial features and characteristics is significantly higher than in the outskirts of the city. The 100x100 meter grid would average out most values to an extent that the analysis would not show meaningful results. In addition, the urban stream restoration project requires the attention to be focused within the city, not in its outskirts. 
+
+To make sure that sufficient level of detail and attention is given to the urban area of Jablonec nad Nisou, and that the entire stream is still analyzed, the choice was made for the grid to be further divided into 50x50 meters inside the Jablonec and Nisou city borders. The higher level of detail provides more accuracy in the higher level of variation in spatial characteristics in the city compared to the rural area. The choice in different grid cell sizes means that only certain analysis methods (namely density, percentage) can be used to preserve standardization and comparability between different cells.
+
+100 meters is a common grid cell size used in the spatial analysis of general environmental conditions, as can be seen in reports on mitigating heat stress (Wang et al., 2022), land use, population, economic (Paprotny & Mengel, 2022) and urban heat islands (Lauwaet et al., 2023) analysis. Meanwhile a raster size of 50 meters is more useful in analysis where spatial conditions, characteristics and typo-morphologies are examined, along with their influence on environmental conditions (see reports: Chen et al., 2023; Song et al., 2020; Wong et al., 2012). 
+
+
+### 2.d. Resolution and Data Acquisition Method
+
+The spatial analysis uses secondary data retrieved mostly from Czech governmental agencies and organizations, as well as Geofabrik and the European Space Agency (the source is specified for each map further in the report). The limited availability of data resulted in the need to consider data of varying resolution levels and types (vector and raster). The resolution of spatial data is directly tied to the data acquisition method [@BARTESAGHIKOC2020103893].
+
+For indicators such as air pollution, the measurement method (space-borne remote sensing) is better suited for large-scale urban assessments, the limited data availability resulted in the need to use data that may lack the spatial precision needed for detailed micro-climatic or ecological studies. On the other hand, data on biodiversity and quality of life is generally more well-documented, detailed and accessible. In these cases, a higher resolution is possible for the analysis.
+
+The conducted analysis reflects this variation, using satellite data for broader patterns such as LST and impervious surfaces. This data is then supplemented with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few. The collected data for each respective goals can be found in the figures below.
+
 
 ```{r}
 #| warning: false
@@ -171,21 +189,12 @@ slickR(obj = img_tags) +
 
 ```
 
-### 2.c. Scale-Specific Indicators for Stream Assessment
-
-Urban stream analysis requires scale-appropriate methodologies. Different ecosystem services or hydrological characteristics demand different spatial extents. [@RANTA2021106980] uses for example 100m stretches for biological assessments and 500m buffers for hydromorphilogical evaluations.
-
-Therefore, when deciding on our scale, we considered our indicators and attempted to closely match them to retain a good representation of the spatial dynamics of the stream functions we aimed to analyze.
-
-### 2.d. Impact of Scale on Detectable Effects
-
-The spatial resolution of the data we collected significantly shapes the analytical results. Averaging the data collected within the chosen 100 x 100m cells allows for generalized insights, which we found best fitting. It may however still obscure localized effects such as even smaller micro climatic benefits of tree clusters or linear vegetation elements. We chose the trade off that best fits our and balances detail with analytical feasibility.
-
-// For the MCDA -\> add how we average and normalise values here?
-
 ### 2.e. Normalization
 
-The data used in this study comes from many different sources and uses different units as discussed above. Therefore, to compare them evenly, all values need to be brought to the same scale, and normalized in order to later conduct K-means clustering to discover appropriate typologies. We therefore could not use one method for all data normalization. Instead, each topic or data map uses its own way of normalizing respective to the data acquisition and availability. For climate adaptation, values like temperature and air pollution were compared to limits from the EU or WHO. For biodiversity, we used scales that show how suitable or rich an area is for nature. For quality of life, we used standards such as walking distances or access to green areas. Each method is explained in the following sections under their respective topic or map that they relate to.
+The data used in this study comes from many different sources and uses different units, as discussed above. Therefore, for the spatial data to be comparable, all values need to be brought to the same scale and unit of measurement (i.e. normalized). In these conditions the data values can be combined and compared to provide meaningful results and form typology clusters.
+
+Due to the varying data types and resolutions, different methods for normalization are used. Each spatial dataset uses its own way of normalizing respective to the data type, acquisition and availability. Each method is explained in the following sections under their respective topic and/or map that they relate to.
+
 
 ## 3. Spatial Multi-Criteria Decision Analysis (S-MCDA)
 
@@ -246,7 +255,7 @@ To normalize tha data, these natural habitat polygons were split up based on the
 
 The map shows that there the largest diversity of natural habitats are right at the edges of the city borders.
 
-![Diversity of Natural Habitats (normalized data)](Inserted_images/Biodiversity/Diversity of natural habitats (normalized data).png.png)
+![Diversity of Natural Habitats (normalized data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(normalized%20data).png.png)
 
 ***Proportion of Natural Habitat Area***
 
@@ -998,6 +1007,18 @@ browsable(tagList(image_grid, fullscreen_script))
 ## 5. Discussion
 
 The chosen methods conducted data analysis and normalization tried to account for the difference in grid cell size by weighing values based on cell size and choosing analysis methods which are not size-dependent (such as percentage of cover area). However...
+
+### Impact of Scale on Detectable Effects 
+
+The spatial resolution of the data we collected significantly shapes the analytical results. Averaging the data collected within the chosen 100 x 100m and 50x50m cells allows for generalized insights, which we found best fitting. It may however still obscure localized effects such as even smaller micro climatic benefits of tree clusters or linear vegetation elements. We chose the trade off that best fits our and balances detail with analytical feasibility.
+
+- mention how the grid cell size may/may not affect the results;
+- discuss abt value of this data for analysis and decision-making;
+- discussion: data availability, buffer size;
+- grid size and positioning impact on results
+
+
+### Group Reflection
 
 ## 6. Conclusion
 
