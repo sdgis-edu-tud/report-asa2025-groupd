@@ -150,12 +150,11 @@ After conducting S-MCDA, the next step is to conduct a typology construction. Th
 
 To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. The unit is used for consistency in the assignment of spatial indicators. It also facilitates the aggregation and comparison of data across the urban landscape. For example, studies on urban heat island and green infrastructure use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. Alternatively, @burdziej2019using uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
 
-The definition of the spatial units was decided based on the size of Jablonec nad Nisou and the Bílá Nisa stream. A 100-meter radius buffer around the stream was selected, over which a grid of 100x100 meters was overlayed. This proved to be a good level of detail for the spatial analysis of the stream in the rural areas, while also being compatible with the available spatial raster data for the area. However, in the urban area of Jablonec and Nisou, the variation in spatial features and characteristics is significantly higher than in the outskirts of the city. The 100x100 meter grid would average out most values to an extent that the analysis would not show meaningful results. In addition, the urban stream restoration project requires the attention to be focused within the city, not in its outskirts. 
+The definition of the spatial units was decided based on the size of Jablonec nad Nisou and the Bílá Nisa stream. A 100-meter radius buffer around the stream was selected, over which a grid of 100x100 meters was overlayed. This proved to be a good level of detail for the spatial analysis of the stream in the rural areas, while also being compatible with the available spatial raster data for the area. However, in the urban area of Jablonec and Nisou, the variation in spatial features and characteristics is significantly higher than in the outskirts of the city. The 100x100 meter grid would average out most values to an extent that the analysis would not show meaningful results. In addition, the urban stream restoration project requires the attention to be focused within the city, not in its outskirts.
 
 To make sure that sufficient level of detail and attention is given to the urban area of Jablonec nad Nisou, and that the entire stream is still analyzed, the choice was made for the grid to be further divided into 50x50 meters inside the Jablonec and Nisou city borders. The higher level of detail provides more accuracy in the higher level of variation in spatial characteristics in the city compared to the rural area. The choice in different grid cell sizes means that only certain analysis methods (namely density, percentage) can be used to preserve standardization and comparability between different cells.
 
-100 meters is a common grid cell size used in the spatial analysis of general environmental conditions, as can be seen in reports on mitigating heat stress (Wang et al., 2022), land use, population, economic (Paprotny & Mengel, 2022) and urban heat islands (Lauwaet et al., 2023) analysis. Meanwhile a raster size of 50 meters is more useful in analysis where spatial conditions, characteristics and typo-morphologies are examined, along with their influence on environmental conditions (see reports: Chen et al., 2023; Song et al., 2020; Wong et al., 2012). 
-
+100 meters is a common grid cell size used in the spatial analysis of general environmental conditions, as can be seen in reports on mitigating heat stress [@Wang_et_al_2022], land use, population, economic [@Paprotny_Mengel_2022] and urban heat islands [@Lauwaet_et_al_2023] analysis. Meanwhile a raster size of 50 meters is more useful in analysis where spatial conditions, characteristics and typo-morphologies are examined, along with their influence on environmental conditions (see reports: @Chen_et_al_2023 ; @Song_et_al_2020 ; @Wong_et_al_2012).
 
 ### 2.d. Resolution and Data Acquisition Method
 
@@ -164,7 +163,6 @@ The spatial analysis uses secondary data retrieved mostly from Czech governmenta
 For indicators such as air pollution, the measurement method (space-borne remote sensing) is better suited for large-scale urban assessments, the limited data availability resulted in the need to use data that may lack the spatial precision needed for detailed micro-climatic or ecological studies. On the other hand, data on biodiversity and quality of life is generally more well-documented, detailed and accessible. In these cases, a higher resolution is possible for the analysis.
 
 The conducted analysis reflects this variation, using satellite data for broader patterns such as LST and impervious surfaces. This data is then supplemented with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few. The collected data for each respective goals can be found in the figures below.
-
 
 ```{r}
 #| warning: false
@@ -194,7 +192,6 @@ slickR(obj = img_tags) +
 The data used in this study comes from many different sources and uses different units, as discussed above. Therefore, for the spatial data to be comparable, all values need to be brought to the same scale and unit of measurement (i.e. normalized). In these conditions the data values can be combined and compared to provide meaningful results and form typology clusters.
 
 Due to the varying data types and resolutions, different methods for normalization are used. Each spatial dataset uses its own way of normalizing respective to the data type, acquisition and availability. Each method is explained in the following sections under their respective topic and/or map that they relate to.
-
 
 ## 3. Spatial Multi-Criteria Decision Analysis (S-MCDA)
 
@@ -1008,15 +1005,14 @@ browsable(tagList(image_grid, fullscreen_script))
 
 The chosen methods conducted data analysis and normalization tried to account for the difference in grid cell size by weighing values based on cell size and choosing analysis methods which are not size-dependent (such as percentage of cover area). However...
 
-### Impact of Scale on Detectable Effects 
+### Impact of Scale on Detectable Effects
 
 The spatial resolution of the data we collected significantly shapes the analytical results. Averaging the data collected within the chosen 100 x 100m and 50x50m cells allows for generalized insights, which we found best fitting. It may however still obscure localized effects such as even smaller micro climatic benefits of tree clusters or linear vegetation elements. We chose the trade off that best fits our and balances detail with analytical feasibility.
 
-- mention how the grid cell size may/may not affect the results;
-- discuss abt value of this data for analysis and decision-making;
-- discussion: data availability, buffer size;
-- grid size and positioning impact on results
-
+-   mention how the grid cell size may/may not affect the results;
+-   discuss abt value of this data for analysis and decision-making;
+-   discussion: data availability, buffer size;
+-   grid size and positioning impact on results
 
 ### Group Reflection
 
