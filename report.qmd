@@ -132,7 +132,7 @@ Our derived sub-questions, respective to each goal are then the following:
 
 > *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
 
-! add figure explaining workflow of project -\> key problems -\> research questions -\> sub-questions
+![Worklfow chart](Inserted_images/General%20Images/Problem%20statement%20%26%20research%20question%20(workflow).jpg)
 
 ## 2. Methodology
 
@@ -206,6 +206,8 @@ This question is further divided into the following questions:
 > *Which Areas Have a High Level of Human Activity?*
 
 > *Which Areas Provide Opportunity for Improved Biodiversity?*
+
+![Aggregated Biodiversity Criteria](Inserted_images/General%20Images/Aggregated%20Biodiversity%20Criteria-01.png)
 
 #### Which Areas Have High Biodiversity Value?
 
@@ -336,6 +338,8 @@ This question is further divided into the following questions:
 
 > *Which Areas Have Healthy Vegetation?*
 
+![Aggregated Climate Adaptation Criteria](Inserted_images/General%20Images/Aggregated%20Climate%20Adaptation%20Criteria-01.png)
+
 #### Which Areas Have Highest Flood Damage Risk?
 
 ! introduction
@@ -348,7 +352,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 ::: {.callout-note collapse="true"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 :::
 
@@ -366,7 +370,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 *Normalized Impervious Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
@@ -380,7 +384,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 *Normalized Mean LST table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
@@ -398,7 +402,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 *Normalized NDVI Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
@@ -427,6 +431,8 @@ This question is further divided into the following questions:
 > *Which Areas Can Be Physically Uncomfortable?*
 
 For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
+
+![Aggregated Quality of Life Criteria](Inserted_images/General%20Images/Aggregated%20Quality%20of%20Life%20Criteria-01.png)
 
 For the first analysis, we look at the availability of public amenities that supports urban life. like public functions and public green along the stream and how well accessible they are.
 
@@ -492,7 +498,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 *Normalized Pollution table*
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -517,7 +523,7 @@ This simpler method yields the final table with the new normalization based on t
 *New Normalized Pollution Table*
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -534,7 +540,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 *Normalized Tree Cover Table*
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
@@ -922,7 +928,7 @@ Based on this we have assigned the following descriptions to each typology and o
 
 ::: {style="font-size: 0.85em"}
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|----------|----------|----------|----------|----------|------------------------|
+|----|----|----|----|----|----|
 | 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function.​ |
 | 2 (Orange) | Low | Moderate | Moderate | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.**​ |
 | 3 (Yellow) | Low | Low | Moderate | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility. This is suitable for **buffer zones or low-impact enhancement.**​ |
