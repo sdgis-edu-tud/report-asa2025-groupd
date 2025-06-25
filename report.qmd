@@ -156,13 +156,17 @@ To make sure that sufficient level of detail and attention is given to the urban
 
 100 meters is a common grid cell size used in the spatial analysis of general environmental conditions, as can be seen in reports on mitigating heat stress [@Wang_et_al_2022], land use, population, economic [@Paprotny_Mengel_2022] and urban heat islands [@Lauwaet_et_al_2023] analysis. Meanwhile a raster size of 50 meters is more useful in analysis where spatial conditions, characteristics and typo-morphologies are examined, along with their influence on environmental conditions (see reports: @Chen_et_al_2023 ; @Song_et_al_2020 ; @Wong_et_al_2012).
 
+![Spatial Unit Definition](Inserted_images/General%20Images/Spatial%20Unit%20Definition-01.png)
+
 ### 2.d. Resolution and Data Acquisition Method
 
 The spatial analysis uses secondary data retrieved mostly from Czech governmental agencies and organizations, as well as Geofabrik and the European Space Agency (the source is specified for each map further in the report). The limited availability of data resulted in the need to consider data of varying resolution levels and types (vector and raster). The resolution of spatial data is directly tied to the data acquisition method [@BARTESAGHIKOC2020103893].
 
 For indicators such as air pollution, the measurement method (space-borne remote sensing) is better suited for large-scale urban assessments, the limited data availability resulted in the need to use data that may lack the spatial precision needed for detailed micro-climatic or ecological studies. On the other hand, data on biodiversity and quality of life is generally more well-documented, detailed and accessible. In these cases, a higher resolution is possible for the analysis.
 
-The conducted analysis reflects this variation, using satellite data for broader patterns such as LST and impervious surfaces. This data is then supplemented with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few. The collected data for each respective goals can be found in the figures below.
+The conducted analysis reflects this variation, using satellite data for broader patterns such as LST and impervious surfaces. This data is then supplemented with higher-resolution sources for space syntax calculations, biotope values and ecologically valuable habitats, to name a few.
+
+The selected criteria for each respective goals can be found in the figures below.
 
 ```{r}
 #| warning: false
@@ -197,21 +201,33 @@ Due to the varying data types and resolutions, different methods for normalizati
 
 ! introduction
 
+The S-MCDA utilizes various criteria to answer the research questions.
+
+For each theme, the criteria are weighed based on their relative importance for the research question utilizing the Saaty matrix (also known as the analytic hierarchy process). The normalized values of all criteria in a given theme are aggregate and then combined to get concluding maps which identify key areas for potential design intervention. Maps showing the untreated data which was used for the conducted analysis can be found in the appendix.
+
 ### 3.A. Biodiversity
 
 ! introduction
 
-The biodiversity chapter aims to follow the following sub-question:
+The research area is currently dealing with challenges of ecological degradation due to past industrial activities. Therefore the biodiversity analysis aims to follow the following question:
 
 > *Where can the ecological quality of the stream area be enhanced?*
 
-This question is further divided into the following questions:
+To help answer this question, the analysis first must answer the following sub-questions:
 
 > *Which Areas Have High Biodiversity Value?*
 
+Areas with an already high value for biodiversity are vital to preserve. It is much harder to restore biodiversity to its original levels than it is to preserve it. Therefore it is vital to keep track of areas valuable for biodiversity, and avoid influencing them with human activity. In addition, the existing biodiverse areas can act as building blocks for the expansion of the green network, and can be further improved through targeted design interventions.
+
 > *Which Areas Have a High Level of Human Activity?*
 
+The presence of human activity is generally harms biodiversity, generally in the form of habitat destruction and lifestyle disturbance. Therefore areas where human activity is high may not be very effective locations to improve biodiversity.
+
 > *Which Areas Provide Opportunity for Improved Biodiversity?*
+
+Areas with certain existing spatial conditions may be easier to transform for improved biodiversity than others. Identifying these areas mean identifying locations which have the highest potential for improvement with minimum effort.
+
+The following figure shows the criteria for each biodiversity sub-question, along with the weight of each attribute. The weights of the attributes are combined to see the weight of each sub-question, and the weight of each value all adds up to one.
 
 ![Aggregated Biodiversity Criteria](Inserted_images/General%20Images/Aggregated%20Biodiversity%20Criteria-01.png)
 
@@ -226,8 +242,8 @@ This question is further divided into the following questions:
 library(slickR)
 
 
-imgs <- c("Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png",
-          "Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png")
+imgs <- c("Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png",
+          "Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png")
 
 slickR(imgs, height = 800, width = 600) +
   settings(dots = TRUE)
@@ -352,7 +368,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 ::: {.callout-note collapse="true"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 :::
 
@@ -370,7 +386,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 *Normalized Impervious Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
@@ -384,7 +400,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 *Normalized Mean LST table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
@@ -402,7 +418,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 *Normalized NDVI Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
@@ -498,7 +514,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 *Normalized Pollution table*
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -523,7 +539,7 @@ This simpler method yields the final table with the new normalization based on t
 *New Normalized Pollution Table*
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -540,7 +556,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 *Normalized Tree Cover Table*
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
@@ -928,7 +944,7 @@ Based on this we have assigned the following descriptions to each typology and o
 
 ::: {style="font-size: 0.85em"}
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function.​ |
 | 2 (Orange) | Low | Moderate | Moderate | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.**​ |
 | 3 (Yellow) | Low | Low | Moderate | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility. This is suitable for **buffer zones or low-impact enhancement.**​ |
