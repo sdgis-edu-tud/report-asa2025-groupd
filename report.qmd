@@ -132,7 +132,7 @@ Our derived sub-questions, respective to each goal are then the following:
 
 > *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
 
-![Worklfow chart](Inserted_images/General%20Images/Problem%20statement%20%26%20research%20question%20(workflow).jpg)
+![Workflow chart](Inserted_images/General Images/Problem statement & research question (workflow).jpg)
 
 ## 2. Methodology
 
@@ -242,15 +242,11 @@ The diversity of natural habitats criterion examines the basic habitat mapping o
 
 For the analysis of the diversity of natural habitats, anthropogenic biomes (coded as X) have been excluded from the dataset, as those are generally less healthy and biodiverse than their natural native counterparts \[SOURCE\]. The original data map shows the detailed natural habitats along Bila Nisa which are less than 50% antrhropogenic.
 
-To normalize tha data, these natural habitat polygons were split up based on the grid lines using the 'intersection' function, and then each polygon was converted into a centroid. Afterwards, the 'join attributes by location (summary)' function was used to identify the number of unique habitat values in each cell. To address the difference in cell size between inside and outside city borders, the 'field calculator' function was used to weigh the number of unique habitats per cell size. Since the 50x50 meter grid cells have half the length and width of the 100x100 meter ones, the weighing chosen was to multiply the smaller grid cell value by 2 if there was more than one unique habitat in the cell.
+To normalize tha data, these natural habitat polygons were split up based on the grid lines using the 'intersection' function, and then each polygon was converted into a centroid. Afterwards, the 'join attributes by location (summary)' function was used to identify the number of unique habitat values in each cell. To address the difference in cell size between inside and outside city borders, for each cell the number of unique values were divided by the surface area of the grid cell. The resulting values were divided by the largest value to get a normalized value from 0 to 1.
 
-Other alternatives were also explored for weighing, such as squaring the value of the small cell or multiplying it by 4 to match the difference in surface area. However, the results of these weighing methods dramatically skewed the values in favor of the smaller cells, making it hard to compare values between the inner and outer city, and resulting in the most habitat-diverse areas being shown as being within the city borders, which does not accurately reflect the situation. Therefore a multiplication of 2 was found as the most accurate form of weighing.
+The map shows that there the largest diversity of natural habitats are right at the edges of the city borders.
 
-Having weighed the data based on cell size, it now had to be normalized. All of the values were then divided by the highest natural habitat diversity value of all the cells. The final results can be seen in the map, where dark brown is high habitat diversity and white means no natural habitats at all.
-
-The map shows that there are no natural habitats in the inner city, only some in its edges. Most of the natural habitats are concentrated outside of city borders.
-
-![Diversity of Natural Habitats (normalized data)](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(normalized%20data).png)
+![Diversity of Natural Habitats (normalized data)](Inserted_images/Biodiversity/Diversity of natural habitats (normalized data).png.png)
 
 ***Proportion of Natural Habitat Area***
 
@@ -270,9 +266,7 @@ Roads act as physical barriers for wildlife, deterring animals from crossing, th
 
 Therefore this criterion looks at the existing road infrastructure and its speed limits, aiming to grasp the level of harm that vehicles and road infrastructure may cause to the biodiversity. The criterion looks at data of road length per cell, as well as its speed limit to estimate the impact that the roads would have on biodiversity in a given cell.
 
-The road infrastructure was taken from OpenStreetMap and clipped to the grid. The road segments were then 'intersected' according to the grid lines and the segments were weighed based on their speed limit, as well as its lenght. The line segment length was multiplied by its speed limit to adjust for the impact that vehicle speeds would have on the biodiversity. Each line segment was then converted into a centroid, and the 'join attributes by location (summary)' function was used to find the sum of all of the given values within a cell. Then the data was normalized by dividing all values by the highest value.
-
-I realize now that this way of normalizing does not account for the difference in cell size...
+The road infrastructure was taken from OpenStreetMap and clipped to the grid. The road segments were then 'intersected' according to the grid lines. The length of each road segment was multiplied by its speed limit to adjust for the impact that vehicle speeds would have on the biodiversity. Each line segment was then converted into a centroid, and the 'join attributes by location (summary)' function was used to find the sum of all of the given values within a cell. Then the data was normalized by dividing all values by the highest value.
 
 ![Weighed Road Segment Length (normalized data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(normalized%20data).png)
 
@@ -352,7 +346,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 ::: {.callout-note collapse="true"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 :::
 
@@ -370,7 +364,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 *Normalized Impervious Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
@@ -384,7 +378,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 *Normalized Mean LST table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
@@ -402,7 +396,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 *Normalized NDVI Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
@@ -498,7 +492,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 *Normalized Pollution table*
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -523,7 +517,7 @@ This simpler method yields the final table with the new normalization based on t
 *New Normalized Pollution Table*
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -540,7 +534,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 *Normalized Tree Cover Table*
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
@@ -928,7 +922,7 @@ Based on this we have assigned the following descriptions to each typology and o
 
 ::: {style="font-size: 0.85em"}
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function.​ |
 | 2 (Orange) | Low | Moderate | Moderate | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.**​ |
 | 3 (Yellow) | Low | Low | Moderate | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility. This is suitable for **buffer zones or low-impact enhancement.**​ |
