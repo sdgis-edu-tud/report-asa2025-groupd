@@ -227,7 +227,7 @@ The presence of human activity is generally harms biodiversity, generally in the
 
 Areas with certain existing spatial conditions may be easier to transform for improved biodiversity than others. Identifying these areas mean identifying locations which have the highest potential for improvement with minimum effort.
 
-The following figure shows the criteria for each biodiversity sub-question, along with the weight of each attribute. The weights of the attributes are combined to see the weight of each sub-question, and the weight of each value all adds up to one.
+The following figure shows the criteria for each biodiversity sub-question, along with the weight of each attribute. The weights of the attributes are combined to see the weight of each sub-question, and the weight of each value all adds up to one. It is important to note that the values for weighed road segment length and proportion of built-up area had to be inverted for the aggregation. Differently from other biodiversity criteria, these attributes are undesirable. Therefore a higher proportion of built-up area and weighed road segment length would result in a poor score.
 
 ![Aggregated Biodiversity Criteria](Inserted_images/General%20Images/Aggregated%20Biodiversity%20Criteria-01.png)
 
@@ -294,8 +294,6 @@ The road infrastructure was taken from OpenStreetMap and clipped to the grid. Th
 
 ***Proportion of Built-up Area***
 
-I feel like something is wrong with the road segment length normalization... it isn't super accurate if I compare it to the original data, but I am not sure how else to normalize
-
 The build-up area criterion utilizes the data on existing buildings from OpenStreetMap (2025) to estimate the level of human activity in each cell (OpenStreetMap, 2025). The 'intersection' function in QGIS split up the building polygons according to the grid lines. Afterwards, an 'overlap analysis' was conducted to calculate the percentage of area that is built-up within a given cell. In essence, the build-up area normalized value looks at the Floor Space Index (FSI) of each cell.
 
 The results of the normalized data on build-up area show that there is some level of build-up along most parts of the stream. There is a fairly high variation of build-up area along the stream in the inner city.
@@ -332,11 +330,7 @@ To process the data, the polygons were 'intercepted' based on the grid lines, th
 
 ![Zones of Protected Natural Areas (normalized data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(normalized%20data).png)
 
-#### Biodiversity Criteria Maxtrix
-
-Using the Saaty matrix, each criterion is weighted against each other to give each criterion a priority based on their importance for urban stream restoration. Each topic (biodiversity, climate adaptation and quality of life) has its own matrix to create a consistent assessment.
-
-![Biodiversity MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Biodiversity.pdf)
+#### Biodiversity S-MCDA Aggregation & Conclusion
 
 ### 3.B. Climate Adaptation
 
@@ -424,11 +418,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 
 ![NDVI_norm](Inserted_images/Climate%20Adaptation/Bila%20Nisa%20(A3%20map)%20impervious.png)
 
-#### Climate Adaptation Criteria Maxtrix
-
-Using the Saaty matrix, each criterion is weighted against each other to give each criterion a priority based on their importance for urban stream restoration.
-
-![Climate Adaptation MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Climate%20Adaptation.pdf)
+#### Climate Adaptation S-MCDA Aggregation & Conclusion
 
 ### 3.C. Quality of life
 
@@ -574,15 +564,13 @@ slickR(imgs, height = 800, width = 600) +
 
 ```
 
-#### Quality of Life Criteria Maxtrix
-
-Using the Saaty matrix, each criterion is weighted against each other to give each criterion a priority based on their importance for urban stream restoration.
-
-![Quality of life MCDA matrix](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/data_carpentry/fig_output/MCDA%20Scores%20-%20Quality%20of%20Life.pdf)
+#### Quality of Life S-MCDA Aggregation & Conclusion
 
 ### 3.D. S-MCDA Conclusion
 
 Short recap, key findings, recommendations
+
+![Concluding S-MCDA Maps](Inserted_images/Concluding%20S-MCDA-01.png)
 
 ## 4. Typology Construction
 
