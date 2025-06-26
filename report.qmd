@@ -422,9 +422,7 @@ In general, areas where ecological quality of the stream can be improved are sit
 
 ### 3.B. Climate Adaptation
 
-! introduction
-
-The climate adaptation chapter aims to follow the following sub-question:
+The research area is currently dealing with increasing climate risks, particularly flood hazards, due to urban development. Therefore, the climate adaptation analysis aims to address the following question:
 
 > *Where along the stream can flood mitigation measures take place?*
 
@@ -435,6 +433,16 @@ This question is further divided into the following questions:
 > *Which Areas Have The Most Impervious Surfaces?*
 
 > *Which Areas Have Healthy Vegetation?*
+
+The figure below shows the criteria for each climate adaptation sub-question, along with the corresponding weights of each attribute. These weights are combined to determine the influence of each sub-question on the final result, with the total sum equal to one.
+
+For the first sub-question, “Which areas have the highest flood damage risk?”, the attribute Flood Impact Zones in Floodplains carries a weight of 0.411, indicating it is a critical factor in identifying areas susceptible to flood damage.
+
+The second sub-question, “Which areas have more impervious surfaces?”, includes two attributes: Impervious Surfaces (0.290) and Night Land Surface Temperature (0.100). Impervious surfaces directly affect the area's ability to absorb water, while higher night land surface temperatures typically indicate denser built environments with less green cover.
+
+For the third sub-question, “Which areas have healthy vegetation?”, the attribute NDVI (Normalized Difference Vegetation Index) is used, with a weight of 0.199. Areas with higher NDVI values suggest healthier and denser vegetation, which can contribute to climate resilience by reducing surface runoff and moderating urban heat effects.
+
+By aggregating these criteria, the analysis helps to spatially identify priority areas along the Bílá Nisa Stream where climate adaptation measures for example flood management should be prioritized.
 
 ![Aggregated Climate Adaptation Criteria](Inserted_images/General%20Images/Aggregated%20Climate%20Adaptation%20Criteria-01.png)
 
