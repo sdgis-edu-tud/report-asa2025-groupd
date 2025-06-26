@@ -1085,11 +1085,13 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 
 **Typology description**
 
-Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions.
+The result of performing K-means clustering to derive typologies is the translation from statistical output into actionable insights. For this reason, we have tried to describe the formed clusters appropriately based on their characteristics, theory and literature to guide intervention planning. 
+
+
 
 ::: {style="font-size: 0.85em"}
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|----|----|----|----|----|----|
+|----|----|----|----|----|------------|
 | 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function. |
 | 2 (Orange) | Low | Moderate | Moderate | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.** |
 | 3 (Yellow) | Low | Low | Moderate | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility.This is suitable for **buffer zones or low-impact enhancement.** |
