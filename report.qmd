@@ -454,32 +454,45 @@ Apart from essential public amenities, the accessiblity of nature and public gre
 
 ("your_field" - min("your_field")) / (max("your_field") - min("your_field"))
 
+::: {.callout-note collapse="true"}
+*Normalized Public Green Table*
+
+| Variable                    | Low availability (0-0.2) | High availability (0.8-1) | Notes                                                                    |
+|------------------|------------------|------------------|------------------|
+| Area mean | \<10073,8            | \>40295,2             | \<10073,8 → 0-0.2 (low availability), \>40295,2 → 0.8-1 (high availability) |
+:::
+
 ![Normalized map of public green availability along Bila Nisa](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20normalized.png)
 
 ***Access to Public Amenities***
 
-![Public amenities along Bila Nisa stream](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png)
-[@PoIOSM]
+![Public amenities along Bila Nisa stream](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png) [@PoIOSM]
 
 Based on these public amenities, data is normalized based on the diversity of public amenities and the size of the public areas, which indicates to what extent the area can be used by the population of Jablonec.
 
 First, the public amenities are clipped within the grid of the Bila Nisa stream. The clipped layer is overlayed in the grid creating a separate layer. The data is then normalized through adding a separate column, where the range of area and functions is used through the following functions. Using this formula, data is normalized to a 0 to 1 scale.
 
+::: {.callout-note collapse="true"}
+*Normalized Public Amenities Table*
+
+| Variable                    | Low availability (0-0.2) | High availability (0.8-1) | Notes                                                                    |
+|------------------|------------------|------------------|------------------|
+| Type count | \<2            | \>5             | \<2 → 0-0.2 (low availability), \>5 → 0.8-1 (high availability) |
+:::
+
 ![Normalized map size of public amenities](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Size%20of%20public%20areas%20normalized.png) ![Diversity of public amenities along Bila Nisa](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png)
 
-Combining these two layers using the criteria weights in the S-MCDA, two areas stand out due to the combination of public greenery and the diversity of amenities. 
-![Combined normalized layers of public goods availability](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/AVAILABILITY%20PUBLIC%20GOODS.png)
+Combining these two layers using the criteria weights in the S-MCDA, two areas stand out due to the combination of public greenery and the diversity of amenities. ![Combined normalized layers of public goods availability](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/AVAILABILITY%20PUBLIC%20GOODS.png)
 
 #### Which Areas Lack Infrastructure to Access?
 
-The second indicator for quality of life is the accessibility of the stream. The stream offers apart from a livable climate due to the cooling effect of the river also a social haven for the population of Jablonec nad Nisau, offering several meeting spots in the leisure areas along the stream.  For this analysis, accessiblity through the road network and public transport infrastructure is measured using the following two layers.
+The second indicator for quality of life is the accessibility of the stream. The stream offers apart from a livable climate due to the cooling effect of the river also a social haven for the population of Jablonec nad Nisau, offering several meeting spots in the leisure areas along the stream. For this analysis, accessiblity through the road network and public transport infrastructure is measured using the following two layers.
 
 ***Access to Stream***
 
 Apart from access to essential human needs along the stream, the Bila Nisa itself is a potential area where people can visit to get in touch with nature and a more comfortable urban environment, taken into account that the urban environment will be impacted further through the effect of climate change. Accessiblity to the stream is therefore an important indicator for quality of life. First, access to the Bila Nisa is analyzed through the road network of Jablonec nad Nisau. A space syntax is used to determine which roads are better integrated to the road network which determines which part of the stream are more centralized and better accessible.
 
-![Angular integration of road network indicating local centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20data%20input.png)
-[@RoadsOSM]
+![Angular integration of road network indicating local centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20data%20input.png) [@RoadsOSM]
 
 The roads that fall within reach of the stream are clipped and used for further normalization. The clip is overlayed in the grid, and both the number of roads and degree if integration with the road network are taken into account in the normalization. Using the open field calculator, a new column is created for normalizing the data of the layer using the following formula:
 
@@ -487,17 +500,31 @@ The roads that fall within reach of the stream are clipped and used for further 
 
 Categorizing the layer with the newly calculated normalized column, the following map shows how urban centers North, central and South-west of the stream can be defined.
 
+::: {.callout-note collapse="true"}
+*Normalized Road Integration Table*
+
+| Variable                    | Low Integration(0) | High Integration (1) | Notes                                                                    |
+|------------------|------------------|------------------|------------------|
+| Angular Integration Sum 2k | \<41.25            | \>115.25             | \<41.25 → 0-0.25 (low integration), \>115.25 → 0.75-1 (high integration) |
+:::
+
 ![Nominal map showing accessiblity to urban centers](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20normalized.png)
 
 ***Access to Public Transport***
 
 Apart from the road network, which primarily focusses on private mobility, public transport offers a good indication how the stream can be accessed from a more regional point of view. For this, a data layer from the ArcGIS web [@publictransportJablonecnadNisau] is found that represents the public transport network of Jablonec nad Nisau. A clip from this layer is made, which results in a couple of bus stops and a tram stops that fall within reach of the stream. To see how accessible the stream is from public transportation, service areas are used with a radius of 500m (bus stops) and 1000m (tram stops) based on the type of connection. Bus is more urban while the tram has a regional connection with the neighboring city of Liberec.
 
-![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png) Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created that calculates the data using a normalized scale from 0 to 1, using the range of opportunities.
-[@publictransportJablonecnadNisau]
+![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png) Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created that calculates the data using a normalized scale from 0 to 1, using the range of opportunities. [@publictransportJablonecnadNisau]
 
-![Access to public transport near the stream normalilzed](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20along%20stream%20normalized.png)
-Overlaying these two layers, one can see a couple urban centers popping up. Especially in the south which is a more urban area and offer different modes of transport and regional connections. Furthermore, there is one main road along the stream connecting the city of Jablonec nad Nisau with rural villages like Loucná nad Nisau. However, the map shows that more central areas with leisure are not well connected. 
+::: {.callout-note collapse="true"}
+*Normalized Public transport proximity Table*
+
+| Variable                    | Low Access(0) | High Access (1) | Notes                                                                    |
+|------------------|------------------|------------------|------------------|
+| Layer Count | \=0            | \>4             | \<1 → 0-0.2 (low access), \>4 → 1 (high access) |
+:::
+
+![Access to public transport near the stream normalilzed](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20along%20stream%20normalized.png) Overlaying these two layers, one can see a couple urban centers popping up. Especially in the south which is a more urban area and offer different modes of transport and regional connections. Furthermore, there is one main road along the stream connecting the city of Jablonec nad Nisau with rural villages like Loucná nad Nisau. However, the map shows that more central areas with leisure are not well connected.
 
 ![Combined accessibility map](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/ACCESSIBLITY%20TO%20STREAM.png)
 
@@ -575,15 +602,15 @@ slickR(imgs, height = 800, width = 600) +
 
 Combining these two layers results in the following combined map. The map shows the more urban one goes, the less liveable the urban climate becomes. Some areas score low because they are former and current industrial areas, for example H
 
-![Urban life conditions along the Sstream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/URBAN%20LIFE%20CONDITIONS.png)
+![Urban life conditions along the Stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/URBAN%20LIFE%20CONDITIONS.png)
 
 #### Quality of Life S-MCDA Aggregation & Conclusion
+
 Using the criteria of the S-MCDA analysis, a combined map is created to highlight which areas along the Bila Nisa stream perform less on quality of life, and suggest an intervention is required to enhance quality of life performance along the urban stream.
 
 All the normalized data is extracted from the attribute table and transferred to an Excel file to calculate the normalized values against the criteria weights from the S-MCDA. All the weighted values are combine in order to create and prepare the aggregated data set for quality of life. The data is then exported as a CSV file in QGIS and the aggregated values are joined in the combined grid layer. The final combined map is presented underneath.
 
 ![Combined and weighted quality of life map](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Bila%20Nisa%20Jablonec%20-%20Combined%20Quality%20of%20Life.png)
-
 
 ### 3.D. S-MCDA Conclusion
 
