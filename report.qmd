@@ -734,7 +734,7 @@ By combining these indicators, we aim to capture both the ecological aspects and
 
 ### 4.b. Methodology
 
-*Step 1: Data Preparation and Normalization*
+**Step 1: Data Preparation and Normalization**
 
 To begin, we extracted the four selected indicators from our spatial dataset and removed the geometry to focus on their numerical values. Since K-means is sensitive to scale, we standardized the data using z-score normalization. This rescales each variable so that it has a mean of 0 and a standard deviation of 1, ensuring that all variables contribute equally to the clustering.
 
@@ -815,7 +815,7 @@ elbow_df <- data.frame(k = k_values, inertia = inertia)
 
 ```
 
-*Step 2: Choosing the Number of Clusters (Elbow Method)*
+**Step 2: Choosing the Number of Clusters (Elbow Method)**
 
 The K-means algorithm requires specifying the number of clusters k. To find a suitable value, we used the **elbow method**, which involves:
 
@@ -842,15 +842,19 @@ plot(k_values, inertia,
 Based on the elbow plot, we choose `k = 5` as a good number of clusters.
 
 
-*Step 3: Running the K-means Algorithm*
-We set a fixed seed to ensure reproducibility and ran the K-means algorithm using k = 5. Each grid cell was assigned a cluster label.
+**Step 3: Running the K-means Algorithm**
 
-*Step 4: Visualizing Clusters*
-We explored the distribution of clusters both spatially and in feature space.
+Based on `step 2`, we set a fixed seed to ensure reproducibility and ran the K-means algorithm using k = 5. Each grid cell was assigned a cluster label. This will then allow us to perform the next step, where we can visualize the clusters in their respective grid cells.
 
-2D Map: Shows how clusters are arranged geographically.
+**Step 4: Visualizing Clusters**
 
-3D Plot: Visualizes how clusters are separated in terms of indicator values (3 axes: NDVI, natural habitat, access).
+As mentioned, now that we have performed the K means clustering with a value of 5, we can explored the distribution of clusters both spatially and in feature space.
+
+1. 2D Map: Shows how clusters are arranged geographically.
+
+2. 3D Plot: Visualizes how clusters are separated in terms of indicator values (3 axes: NDVI, natural habitat, access).
+
+We chose these 3 axis after trial and error with the fourth indicator (Flood Impact Zones). The combination below resulted in a better visual of how the clusters formed. 
 
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
@@ -939,7 +943,8 @@ plot_ly(
 
 ```
 
-*Step 5: Understanding Cluster Profiles (Radar Charts)*
+**Step 5: Understanding Cluster Profiles (Radar Charts)**
+
 To interpret the clusters, we examined the cluster centers, which represent the "average" values of each indicator per cluster.
 
 We converted the standardized cluster centers back to the original scale to understand their real-world meaning and visualized them using radar charts, highlighting each cluster's performance across the four indicators.
@@ -1045,7 +1050,8 @@ par(op)
 ```
 
 
-*Step 6: Assessing Cluster Confidence (Distance to Cluster Center)*
+**Step 6: Assessing Cluster Confidence (Distance to Cluster Center)**
+
 We calculated the Euclidean distance from each grid cell to its assigned cluster center in feature space. This indicates how representative a cell is of its cluster: smaller distances imply stronger conformity.
 
 This was visualized using histograms, one per cluster.
