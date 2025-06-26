@@ -211,7 +211,6 @@ The choice of criteria are based on scientific research, as well as data availab
 
 For each theme, the criteria are weighed based on their relative importance for the research question utilizing the Saaty matrix (also known as the analytic hierarchy process). @FuzzyAHP was used for the construction of the Saaty matrix. The normalized values of all criteria in a given theme are aggregated and then combined to get concluding maps which identify key areas for potential design intervention. Maps showing the untreated data which was used for the conducted analysis can be found in the appendix.
 
-
 ### 3.A. Biodiversity
 
 ! introduction
@@ -247,12 +246,11 @@ The purpose of this criteria is to identify which Bílá Nisa floodplains serve 
 
 The layer shows that most of the Bílá Nisa floodplain has negligible biotope value. However, some patches of moderate value remain which could be salvaged. To normalize this information, the polygons with moderate biotope value were isolated and 'intersected' according to the grid lines. Then an 'overlap analysis' was conducted to calculate the percentage of area per cell that has moderate floodplain biotope value.
 
-
 ![Floodplain Biotope Value (normalized data)](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png)
 
 ***Diversity of Natural Habitats***
 
-Habitat diversity enables interaction, support and exchange of materials and energy between different habitat types, which improves local biodiversity and resilience [@Alsterberg_et_al_2017].  Habitat diversity is highly important for the overall biodiversity and ecosystem stability, therefore it is a criteria that has significant weight.
+Habitat diversity enables interaction, support and exchange of materials and energy between different habitat types, which improves local biodiversity and resilience [@Alsterberg_et_al_2017]. Habitat diversity is highly important for the overall biodiversity and ecosystem stability, therefore it is a criteria that has significant weight.
 
 The diversity of natural habitats criterion examines the basic habitat mapping of the stream area retrieved from the Agency for Nature and Landscape Conservation of the Czech Republic (APOK ČR, 2025). This dataset maps the distribution of habitat types in the form of biomes. The detailed biomes are classified according to the Biotope Catalogue of The Czech Republic and include biomes which are influenced by human activity (APOK ČR, 2010).
 
@@ -270,7 +268,6 @@ The surface area of natural habitats directly influences biodiversity and ecosys
 
 This criterion looks at the same data as the diversity of natural habitats, categorized in broader natural habitat types (APOK ČR, 2025). The map shows a prominence of grasslands outside of the city, but there are also forests, shrubs and peat bogs. The polygons of these natural habitats were divided based on grid lines using the 'intersection' tool, and then an 'overlap analysis' was conducted to identify the cover area of these combined natural habitats in each cell. The map shows that most of the natural habitats area actually concentrated further away from the stream.
 
-
 ![Proportion of Natural Habitat Area (normalized data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(normalized%20data).png)
 
 #### Which Areas Have a High Level of Human Activity?
@@ -286,7 +283,6 @@ Roads act as physical barriers for wildlife, deterring animals from crossing, th
 Therefore, this criterion looks at the existing road infrastructure and its speed limits, aiming to grasp the level of harm that vehicles and road infrastructure may cause to the biodiversity. The criterion looks at data of road length per cell, as well as its speed limit to estimate the impact that the roads would have on biodiversity in a given cell.
 
 The road infrastructure was taken from OpenStreetMap and clipped to the grid. The road segments were then 'intersected' according to the grid lines. The length of each road segment was multiplied by its speed limit to adjust for the impact that vehicle speeds would have on the biodiversity. Each line segment was then converted into a centroid, and the 'join attributes by location (summary)' function was used to find the sum of all of the given values within a cell. Then the data was normalized by dividing all values by the highest value. It is important to note that for the later aggregation, the values in this criterion had to be inverted, as a larger presence of roads is undesirable for biodiversity.
-
 
 ![Weighed Road Segment Length (normalized data)](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(normalized%20data).png)
 
@@ -330,7 +326,7 @@ Legal protection for natural areas is vital to limit human activity which may ne
 
 Zones of protection of natural areas examine the level of legal protection which large-scale specially protected natural areas have. The zoning data was taken from Agency for Nature and Landscape Conservation of the Czech Republic (AOPK ČR, 2025, AOPK ČR, 2025). The dataset shows that there are some areas along the stream with Zone III and Zone IV levels of protection. Zone IV indicates a landscape management zone with the least strict protection, allowing for broader human activity, but still focusing on the preservation of ecological value. Zone III is a natural buffer zone where traditional and sustainable land use is still generally allowed. The map shows that mostly only the areas outside of the city borders have some level of protection.
 
-To process the data, the polygons were 'intercepted' based on the grid lines, then the 'overlap analysis' function calculated the percentage of area different protection zones took up in each grid cell. Using the field calculator, the majority (>50%) value in each cell size was identified and normalized. In case there was no majority, the average between two values with the highest percentage of area was taken. For example, if a cell was 45% zone III and 35% zone IV, then the final cell value is 0.5, because zone VI has the normalized value of 0.25 and zone III has the normalized value of 0.75.
+To process the data, the polygons were 'intercepted' based on the grid lines, then the 'overlap analysis' function calculated the percentage of area different protection zones took up in each grid cell. Using the field calculator, the majority (\>50%) value in each cell size was identified and normalized. In case there was no majority, the average between two values with the highest percentage of area was taken. For example, if a cell was 45% zone III and 35% zone IV, then the final cell value is 0.5, because zone VI has the normalized value of 0.25 and zone III has the normalized value of 0.75.
 
 ![Zones of Protected Natural Areas (normalized data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(normalized%20data).png)
 
@@ -388,7 +384,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
-![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI.png)
+![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_Impervious_v2.png)
 
 ***Mean Night-Time Land Surface Temperature (LST)***
 
@@ -402,7 +398,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
-![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST.png) \##### NDVI (Normalized Difference Vegetation Index)
+![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST_v2.png) \##### NDVI (Normalized Difference Vegetation Index)
 
 #### Which Areas Have Healthy Vegetation?
 
@@ -420,7 +416,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
-![NDVI_norm](Inserted_images/Climate%20Adaptation/Bila%20Nisa%20(A3%20map)%20impervious.png)
+![NDVI_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_Impervious_v2.png)
 
 #### Climate Adaptation S-MCDA Aggregation & Conclusion
 
@@ -994,7 +990,7 @@ Based on this we have assigned the following descriptions to each typology and o
 
 ::: {style="font-size: 0.85em"}
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|----|----|----|----|----|------------|
+|-----------|-----------|-----------|-----------|-----------|-------------------|
 | 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function.​ |
 | 2 (Orange) | Low | Moderate | Moderate | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.**​ |
 | 3 (Yellow) | Low | Low | Moderate | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility. This is suitable for **buffer zones or low-impact enhancement.**​ |
