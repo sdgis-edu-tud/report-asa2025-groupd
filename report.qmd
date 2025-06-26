@@ -1332,18 +1332,17 @@ browsable(tagList(image_grid, fullscreen_script))
 library(htmltools)
 
 imgs <- c(
-  "Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20data%20input.png)",
+  "Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20data%20input.png",
   "Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png",
   "Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20data%20input.png",
   "Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png",
 )
   
 titles <- c(
-  "Protected natural zones (original data)",
   "Bila Nisa Jablonec - Access public green along stream data input",
   "Bila Nisa Jablonec - Access public transport near stream data input",
   "Bila Nisa Jablonec - Access to stream data input",
-  "Bila Nisa Jablonec - Public amenities data input",
+  "Bila Nisa Jablonec - Public amenities data input"
 )
 
 # Create a grid of images with titles and fullscreen support
