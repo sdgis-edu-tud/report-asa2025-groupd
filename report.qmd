@@ -730,6 +730,8 @@ All the normalized data is extracted from the attribute table and transferred to
 
 ![Combined and weighted quality of life map](Inserted_images/Bila%20Nisa%20Jablonec%20-%20Combined%20Quality%20of%20Life.png)
 
+The combined map shows that more remote areas along main roads Tovarní-Síroka and in the village Loucná nad Nisau, and former industrial areas Hranicná, Janovska, and Mseno nad Nisau show lower quality of life performance. The more remote areas should improve public amenities while the industrial areas need more ecological improvement.
+
 ### 3.D. S-MCDA Conclusion
 
 Short recap, key findings, recommendations
