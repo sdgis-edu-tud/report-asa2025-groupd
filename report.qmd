@@ -679,6 +679,28 @@ This simpler method yields the final table with the new normalization based on t
 | BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
 :::
 
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+library(slickR)
+
+
+imgs <- c("Inserted_images/Quality of Life/Normalised_Mean_SO2_pollution.png",
+          "Inserted_images/Quality of Life/Normalised_Mean_NO2_pollution.png",
+          "Inserted_images/Quality of Life/Normalised_Mean_PM10_pollution.png",
+          "Inserted_images/Quality of Life/Normalised_Mean_PM25_pollution.png",
+          "Inserted_images/Quality of Life/Normalised_Mean_BaP_Airpollution.png",
+          "Inserted_images/Quality of Life/Normalised_Mean_BzN_pollution.png")
+
+slickR(imgs, height = 800, width = 500) +
+  settings(dots = TRUE, autoplay = TRUE, infinite = TRUE)
+
+```
+
+
+
 ***Percentage of Tree Cover***
 
 Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
@@ -695,7 +717,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 
 Combining these two layers results in the following combined map. The map shows the more urban one goes, the less liveable the urban climate becomes. Some areas score low because they are former and current industrial areas, for example H
 
-![Urban life conditions along the Stream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/URBAN%20LIFE%20CONDITIONS.png)
+![Urban life conditions along the Stream](Inserted_images/Quality%20of%20Life/URBAN%20LIFE%20CONDITIONS.png)
 
 #### Quality of Life S-MCDA Aggregation & Conclusion
 
@@ -703,7 +725,7 @@ Using the criteria of the S-MCDA analysis, a combined map is created to highligh
 
 All the normalized data is extracted from the attribute table and transferred to an Excel file to calculate the normalized values against the criteria weights from the S-MCDA. All the weighted values are combine in order to create and prepare the aggregated data set for quality of life. Only for the criteria air pollution, the data is inverted as a higher score, means higher the air pollution, which is a negative indicator for urban life condition. The data is then exported as a CSV file in QGIS and the aggregated values are joined in the combined grid layer. The final combined map is presented underneath.
 
-![Combined and weighted quality of life map](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Bila%20Nisa%20Jablonec%20-%20Combined%20Quality%20of%20Life.png)
+![Combined and weighted quality of life map](Inserted_images/Bila%20Nisa%20Jablonec%20-%20Combined%20Quality%20of%20Life.png)
 
 ### 3.D. S-MCDA Conclusion
 
