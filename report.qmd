@@ -250,7 +250,7 @@ The layer shows that most of the Bílá Nisa floodplain has negligible biotope v
 
 ::: {.callout-note collapse="true"}
 | Normalized Value | **\<0.3** | 0.3-0.7 | \>0.7 | Normalized Range (0-1) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | **Meaning** | Low to No Presence | Some Presence | High Presence | Proportion of Moderately Valuable Floodplain Biotope per Cell |
 :::
 
@@ -272,7 +272,7 @@ The map shows that there the largest diversity of natural habitats is right at t
 
 ::: {.callout-note collapse="true"}
 | Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | **Meaning** | Low to No Diversity | Some Diversity | High Diversity | Number of Unique Natural Habitats per Cell |
 :::
 
@@ -288,7 +288,7 @@ This criterion looks at the same data as the diversity of natural habitats, cate
 
 ::: {.callout-note collapse="true"}
 | Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | **Meaning** | Low to No Presence | Some Presence | High Presence | Proportion of Natural Habitats per Cell |
 :::
 
@@ -296,7 +296,7 @@ This criterion looks at the same data as the diversity of natural habitats, cate
 
 ***Areas With High Biodiversity Value***
 
-The three criteria for the sub-question are aggregated based on their weights and combined into an intermediate map which shows areas along the stream with high biodiversity value.
+The three criteria for the sub-question are aggregated based on their weights and combined into an intermediate map which shows areas along the stream with high biodiversity value. Loučná nad Nisou, Hraničná and Tovární are the areas with the highest biodiversity value along Bílá Nisa.
 
 ![Combination Map Biodiversity Question 1: Areas With High Biodiversity Value](Inserted_images/Biodiversity/Biodiversity%20Question%201.png)
 
@@ -318,7 +318,7 @@ The road infrastructure was taken from OpenStreetMap and clipped to the grid [@r
 
 ::: {.callout-note collapse="true"}
 | Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | **Meaning** | Low to No Nuisance | Some Nuisance | High Nuisance | Road Nuisance by Proportion of Weighed Road Segment Length per Cell |
 :::
 
@@ -336,7 +336,7 @@ The results of the normalized data on build-up area show that there is some leve
 
 ::: {.callout-note collapse="true"}
 | Normalized Value | **\<40%** | 40-60% | \>60% | Normalized Range (0%-100%) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | **Meaning** | Low to No Build-up | Some Build-up | High Build-up | Percentage of Built-Up Area Per Cell |
 :::
 
@@ -344,7 +344,7 @@ The results of the normalized data on build-up area show that there is some leve
 
 ***Areas With High Level of Human Activity***
 
-The two criteria for the sub-question are aggregated based on their weights and combined into an intermediate map which shows areas along the stream with a high level of human activity.
+The two criteria for the sub-question are aggregated based on their weights and combined into an intermediate map which shows areas along the stream with a high level of human activity. Industrial areas generally seem to have the highest level of human activity, namely the Janovská industrial site and the industrial area near Mšeno nad Nisou, along with the village of Janov nad Nisou.
 
 ![Combination Map Biodiversity Question 2: Areas With High Level of Human Activity](Inserted_images/Biodiversity/Biodiversity%20Question%202.png)
 
@@ -366,7 +366,7 @@ To normalize this data, the layer polygons were split up per cell using the 'int
 
 ::: {.callout-note collapse="true"}
 | Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | **Meaning** | Low to No Presence | Some Presence | High Presence | Proportion of Ecological Corridor Area Per Cell |
 :::
 
@@ -382,7 +382,7 @@ To normalize this data, the polygons with medium and high potential for restorat
 
 ::: {.callout-note collapse="true"}
 | Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | **Meaning** | Low to No Presence | Some Presence | High Presence | Proportion of Area Per Cell With Potential for Natural Floodplain Restoration |
 :::
 
@@ -400,7 +400,7 @@ To process the data, the polygons were 'intercepted' based on the grid lines, th
 
 ::: {.callout-note collapse="true"}
 | Normalized Value | 0 | 0.25 | 0.5 | 0.75 |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | **Meaning** | No Protection | Lowest Protection Zone (VI) | Low Protection Zone (VI/III) | Moderate Protection Zone (III) |
 :::
 
@@ -408,7 +408,7 @@ To process the data, the polygons were 'intercepted' based on the grid lines, th
 
 ***Areas With Biodiversity Improvement Opportunities***
 
-The three criteria for the sub-question are aggregated based on their weights and combined into an intermediate map which shows areas along the stream with a potential for improved biodiversity.
+The three criteria for the sub-question are aggregated based on their weights and combined into an intermediate map which shows areas along the stream with a potential for improved biodiversity. Compared to the other research sub-questions, areas with biodiversity opportunities have a more localized distribution. Key areas with biodiversity opportunities are the Loučná nad Nisou village, as well as the greenfield site near Hraničná. In the inner city, areas which offer biodiversity opportunities are: U Hřiště bridge, the industrial area near Mšeno nad Nisou and Tovární.
 
 ![Combination Map Biodiversity Question 3: Areas With Biodiversity Improvement Opportunities](Inserted_images/Biodiversity/Biodiversity%20Question%203.png)
 
@@ -452,7 +452,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 ::: {.callout-note collapse="true"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 :::
 
@@ -470,7 +470,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 *Normalized Impervious Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
@@ -484,7 +484,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 *Normalized Mean LST table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
@@ -502,7 +502,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 *Normalized NDVI Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
@@ -552,7 +552,7 @@ Apart from essential public amenities, the accessiblity of nature and public gre
 *Normalized Public Green Table*
 
 | Variable | Low availability (0-0.2) | High availability (0.8-1) | Notes |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Area mean | \<10073,8 | \>40295,2 | \<10073,8 → 0-0.2 (low availability), \>40295,2 → 0.8-1 (high availability) |
 :::
 
@@ -574,7 +574,7 @@ First, the public amenities are clipped within the grid of the Bila Nisa stream.
 *Normalized Public Amenities Table*
 
 | Variable | Low availability (0-0.2) | High availability (0.8-1) | Notes |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Type count | \<2 | \>5 | \<2 → 0-0.2 (low availability), \>5 → 0.8-1 (high availability) |
 :::
 
@@ -606,7 +606,7 @@ Categorizing the layer with the newly calculated normalized column, the followin
 *Normalized Road Integration Table*
 
 | Variable | Low Integration(0) | High Integration (1) | Notes |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Angular Integration Sum 2k | \<41.25 | \>115.25 | \<41.25 → 0-0.25 (low integration), \>115.25 → 0.75-1 (high integration) |
 :::
 
@@ -626,7 +626,7 @@ Apart from the road network, which primarily focusses on private mobility, publi
 *Normalized Public transport proximity Table*
 
 | Variable | Low Access(0) | High Access (1) | Notes |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Layer Count | =0 | \>4 | \<1 → 0-0.2 (low access), \>4 → 1 (high access) |
 :::
 
@@ -648,7 +648,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 *Normalized Pollution table*
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
 | PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
 | NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
@@ -673,7 +673,7 @@ This simpler method yields the final table with the new normalization based on t
 *New Normalized Pollution Table*
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
 | BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
@@ -690,7 +690,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 *Normalized Tree Cover Table*
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
@@ -1074,7 +1074,7 @@ Based on this we have assigned the following descriptions to each typology and o
 
 ::: {style="font-size: 0.85em"}
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|----|----|----|----|----|----|
+|------------|------------|------------|------------|------------|------------|
 | 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function. |
 | 2 (Orange) | Low | Moderate | Moderate | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.** |
 | 3 (Yellow) | Low | Low | Moderate | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility.This is suitable for **buffer zones or low-impact enhancement.** |
