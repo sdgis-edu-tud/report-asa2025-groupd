@@ -446,9 +446,8 @@ This question is further divided into the following questions:
 
 Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
 
-*Normalized Flood risk Table*
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" title="Flood Risk Normalisation Table"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
 |---------------|---------------|---------------|---------------|---------------|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
@@ -464,7 +463,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" title = "Impervious Surface Normalisation Table"}
 *Normalized Impervious Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
@@ -478,7 +477,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 
 High night-time temperatures indicate poor cooling and urban heat retention. The LST was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" title="Night Time Land Surface Temperature Normalisation Table"}
 *Normalized Mean LST table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
@@ -486,7 +485,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 | Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
-![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST_v2.png) \##### NDVI (Normalized Difference Vegetation Index)
+![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST_v2.png)
 
 #### Which Areas Have Healthy Vegetation?
 
@@ -496,7 +495,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 
 NDVI indicates vegetation health and coverage. The NDVI was collected from the Sentinel-2 satellite using bands 2, 3 and 8. Then the mean NDVI was computed based on a temporal range of the last 5 years(between 01-01-2020 and 01-01-2025), the resolution of final NDVI is 10 by 10m. Higher values correspond to greener, more vegetated areas, contributing to cooling and ecosystem benefits. An NDVI of \>0.6 is typical of healthy vegetation in temperate zones [@ozyavuz2015determination]. For this reason the following table shows our justified choice of NDVI range when normalizing.
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" title="Normalised Difference Vegetation Index Normalisation Table"}
 *Normalized NDVI Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
