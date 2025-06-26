@@ -1349,7 +1349,13 @@ titles <- c(
   "Bila Nisa Jablonec - Access public green along stream data input",
   "Bila Nisa Jablonec - Access public transport near stream data input",
   "Bila Nisa Jablonec - Access to stream data input",
-  "Bila Nisa Jablonec - Public amenities data input"
+  "Bila Nisa Jablonec - Public amenities data input",
+  "SO2 pollution Before Normalisation",
+  "NO2 Pollution Before Normalisation",
+  "PM10 Pollution Before Normalisation",
+  "PM25 Pollution Before Normalisation",
+  "BaP Pollution Before Normalisation",
+  "Bzn Pollution Before Normalisation"
 )
 
 # Create a grid of images with titles and fullscreen support
