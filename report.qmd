@@ -981,7 +981,7 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
     y = "Count"
   )
 
-st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
+#st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
 
 #print(grid_distances)
 ```
