@@ -738,9 +738,10 @@ Our approach to out topology construction is embedded in our main reserach quest
 
 ### 4.a. Research Question & Variables
 
+
 *"What spatial typologies emerge from key ecological and accessibility indicators along the stream corridor, and how can they inform targeted green-blue infrastructure interventions?"*
 
-This question is grounded in the broader ambition to enhance ecosystem services, urban climate resilience, and quality of life through the strategic planning of nature-based solutions. To approach this, we identified from all of our indicators, 4 main key spatial indicators that reflect the multifunctionality of green-blue spaces. Each indicator was selected to represent a dimension of performance relevant to our project:
+This question is grounded in the broader ambition to enhance ecosystem services, urban climate resilience, and quality of life through the strategic planning of nature-based solutions. To approach this, we identified from all of our indicators, 4 main key spatial indicators that reflect the functionality of green-blue spaces. Each indicator was selected to represent a dimension of performance relevant to our project:
 
 **Proportion of Natural Habitat (Biodiversity):** A higher share of natural habitat suggests greater ecological quality and potential for species support and connectivity.
 
@@ -1197,6 +1198,8 @@ The spatial resolution of the data we collected significantly shapes the analyti
 
 ## 7. Appendix
 
+**Original Raw Data Maps for Biodiversity**
+
 ```{r}
 #| warning: false
 #| echo: false
@@ -1212,15 +1215,7 @@ imgs <- c(
   "Inserted_images/Biodiversity/Built-up%20area%20(original%20data).png",
   "Inserted_images/Biodiversity/Ecological%20corridors%20(original%20data).png",
   "Inserted_images/Biodiversity/Natural%20floodplain%20restoration%20potential%20(original%20data).png",
-  "Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(original%20data).png",
-  "http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20data%20input.png)",
-  "http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png",
-  "http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20data%20input.png",
-  "http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png",
-  "Inserted_images/Climate%20Adaptation/Original_Impervious.png",
-  "Inserted_images/Climate%20Adaptation/Original_LST.png",
-  "Inserted_images/Climate%20Adaptation/Original_NDVI.png",
-  "Inserted_images/Quality%20of%20Life/Original_treecover.png"
+  "Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(original%20data).png"
 )
   
 titles <- c(
@@ -1231,11 +1226,62 @@ titles <- c(
   "Built-up area (original data)",
   "Ecological corridors (original data)",
   "Floodplain restoration potential (original data)",
-  "Protected natural zones (original data)",
-  "Bila Nisa Jablonec - Access public green along stream data input",
-  "Bila Nisa Jablonec - Access public transport near stream data input",
-  "Bila Nisa Jablonec - Access to stream data input",
-  "Bila Nisa Jablonec - Public amenities data input",
+  "Protected natural zones (original data)"
+)
+
+# Create a grid of images with titles and fullscreen support
+image_grid <- div(
+  style = "display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;",
+  Map(function(img, title) {
+    div(
+      style = "max-width: 18%; text-align: center;",
+      tags$img(
+        src = img,
+        style = "width: 100%; cursor: pointer; border: 1px solid #ccc; border-radius: 8px;",
+        onclick = sprintf("openFullscreen(this)")
+      ),
+      tags$p(title, style = "font-size: 0.85em; margin-top: 6px;")
+    )
+  }, imgs, titles)
+)
+
+# Add fullscreen JavaScript function
+fullscreen_script <- tags$script(HTML("
+  function openFullscreen(el) {
+    if (el.requestFullscreen) {
+      el.requestFullscreen();
+    } else if (el.webkitRequestFullscreen) { /* Safari */
+      el.webkitRequestFullscreen();
+    } else if (el.msRequestFullscreen) { /* IE11 */
+      el.msRequestFullscreen();
+    }
+  }
+"))
+
+# Render everything
+browsable(tagList(image_grid, fullscreen_script))
+
+
+```
+
+**Original Raw Data Maps for Climate Adaptation**
+
+
+```{r}
+#| warning: false
+#| echo: false
+#| message: false
+
+library(htmltools)
+
+imgs <- c(
+  "Inserted_images/Climate%20Adaptation/Original_Impervious.png",
+  "Inserted_images/Climate%20Adaptation/Original_LST.png",
+  "Inserted_images/Climate%20Adaptation/Original_NDVI.png",
+  "Inserted_images/Quality%20of%20Life/Original_treecover.png"
+)
+  
+titles <- c(
   "Impervious Surface (original data)",
   "Mean Night-Time Land Surface Temperature (original data)",
   "Mean NDVI (original data)",
@@ -1274,5 +1320,62 @@ fullscreen_script <- tags$script(HTML("
 # Render everything
 browsable(tagList(image_grid, fullscreen_script))
 
+```
+
+**Original Raw Data Maps for Climate Adaptation**
+
+```{r}
+#| warning: false
+#| echo: false
+#| message: false
+
+library(htmltools)
+
+imgs <- c(
+  "Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20data%20input.png)",
+  "Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png",
+  "Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20data%20input.png",
+  "Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png",
+)
+  
+titles <- c(
+  "Protected natural zones (original data)",
+  "Bila Nisa Jablonec - Access public green along stream data input",
+  "Bila Nisa Jablonec - Access public transport near stream data input",
+  "Bila Nisa Jablonec - Access to stream data input",
+  "Bila Nisa Jablonec - Public amenities data input",
+)
+
+# Create a grid of images with titles and fullscreen support
+image_grid <- div(
+  style = "display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;",
+  Map(function(img, title) {
+    div(
+      style = "max-width: 18%; text-align: center;",
+      tags$img(
+        src = img,
+        style = "width: 100%; cursor: pointer; border: 1px solid #ccc; border-radius: 8px;",
+        onclick = sprintf("openFullscreen(this)")
+      ),
+      tags$p(title, style = "font-size: 0.85em; margin-top: 6px;")
+    )
+  }, imgs, titles)
+)
+
+# Add fullscreen JavaScript function
+fullscreen_script <- tags$script(HTML("
+  function openFullscreen(el) {
+    if (el.requestFullscreen) {
+      el.requestFullscreen();
+    } else if (el.webkitRequestFullscreen) { /* Safari */
+      el.webkitRequestFullscreen();
+    } else if (el.msRequestFullscreen) { /* IE11 */
+      el.msRequestFullscreen();
+    }
+  }
+"))
+
+# Render everything
+browsable(tagList(image_grid, fullscreen_script))
 
 ```
