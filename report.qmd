@@ -361,9 +361,9 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 *Normalized Flood risk Table*
 
 ::: {.callout-note collapse="true"}
-| Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
+| Indicator      | Low Flood Risk (0)       | Middle Flood Risk (0.5) | High Flood Risk (1)       | Normalized Range (0-1) |
 |---------------|---------------|---------------|---------------|---------------|
-| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
+| Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1                  |
 :::
 
 ![Floodplain](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png)
@@ -379,9 +379,9 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 ::: {.callout-note collapse="true"}
 *Normalized Impervious Table*
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+| Indicator              | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                                                                  |
 |---------------|---------------|---------------|---------------|---------------|
-| Impervious Surface (%) | 0% | 80% | 0 – 1 | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
+| Impervious Surface (%) | 0%                     | 80%                     | 0 – 1                  | \>80% often found in dense urban areas, 0% = natural cover. Therefore we normalise between this range. |
 :::
 
 ![Impervious_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI.png)
@@ -393,9 +393,9 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 ::: {.callout-note collapse="true"}
 *Normalized Mean LST table*
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+| Indicator                | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                                                                                                                             |
 |---------------|---------------|---------------|---------------|---------------|
-| Mean Night-Time LST (°C) | 11°C | 16°C | 0 – 1 | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
+| Mean Night-Time LST (°C) | 11°C                   | 16°C                    | 0 – 1                  | 30°C = common threshold for urban heat stress at night, we chose to normalise for our range. Given Jablonec is at altitude, the temperature is going to be lower. |
 :::
 
 ![LST_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST.png) \##### NDVI (Normalized Difference Vegetation Index)
@@ -411,9 +411,9 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 ::: {.callout-note collapse="true"}
 *Normalized NDVI Table*
 
-| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
+| Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes                                                      |
 |---------------|---------------|---------------|---------------|---------------|
-| NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
+| NDVI      | 0.6                    | 0.0                     | 0 – 1 (inverted)       | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
 ![NDVI_norm](Inserted_images/Climate%20Adaptation/Bila%20Nisa%20(A3%20map)%20impervious.png)
@@ -422,9 +422,11 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 
 ### 3.C. Quality of life
 
-! introduction
+For quality of life, can vary from psychological and health indicators to more tangible urban climate indicator. According to František Murgaš & Michal Klobučník, they used the so-called gold standard for assessing quality of life in municipalities in the Czech Republic. The following indicators are included in the Gold standard for measuring the quality of life in urban environments. - Wanting to live—can be expressed by the absence of the will to live, i.e., suicide. Expression of the indicator is suicide mortality rate. - Long life—can be expressed by the indicator of life expectancy. - Living in a complete family—can be expressed by its absence; indicator is divorce rate. - Having children—can be expressed by the indicator of birth rate. - Being healthy—can be expressed by the absence of health; indicator is mortality. - Living in a healthy environment—can be expressed by the environmental pollution. - Being educated—can be expressed by the indicator of the share of university graduates. - Having a job—can be expressed by the indicator of unemployment rate. - Being a good person—can be expressed by the indicator of generativity.
 
-The climate adaptation chapter aims to follow the following sub-question:
+Since many data are statistical data that have not been translated to vector layers, different indicators have been created which could give an idea of the quality of life. Koi and Masanobu discovered that accessiblity to basic human needs is an important factor for improving quality of life through policy implementation and spatial planning for land use purposes or transportation infrastructure. Moreover, Khalil pointed out that economic viability of urban areas and the various of economic activity forms also an important indicator for quality of life and the functioning of urban systems.
+
+Based on these 3 research papers, three different perspectives for measuring quality of life surrounding the area of the Bila Nisa urban stream have been picked; amenities around the stream, accessiblity of the stream, and the condition of the urban climate. Based on the assingment to enhance the quality of life along the stream, one main research question and three sub research questions have been drafted to pin point the areas along the Bila Nisa that underperform and require an intervention that enhances the quality of life along the urban stream according to the directions of the ReBioClim program.
 
 > *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
 
@@ -436,15 +438,13 @@ This question is further divided into the following questions:
 
 > *Which Areas Can Be Physically Uncomfortable?*
 
-For quality of life, three main criteria have been developed according to the paper published by [@Khalil2017]: Availability of public amenities, accessibility of the area, and environmental indicators. Another indicator include socio-economic data on the population, however these have not been translated in vector data for the area of Jablonec nad Nisau and have therefore been excluded from this analysis.
-
 ![Aggregated Quality of Life Criteria](Inserted_images/General%20Images/Aggregated%20Quality%20of%20Life%20Criteria-01.png)
 
-For the first analysis, we look at the availability of public amenities that supports urban life. like public functions and public green along the stream and how well accessible they are.
+For the first analysis, we look at the availability of public amenities such as green spaces and public goods that are available to the population along the Bila Nisa, that could support urban life and enhance quality of life. The Bila Nisa is known for its offering of leisure activities and greenery, however these areas are not connected, thus for a larger population perceived as inaccessible.
 
 #### Which Areas Are Deprived of Public Facilities?
 
-! introduction
+For the availability of public amenities along the stream, we looked at the availability of public green and the presence and diversity of public areas.
 
 ***Access to Public Green Space***
 
@@ -466,9 +466,12 @@ First, the public amenities are clipped within the grid of the Bila Nisa stream.
 
 ![Normalized map size of public amenities](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Size%20of%20public%20areas%20normalized.png) ![Diversity of public amenities along Bila Nisa](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png)
 
+Combining these two layers using the criteria weights in the S-MCDA, two areas stand out due to the combination of public greenery and the diversity of amenities. 
+![Combined normalized layers of public goods availability](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/AVAILABILITY%20PUBLIC%20GOODS.png)
+
 #### Which Areas Lack Infrastructure to Access?
 
-! introduction
+The second indicator for quality of life is the accessibility of the stream. The stream offers apart from a livable climate due to the cooling effect of the river also a social haven for the population of Jablonec nad Nisau, offering several meeting spots in the leisure areas along the stream.  For this analysis, accessiblity through the road network and public transport infrastructure is measured using the following two layers.
 
 ***Access to Stream***
 
@@ -491,6 +494,9 @@ Apart from the road network, which primarily focusses on private mobility, publi
 ![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png) Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created that calculates the data using a normalized scale from 0 to 1, using the range of opportunities.
 
 ![Access to public transport near the stream normalilzed](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20along%20stream%20normalized.png)
+Overlaying these two layers, one can see a couple urban centers popping up. Especially in the south which is a more urban area and offer different modes of transport and regional connections. Furthermore, there is one main road along the stream connecting the city of Jablonec nad Nisau with rural villages like Loucná nad Nisau. However, the map shows that more central areas with leisure are not well connected. 
+
+![Combined accessibility map](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/ACCESSIBLITY%20TO%20STREAM.png)
 
 #### Which Areas Can Be Physically Uncomfortable?
 
@@ -505,12 +511,12 @@ To ensure comparability across pollutants, all air quality indicators were norma
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
 |------------|------------|------------|------------|------------|------------|
-| PM2.5 | 5 | 20 | 2.5 | 20 | 0 – 1 |
-| PM10 | 15 | 40 | 7.5 | 40 | 0 – 1 |
-| NO₂ | 10 | 40 | 5 | 40 | 0 – 1 |
-| BaP | *0.12 (indicative, EU)* | 1.0 | 0.06 | 1.0 | 0 – 1 |
-| BzN | 0.2 *(WHO guideline)* | 1.0 *(assumed)* | 0.1 | 1.0 | 0 – 1 |
-| SO₂ | 40 *(WHO 24h guideline)* | 125 *(EU 24h)* | 20 | 125 | 0 – 1 |
+| PM2.5     | 5                          | 20               | 2.5                            | 20                           | 0 – 1                  |
+| PM10      | 15                         | 40               | 7.5                            | 40                           | 0 – 1                  |
+| NO₂       | 10                         | 40               | 5                              | 40                           | 0 – 1                  |
+| BaP       | *0.12 (indicative, EU)*    | 1.0              | 0.06                           | 1.0                          | 0 – 1                  |
+| BzN       | 0.2 *(WHO guideline)*      | 1.0 *(assumed)*  | 0.1                            | 1.0                          | 0 – 1                  |
+| SO₂       | 40 *(WHO 24h guideline)*   | 125 *(EU 24h)*   | 20                             | 125                          | 0 – 1                  |
 :::
 
 A then example calculation in Qgis for SO2 would be:
@@ -530,12 +536,12 @@ This simpler method yields the final table with the new normalization based on t
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
 |---------------|---------------|---------------|---------------|---------------|
-| PM2.5 | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
-| SO₂ | 2.5 | 0 | 5 | `"MAX_max" / 2.5` |
-| BaP | 0.16 | 0 | 0.16 | `"MAX_max" / 0.16` |
-| PM10 | 3 | 0 | 3 | `"MAX_max" / 3` |
-| NO₂ | 3.5 | 0 | 3.5 | `"MAX_max" / 3.5` |
-| BzN | 0.25 | 0 | 0.25 | `"MAX_max" / 0.25` |
+| PM2.5     | 2.5                       | 0                      | 5                       | `"MAX_max" / 2.5`     |
+| SO₂       | 2.5                       | 0                      | 5                       | `"MAX_max" / 2.5`     |
+| BaP       | 0.16                      | 0                      | 0.16                    | `"MAX_max" / 0.16`    |
+| PM10      | 3                         | 0                      | 3                       | `"MAX_max" / 3`       |
+| NO₂       | 3.5                       | 0                      | 3.5                     | `"MAX_max" / 3.5`     |
+| BzN       | 0.25                      | 0                      | 0.25                    | `"MAX_max" / 0.25`    |
 :::
 
 ***Percentage of Tree Cover***
@@ -545,9 +551,9 @@ Tree cover density represents the percentage of land surface covered by trees wi
 ::: {.callout-note collapse="true"}
 *Normalized Tree Cover Table*
 
-| Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
+| Variable          | Low Risk Threshold(0) | High Risk Threshold (1) | Notes                                   |
 |------------------|------------------|------------------|------------------|
-| Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
+| Tree Canopy Cover | \>75%                 | \<25%                   | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
 ```{r}
@@ -564,7 +570,17 @@ slickR(imgs, height = 800, width = 600) +
 
 ```
 
+Combining these two layers results in the following combined map. The map shows the more urban one goes, the less liveable the urban climate becomes. Some areas score low because they are former and current industrial areas, for example H
+
+![Urban life conditions along the Sstream](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/URBAN%20LIFE%20CONDITIONS.png)
+
 #### Quality of Life S-MCDA Aggregation & Conclusion
+Using the criteria of the S-MCDA analysis, a combined map is created to highlight which areas along the Bila Nisa stream perform less on quality of life, and suggest an intervention is required to enhance quality of life performance along the urban stream.
+
+All the normalized data is extracted from the attribute table and transferred to an Excel file to calculate the normalized values against the criteria weights from the S-MCDA. All the weighted values are combine in order to create and prepare the aggregated data set for quality of life. The data is then exported as a CSV file in QGIS and the aggregated values are joined in the combined grid layer. The final combined map is presented underneath.
+
+![Combined and weighted quality of life map](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Bila%20Nisa%20Jablonec%20-%20Combined%20Quality%20of%20Life.png)
+
 
 ### 3.D. S-MCDA Conclusion
 
@@ -931,13 +947,13 @@ st_write(grids, "data/clustered_tiles_with_distances.gpkg", delete_dsn = TRUE)
 Based on this we have assigned the following descriptions to each typology and our analysis we are able to descript each cluster as a typology. We have therefore come up with the following descriptions.
 
 ::: {style="font-size: 0.85em"}
-| Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
+| Type (Cluster) | Natural Habitat | NDVI     | Flood Zone | Stream Access | Description                                                                                                                                                                                                                           |
 |------------|------------|------------|------------|------------|------------|
-| 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function.​ |
-| 2 (Orange) | Low | Moderate | Moderate | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.**​ |
-| 3 (Yellow) | Low | Low | Moderate | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility. This is suitable for **buffer zones or low-impact enhancement.**​ |
-| 4 (Green) | **High** | Low | Low | Low | Although these areas are classified as having **high natural habitat**, they exhibit **low vegetation health or cover**. Stream access is also limited. This could indicate sparse but valuable habitats.​ |
-| 5 (Blue) | **High** | Low | **High** | Low | Flood-exposed, degraded zone. Here we can prioritize **wetland restoration or flood-resilient interventions.**​ |
+| 1 (Red)        | **High**        | **High** | Low        | Low           | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function.​ |
+| 2 (Orange)     | Low             | Moderate | Moderate   | **High**      | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.**​                       |
+| 3 (Yellow)     | Low             | Low      | Moderate   | Low           | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility. This is suitable for **buffer zones or low-impact enhancement.**​                                                                   |
+| 4 (Green)      | **High**        | Low      | Low        | Low           | Although these areas are classified as having **high natural habitat**, they exhibit **low vegetation health or cover**. Stream access is also limited. This could indicate sparse but valuable habitats.​                             |
+| 5 (Blue)       | **High**        | Low      | **High**   | Low           | Flood-exposed, degraded zone. Here we can prioritize **wetland restoration or flood-resilient interventions.**​                                                                                                                        |
 :::
 
 **Identifying where the clusters are located and which are closest to their cluster centers**
