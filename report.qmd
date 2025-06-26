@@ -734,13 +734,9 @@ By combining these indicators, we aim to capture both the ecological aspects and
 
 ### 4.b. Methodology
 
-To begin our typology construction, we chose to perform K-means clustering. The following section will guide you through the process we took to reach the typologies.
+*Step 1: Data Preparation and Normalization*
 
-The first step of conducting K-means clustering involves standardizing our normalized input data.
-
-We use the **elbow method** to choose a good number of clusters.
-
-For each value of `k` (e.g. 2 to 9), we run K-means and record a value called **inertia** : the total distance between points and their cluster centers. Lower inertia means tighter (better) clusters.
+To begin, we extracted the four selected indicators from our spatial dataset and removed the geometry to focus on their numerical values. Since K-means is sensitive to scale, we standardized the data using z-score normalization. This rescales each variable so that it has a mean of 0 and a standard deviation of 1, ensuring that all variables contribute equally to the clustering.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -819,11 +815,15 @@ elbow_df <- data.frame(k = k_values, inertia = inertia)
 
 ```
 
-::: callout-note
-We suggest using a larger `nstart` value, such as 20 or 50, to get more reliable results. Setting `nstart = 20` makes R try 20 different starting points and choose the one with the lowest `tot.withinss`. The `tot.withinss` value measures how close points are to their cluster centers. Lower values mean better clustering.
-:::
+*Step 2: Choosing the Number of Clusters (Elbow Method)*
 
-We can visualize how inertia changes with increasing k. After a certain point, adding more clusters doesn’t help much — the curve bends. That bend is called the *elbow point*, and we use it to choose the best k.
+The K-means algorithm requires specifying the number of clusters k. To find a suitable value, we used the **elbow method**, which involves:
+
+1. Running K-means for a range of k values (2 to 9).
+
+2. Calculating inertia for each value — the total within-cluster sum of squares. Lower inertia means tighter, more compact clusters.
+
+We then plotted the inertia values to identify the "elbow point", where the reduction in inertia begins to level off.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 ##########################################################
@@ -839,8 +839,19 @@ plot(k_values, inertia,
 
 ```
 
-Based on the elbow plot, we choose `k = 5` as a good number of clusters.\
-We now run the K-means algorithm and assign each grid to one of the five clusters. The following shows us the clusters formed along the Bila Nisa stream.
+Based on the elbow plot, we choose `k = 5` as a good number of clusters.
+
+
+*Step 3: Running the K-means Algorithm*
+We set a fixed seed to ensure reproducibility and ran the K-means algorithm using k = 5. Each grid cell was assigned a cluster label.
+
+*Step 4: Visualizing Clusters*
+We explored the distribution of clusters both spatially and in feature space.
+
+2D Map: Shows how clusters are arranged geographically.
+
+3D Plot: Visualizes how clusters are separated in terms of indicator values (3 axes: NDVI, natural habitat, access).
+
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -892,11 +903,8 @@ legend("topright",
        title = "Clusters",
        bty = "n",
        cex = 0.8)
-```
 
-To be able the visualize the distribution of the 5 clusters in 3D space, the following plot was created. As we have 4 indicators, and we cannot easily visualize the 4 dimensional representation of our clustering. When deciding on which indicators to use for the axis, we inspected all possible options and chose the most appealing visual representation which spatially distributed the clusters the best.
 
-```{r echo=FALSE, warning=FALSE, message=FALSE}
 
 ##########################################################
 # Visualise the 3d plot of the Kmeans cluster
@@ -928,9 +936,13 @@ plot_ly(
       zaxis = list(title = "Access to Stream")
     )
   )
+
 ```
 
-Therefore, to ensure another representation of each cluster in respect to their indicator we can plot Polar charts. This can help visualise the 4 dimensional nature and what typological counterpart each cluster would represent. Based from these charts we can assign each cluster a correct typology.
+*Step 5: Understanding Cluster Profiles (Radar Charts)*
+To interpret the clusters, we examined the cluster centers, which represent the "average" values of each indicator per cluster.
+
+We converted the standardized cluster centers back to the original scale to understand their real-world meaning and visualized them using radar charts, highlighting each cluster's performance across the four indicators.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -1032,13 +1044,11 @@ par(op)
 
 ```
 
-### 4.c. Results
 
-**Interpreting the cluster centers**
+*Step 6: Assessing Cluster Confidence (Distance to Cluster Center)*
+We calculated the Euclidean distance from each grid cell to its assigned cluster center in feature space. This indicates how representative a cell is of its cluster: smaller distances imply stronger conformity.
 
-Now we look at the center of each cluster. First, we check the values in standardized form. Then, we convert them back to the original units (e.g. degrees), so they are easier to understand. Then, to interpret the clustering results, we examine the centers of each cluster in the original data scale. The table below summarizes the environmental characteristics of each cluster based on the original (unscaled) values. From these we can assign our created typology description, testing if they align with our initial set out goals and conjectures.
-
-Additionally, it is also clear that each grid cell will not be as representational of it's typology. This can be visualised depending on it;s distance to the cluster center. This shows us a clearer picture of the distribution of points around their centers, identifying the spread of each cluster. This is helpful when determining the typologies which are most related. Histograms of each Cluster around their respective centers is shown below.
+This was visualized using histograms, one per cluster.
 
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -1064,7 +1074,8 @@ ggplot(grids, aes(x = cluster_dist, fill = cluster)) +
 #print(grid_distances)
 ```
 
-![Distance to each cluster center for each respective cluster](Inserted_images/distance_to_cluster_center.png)
+
+### 4.c. Results
 
 **Typology description**
 
@@ -1072,7 +1083,7 @@ Based on this we have assigned the following descriptions to each typology and o
 
 ::: {style="font-size: 0.85em"}
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|----|
 | 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function. |
 | 2 (Orange) | Low | Moderate | Moderate | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.** |
 | 3 (Yellow) | Low | Low | Moderate | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility.This is suitable for **buffer zones or low-impact enhancement.** |
