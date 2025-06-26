@@ -294,6 +294,12 @@ This criterion looks at the same data as the diversity of natural habitats, cate
 
 ![Proportion of Natural Habitat Area (normalized data)](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(normalized%20data).png)
 
+***Areas With High Biodiversity Value***
+
+The three criteria for the sub-question are aggregated based on their weights and combined into an intermediate map which shows areas along the stream with high biodiversity value.
+
+![Combination Map Biodiversity Question 1: Areas With High Biodiversity Value](Inserted_images/Biodiversity/Biodiversity%20Question%201.png)
+
 #### Which Areas Have a High Level of Human Activity?
 
 The presence of human activity is generally harms biodiversity, generally in the form of habitat destruction and lifestyle disturbance. Therefore areas where human activity is high may not be very effective locations to improve biodiversity.
@@ -335,6 +341,12 @@ The results of the normalized data on build-up area show that there is some leve
 :::
 
 ![Proportion of Built-up Area (normalized data)](Inserted_images/Biodiversity/Built-up%20area%20(normalized%20data).png)
+
+***Areas With High Level of Human Activity***
+
+The two criteria for the sub-question are aggregated based on their weights and combined into an intermediate map which shows areas along the stream with a high level of human activity.
+
+![Combination Map Biodiversity Question 2: Areas With High Level of Human Activity](Inserted_images/Biodiversity/Biodiversity%20Question%202.png)
 
 #### Which Areas Provide Opportunity for Improved Biodiversity?
 
@@ -387,14 +399,28 @@ To process the data, the polygons were 'intercepted' based on the grid lines, th
 *Normalized Zones of Protected Natural Areas Table*
 
 ::: {.callout-note collapse="true"}
-| Normalized Value | 0 | 0.25 | 0.5 | \<0.75 |
+| Normalized Value | 0 | 0.25 | 0.5 | 0.75 |
 |----|----|----|----|----|
 | **Meaning** | No Protection | Lowest Protection Zone (VI) | Low Protection Zone (VI/III) | Moderate Protection Zone (III) |
 :::
 
 ![Zones of Protected Natural Areas (normalized data)](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(normalized%20data).png)
 
+***Areas With Biodiversity Improvement Opportunities***
+
+The three criteria for the sub-question are aggregated based on their weights and combined into an intermediate map which shows areas along the stream with a potential for improved biodiversity.
+
+![Combination Map Biodiversity Question 3: Areas With Biodiversity Improvement Opportunities](Inserted_images/Biodiversity/Biodiversity%20Question%203.png)
+
 #### Biodiversity S-MCDA Aggregation & Conclusion
+
+Having conducted the detailed analysis, all criteria values from the biodiversity are weighed and combined into a single concluding map:
+
+![Concluding Biodiversity Map](Inserted_images/Biodiversity/Final%20Biodiversity%20Map.png)
+
+The concluding map offers insight to the initial biodiverisity research question: *where can the ecological quality of the stream area be enhanced?*
+
+In general, areas where ecological quality of the stream can be improved are situated outside of the most urbanized areas. Namely the area near Janovská highway, as well as the nearby village of Loučná nad Nisou seem to be the largest areas with the highest potential for ecological improvement. Inside the city of Jablonec nad Nisou, U Hřiště bridge and the industrial area near Mšeno nad Nisou offer the most potential for ecological improvement. Right at the city borders, areas of Hraničná and Tovární also offer possibilities for improved ecological quality.
 
 ### 3.B. Climate Adaptation
 
