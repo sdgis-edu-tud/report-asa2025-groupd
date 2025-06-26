@@ -416,7 +416,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 | NDVI | 0.6 | 0.0 | 0 – 1 (inverted) | Values \>0.6 = dense vegetation; 0 = bare soil or built-up |
 :::
 
-![NDVI_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_Impervious_v2.png)
+![NDVI_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI_v2.png)
 
 #### Climate Adaptation S-MCDA Aggregation & Conclusion
 
@@ -1101,7 +1101,10 @@ imgs <- c(
   "http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20data%20input.png)",
   "http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png",
   "http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20data%20input.png",
-  "http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png"
+  "http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png",
+  "Inserted_images/Climate%20Adaptation/Original_Impervious.png",
+  "Inserted_images/Climate%20Adaptation/Original_LST.png",
+  "Inserted_images/Climate%20Adaptation/Original_NDVI.png"
 )
   
 titles <- c(
@@ -1116,7 +1119,10 @@ titles <- c(
   "Bila Nisa Jablonec - Access public green along stream data input",
   "Bila Nisa Jablonec - Access public transport near stream data input",
   "Bila Nisa Jablonec - Access to stream data input",
-  "Bila Nisa Jablonec - Public amenities data input"
+  "Bila Nisa Jablonec - Public amenities data input",
+  "Impervious Surface (original data)",
+  "Mean Night-Time Land Surface Temperature (original data)",
+  "Mean NDVI (original data)"
 )
 
 # Create a grid of images with titles and fullscreen support
