@@ -598,19 +598,8 @@ Tree cover density represents the percentage of land surface covered by trees wi
 | Tree Canopy Cover | \>75% | \<25% | 75% → 0 (low risk), 25% → 1 (high risk) |
 :::
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-library(slickR)
+![Normalised Mean Tree Cover Percentage](Inserted_images/Quality%20of%20Life/Normalised_Mean_treecover_v2.png)
 
-
-imgs <- c("Inserted_images/Biodiversity/Normalised_mean_Treecover.png", "Inserted_images/Biodiversity/Mean_treecover.png")
-
-slickR(imgs, height = 800, width = 600) +
-  settings(dots = TRUE)
-
-```
 
 Combining these two layers results in the following combined map. The map shows the more urban one goes, the less liveable the urban climate becomes. Some areas score low because they are former and current industrial areas, for example H
 
@@ -1104,7 +1093,8 @@ imgs <- c(
   "http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Public%20amenities%20data%20input.png",
   "Inserted_images/Climate%20Adaptation/Original_Impervious.png",
   "Inserted_images/Climate%20Adaptation/Original_LST.png",
-  "Inserted_images/Climate%20Adaptation/Original_NDVI.png"
+  "Inserted_images/Climate%20Adaptation/Original_NDVI.png",
+  "Inserted_images/Quality%20of%20Life/Original_treecover.png"
 )
   
 titles <- c(
@@ -1122,7 +1112,8 @@ titles <- c(
   "Bila Nisa Jablonec - Public amenities data input",
   "Impervious Surface (original data)",
   "Mean Night-Time Land Surface Temperature (original data)",
-  "Mean NDVI (original data)"
+  "Mean NDVI (original data)",
+  "Mean Treecover percentage (original data)"
 )
 
 # Create a grid of images with titles and fullscreen support
