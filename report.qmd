@@ -452,7 +452,9 @@ Apart from essential public amenities, the accessiblity of nature and public gre
 
 ![Map showing public green along Bila Nisa stream](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20green%20along%20stream%20data%20input.png) The area of public green is then further normalized, through the following formula, thus normalizng the area on a scale from 0 to 1.
 
-("your_field" - min("your_field")) / (max("your_field") - min("your_field"))
+:::{.callout-note collapse="true"}
+**Normalized value** = *("area mean" - min("area mean")) / (max("area mean") - min("area mean"))*
+:::
 
 ::: {.callout-note collapse="true"}
 *Normalized Public Green Table*
@@ -471,6 +473,10 @@ Apart from essential public amenities, the accessiblity of nature and public gre
 Based on these public amenities, data is normalized based on the diversity of public amenities and the size of the public areas, which indicates to what extent the area can be used by the population of Jablonec.
 
 First, the public amenities are clipped within the grid of the Bila Nisa stream. The clipped layer is overlayed in the grid creating a separate layer. The data is then normalized through adding a separate column, where the range of area and functions is used through the following functions. Using this formula, data is normalized to a 0 to 1 scale.
+
+:::{.callout-note collapse="true"}
+**Normalized value** = *("type count" - min("type count")) / (max("type count") - min("type count"))*
+:::
 
 ::: {.callout-note collapse="true"}
 *Normalized Public Amenities Table*
@@ -496,7 +502,9 @@ Apart from access to essential human needs along the stream, the Bila Nisa itsel
 
 The roads that fall within reach of the stream are clipped and used for further normalization. The clip is overlayed in the grid, and both the number of roads and degree if integration with the road network are taken into account in the normalization. Using the open field calculator, a new column is created for normalizing the data of the layer using the following formula:
 
-("sum_Atw2kM" - minimum("sum_Atw2kM")) / (maximum("sum_Atw2kM") - minimum("sum_Atw2kM"))
+::: {.callout_note collapse="true"}
+**Normalized value** = *("sum_Atw2kM" - minimum("sum_Atw2kM")) / (maximum("sum_Atw2kM") - minimum("sum_Atw2kM"))*
+:::
 
 Categorizing the layer with the newly calculated normalized column, the following map shows how urban centers North, central and South-west of the stream can be defined.
 
@@ -516,6 +524,10 @@ Apart from the road network, which primarily focusses on private mobility, publi
 
 ![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png) Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created that calculates the data using a normalized scale from 0 to 1, using the range of opportunities. [@publictransportJablonecnadNisau]
 
+:::{.callout-note collapse="true"}
+**Normalized value** = *("layer count" - min("layer count")) / (max("layer count") - min("layer count"))*
+:::
+
 ::: {.callout-note collapse="true"}
 *Normalized Public transport proximity Table*
 
@@ -524,13 +536,13 @@ Apart from the road network, which primarily focusses on private mobility, publi
 | Layer Count | =0            | \>4             | \<1 → 0-0.2 (low access), \>4 → 1 (high access) |
 :::
 
-![Access to public transport near the stream normalilzed](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20along%20stream%20normalized.png) Overlaying these two layers, one can see a couple urban centers popping up. Especially in the south which is a more urban area and offer different modes of transport and regional connections. Furthermore, there is one main road along the stream connecting the city of Jablonec nad Nisau with rural villages like Loucná nad Nisau. However, the map shows that more central areas with leisure are not well connected.
+![Access to public transport near the stream normalilzed](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20along%20stream%20normalized.png)Overlaying these two layers, one can see a couple urban centers popping up. Especially in the south which is a more urban area and offer different modes of transport and regional connections. Furthermore, there is one main road along the stream connecting the city of Jablonec nad Nisau with rural villages like Loucná nad Nisau. However, the map shows that more central areas with leisure are not well connected.
 
 ![Combined accessibility map](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/ACCESSIBLITY%20TO%20STREAM.png)
 
 #### Which Areas Can Be Physically Uncomfortable?
 
-! introduction
+The last performance indicator for quality of life relates to physical condition of the urban environment, in other words to figure out how healthy the urban environment around the Bila Nisa is. This is relevant for the case of Jablonec nad Nisau since the area was once a breeding ground for industrial activity, especially for glass and glass ornament production [@Brittanica2011].
 
 ***Air Pollution***
 
@@ -608,7 +620,7 @@ Combining these two layers results in the following combined map. The map shows 
 
 Using the criteria of the S-MCDA analysis, a combined map is created to highlight which areas along the Bila Nisa stream perform less on quality of life, and suggest an intervention is required to enhance quality of life performance along the urban stream.
 
-All the normalized data is extracted from the attribute table and transferred to an Excel file to calculate the normalized values against the criteria weights from the S-MCDA. All the weighted values are combine in order to create and prepare the aggregated data set for quality of life. The data is then exported as a CSV file in QGIS and the aggregated values are joined in the combined grid layer. The final combined map is presented underneath.
+All the normalized data is extracted from the attribute table and transferred to an Excel file to calculate the normalized values against the criteria weights from the S-MCDA. All the weighted values are combine in order to create and prepare the aggregated data set for quality of life. Only for the criteria air pollution, the data is inverted as a higher score, means higher the air pollution, which is a negative indicator for urban life condition. The data is then exported as a CSV file in QGIS and the aggregated values are joined in the combined grid layer. The final combined map is presented underneath.
 
 ![Combined and weighted quality of life map](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Bila%20Nisa%20Jablonec%20-%20Combined%20Quality%20of%20Life.png)
 
