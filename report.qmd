@@ -618,11 +618,11 @@ Apart from the road network, which primarily focusses on private mobility, publi
 
 ![public transport access within stream area](http://rstudio-server-edu.bk.tudelft.nl:8787/files/report-asa2025-groupd/Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20near%20stream%20data%20input.png) Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created that calculates the data using a normalized scale from 0 to 1, using the range of opportunities. [@publictransportJablonecnadNisau]
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" title="Public transport access normalisation equation"}
 **Normalized value** = *("layer count" - min("layer count")) / (max("layer count") - min("layer count"))*
 :::
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" title="Normalized Public transport proximity Table"}
 *Normalized Public transport proximity Table*
 
 | Variable | Low Access(0) | High Access (1) | Notes |
@@ -644,7 +644,7 @@ The last performance indicator for quality of life relates to physical condition
 
 To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspired by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" title="Initial Air Pollution Normalisation Method"}
 *Normalized Pollution table*
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
@@ -659,7 +659,7 @@ To ensure comparability across pollutants, all air quality indicators were norma
 
 A then example calculation in Qgis for SO2 would be:
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" title="Calculation Example for SO2"}
 *Example calculation for SO2*
 
 CASE WHEN "MAX_majority" IS NULL THEN NULL WHEN "MAX_majority" \< 20 THEN 0 WHEN "MAX_majority" \> 125 THEN 1 ELSE ("MAX_majority" - 20) / (125 - 20) END
@@ -669,7 +669,7 @@ However, as was later discovered, this approach led to all of the pollution data
 
 This simpler method yields the final table with the new normalization based on the input data classification is the following.
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" title="New Normalisation Method for Pollution"}
 *New Normalized Pollution Table*
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
@@ -686,7 +686,7 @@ This simpler method yields the final table with the new normalization based on t
 
 Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
 
-::: {.callout-note collapse="true"}
+::: {.callout-note collapse="true" title="Normalisation for Tree Cover Table"}
 *Normalized Tree Cover Table*
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
