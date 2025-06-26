@@ -436,19 +436,13 @@ This question is further divided into the following questions:
 
 The figure below shows the criteria for each climate adaptation sub-question, along with the corresponding weights of each attribute. These weights are combined to determine the influence of each sub-question on the final result, with the total sum equal to one.
 
-For the first sub-question, “Which areas have the highest flood damage risk?”, the attribute Flood Impact Zones in Floodplains carries a weight of 0.411, indicating it is a critical factor in identifying areas susceptible to flood damage.
-
-The second sub-question, “Which areas have more impervious surfaces?”, includes two attributes: Impervious Surfaces (0.290) and Night Land Surface Temperature (0.100). Impervious surfaces directly affect the area's ability to absorb water, while higher night land surface temperatures typically indicate denser built environments with less green cover.
-
-For the third sub-question, “Which areas have healthy vegetation?”, the attribute NDVI (Normalized Difference Vegetation Index) is used, with a weight of 0.199. Areas with higher NDVI values suggest healthier and denser vegetation, which can contribute to climate resilience by reducing surface runoff and moderating urban heat effects.
-
 By aggregating these criteria, the analysis helps to spatially identify priority areas along the Bílá Nisa Stream where climate adaptation measures for example flood management should be prioritized.
 
 ![Aggregated Climate Adaptation Criteria](Inserted_images/General%20Images/Aggregated%20Climate%20Adaptation%20Criteria-01.png)
 
 #### Which Areas Have Highest Flood Damage Risk?
 
-! introduction ! purpose of research question, why does it help answer the main question?
+Flood risk is one of the most urgent challenges in stream corridor management, especially in areas with extensive urbanization and altered natural floodplains.By locating these high-risk zones, planners can prioritize where flood mitigation strategies should be implemented first.
 
 ***Flood Impact Zones in Floodplains***
 
@@ -464,7 +458,7 @@ Floodplain are flat, low-lying areas near a river or coast that are likely to fl
 
 #### Which Areas Have The Most Impervious Surfaces?
 
-! introduction ! purpose of research question, why does it help answer the main question?
+Impervious surfaces directly affect the area's ability to absorb water, while higher night land surface temperatures typically indicate denser built environments with less green cover.
 
 ***Impervious Surface Percentage***
 
@@ -496,7 +490,7 @@ High night-time temperatures indicate poor cooling and urban heat retention. The
 
 #### Which Areas Have Healthy Vegetation?
 
-! introduction ! purpose of research question, why does it help answer the main question?
+Areas with higher NDVI values suggest healthier and denser vegetation, which can contribute to climate resilience by reducing surface runoff and moderating urban heat effects.
 
 ***Normalized Difference Vegetation Index (NDVI)***
 
@@ -513,6 +507,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 ![NDVI_norm](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI_v2.png)
 
 #### Climate Adaptation S-MCDA Aggregation & Conclusion
+
 
 
 ### 3.C. Quality of life
