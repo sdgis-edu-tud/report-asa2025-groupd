@@ -217,7 +217,7 @@ The research area is currently dealing with challenges of ecological degradation
 
 > *Where can the ecological quality of the stream area be enhanced?*
 
-This research question is divided into three sub-questions, each with a number of criteria (see figure below).
+The following figure shows the criteria for each biodiversity sub-question, along with the weight of each attribute. The weights of the attributes are combined to see the weight of each sub-question, and the weight of each value all adds up to one. It is important to note that the values for weighed road segment length and proportion of built-up area had to be inverted for the aggregation. Differently from other biodiversity criteria, these attributes are undesirable. Therefore a higher proportion of built-up area and weighed road segment length would result in a poor score.
 
 ![Aggregated Biodiversity Criteria](Inserted_images/General%20Images/Aggregated%20Biodiversity%20Criteria-01.png)
 
@@ -351,8 +351,6 @@ The two criteria for the sub-question are aggregated based on their weights and 
 #### Which Areas Provide Opportunity for Improved Biodiversity?
 
 Areas with certain existing spatial conditions may be easier to transform for improved biodiversity than others. Identifying these areas mean identifying locations which have the highest potential for improvement with minimum effort.
-
-The following figure shows the criteria for each biodiversity sub-question, along with the weight of each attribute. The weights of the attributes are combined to see the weight of each sub-question, and the weight of each value all adds up to one. It is important to note that the values for weighed road segment length and proportion of built-up area had to be inverted for the aggregation. Differently from other biodiversity criteria, these attributes are undesirable. Therefore a higher proportion of built-up area and weighed road segment length would result in a poor score.
 
 ***Ecological Corridors***
 
