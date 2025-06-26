@@ -508,7 +508,14 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 
 #### Climate Adaptation S-MCDA Aggregation & Conclusion
 
+According to the criteria of the S-MCDA analysis, a concluding map was created to highlight areas along the Bílá Nisa Stream with lower overall adaptive capacity to climate change, where flood mitigation measures should take place.
 
+All normalized data were extracted from the attribute tables and transferred into an Excel file, where weighted normalized values were calculated based on the criteria weights defined in the S-MCDA framework. These weighted values were then aggregated to produce a composite dataset reflecting the spatial distribution of flood risk. Notably, the NDVI values were inverted to align with the direction of other criteria — so that higher final scores indicate weaker flood resilience.
+
+The resulting dataset was exported as a CSV file and linked to the grid layer in QGIS to visualize the spatial outcomes.The final concluding map is presented underneath
+
+![Concluding climate adaptation S-MCDA Map](Inserted_images/Climate Adaptation/con climate map-01.png)
+The final conclusding map reveals that two industrial sites along the stream exhibit particularly low adaptive capacity to flood risk, suggesting a pressing need for the implementation of resilience-based flood mitigation measures. Additionally, a sports field with impervious surfaces located between these two industrial areas was also identified as an area requiring improvement in surface permeability to enhance its flood adaptation performance.
 
 ### 3.C. Quality of life
 
