@@ -27,6 +27,28 @@ editor: visual
 
 ```
 
+# Spatial Analysis for Decision-Making in Urban Stream Restoration
+
+## The Case of Bílá Nisa in Jablonec nad Nisou
+
+*2025, June 27*
+
+*Students (Group D):*
+
+-   *Finn van Asch (Urbanism)*
+-   *Frederick Auer (Geomatics)*
+-   *Matthijs Jerez Nova (Urbanism)*
+-   *Ruofan Lin (Landscape Architecture)*
+-   *Ula Nina Kunigėlytė (Urbanism)*
+
+*Teachers:*
+
+-   *Daniele Cannatella*
+
+-   *Claudiu Forgaci*
+
+-   *Yehan Wu*
+
 **Table of contents:**
 
 1.  Introduction;
