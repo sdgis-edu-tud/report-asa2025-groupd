@@ -457,6 +457,8 @@ For these reasons, we applied normalization to this indicator using specific thr
 
 ![*Mean Impervious Surface Percentage (Normalized Map).*](Inserted_images/Climate%20Adaptation/Normalised_Mean_Impervious_v2.png){fig-align="center" width="500"}
 
+The impervious surface percentage map of the original extracted data can be found in the appendix under its respective theme. 
+
 ***Mean Night-Time Land Surface Temperature (LST)***
 
 High night-time temperatures indicate poor cooling and urban heat retention. The Mean Night-Time Land Surface Temperature (LST) was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range. 
@@ -472,6 +474,8 @@ The range we chose is adjusted to the context of the city. For that reason we ch
 :::
 
 ![*Mean Night-Time Land Surface Temperature (Normalized Map).*](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST_v2.png){fig-align="center" width="500"}
+
+The Mean Night-Time Land Surface Temperature map of the original extracted data can be found in the appendix under its respective theme. 
 
 #### Which Areas Have Healthy Vegetation?
 
@@ -490,6 +494,8 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 :::
 
 ![*Normalized Difference Vegetation Index (Normalized Map).*](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI_v2.png){fig-align="center" width="500"}
+
+The NDVI map of the original extracted data can be found in the appendix under its respective theme. 
 
 #### Climate Adaptation S-MCDA Aggregation & Conclusion
 
@@ -709,6 +715,9 @@ slickR(imgs, height = 800, width = 500) +
 
 ```
 
+The original non normalized maps of the original extracted pollution data can be found in the appendix under its respective theme. 
+
+
 ***Percentage of Tree Cover***
 
 Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
@@ -720,6 +729,8 @@ Tree cover density represents the percentage of land surface covered by trees wi
 :::
 
 ![*Normalised Mean Tree Cover Percentage (Normalized Map).*](Inserted_images/Quality%20of%20Life/Normalised_Mean_treecover_v2.png){fig-align="center" width="500"}
+
+The tree cover percentage map of the original extracted data can be found in the appendix under its respective theme. 
 
 Combining these two layers results in the following combined map. The map shows the more urban one goes, the less liveable the urban climate becomes. Some areas score low because they are former and current industrial areas, for example Hranicá and Janovska industrial areas were pollution is still present.
 
