@@ -473,7 +473,8 @@ Impervious surfaces directly affect the area's ability to absorb water, while hi
 
 Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
 
-::: {.callout-note collapse="true" title = "Impervious Surface Normalisation Table"} *Normalized Impervious Table*
+::: {.callout-note collapse="true" title = "Impervious Surface Normalisation Table"}
+ *Normalized Impervious Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
 |---------------|---------------|---------------|---------------|---------------|
