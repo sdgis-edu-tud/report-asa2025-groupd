@@ -33,6 +33,10 @@ editor: visual
 
 *2025, June 27*
 
+*Delft University of Technology, Faculty of Architecture & The Built Environment*
+
+*ARFW0501 \| Applied Spatial Analytics for Sustainable Urban Development (2024/25 Q4)*
+
 *Students (Group D):*
 
 -   *Finn van Asch (Urbanism)*
