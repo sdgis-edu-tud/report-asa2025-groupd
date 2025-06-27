@@ -38,17 +38,29 @@ editor: visual
     e.  Normalization;
 3.  Spatial Multi-Criteria Decision Analysis (S-MCDA)
     A.  Biodiversity;
-        a.  Which Areas Have High Biodiversity Value?
-        b.  Which Areas Have a High Level of Human Activity?
-        c.  Which Areas Provide Opportunity for Improved Biodiversity?
+
+        Which Areas Have High Biodiversity Value?
+
+        Which Areas Have a High Level of Human Activity?
+
+        Which Areas Provide Opportunity for Improved Biodiversity?
+
     B.  Climate Adaptation;
-        a.  Which Areas Have Highest Flood Damage Risk?
-        b.  Which Areas Have The Most Impervious Surfaces?
-        c.  Which Areas Have Healthy Vegetation?
+
+        Which Areas Have Highest Flood Damage Risk?
+
+        Which Areas Have The Most Impervious Surfaces?
+
+        Which Areas Have Healthy Vegetation?
+
     C.  Quality of Life;
-        a.  Which Areas Are Deprived of Public Facilities?
-        b.  Which Areas Lack Infrastructure to Access?
-        c.  Which Areas Can Be Physically Uncomfortable?
+
+        Which Areas Are Deprived of Public Facilities?
+
+        Which Areas Lack Infrastructure to Access?
+
+        Which Areas Can Be Physically Uncomfortable?
+
     D.  Conclusion of S-MCDA;
 4.  Typology Construction;
     a.  Research Question & Variables;
@@ -60,15 +72,15 @@ editor: visual
 
 ## 1. Introduction
 
-Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss and the demand for sustainable development [@nijkamp2013new]. According to @article, in cities the impact of land use on fresh-water ecosystems is especially severe. As climate change is expected to increase the intensity and frequency of extreme weather events, solutions to combat these effects are urgently needed [@ourloglou2020assessing].
+Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss and the demand for sustainable development [@Nijkamp_Karima_2013]. According to @article, in cities the impact of urbanization and intensified land use on fresh-water ecosystems is especially severe. As climate change is expected to become more increase the intensity and frequency of severe weather events, solutions to combat these effects are urgently needed [@ourloglou2020assessing].
 
 Urban streams are expected to have an important role in the mitigation of climate change by buffering extreme temperatures and prevent floods. More importantly, finding nature-based solutions are key and can restore existing strained water systems [@ourloglou2020assessing]. In this context, spatial analytics can play a crucial role in informing climate adaptation and urban planning strategies [@hurlimann2012role]. Through methods such as Spatial Multi-Criteria Decision Analysis (S-MCDA) and typology development, planners and designers can better understand urban systems, evaluate trade-offs, and propose the correct targeted interventions.
 
-The ReBioClim project, funded by the Interreg Central Europe Program [@rebioclim2024], exemplifies this approach by focusing on revitalizing small urban streams. It additionally provides a framework where nature-based solutions can be identified to enhance biodiversity, mitigate climate change effects, and improve urban living conditions [@rebioclim_ioer2024]. Running from June 2024 to January 2027, the project addresses the challenges of urban stream restoration in four Central European cities, including Jablonec nad Nisou, the case targeted in this report.
+The ReBioClim project, funded by the Interreg Central Europe Program [@rebioclim2024], exemplifies this approach by focusing on revitalizing small urban streams. It additionally provides a framework where nature-based solutions can be identified to enhance biodiversity, mitigate climate change effects, and improve urban living conditions [@rebioclim_ioer2024]. Running from June 2024 to January 2027, the project addresses the challenges of urban stream restoration in four Central European cities: Dresden, Jablonec nad Nisou, Poznan and Senica. The case study area of this report is the Bílá Nisa stream in Jablonec nad Nisou.
 
-![ReBioClim Project Overview](Inserted_images/rebioclim_currentstate.png){width="600"}
+![ReBioClim Project Overview [@rebioclim_ioer2024].](Inserted_images/rebioclim_currentstate.png){fig-align="center" width="600"}
 
-Over recent decades, Jablonec nad Nisou has experienced overbuilding, channelization, and neglect of its urban streams, leading to ecological degradation and reduced quality of life. Our objective is to quantitatively assess the current state of these waterways and identify areas with the highest potential for improvement. Through these efforts, we aim to provide a better understanding of where and how to restore the waterways and create green-blue corridors that offer cooling effects, improve air quality, and provide recreational spaces for residents.
+Over recent decades, Jablonec nad Nisou has experienced overbuilding, channelization, and neglect of its urban streams, leading to ecological degradation and reduced quality of life. Our objective is to quantitatively assess the current state of these waterways and identify areas with the highest potential for improvement for biodiversity, climate adaptation and quality of life. Through these efforts, we aim to provide a better understanding of where and how to restore the waterways and create green-blue corridors that offer cooling effects, improve air quality, and provide recreational spaces for residents.
 
 ```{r fig.subcap="Jablonec nad Nisou and the Bila Nisa stream"}
 #| warning: false
@@ -750,7 +762,7 @@ Flood mitigation measures can be implemented mainly in the inner city, particula
 
 For this question, the research looked at areas which are lacking social infrastructure and accessibility for a good quality of life. Therefore areas which are in need of improvements are those which are currently performing poorly. Quality of life differs somewhat evenly across the entire length of the stream. There is not a significant difference between the inner city and its outskirts. Inside the city, key areas which are in need of quality of life improvements are Tovární - Siroká, the industrial area near Mšeno nad Nisou and the Janovská industrial area.
 
-![Concluding S-MCDA Maps](Inserted_images/Concluding%20S-MCDA-01.png)
+![*Concluding S-MCDA Maps.*](Inserted_images/Concluding%20S-MCDA-01.png){fig-align="center"}
 
 ## 4. Typology Construction
 
@@ -1353,7 +1365,7 @@ browsable(tagList(image_grid, fullscreen_script))
 
 ```
 
-**Original Raw Data Maps for Climate Adaptation**
+**Original Raw Data Maps for Quality of Life**
 
 ```{r}
 #| warning: false
