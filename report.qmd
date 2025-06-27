@@ -77,7 +77,7 @@ editor: visual
 
 ## 1. Introduction
 
-Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss and the demand for sustainable development [@Nijkamp_Karima_2013]. As climate change is expected to become more extreme and social inequality in urban facilities continues to rise rise, solutions which address biodiversity loss, climate change and the degradation of quality of life in urban public spaces are urgently needed [@Ourloglou_et_al_2020 ; @United_Nations_2025].
+Urban areas across Europe are increasingly challenged by the impacts of climate change, biodiversity loss and the demand for sustainable development [@Nijkamp_Karima_2013]. As climate change is expected to become more extreme and social inequality in urban facilities continues to rise rise, solutions which address biodiversity loss, climate change and the degradation of quality of life in urban public spaces are urgently needed [@Ourloglou_et_al_2020; @United_Nations_2025].
 
 According to @Diaz_et_al_2019, in cities the impact of urbanization and intensified land use on fresh-water ecosystems is especially severe. Extreme biodiversity loss, water quality degradation, urban build-up, destruction of riparian buffers and the chanelisation of streams are some among many drastic changes that urban streams have gone through in the past centuries. In light of the challenges that urban areas are facing, urban stream restoration is seen as having an increasingly important role in the mitigation of climate change by buffering extreme temperatures and managing floods. Streams in urban areas also offer great opportunities for improved biodiversity and quality of life in urban spaces [@Diaz_et_al_2019].
 
@@ -247,20 +247,7 @@ The following figure shows the criteria for each biodiversity sub-question, alon
 
 Areas with an already high value for biodiversity are vital to preserve. It is much harder to restore biodiversity to its original levels than it is to preserve it. Therefore it is vital to keep track of areas valuable for biodiversity, and avoid influencing them with human activity. In addition, the existing biodiverse areas can act as building blocks for the expansion of the green network, and can be further improved through targeted design interventions.
 
-```{r}
-#| echo: false
-#| warning: false
-#| message: false
-library(slickR)
-
-
-imgs <- c("Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png",
-          "Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(original%20data).png")
-
-slickR(imgs, height = 800, width = 600) +
-  settings(dots = TRUE)
-
-```
+![*Biodiversity value (normalised data)*](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png)
 
 ***Floodplain Biotope Value***
 
@@ -268,11 +255,12 @@ The purpose of this criteria is to identify which Bílá Nisa floodplains serve 
 
 The layer shows that most of the Bílá Nisa floodplain has negligible biotope value. However, some patches of moderate value remain which could be salvaged. To normalize this information, the polygons with moderate biotope value were isolated and 'intersected' according to the grid lines. Then an 'overlap analysis' was conducted to calculate the percentage of area per cell that has moderate floodplain biotope value.
 
-::: {.callout-note collapse="true", title = "Normalized Floodplain Biotope Value Table"}
-| Normalized Value | **\<0.3** | 0.3-0.7 | \>0.7 | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
-| **Meaning** | Low to No Presence | Some Presence | High Presence | Proportion of Moderately Valuable Floodplain Biotope per Cell |
+::: {.callout-note collapse="true" title="Normalized Floodplain Biotope Value Table"}
+| Normalized Value | **<0.3**          | 0.3-0.7       | >0.7          | Normalized Range (0-1)                         |
+|------------------|-------------------|---------------|---------------|-----------------------------------------------|
+| **Meaning**      | Low to No Presence | Some Presence | High Presence | Proportion of Moderately Valuable Floodplain Biotope per Cell |
 :::
+
 
 ![*Floodplain Biotope Value (normalized data).*](Inserted_images/Biodiversity/Floodplain%20biotope%20value%20(normalized%20data).png){fig-align="center" width="500"}
 
@@ -288,13 +276,14 @@ To normalize the data, these natural habitat polygons were split up based on the
 
 The map shows that there the largest diversity of natural habitats is right at the edges of the city borders.
 
-::: {.callout-note collapse="true", title = "Normalized Diversity of Natural Habitats Table"}
-| Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
-| **Meaning** | Low to No Diversity | Some Diversity | High Diversity | Number of Unique Natural Habitats per Cell |
+::: {.callout-note collapse="true" title="Normalized Diversity of Natural Habitats Table"}
+| Normalized Value | **<0.4**          | 0.4-0.6       | >0.6          | Normalized Range (0-1)                      |
+|-----------------|-------------------|---------------|---------------|---------------------------------------------|
+| **Meaning**     | Low to No Diversity| Some Diversity| High Diversity| Number of Unique Natural Habitats per Cell |
 :::
 
-![*Diversity of Natural Habitats (normalized data)*](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(normalized%20data).png.png){fig-align="center" width="500"}
+
+![*Diversity of Natural Habitats (normalized data)*](Inserted_images/Biodiversity/Diversity%20of%20natural%20habitats%20(normalized%20data).png){fig-align="center" width="500"}
 
 ***Proportion of Natural Habitat Area***
 
@@ -302,12 +291,12 @@ The surface area of natural habitats directly influences biodiversity and ecosys
 
 This criterion looks at the same data as the diversity of natural habitats, categorized in broader natural habitat types [@AOPK_CR_2025a]. The map shows a prominence of grasslands outside of the city, but there are also forests, shrubs and peat bogs. The polygons of these natural habitats were divided based on grid lines using the 'intersection' tool, and then an 'overlap analysis' was conducted to identify the cover area of these combined natural habitats in each cell. The map shows that most of the natural habitats area actually concentrated further away from the stream.
 
-
-::: {.callout-note collapse="true", title = "Normalized Proportion of Natural Habitat Area Table"}
-| Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
-| **Meaning** | Low to No Presence | Some Presence | High Presence | Proportion of Natural Habitats per Cell |
+::: {.callout-note collapse="true" title="Normalized Proportion of Natural Habitat Area Table"}
+| Normalized Value | **<0.4**          | 0.4-0.6       | >0.6          | Normalized Range (0-1)                  |
+|-----------------|-------------------|---------------|---------------|-----------------------------------------|
+| **Meaning**     | Low to No Presence | Some Presence | High Presence | Proportion of Natural Habitats per Cell |
 :::
+
 
 ![*Proportion of Natural Habitat Area (normalized data).*](Inserted_images/Biodiversity/Natural%20habitats%20-%20cover%20area%20(normalized%20data).png){fig-align="center" width="500"}
 
@@ -331,12 +320,12 @@ Therefore, this criterion looks at the existing road infrastructure and its spee
 
 The road infrastructure was taken from OpenStreetMap and clipped to the grid [@roads_OSM]. The road segments were then 'intersected' according to the grid lines. The length of each road segment was multiplied by its speed limit to adjust for the impact that vehicle speeds would have on the biodiversity. Each line segment was then converted into a centroid, and the 'join attributes by location (summary)' function was used to find the sum of all of the given values within a cell. Then the data was normalized by dividing all values by the highest value. It is important to note that for the later aggregation, the values in this criterion had to be inverted, as a larger presence of roads is undesirable for biodiversity.
 
-
-::: {.callout-note collapse="true", title ="Normalized Weighed Road Segment Length Table"}
-| Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
-| **Meaning** | Low to No Nuisance | Some Nuisance | High Nuisance | Road Nuisance by Proportion of Weighed Road Segment Length per Cell |
+::: {.callout-note collapse="true" title="Normalized Weighed Road Segment Length Table"}
+| Normalized Value | **<0.4**          | 0.4-0.6       | >0.6          | Normalized Range (0-1)                              |
+|-----------------|-------------------|---------------|---------------|----------------------------------------------------|
+| **Meaning**     | Low to No Nuisance | Some Nuisance | High Nuisance | Road Nuisance by Proportion of Weighed Road Segment Length per Cell |
 :::
+
 
 ![*Weighed Road Segment Length (normalized data).*](Inserted_images/Biodiversity/Weighed%20road%20segment%20lenght%20(normalized%20data).png){fig-align="center" width="500"}
 
@@ -348,11 +337,12 @@ The build-up area criterion utilizes the data on existing buildings from @Buildi
 
 The results of the normalized data on build-up area show that there is some level of build-up along most parts of the stream. There is a fairly high variation of build-up area along the stream in the inner city. For the later aggregation, the values in this criterion had to be inverted, as it is undesirable for biodiversity to have a high level of build-up.
 
-::: {.callout-note collapse="true", title = "Normalized Proportion of Built-up Area Table"}
-| Normalized Value | **\<40%** | 40-60% | \>60% | Normalized Range (0%-100%) |
-|---------------|---------------|---------------|---------------|---------------|
-| **Meaning** | Low to No Build-up | Some Build-up | High Build-up | Percentage of Built-Up Area Per Cell |
+::: {.callout-note collapse="true" title="Normalized Proportion of Built-up Area Table"}
+| Normalized Value | **<40%**          | 40-60%        | >60%          | Normalized Range (0%-100%)                 |
+|-----------------|-------------------|---------------|---------------|--------------------------------------------|
+| **Meaning**     | Low to No Build-up | Some Build-up | High Build-up | Percentage of Built-Up Area Per Cell       |
 :::
+
 
 ![*Proportion of Built-up Area (normalized data).*](Inserted_images/Biodiversity/Built-up%20area%20(normalized%20data).png){fig-align="center" width="500"}
 
@@ -374,11 +364,12 @@ The data used for this criterion is the 'Methodologically Unified Definition of 
 
 To normalize this data, the layer polygons were split up per cell using the 'intersect' function, and the 'overlap analysis' was conducted to identify the percentage of area per cell that is taken up by the ecological corridor polygon. In the resulting map (where 1 is 100% of the area and 0 is 0% of the area) key cells for ecological connectivity can be seen.
 
-::: {.callout-note collapse="true", title = "Normalized Ecological Corridors Table"}
-| Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|---------------|---------------|---------------|---------------|---------------|
-| **Meaning** | Low to No Presence | Some Presence | High Presence | Proportion of Ecological Corridor Area Per Cell |
+::: {.callout-note collapse="true" title="Normalized Ecological Corridors Table"}
+| Normalized Value | **<0.4**          | 0.4-0.6       | >0.6          | Normalized Range (0-1)                         |
+|-----------------|-------------------|---------------|---------------|------------------------------------------------|
+| **Meaning**     | Low to No Presence | Some Presence | High Presence | Proportion of Ecological Corridor Area Per Cell |
 :::
+
 
 ![*Ecological Corridors (normalized data).*](Inserted_images/Biodiversity/Ecological%20corridors%20(normalized%20data).png){fig-align="center" width="500"}
 
@@ -400,15 +391,16 @@ To normalize this data, the polygons with medium and high potential for restorat
 
 Legal protection for natural areas is vital to limit human activity which may negatively influence biodiversity. However, establishing protected areas are often insufficient in preventing biodiversity loss. Therefore, the zones of protected natural areas are considered in this analysis but are given limited weight [@Hein_Cunha_deFrancisco_2024].
 
-Zones of protection of natural areas examine the level of legal protection which large-scale specially protected natural areas have. The zoning data was taken from Agency for Nature and Landscape Conservation of the Czech Republic [@AOPK_CR_2025b ; @AOPK_CR_2025c]. The dataset shows that there are some areas along the stream with Zone III and Zone IV levels of protection. Zone IV indicates a landscape management zone with the least strict protection, allowing for broader human activity, but still focusing on the preservation of ecological value. Zone III is a natural buffer zone where traditional and sustainable land use is still generally allowed. The map shows that mostly only the areas outside of the city borders have some level of protection.
+Zones of protection of natural areas examine the level of legal protection which large-scale specially protected natural areas have. The zoning data was taken from Agency for Nature and Landscape Conservation of the Czech Republic [@AOPK_CR_2025b; @AOPK_CR_2025c]. The dataset shows that there are some areas along the stream with Zone III and Zone IV levels of protection. Zone IV indicates a landscape management zone with the least strict protection, allowing for broader human activity, but still focusing on the preservation of ecological value. Zone III is a natural buffer zone where traditional and sustainable land use is still generally allowed. The map shows that mostly only the areas outside of the city borders have some level of protection.
 
 To process the data, the polygons were 'intercepted' based on the grid lines, then the 'overlap analysis' function calculated the percentage of area different protection zones took up in each grid cell. Using the field calculator, the majority (\>50%) value in each cell size was identified and normalized. In case there was no majority, the average between two values with the highest percentage of area was taken. For example, if a cell was 45% zone III and 35% zone IV, then the final cell value is 0.5, because zone VI has the normalized value of 0.25 and zone III has the normalized value of 0.75.
 
-::: {.callout-note collapse="true", title ="Normalized Zones of Protected Natural Areas Table"}
-| Normalized Value | 0 | 0.25 | 0.5 | 0.75 |
-|---------------|---------------|---------------|---------------|---------------|
-| **Meaning** | No Protection | Lowest Protection Zone (VI) | Low Protection Zone (VI/III) | Moderate Protection Zone (III) |
+::: {.callout-note collapse="true" title="Normalized Zones of Protected Natural Areas Table"}
+| Normalized Value | 0              | 0.25                        | 0.5                          | 0.75                     |
+|------------------|----------------|-----------------------------|------------------------------|--------------------------|
+| **Meaning**      | No Protection  | Lowest Protection Zone (VI) | Low Protection Zone (VI/III) | Moderate Protection Zone (III) |
 :::
+
 
 ![*Zones of Protected Natural Areas (normalized data).*](Inserted_images/Biodiversity/Zones%20of%20protected%20natural%20areas%20(normalized%20data).png){fig-align="center" width="500"}
 
@@ -472,7 +464,7 @@ A high proportion of impervious surfaces can directly lead to floods in urban ar
 
 Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
 
-::: {.callout-note collapse="true" title = "Impervious Surface Normalisation Table"} 
+::: {.callout-note collapse="true" title = "Impervious Surface Normalisation Table"}
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
 |---------------|---------------|---------------|---------------|---------------|
@@ -574,15 +566,14 @@ Accessibility to nature and public green offer comfort in urban areas and is an 
 
 A clip mask has been made to overlay it on the grid layer using the mean values. The area of public green per grid cell is then normalized on a 0 to 1 scale using the formula underneath.
 
-::: {.callout-note collapse="true", title = "Normalisation Formula Access to Public Green Space"}
-**Normalized value** = *("area mean" - min("area mean")) / (max("area mean") - min("area mean"))*
-:::
+::: {.callout-note collapse="true" title = "Normalisation Formula Access to Public Green Space"} **Normalized value** = *("area mean" - min("area mean")) / (max("area mean") - min("area mean"))* :::
 
-::: {.callout-note collapse="true", title = "Normalized Public Green Table"}
+::: {.callout-note collapse="true" title = "Normalized Public Green Table"}
 
 | Variable | Low availability (0-0.2) | High availability (0.8-1) | Notes |
 |------------------|------------------|------------------|------------------|
 | Area mean | \<10073,8 | \>40295,2 | \<10073,8 → 0-0.2 (low availability), \>40295,2 → 0.8-1 (high availability) |
+
 :::
 
 Following the conversion to normalized values using the open field calculator tool in GIS, the layer has been styled using an equal interval of 5 classes.
@@ -597,15 +588,17 @@ The layer filters only public areas that are also considered meeting spots for t
 
 The data is normalized using the layer count data, on a scale from 0 to 1. The formula underneath has been used in the open field calculator tool to create a new column with normalized values.
 
-::: {.callout-note collapse="true", title = "Normalisation Formula for Access to Public Amenties"}
+::: {.callout-note collapse="true" title="Normalisation Formula for Access to Public Amenties"}
 **Normalized value** = *("type count" - min("type count")) / (max("type count") - min("type count"))*
 :::
+
 
 ::: {.callout-note collapse="true", title = "Normalized Public Amenities Table"}
 
 | Variable | Low availability (0-0.2) | High availability (0.8-1) | Notes |
 |------------------|------------------|------------------|------------------|
 | Type count | \<2 | \>5 | \<2 → 0-0.2 (low availability), \>5 → 0.8-1 (high availability) |
+
 :::
 
 Using 5 classes, the layer is styled using an equal interval of 0.2. It shows two areas with high diversity, namely in the south downstream where different modes of infrastructure are located and more central near the Mšeno nad Nisou industrial area which is close to an urban center.
@@ -626,15 +619,17 @@ How well the urban stream can be accessed can be analyzed through the level of i
 
 Using the open field calculator, a new column is created for normalizing the data to a 0 to 1 scale using the following formula:
 
-::: {.callout_note collapse="true", title = "Normalisation Formula for Access to Stream"}
+::: {.callout-note collapse="true" title="Normalisation Formula for Access to Stream"}
 **Normalized value** = *("sum_Atw2kM" - minimum("sum_Atw2kM")) / (maximum("sum_Atw2kM") - minimum("sum_Atw2kM"))*
 :::
+
 
 ::: {.callout-note collapse="true", title = "Normalized Road Integration Table"}
 
 | Variable | Low Integration(0) | High Integration (1) | Notes |
 |------------------|------------------|------------------|------------------|
 | Angular Integration Sum 2k | \<41.25 | \>115.25 | \<41.25 → 0-0.25 (low integration), \>115.25 → 0.75-1 (high integration) |
+
 :::
 
 Categorizing the layer with the newly calculated normalized column, the following map shows how urban centers North, central and South-west of the stream can be defined.
@@ -676,7 +671,6 @@ The last performance indicator for quality of life relates to physical condition
 To ensure comparability across pollutants, all air quality indicators were normalized to a common scale between 0 and 1. The normalization is based on internationally recognized health guidelines from the World Health Organization [@who2021] and the European Union (Directive 2008/50/EC) [@eu_air_quality]. For PM₁₀, PM₂.₅, and NO₂, thresholds were defined using three reference points: half the WHO annual guideline value (representing minimal health risk), the WHO annual guideline value (health-based target), and the EU legal limit (regulatory maximum). For SO₂, BaP, and BzN, thresholds were determined using available EU targets or inspired by the Belgian national limits [@irceline2022]. All values were normalized using the upper bound of each category range to reflect worst case exposure levels for each grid cell. This approach allows consistent interpretation of long-term exposure risks across pollutants.
 
 ::: {.callout-note collapse="true" title="Initial Air Pollution Normalisation Method"}
-*Normalized Pollution table*
 
 | Pollutant | WHO 2021 Guideline (µg/m³) | EU Limit (µg/m³) | Low Risk Threshold (0) = ½ WHO | High Risk Threshold (1) = EU | Normalized Range (0–1) |
 |------------|------------|------------|------------|------------|------------|
@@ -691,7 +685,6 @@ To ensure comparability across pollutants, all air quality indicators were norma
 A then example calculation in Qgis for SO2 would be:
 
 ::: {.callout-note collapse="true" title="Calculation Example for SO2"}
-*Example calculation for SO2*
 
 CASE WHEN "MAX_majority" IS NULL THEN NULL WHEN "MAX_majority" \< 20 THEN 0 WHEN "MAX_majority" \> 125 THEN 1 ELSE ("MAX_majority" - 20) / (125 - 20) END
 :::
@@ -701,7 +694,6 @@ However, as was later discovered, this approach led to all of the pollution data
 This simpler method yields the final table with the new normalization based on the input data classification is the following.
 
 ::: {.callout-note collapse="true" title="New Normalisation Method for Pollution"}
-*New Normalized Pollution Table*
 
 | Pollutant | Observed Max (From Layer) | Low Risk Threshold (0) | High Risk Threshold (1) | Normalization Formula |
 |---------------|---------------|---------------|---------------|---------------|
@@ -737,7 +729,6 @@ slickR(imgs, height = 800, width = 500) +
 Tree cover density represents the percentage of land surface covered by trees within our chosen area of interest. This measure is normalized on a 0 to 1 scale, where 0 corresponds to \<25% tree cover and 1 corresponds to \>75% tree cover. This range was chose as lower tree cover densities (\<0.25) are linked to increased land surface temperatures and higher urban heat island effects, while higher densities (\>0.75) are associated with reduced temperatures and mitigation of urban heat [@morabito2021surface].
 
 ::: {.callout-note collapse="true" title="Normalisation for Tree Cover Table"}
-*Normalized Tree Cover Table*
 
 | Variable | Low Risk Threshold(0) | High Risk Threshold (1) | Notes |
 |------------------|------------------|------------------|------------------|
@@ -1155,7 +1146,7 @@ The result of performing K-means clustering to derive typologies is the translat
 
 ::: {style="font-size: 0.85em"}
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|----|----|----|----|----|------------|
+|------------|------------|------------|------------|------------|------------|
 | 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function. |
 | 2 (Orange) | Low | Moderate | Moderate | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.** |
 | 3 (Yellow) | Low | Low | Moderate | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility.This is suitable for **buffer zones or low-impact enhancement.** |
@@ -1182,14 +1173,13 @@ slickR(imgs, height = 800, width = 500) +
 
 **Visualizing the Five Grid Cells Closest to their cluster centers**
 
-In the maps below, we visualize each cluster using the grid cell that is closest to the center of its cluster. This approach helps us understand the “typical” spatial characteristics of each typology by looking directly at the physical environment in satellite view. 
+In the maps below, we visualize each cluster using the grid cell that is closest to the center of its cluster. This approach helps us understand the “typical” spatial characteristics of each typology by looking directly at the physical environment in satellite view.
 
-Viewing these tiles alongside our typology tables allows us to connect normalized indicator data with what these areas actually look like on the ground.We can then also provide visual confirmation that should align with the typology's data profile and description. 
+Viewing these tiles alongside our typology tables allows us to connect normalized indicator data with what these areas actually look like on the ground.We can then also provide visual confirmation that should align with the typology's data profile and description.
 
-By repeating this visual process across all five of the clusters closest to their respective centers, we can compare the difference in vegetation density, built-up areas, stream access paths, and floodplain conditions, allowing for a more intuitive interpretation of each typology. 
+By repeating this visual process across all five of the clusters closest to their respective centers, we can compare the difference in vegetation density, built-up areas, stream access paths, and floodplain conditions, allowing for a more intuitive interpretation of each typology.
 
 In this way, visualizing the tiles bridges quantitative clustering with qualitative site reading, strengthening the practical relevance of the typology construction for planning the targeted interventions along the Bila Nisa stream.
-
 
 ```{r}
 #| warning: false
@@ -1251,7 +1241,7 @@ The methodology used in this analysis combines multiple spatial vector and raste
 
 *Typology Construction* Another important observation relates to the interpretation of typologies based on the K-means clustering approach. The nearest grid cell to the cluster center in feature space, which we often use as an illustrative example of a “typical” cell, may not necessarily be representational of the spatial or contextual characteristics of the entire typology in reality. This is exhibited when visualizing our five nearest grid cells respective to their cluster centers. Some appear quite similar, and the size and shape of the spatial unit may lead to unrealistic representation of the cluster. Local variations, edge effects, and mixed land uses can cause certain grid cells to exhibit high conformity in indicator values while not fully reflecting the actual on the ground conditions. This means that while the clustering helps identify patterns and priority areas, local field verification and expertise remain essential before planning interventions. Additionally, the typology maps, while helpful for visualizing patterns, should be used in conjunction with stakeholder input to interpret what the clusters mean in practice, especially in areas where social conflicts over stream access may exist.
 
-Furthermore, it is important to note that not all of the five tiles closest to the cluster centers contain the stream corridor within them. This occurs because the selection was based on proximity to the cluster center in normalized feature space, not physical location along the stream. As a result, some tiles, despite being statistically representative of their typology, may not fully reflect the spatial relationship with the stream that is central to the project's intervention focus. This is a limitation when interpreting typologies for green-blue infrastructure planning, as it may overlook the spatial dynamics of hydrological connectivity and riparian accessibility that are critical for targeted interventions. 
+Furthermore, it is important to note that not all of the five tiles closest to the cluster centers contain the stream corridor within them. This occurs because the selection was based on proximity to the cluster center in normalized feature space, not physical location along the stream. As a result, some tiles, despite being statistically representative of their typology, may not fully reflect the spatial relationship with the stream that is central to the project's intervention focus. This is a limitation when interpreting typologies for green-blue infrastructure planning, as it may overlook the spatial dynamics of hydrological connectivity and riparian accessibility that are critical for targeted interventions.
 
 To address this, these representative tiles should be interpreted as indicator archetypes rather than direct site candidates, and planners should cross reference these typologies with spatial layers showing actual stream locations for planning interventions. Future analyses could consider constraining cluster sampling to cells intersecting the stream to align more closely with hydrological connectivity goals while maintaining typology interpretability.
 
