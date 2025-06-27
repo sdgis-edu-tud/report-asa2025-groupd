@@ -85,7 +85,7 @@ In this context, spatial analytics can play a crucial role in informing decision
 
 The ReBioClim project, funded by the Interreg Central Europe Program [@rebioclim2024_TUDresden], focuses on revitalizing small urban streams to address biodiversity, climate adaptation and quality of life challenges facing urban areas in Central Europe [@rebioclim2024_Leibniz]. Running from June 2024 to January 2027, the project addresses the challenges of urban stream restoration in four Central European cities: Dresden, Jablonec nad Nisou, Poznan and Senica. The case study area of this report is the Bílá Nisa stream in Jablonec nad Nisou.
 
-![*ReBioClim Project Overview [@rebioclim_ioer2024].*](Inserted_images/rebioclim_currentstate.png){fig-align="center" width="500"}
+![*ReBioClim Project Overview [@rebioclim2024_TUDresden].*](Inserted_images/rebioclim_currentstate.png){fig-align="center" width="500"}
 
 ```{r fig.subcap="Jablonec nad Nisou and the Bila Nisa stream"}
 #| warning: false
@@ -528,7 +528,7 @@ The final conclusding map reveals that two industrial sites along the stream exh
 
 ### 3.C. Quality of life
 
-For quality of life, criteria can vary from psychological and health indicators to more tangible indicators on the conditions of the urban climate. František Murgaš & Michal Klobučník [@Murgas_&_Klobucnik_2016] used the gold standard for assessing quality of life in municipalities of the Czech Republic. They evaluated quality of life based on the following indicators below.
+For quality of life, criteria can vary from psychological and health indicators to more tangible indicators on the conditions of the urban climate. František Murgaš & Michal Klobučník [@Murgas_Klobucnik_2016] used the gold standard for assessing quality of life in municipalities of the Czech Republic. They evaluated quality of life based on the following indicators below.
 
 > Wanting to live — can be expressed by the absence of the will to live, i.e., suicide. Expression of the indicator is suicide mortality rate.
 
@@ -546,7 +546,7 @@ For quality of life, criteria can vary from psychological and health indicators 
 
 > Being a good person—can be expressed by the indicator of generativity.
 
-However, not all data used in this research are useful as it is mostly acquired through methods of fieldwork, like surveys and interviews, and are therefore perceived as subjective. Different indicators are required to determine how quality of life can be measured in urban space. Koi and Masanobu [@Doi_et_al_2008] discovered that accessiblity to basic human needs is an important factor for indicating quality of life and form a decisive criterion for planning for land use purposes or planning for new transportation infrastructure. Moreover, Khalil [@Khalil_2012] pointed out that economic viability of urban areas and the various forms of economic activity are also an important indicator for quality of life and the functioning of urban systems.
+However, not all data used in this research are useful as it is mostly acquired through methods of fieldwork, like surveys and interviews, and are therefore perceived as subjective. Different indicators are required to determine how quality of life can be measured in urban space. Koi and Masanobu [@Doi_Kii_Nakanishi_2008] discovered that accessiblity to basic human needs is an important factor for indicating quality of life and form a decisive criterion for planning for land use purposes or planning for new transportation infrastructure. Moreover, Khalil [@Khalil_2012] pointed out that economic viability of urban areas and the various forms of economic activity are also an important indicator for quality of life and the functioning of urban systems.
 
 Based on these 3 research papers, three different perspectives on quality of life performance of an urban area are constructed to implement in the research to assess the viability of the area around the urban stream; amenities around the stream, accessibility of the stream, and the condition of the urban climate. Based on the assignment to enhance the quality of life along the stream, one main research question and three sub research questions have been drafted to pin point the areas along the Bila Nisa that perform low and require an intervention to enhance the quality of life along the urban stream.
 
@@ -643,7 +643,7 @@ Categorizing the layer with the newly calculated normalized column, the followin
 
 ***Access to Public Transport***
 
-Apart from the road network, which primarily focuses on private mobility, public transport offers a good indication how the stream can be accessed from a more regional perspective For this, a data layer from the ArcGIS web [@public_transport_Jablonec_nad_Nisau] is found that represents the public transport network of Jablonec nad Nisau. A clip from this layer is made, which results in a couple of bus stops and a tram stops that fall within reach of the stream. To see how accessible the stream is from public transportation, service areas are used with a radius of 500m (bus stops) and 1000m (tram stops) based on the type of connection. Bus is considered as a more urban connection while the tram has a regional connection with the neighboring city of Liberec.
+Apart from the road network, which primarily focuses on private mobility, public transport offers a good indication how the stream can be accessed from a more regional perspective For this, a data layer from the ArcGIS web [@PT_Jablonec_nad_Nisou_2025] is found that represents the public transport network of Jablonec nad Nisau. A clip from this layer is made, which results in a couple of bus stops and a tram stops that fall within reach of the stream. To see how accessible the stream is from public transportation, service areas are used with a radius of 500m (bus stops) and 1000m (tram stops) based on the type of connection. Bus is considered as a more urban connection while the tram has a regional connection with the neighboring city of Liberec.
 
 Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created using the open field calculator tool using the following formula to normalize the data from a 0 to 1 scale, based on the range of opportunities.
 
