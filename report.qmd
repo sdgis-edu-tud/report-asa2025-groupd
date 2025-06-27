@@ -536,27 +536,27 @@ The final conclusding map reveals that two industrial sites along the stream exh
 
 ### 3.C. Quality of life
 
-For quality of life, can vary from psychological and health indicators to more tangible urban climate indicator. @Murgas_Klobucnik_2016 used the gold standard for assessing quality of life in municipalities in the Czech Republic. The following indicators are included in the Gold standard for measuring the quality of life in urban environments.
+For quality of life, criteria can vary from psychological and health indicators to more tangible indicators on the conditions of the urban climate. František Murgaš & Michal Klobučník [@Murgas_&_Klobucnik_2016] used the gold standard for assessing quality of life in municipalities of the Czech Republic. They evaluated quality of life based on the following indicators below.
 
 > Wanting to live — can be expressed by the absence of the will to live, i.e., suicide. Expression of the indicator is suicide mortality rate.
 
-> Long life—can be expressed by the indicator of life expectancy.
+> Long life — can be expressed by the indicator of life expectancy.
 
-> Living in a complete family can be expressed by its absence; indicator is divorce rate. - Having children—can be expressed by the indicator of birth rate.
+> Living in a complete family - can be expressed by its absence; indicator is divorce rate. - Having children—can be expressed by the indicator of birth rate.
 
-> Being healthy—can be expressed by the absence of health; indicator is mortality.
+> Being healthy — can be expressed by the absence of health; indicator is mortality.
 
 > Living in a healthy environment—can be expressed by the environmental pollution.
 
 > Being educated—can be expressed by the indicator of the share of university graduates.
 
-> Having a job—can be expressed by the indicator of unemployment rate.
+> Having a job — can be expressed by the indicator of unemployment rate.
 
 > Being a good person—can be expressed by the indicator of generativity.
 
-Since many data are statistical data that have not been translated to vector layers, different indicators have been created which could give an idea of the quality of life. @Doi_Kii_Nakanishi_2008 discovered that accessiblity to basic human needs is an important factor for improving quality of life through policy implementation and spatial planning for land use purposes or transportation infrastructure. Moreover, @Khalil_2012 pointed out that economic viability of urban areas and the various of economic activity forms also an important indicator for quality of life and the functioning of urban systems.
+However, not all data used in this research are useful as it is mostly acquired through methods of fieldwork, like surveys and interviews, and are therefore perceived as subjective. Different indicators are required to determine how quality of life can be measured in urban space. Koi and Masanobu [@Doi_et_al_2008] discovered that accessiblity to basic human needs is an important factor for indicating quality of life and form a decisive criterion for planning for land use purposes or planning for new transportation infrastructure. Moreover, Khalil [@Khalil_2012] pointed out that economic viability of urban areas and the various  forms of economic activity are also an important indicator for quality of life and the functioning of urban systems.
 
-Based on these 3 research papers, three different perspectives for measuring quality of life surrounding the area of the Bila Nisa urban stream have been picked; amenities around the stream, accessiblity of the stream, and the condition of the urban climate. Based on the assingment to enhance the quality of life along the stream, one main research question and three sub research questions have been drafted to pin point the areas along the Bila Nisa that underperform and require an intervention that enhances the quality of life along the urban stream according to the directions of the ReBioClim program.
+Based on these 3 research papers, three different perspectives on quality of life performance of an urban area are constructed to implement in the research to assess the viability of the area around the urban stream; amenities around the stream, accessibility of the stream, and the condition of the urban climate. Based on the assignment to enhance the quality of life along the stream, one main research question and three sub research questions have been drafted to pin point the areas along the Bila Nisa that perform low and require an intervention to enhance the quality of life along the urban stream.
 
 > *Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
 
@@ -568,17 +568,17 @@ This question is further divided into the following questions:
 
 > *Which Areas Can Be Physically Uncomfortable?*
 
-![*Aggregated Quality of Life Criteria.*](Inserted_images/General%20Images/Aggregated%20Quality%20of%20Life%20Criteria-01.png){fig-align="center" width="500"}
+Following the research questions, a hierarchy is created to emphasize which aspects to quality of life are more important and require more priority over other criteria. In the S-MCDA diagram for quality of life, a distinction has been made between the three sub-topics, which are closely correlated to the briefing of the ReBioClim program.
 
-For the first analysis, we look at the availability of public amenities such as green spaces and public goods that are available to the population along the Bila Nisa, that could support urban life and enhance quality of life. The Bila Nisa is known for its offering of leisure activities and greenery, however these areas are not connected, thus for a larger population perceived as inaccessible.
+![*Aggregated Quality of Life Criteria.*](Inserted_images/General%20Images/Aggregated%20Quality%20of%20Life%20Criteria-01.png){fig-align="center" width="500"}
 
 #### Which Areas Are Deprived of Public Facilities?
 
-Public amenities are essential for urban life. Basic access to public goods such as parcs and stores offer incentives to go out, socialize and improve the general well-being of the population. Therefore, mapping which areas have these amenities and highlighting the areas that are deprived and require better access for the sake of the population. For the availability of public amenities along the stream, we looked at the availability of public green and the presence and diversity of public areas.
+Public amenities are essential for urban life. Basic access to public goods such as parks and stores offer incentives to go out, socialize and improve the general well-being of the population. Therefore, mapping which areas have these amenities and highlighting the areas that are deprived and require better access for the sake of the population forms the first step to indicate which areas offer a better social climate. For the availability of public amenities along the stream, we looked at the availability of public green and the presence and diversity of public areas.
 
 ***Access to Public Green Space***
 
-Accessiblity to nature and public green offer comfort in urban areas and is an important factor to be taken into account to determine if areas are liveable. As stated in the case of ReBioClim, ecological quality of the stream has been degregated over the years through human and industrial activity, resulting in a less liveable urban environment. There are some public green areas along the stream mainly located on the outskirts of the urban area. The data used is derived from Open Street Map services [@Green_space_OSM].
+Accessibility to nature and public green offer comfort in urban areas and is an important factor to be taken into account to determine if areas are liveable. As stated in the case of ReBioClim, ecological quality of the stream has been decreased over the years through human and industrial activity, resulting in a less livable urban environment. There are some public green areas along the stream mainly located on the outskirts of the urban area. The data used is derived from Open Street Map services [@Green_space_OSM].
 
 A clip mask has been made to overlay it on the grid layer using the mean values. The area of public green per grid cell is then normalized on a 0 to 1 scale using the formula underneath.
 
@@ -600,9 +600,9 @@ Following the conversion to normalized values using the open field calculator to
 
 ***Access to Public Amenities***
 
-Public amenities are needed to facilitate urban life and provide the population with basic human needs. Having these amenities close to the urban stream forms an important indicator how liveable the environment around the Bila Nisa is. Using the land use and point of interest layers from Open Street Map services, a clip layer has been made of all the public amenities and areas surrounding the Bila Nisa [@PoI_OSM].
+Public amenities are needed to facilitate urban life and provide the population with basic human needs. Having these amenities close to the urban stream forms an important indicator how livable the environment around the Bila Nisa is. Using the land use and point of interest layers from Open Street Map services, a clip layer has been made to show all the public amenities and public areas surrounding the Bila Nisa [@PoI_OSM].
 
-The layer filters out only public areas that are also considered meeting places for social gathering and have a positive effect on the well-being of the population. Based on these public amenities, data is normalized based on the diversity of public amenities, which indicates which area offer more public amenities and are considered more key to social life for the population of Jablonec nad Nisau.
+The layer filters only public areas that are also considered meeting spots for tacit encounters that could have a positive effect on the well-being of the population and create a sense of belonging. Based on these public amenities, data is normalized based on the diversity of public amenities, which indicates which area offer more public amenities and more social encounters in order to foster social life for the population of Jablonec nad Nisau.
 
 The data is normalized using the layer count data, on a scale from 0 to 1. The formula underneath has been used in the open field calculator tool to create a new column with normalized values.
 
@@ -618,19 +618,21 @@ The data is normalized using the layer count data, on a scale from 0 to 1. The f
 | Type count | \<2 | \>5 | \<2 → 0-0.2 (low availability), \>5 → 0.8-1 (high availability) |
 :::
 
-Using 5 classes, the layer is styled using an equal interval of 0.2. It shows two areas with high diversity, namely in the south at the end of the stream where different modes of infrastructure are located and more central near the Mšeno nad Nisou industrial area.
+Using 5 classes, the layer is styled using an equal interval of 0.2. It shows two areas with high diversity, namely in the south downstream where different modes of infrastructure are located and more central near the Mšeno nad Nisou industrial area which is close to an urban center.
 
 ![*Normalized map diversity of public amenities along Bila Nisa.*](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Diversity%20public%20areas%20normalized.png){fig-align="center" width="500"}
 
-Combining these two layers using the criteria weights in the S-MCDA, two areas stand out due to the combination of public greenery and the diversity of amenities, which are the areas Tovarní-Síroka and Hraničná.
+Combining these two layers using the criteria weights in the S-MCDA, two areas stand out where the combination of public greenery and the diversity of amenities is high, which are the areas Tovarní-Síroka and Hraničná.
 
 ![*Combined normalized layers availability of public goods.*](Inserted_images/Quality%20of%20Life/AVAILABILITY%20PUBLIC%20GOODS.png){fig-align="center" width="500"}
 
 #### Which Areas Lack Infrastructure to Access?
 
-The second indicator for quality of life is the accessibility of the stream. The stream offers apart from a livable climate due to the cooling effect of the river also a social haven for the population of Jablonec nad Nisau, offering several meeting spots in the leisure areas along the stream. Accessiblity to the stream as a cool area and social hotspot is therefore an important indicator for quality of life as it has positive inclination on physical and mental well-being of the population. Accessiblity of the urban stream is analyzed through the existing road network and the public transport infrastructure.
+The second indicator for quality of life is the accessibility of the stream. The stream offers apart from a livable climate because of its cooling effect also a social haven for the population of Jablonec nad Nisau to meet in one of the leisure spots along the stream. Accessibility of the urban stream is analyzed through the existing road network and the public transport infrastructure.
 
-***Access to Stream*** How well the urban stream can be accessed can be analyzed through the level of integration of the existing road network to determine centralities along the Bila Nisa. For this analysis, the road network of Jablonec nad Nisau is extracted from Open Street Map services [@Roads_OSM] and a space syntax analysis is conducted using Angular Integration to determine how central areas are. A clip mask focusing on the areas close to the Bila Nisa is made and overlayed on the grid.
+***Access to Stream***
+
+How well the urban stream can be accessed can be analyzed through the level of integration with the existing road network, which determines how central an area along the Bila Nisa is. For this analysis, the road network of Jablonec nad Nisau is extracted from Open Street Map services [@Roads_OSM] and a space syntax analysis is conducted using the Angular Integration tool to determine how central areas are based on the level of road integration. A clip mask focusing on the areas close to the Bila Nisa is made and overlapped on the grid.
 
 Using the open field calculator, a new column is created for normalizing the data to a 0 to 1 scale using the following formula:
 
@@ -650,7 +652,9 @@ Categorizing the layer with the newly calculated normalized column, the followin
 
 ![*Normalized map showing accessiblity to urban stream.*](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20to%20stream%20normalized.png){fig-align="center" width="500"}
 
-***Access to Public Transport*** Apart from the road network, which primarily focusses on private mobility, public transport offers a good indication how the stream can be accessed from a more regional point of view. For this, a data layer from the ArcGIS web [@PT_Jablonec_nad_Nisou_2025] is found that represents the public transport network of Jablonec nad Nisau. A clip from this layer is made, which results in a couple of bus stops and a tram stops that fall within reach of the stream. To see how accessible the stream is from public transportation, service areas are used with a radius of 500m (bus stops) and 1000m (tram stops) based on the type of connection. Bus is more urban while the tram has a regional connection with the neighboring city of Liberec [@public_transport_Jablonec_nad_Nisau].
+***Access to Public Transport***
+
+Apart from the road network, which primarily focuses on private mobility, public transport offers a good indication how the stream can be accessed from a more regional perspective For this, a data layer from the ArcGIS web [@public_transport_Jablonec_nad_Nisau] is found that represents the public transport network of Jablonec nad Nisau. A clip from this layer is made, which results in a couple of bus stops and a tram stops that fall within reach of the stream. To see how accessible the stream is from public transportation, service areas are used with a radius of 500m (bus stops) and 1000m (tram stops) based on the type of connection. Bus is considered as a more urban connection while the tram has a regional connection with the neighboring city of Liberec.
 
 Based on the number of opportunities, which is based on how many service areas overlap, the data can be normalized. A separate column is created using the open field calculator tool using the following formula to normalize the data from a 0 to 1 scale, based on the range of opportunities.
 
@@ -666,7 +670,7 @@ Based on the number of opportunities, which is based on how many service areas o
 | Layer Count | =0 | \>4 | \<1 → 0-0.2 (low access), \>4 → 1 (high access) |
 :::
 
-This results in the following map underneath, where areas in more urban areas in the south and on crossroads over better accessiblity to public transport.
+This results in the following map underneath, where areas in more urban areas in the south and on crossroads over better accessibility to public transport.
 
 ![*Access to public transport near the stream normalilzed.*](Inserted_images/Quality%20of%20Life/Bila%20Nisa%20Jablonec%20-%20Access%20public%20transport%20along%20stream%20normalized.png){fig-align="center" width="500"}
 
