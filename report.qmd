@@ -53,48 +53,48 @@ editor: visual
 
 -   *Yehan Wu*
 
-**Table of contents:**
+***Table of contents:***
 
-1.  Introduction;
-2.  Methodology;
-    a.  Spatial Multi-Criteria Decision Analysis (S-MCDA)
-    b.  Typology Construction (K-Means Clustering)
-    c.  Definition of Spatial Units;
-    d.  Resolution and Data Acquisition Methods
-    e.  Normalization;
-3.  Spatial Multi-Criteria Decision Analysis (S-MCDA)
-    A.  Biodiversity;
+1.  *Introduction;*
+2.  *Methodology;*
+    a.  *Spatial Multi-Criteria Decision Analysis (S-MCDA)*
+    b.  *Typology Construction (K-Means Clustering)*
+    c.  *Definition of Spatial Units;*
+    d.  *Resolution and Data Acquisition Methods*
+    e.  *Normalization;*
+3.  *Spatial Multi-Criteria Decision Analysis (S-MCDA)*
+    A.  *Biodiversity;*
 
-        Which Areas Have High Biodiversity Value?
+        *Which Areas Have High Biodiversity Value?*
 
-        Which Areas Have a High Level of Human Activity?
+        *Which Areas Have a High Level of Human Activity?*
 
-        Which Areas Provide Opportunity for Improved Biodiversity?
+        *Which Areas Provide Opportunity for Improved Biodiversity?*
 
-    B.  Climate Adaptation;
+    B.  *Climate Adaptation;*
 
-        Which Areas Have Highest Flood Damage Risk?
+        *Which Areas Have Highest Flood Damage Risk?*
 
-        Which Areas Have The Most Impervious Surfaces?
+        *Which Areas Have The Most Impervious Surfaces?*
 
-        Which Areas Have Healthy Vegetation?
+        *Which Areas Have Healthy Vegetation?*
 
-    C.  Quality of Life;
+    C.  *Quality of Life;*
 
-        Which Areas Are Deprived of Public Facilities?
+        *Which Areas Are Deprived of Public Facilities?*
 
-        Which Areas Lack Infrastructure to Access?
+        *Which Areas Lack Infrastructure to Access?*
 
-        Which Areas Can Be Physically Uncomfortable?
+        *Which Areas Can Be Physically Uncomfortable?*
 
-    D.  Conclusion of S-MCDA;
-4.  Typology Construction;
-    a.  Research Question & Variables;
-    b.  Methodology;
-    c.  Results;
-5.  Discussion;
-6.  Conclusion;
-7.  Appendix.
+    D.  *Conclusion of S-MCDA;*
+4.  *Typology Construction;*
+    a.  *Research Question & Variables;*
+    b.  *Methodology;*
+    c.  *Results;*
+5.  *Discussion;*
+6.  *Conclusion;*
+7.  *Appendix.*
 
 ## 1. Introduction
 
@@ -173,7 +173,7 @@ The main research question is then further divided per theme of biodiversity, cl
 
 ## 2. Methodology
 
-Methodological decisions such as the spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from the spatial analysis results [@dungan2002balanced]. The description of methodology makes it possible to reproduce the conducted analysis and provides critical context for interpreting results. The decisions made for the analysis methodology are structured around principles derived from literature, geographical context and data availability.
+Methodological decisions such as the spatial scale, unit configuration, and data resolution directly influences the insights that can be drawn from the spatial analysis results [@Dungan_et_al_2002]. The description of methodology makes it possible to reproduce the conducted analysis and provides critical context for interpreting results. The decisions made for the analysis methodology are structured around principles derived from literature, geographical context and data availability.
 
 ### 2.a. Spatial Multi-Criteria Decision Analysis (S-MCDA)
 
@@ -185,7 +185,7 @@ After conducting S-MCDA, the next step is to conduct a typology construction. Th
 
 ### 2.c. Definition of Spatial Units
 
-To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. The unit is used for consistency in the assignment of spatial indicators. It also facilitates the aggregation and comparison of data across the urban landscape. For example, studies on urban heat island and green infrastructure use a regular grid of 50 x 50 meter cells as the base unit of analysis [@BARTESAGHIKOC2020103893]. Alternatively, @burdziej2019using uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
+To conduct a meaningful spatial analysis, the study area must be divided into standardized spatial units. The unit is used for consistency in the assignment of spatial indicators. It also facilitates the aggregation and comparison of data across the urban landscape. For example, studies on urban heat island and green infrastructure use a regular grid of 50 x 50 meter cells as the base unit of analysis [@Bartesaghi-Koc_Osmond_Peters_2020]. Alternatively, @Burdziej_2019 uses a hexagonal grid where each hexagon has a side length of 100 m, selected based on the size of the study area (Toruń, Poland) and the intended spatial resolution of the study.
 
 The definition of the spatial units was decided based on the size of Jablonec nad Nisou and the Bílá Nisa stream. A 100-meter radius buffer around the stream was selected, over which a grid of 100x100 meters was overlayed. This proved to be a good level of detail for the spatial analysis of the stream in the rural areas, while also being compatible with the available spatial raster data for the area. However, in the urban area of Jablonec and Nisou, the variation in spatial features and characteristics is significantly higher than in the outskirts of the city. The 100x100 meter grid would average out most values to an extent that the analysis would not show meaningful results. In addition, the urban stream restoration project requires the attention to be focused within the city, not in its outskirts.
 
@@ -197,7 +197,7 @@ To make sure that sufficient level of detail and attention is given to the urban
 
 ### 2.d. Resolution and Data Acquisition Method
 
-The spatial analysis uses secondary data retrieved mostly from Czech governmental agencies and organizations, as well as Geofabrik and the European Space Agency (the source is specified for each map further in the report). The limited availability of data resulted in the need to consider data of varying resolution levels and types (vector and raster). The resolution of spatial data is directly tied to the data acquisition method [@BARTESAGHIKOC2020103893].
+The spatial analysis uses secondary data retrieved mostly from Czech governmental agencies and organizations, as well as Geofabrik and the European Space Agency (the source is specified for each map further in the report). The limited availability of data resulted in the need to consider data of varying resolution levels and types (vector and raster). The resolution of spatial data is directly tied to the data acquisition method [@Bartesaghi-Koc_Osmond_Peters_2020].
 
 For indicators such as air pollution, the measurement method (space-borne remote sensing) is better suited for large-scale urban assessments, the limited data availability resulted in the need to use data that may lack the spatial precision needed for detailed micro-climatic or ecological studies. On the other hand, data on biodiversity and quality of life is generally more well-documented, detailed and accessible. In these cases, a higher resolution is possible for the analysis.
 
@@ -283,7 +283,7 @@ The purpose of this criteria is to identify which Bílá Nisa floodplains serve 
 
 The layer shows that most of the Bílá Nisa floodplain has negligible biotope value. However, some patches of moderate value remain which could be salvaged. To normalize this information, the polygons with moderate biotope value were isolated and 'intersected' according to the grid lines. Then an 'overlap analysis' was conducted to calculate the percentage of area per cell that has moderate floodplain biotope value.
 
-*Normalized Floodplain Biotope Value Table*
+*Normalized Floodplain Biotope Value Table.*
 
 ::: {.callout-note collapse="true"}
 | Normalized Value | **\<0.3** | 0.3-0.7 | \>0.7 | Normalized Range (0-1) |
@@ -553,7 +553,7 @@ All normalized data were extracted from the attribute tables and transferred int
 
 The resulting dataset was exported as a CSV file and linked to the grid layer in QGIS to visualize the spatial outcomes.The final concluding map is presented underneath
 
-![Concluding climate adaptation S-MCDA Map](Inserted_images/Climate%20Adaptation/con%20climate%20map-01.png){width="500"}
+![Concluding climate adaptation S-MCDA Map](Inserted_images/Climate%20Adaptation/con%20climate%20map-01.png){fig-align="center" width="500"}
 
 The final conclusding map reveals that two industrial sites along the stream exhibit particularly low adaptive capacity to flood risk, suggesting a pressing need for the implementation of resilience-based flood mitigation measures. Additionally, a sports field with impervious surfaces located between these two industrial areas was also identified as an area requiring improvement in surface permeability to enhance its flood adaptation performance.
 
@@ -1256,19 +1256,17 @@ browsable(tagList(image_grid, fullscreen_script))
 
 ## 5. Discussion
 
-The methodology used in this analysis combines multiple spatial vector datasets and a structured decision-making approach (S-MCDA) to support urban and environmental planning. This process allowed for an assessment by including both environmental and social indicators. While some datasets, like biodiversity, provided detailed information, others, such as air quality, were more general.
+The methodology used in this analysis combines multiple spatial vector and raster datasets and a structured decision-making approach (S-MCDA) to support urban and environmental planning. This process allowed for an assessment by including both environmental and social indicators.
 
-One key aspect of the methodology was the use of different grid cell sizes 50x50 meters in urban areas and 100x100 meters in rural areas. This approach helped show more detail in the urban environments more accurately. However, using two different grid sizes also introduced some challenges. It made it harder to compare certain results across the whole study area, as some indicators only make sense at one scale.
+*Data Availability.* While some datasets, like biodiversity, provided detailed information, others, such as air quality, were more general. The difference in level of detail are not ideal for this kind of analysis, as it may distort the results by missing important local spatial conditions. Unfortunately due to limited data availability, the analysis had to utilize a variety of data types with varying levels of detail.
 
-Data availability also shaped the analysis. Open-source data was useful and accessible, but some layers lacked the level of detail needed for a deeper analysis. The choice of a 100-meter buffer around the Bílá Nisa stream focused the study area but may have left out some important factors just outside this zone. A larger or adjustable buffer could have added more context, but it would also increase data processing.
+*100 meter buffer limitation.* The choice of a 100-meter buffer around the Bílá Nisa stream focused on the study area and excluded any information outside of it. This may have left out some important factors just outside of the buffer zone, thus reducing the accuracy of the results. A larger or adjustable buffer could have added more important context, but it would also variability and make it harder to ensure that data is comparable.
 
-The positioning of the grid itself also played a role. Even small changes in where the grid is placed can affect the outcome. While standardized grid sizes help make the results more consistent, the placement still matters and should be considered when interpreting the results.
+*Varying grid size*. One key aspect of the methodology was the use of different grid cell sizes 50x50 meters in urban areas and 100x100 meters in rural areas. This approach helped to show more detail in the urban environments, where it is needed. However, using two different grid sizes also introduced some challenges and limitations. The difference in cell sizes restricted the possible spatial analysis methods to calculating density and percentage of cover area. While accounting for the differing grid cell sizes, the selected methods of analysis may have still skewed the results, as 100x100 meter cells averaged out differing values on a larger scale than the 50x50 meter cells. This made it harder to compare certain results across the whole study area.
 
-The analysis was based on static data, meaning it represents conditions at one point in time. However, urban and environmental factors often change with seasons, development, or climate conditions. This would be especially helpful for planning long-term projects like stream restoration.
+*Grid positioning.* The positioning of the grid itself also played a role in the final results. Even small changes in where the grid is placed can affect the outcome, as the grid isolates whole spatial units from each other based on the grid lines. It is possible that if the grid was overlayed with a different reference point, the results would identify different problem areas. Therefore, placement still matters and should be considered when interpreting the results.
 
-The method used in this study was designed for Jablonec nad Nisou and the Bílá Nisa stream area, and it fits this context well. Still, applying it to other cities or landscapes would require adjustments in the S-MCDA.
-
-Finally, once the clusters were formed, they had to be interpreted and labeled to be useful in planning. This step is necessary, but it also involves some subjective decisions.
+*Static information*. The analysis was based on static data, meaning it represents conditions at one point in time. However, urban and environmental factors often change with years and seasons, as the area develops and the climate conditions change. A key limitation of this research is that it does not account for this possible variability. For example, the accessibility to the stream may be drastically different in the summer and winter. This variation is especially important to consider for planning resilient, flexible and long-lasting stream restoration projects.
 
 ### Group Reflection
 
@@ -1282,7 +1280,7 @@ On the other hand, areas in the north of Jablonec nad Nisou which have high ecol
 
 The typology construction with k means clustering further supports the analysis by classifying the stream corridor into five spatial types based on natural habitat, vegetation health, flood exposure, and access. These classifications give insight into what the challenging areas are by analysing the normalized data. This gives specific grid cells where most improvement is possible.
 
-In summary, the combination S-MCDA and k means clustering. The results can guide local authorities, urban designers, and environmental planners in developing actions that balance ecological needs with urban development. This work contributes to the goals of the ReBioClim framework by highlighting where multifunctional green-blue infrastructure can improve biodiversity, climate adaptation and quality of life in the city.
+In summary, the combination S-MCDA and k-means clustering. The results can guide local authorities, urban designers, and environmental planners in developing actions that balance ecological needs with urban development. This work contributes to the goals of the ReBioClim framework by highlighting where multifunctional green-blue infrastructure can improve biodiversity, climate adaptation and quality of life in the city.
 
 ## 7. Appendix
 
