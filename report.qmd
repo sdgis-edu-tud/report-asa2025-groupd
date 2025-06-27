@@ -4,19 +4,14 @@ subtitle: "Project report of Group D"
 author:
   - name: "Frederick Auer"
     affiliation: "MSc Geomatics"
-    group_role: "Software/Program Helper & Data Collector"
   - name: "Lin Ruofan"
     affiliation: "MSc Landscape Architecture"
-    group_role: "Mapping Specialist & Design Lead"
   - name: "Matthijs Jerez Nova"
     affiliation: "MSc Urbanism"
-    group_role: "Writer/Editor & Research Lead"
   - name: "Ula Kunigelyte"
     affiliation: "MSc Urbanism"
-    group_role: "Mapping Specialist & Data Analyst"
   - name: "Finn van Asch"
     affiliation: "MSc Urbanism"
-    group_role: "Research Lead & Assistant Mapping Specialist"
 
 bibliography: references.bib
 csl: apa.csl
@@ -741,7 +736,19 @@ The combined map shows that more remote areas along main roads Tovarní-Síroka 
 
 ### 3.D. S-MCDA Conclusion
 
-Short recap, key findings, recommendations
+Having conducted S-MCDA , it is now possible to answer the main research questions:
+
+> *Biodiversity: Where can the ecological quality of the stream area be enhanced?*
+
+Ecological quality along the stream can mainly be improved in the outskirts and outside of the city. However, some locations in the inner city, such as the area near U Hřiště bridge and Tovární.
+
+> *Climate Adaptation: Where along the stream can flood mitigation measures take place?*
+
+Flood mitigation measures can be implemented mainly in the inner city, particularly in the industrial area near Mšeno nad Nisou and the sports field near U Hřiště bridge.
+
+> *Quality of Life: Which areas along the stream need improvements for quality of life to address stakeholder conflicts?*
+
+For this question, the research looked at areas which are lacking social infrastructure and accessibility for a good quality of life. Therefore areas which are in need of improvements are those which are currently performing poorly. Quality of life differs somewhat evenly across the entire length of the stream. There is not a significant difference between the inner city and its outskirts. Inside the city, key areas which are in need of quality of life improvements are Tovární - Siroká, the industrial area near Mšeno nad Nisou and the Janovská industrial area.
 
 ![Concluding S-MCDA Maps](Inserted_images/Concluding%20S-MCDA-01.png)
 
