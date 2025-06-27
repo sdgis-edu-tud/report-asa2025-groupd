@@ -110,8 +110,8 @@ leaflet(options = leafletOptions(minZoom = 12, maxZoom = 17)) %>%
   addTiles() %>%
   setView(lng = jablonec_coords["lng"], lat = jablonec_coords["lat"], zoom = 13) %>%
   setMaxBounds(
-    lat1 = 50.60, lng1 = 15.10,
-    lat2 = 50.80, lng2 = 15.24
+    lat1 = 50.60, lng1 = 15.13,
+    lat2 = 50.80, lng2 = 15.21
   ) %>%
   addPolylines(
     data = stream,
@@ -797,7 +797,11 @@ For this question, the research looked at areas which are lacking social infrast
 
 ## 4. Typology Construction
 
-Our approach to out topology construction is embedded in our main reserach questions and goals. Based on our analysis we formulated the following guiding question for finding relevant typologies in Jablonec nad Nisou.
+Typology construction is an important step in our analysis as it allows us to transform normalized spatial indicator data into clusters based on their characteristics. From these groups, we can derive insights and identify suitable interventions for each area. Along the Bila Nisa stream, spatial conditions vary greatly, as shown in our previous MCDA analysis maps. These variations in ecological quality, flood risk, and human accessibility create challenges when designing targeted interventions and prioritizing areas for action. Without organizing our grid into meaningful clusters, it becomes much more difficult to identify where specific solutions would be most effective or necessary.
+
+Typologies help simplify this complexity by grouping similar areas together, making it possible to prioritize where to preserve, restore, or enhance green-blue infrastructure in a targeted and informed manner. This approach also supports communication with stakeholders by providing a structured, evidence-based narrative that connects spatial data with planning decisions. In this way, typology becomes a bridge between spatial analysis and actionable green-blue infrastructure strategies.
+
+The approach we took in this report to constructing our topologies is embedded in our main research questions and goals. Based on our analysis we formulated the following guiding question for finding relevant typologies in Jablonec nad Nisou.
 
 ### 4.a. Research Question & Variables
 
