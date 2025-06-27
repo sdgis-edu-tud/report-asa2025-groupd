@@ -97,6 +97,11 @@ library(sf)
 # Read the stream GeoJSON
 stream <- st_read("Inserted_images/stream_for_interactivemap.geojson", quiet = TRUE)
 
+# Read the city boundary GeoJSON
+city_boundary <- st_read("data/Jablonec nad Nisou/osm_city_boundary/osm_city_boundary.shp", quiet = TRUE)
+city_boundary <- st_transform(city_boundary, 4326)
+
+
 # Coordinates for Jablonec nad Nisou
 jablonec_coords <- c(lat = 50.7224, lng = 15.1708)
 
@@ -115,17 +120,18 @@ leaflet(options = leafletOptions(minZoom = 12, maxZoom = 17)) %>%
     opacity = 0.8,
     popup = "Bílá Nisa Stream"
   ) %>%
-  addCircleMarkers(
-    lng = jablonec_coords["lng"],
-    lat = jablonec_coords["lat"],
-    radius = 6,
-    color = "red",
-    fillOpacity = 0.8,
-    label = "Jablonec nad Nisou"
+  addPolygons(
+    data = city_boundary,
+    color = "white",
+    weight = 2,
+    fillColor = "white",
+    fillOpacity = 0.4,
+    opacity = 0.8,
+    label = "Jablonec nad Nisou Boundary"
   ) %>%
   addLegend(
     position = "bottomright",
-    colors = c("blue", "red"),
+    colors = c("blue", "white"),
     labels = c("Bílá Nisa Stream", "Jablonec nad Nisou"),
     title = "Legend",
     opacity = 0.8
@@ -1162,7 +1168,7 @@ The result of performing K-means clustering to derive typologies is the translat
 
 ::: {style="font-size: 0.85em"}
 | Type (Cluster) | Natural Habitat | NDVI | Flood Zone | Stream Access | Description |
-|------------|------------|------------|------------|------------|------------|
+|----|----|----|----|----|------------|
 | 1 (Red) | **High** | **High** | Low | Low | This cluster represents areas with lush, **biodiverse vegetation and high ecological quality.** These zones have low flood risk but are relatively inaccessible to the public. Their primary value lies in their ecological function. |
 | 2 (Orange) | Low | Moderate | Moderate | **High** | High-access area with limited vegetation or habitat. Here there is potential for **urban greening or recreational upgrades.** Their moderate flood risk indicates a need for **climate adaptation strategies.** |
 | 3 (Yellow) | Low | Low | Moderate | Low | This typology consists of degraded areas with limited vegetation, biodiversity, and accessibility.This is suitable for **buffer zones or low-impact enhancement.** |
