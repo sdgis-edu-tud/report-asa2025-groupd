@@ -1271,6 +1271,8 @@ The methodology used in this analysis combines multiple spatial vector and raste
 
 ### Group Reflection
 
+During this project the challenge at first was navigating the many websites and applications. Starting by searching for vector data and trying to divide the three main subjects over all the group members. Navigating Rstudio was a real challenge and managing the push and pull requests which took us some getting used to. But after the midterm we really picked up the pace and finished the k-means clustering and gave a nice presentation. The thing that we could have done better is communication. What went well was the use of the Miroboard which gave a nice overview during the project.
+
 ## 6. Conclusion
 
 The analysis of the Bílá Nisa stream using Spatial Multi-Criteria Decision Analysis (S-MCDA) and typology construction visualized places where interventions are necessary along the stream in Jablonec nad Nisou. The findings show that different parts of the stream area vary significantly in terms of biodiversity value, climate vulnerability, and quality of life indicators.
