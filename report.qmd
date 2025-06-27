@@ -63,30 +63,9 @@ editor: visual
     d.  *Resolution and Data Acquisition Methods*
     e.  *Normalization;*
 3.  *Spatial Multi-Criteria Decision Analysis (S-MCDA)*
-    A.  *Biodiversity;*
-
-        *Which Areas Have High Biodiversity Value?*
-
-        *Which Areas Have a High Level of Human Activity?*
-
-        *Which Areas Provide Opportunity for Improved Biodiversity?*
-
-    B.  *Climate Adaptation;*
-
-        *Which Areas Have Highest Flood Damage Risk?*
-
-        *Which Areas Have The Most Impervious Surfaces?*
-
-        *Which Areas Have Healthy Vegetation?*
-
-    C.  *Quality of Life;*
-
-        *Which Areas Are Deprived of Public Facilities?*
-
-        *Which Areas Lack Infrastructure to Access?*
-
-        *Which Areas Can Be Physically Uncomfortable?*
-
+    A.  *Biodiversity;* *Which Areas Have High Biodiversity Value?* *Which Areas Have a High Level of Human Activity?* *Which Areas Provide Opportunity for Improved Biodiversity?*
+    B.  *Climate Adaptation;* *Which Areas Have Highest Flood Damage Risk?* *Which Areas Have The Most Impervious Surfaces?* *Which Areas Have Healthy Vegetation?*
+    C.  *Quality of Life;* *Which Areas Are Deprived of Public Facilities?* *Which Areas Lack Infrastructure to Access?* *Which Areas Can Be Physically Uncomfortable?*
     D.  *Conclusion of S-MCDA;*
 4.  *Typology Construction;*
     a.  *Research Question & Variables;*
@@ -213,9 +192,9 @@ The selected criteria for each respective goals can be found in the figures belo
 library(slickR)
 library(htmltools)
 
-imgs <- c("Inserted_images/General Images/data_biodiversity.png",
-          "Inserted_images/General Images/climate_adaption.png",
-          "Inserted_images/General Images/qualityoflife_datacollected.png")
+imgs <- c("Inserted_images/General%20Images/Aggregated%20Biodiversity%20Criteria-01.png",
+          "Inserted_images/General%20Images/Aggregated%20Climate%20Adaptation%20Criteria-01.png",
+          "Inserted_images/General%20Images/Aggregated%20Quality%20of%20Life%20Criteria-01.png")
 
 # Create HTML img tags with responsive styling
 img_tags <- lapply(imgs, function(img) {
@@ -479,11 +458,11 @@ By aggregating these criteria, the analysis helps to spatially identify priority
 
 #### Which Areas Have Highest Flood Damage Risk?
 
-Flood risk is one of the most urgent challenges in stream corridor management, especially in areas with extensive urbanization and altered natural floodplains.By locating these high-risk zones, planners can prioritize where flood mitigation strategies should be implemented first.
+Flood risk is one of the most urgent challenges in stream corridor management, especially in areas with extensive urbanization and altered natural floodplains. By locating these high-risk zones, planners can prioritize where flood mitigation strategies should be implemented first.
 
 ***Flood Impact Zones in Floodplains***
 
-Floodplain are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood risk.So we chose the following ranges when normalizing.
+Floodplains are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood impact risk. For example, a flood in an urbanized residential area will sustain much more damage compared to a flood in a natural area. The data used of this analysis comes from @AOPK_CR_2022.
 
 ::: {.callout-note collapse="true" title="Flood Risk Normalisation Table"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
@@ -503,8 +482,7 @@ Impervious surfaces directly affect the area's ability to absorb water, while hi
 
 Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
 
-::: {.callout-note collapse="true" title = "Impervious Surface Normalisation Table"}
- *Normalized Impervious Table*
+::: {.callout-note collapse="true" title = "Impervious Surface Normalisation Table"} *Normalized Impervious Table*
 
 | Indicator | Low Risk Threshold (0) | High Risk Threshold (1) | Normalized Range (0–1) | Notes |
 |---------------|---------------|---------------|---------------|---------------|
@@ -516,7 +494,7 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 
 ***Mean Night-Time Land Surface Temperature (LST)***
 
-High night-time temperatures indicate poor cooling and urban heat retention. The LST was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
+High night-time temperatures indicate poor cooling and urban heat retention. The Mean Night-Time Land Surface Temperature (LST) was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
 
 ::: {.callout-note collapse="true" title="Night Time Land Surface Temperature Normalisation Table"}
 *Normalized Mean LST table*
@@ -1269,8 +1247,7 @@ The methodology used in this analysis combines multiple spatial vector and raste
 
 *Static information*. The analysis was based on static data, meaning it represents conditions at one point in time. However, urban and environmental factors often change with years and seasons, as the area develops and the climate conditions change. A key limitation of this research is that it does not account for this possible variability. For example, the accessibility to the stream may be drastically different in the summer and winter. This variation is especially important to consider for planning resilient, flexible and long-lasting stream restoration projects.
 
-*Typology Construction* Another important observation relates to the interpretation of typologies based on the K-means clustering approach. The nearest grid cell to the cluster center in feature space, which we often use as an illustrative example of a "typical" cell, may not necessarily be representational of the spatial or contextual characteristics of the entire typology in reality. This is exhibited when visualizing our 5 nearest grid cells respective to their cluster centers. Some appear wuite similar and the size and shape of the spatial unit may lead to unrealistic representation of the cluster.
-The local variations, edge effects, and mixed land uses can cause certain grid cells to exhibit high conformity in indicator values while not fully reflecting on-the-ground conditions (small patches of high NDVI in otherwise built up areas). This means that while the clustering helps identify patterns and priority areas, local field verification and expertise remains essential before planning interventions. Additionally, the typology maps, while helpful for visualizing patterns, should be used in conjunction with stakeholder input to interpret what the clusters mean in practice, especially in areas where social conflicts over stream access may exist.
+*Typology Construction* Another important observation relates to the interpretation of typologies based on the K-means clustering approach. The nearest grid cell to the cluster center in feature space, which we often use as an illustrative example of a "typical" cell, may not necessarily be representational of the spatial or contextual characteristics of the entire typology in reality. This is exhibited when visualizing our 5 nearest grid cells respective to their cluster centers. Some appear wuite similar and the size and shape of the spatial unit may lead to unrealistic representation of the cluster. The local variations, edge effects, and mixed land uses can cause certain grid cells to exhibit high conformity in indicator values while not fully reflecting on-the-ground conditions (small patches of high NDVI in otherwise built up areas). This means that while the clustering helps identify patterns and priority areas, local field verification and expertise remains essential before planning interventions. Additionally, the typology maps, while helpful for visualizing patterns, should be used in conjunction with stakeholder input to interpret what the clusters mean in practice, especially in areas where social conflicts over stream access may exist.
 
 Furthermore, the selection of four key indicators, while aligned with the project's goals, inherently leaves out other dimensions such as soil quality, microclimate, and informal community uses that may affect the success of interventions. Future work could explore adding more dynamic or seasonal variables or using ensemble clustering methods to test the stability of typologies under varying indicators.
 
