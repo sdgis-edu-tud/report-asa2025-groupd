@@ -451,7 +451,9 @@ A high proportion of impervious surfaces can directly lead to floods in urban ar
 
 ***Mean Impervious Surface Percentage***
 
-Impervious surfaces prevent water infiltration and increase runoff and heat accumulation. High imperviousness is typically associated with poor ecological performance and higher flood/heat risks. For this reason we chose to following ranges when normalizing.
+Impervious surfaces, such as roads, rooftops, and paved areas, prevent water infiltration into the soil, leading to increased surface runoff, reduced groundwater recharge, and greater heat accumulation within urban environments. High levels of imperviousness are typically associated with poorer ecological performance, increased flood risks due to reduced infiltration capacity, and elevated urban heat island effects.
+
+For these reasons, we applied normalization to this indicator using specific threshold ranges that reflect the relationship between imperviousness, ecological functioning, and environmental risks, ensuring the metric aligns with the ecological goals of our analysis.
 
 ::: {.callout-note collapse="true" title = "Impervious Surface Normalisation Table"}
 
@@ -465,7 +467,9 @@ Impervious surfaces prevent water infiltration and increase runoff and heat accu
 
 ***Mean Night-Time Land Surface Temperature (LST)***
 
-High night-time temperatures indicate poor cooling and urban heat retention. The Mean Night-Time Land Surface Temperature (LST) was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
+High night-time temperatures indicate poor cooling and urban heat retention. The Mean Night-Time Land Surface Temperature (LST) was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range. 
+
+The range we chose is adjusted to the context of the city. For that reason we choose to take the upper and lower bounds of the temperature and normalise between that range, as can be seen in the table below. 
 
 ::: {.callout-note collapse="true" title="Night Time Land Surface Temperature Normalisation Table"}
 *Normalized Mean LST table*
