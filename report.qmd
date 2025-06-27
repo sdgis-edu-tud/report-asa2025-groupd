@@ -464,19 +464,17 @@ Flood risk is one of the most urgent challenges in stream corridor management, e
 
 Floodplains are flat, low-lying areas near a river or coast that are likely to flood due to rainfall, tidal surges or other storm events. The type of landscaping in a floodplain can also reflect the level of flood impact risk. For example, a flood in an urbanized residential area will sustain much more damage compared to a flood in a natural area. The data used of this analysis comes from @AOPK_CR_2022.
 
-::: {.callout-note collapse="true" title="Flood Risk Normalisation Table"}
+::: {.callout-note collapse="true" title="Flood Impact Zones in Floodplains Normalisation Table"}
 | Indicator | Low Flood Risk (0) | Middle Flood Risk (0.5) | High Flood Risk (1) | Normalized Range (0-1) |
 |---------------|---------------|---------------|---------------|---------------|
 | Landscape Type | Natural forest / wetland | Arable land / grassland | Built-up / paved surfaces | 0 – 1 |
 :::
 
-***Flood Impact Zones in Floodplains***
-
 ![*Flood Impact Zones in Floodplains (normalized map).*](Inserted_images/Climate%20Adaptation/floodplain%20map-01.png){fig-align="center" width="500"}
 
 #### Which Areas Have The Most Impervious Surfaces?
 
-Impervious surfaces directly affect the area's ability to absorb water, while higher night land surface temperatures typically indicate denser built environments with less green cover.
+A high proportion of impervious surfaces can directly lead to floods in urban areas, and contribute to the Urban Heat Island effect. Impervious surfaces directly affect the area's ability to absorb water, while higher night land surface temperatures typically indicate denser built environments with less green cover.
 
 ***Mean Impervious Surface Percentage***
 
