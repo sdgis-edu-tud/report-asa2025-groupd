@@ -529,7 +529,23 @@ The final conclusding map reveals that two industrial sites along the stream exh
 
 ### 3.C. Quality of life
 
-For quality of life, can vary from psychological and health indicators to more tangible urban climate indicator. According to František Murgaš & Michal Klobučník [@Murgas_&_Klobucnik_2016], they used the gold standard for assessing quality of life in municipalities in the Czech Republic. The following indicators are included in the Gold standard for measuring the quality of life in urban environments. - Wanting to live—can be expressed by the absence of the will to live, i.e., suicide. Expression of the indicator is suicide mortality rate. - Long life—can be expressed by the indicator of life expectancy. - Living in a complete family—can be expressed by its absence; indicator is divorce rate. - Having children—can be expressed by the indicator of birth rate. - Being healthy—can be expressed by the absence of health; indicator is mortality. - Living in a healthy environment—can be expressed by the environmental pollution. - Being educated—can be expressed by the indicator of the share of university graduates. - Having a job—can be expressed by the indicator of unemployment rate. - Being a good person—can be expressed by the indicator of generativity.
+For quality of life, can vary from psychological and health indicators to more tangible urban climate indicator. According to František Murgaš & Michal Klobučník [@Murgas_&_Klobucnik_2016], they used the gold standard for assessing quality of life in municipalities in the Czech Republic. The following indicators are included in the Gold standard for measuring the quality of life in urban environments.
+
+> Wanting to live — can be expressed by the absence of the will to live, i.e., suicide. Expression of the indicator is suicide mortality rate.
+
+> Long life—can be expressed by the indicator of life expectancy.
+
+> Living in a complete family can be expressed by its absence; indicator is divorce rate. - Having children—can be expressed by the indicator of birth rate.
+
+> Being healthy—can be expressed by the absence of health; indicator is mortality.
+
+> Living in a healthy environment—can be expressed by the environmental pollution.
+
+> Being educated—can be expressed by the indicator of the share of university graduates.
+
+> Having a job—can be expressed by the indicator of unemployment rate.
+
+> Being a good person—can be expressed by the indicator of generativity.
 
 Since many data are statistical data that have not been translated to vector layers, different indicators have been created which could give an idea of the quality of life. Koi and Masanobu [@Doi_et_al_2008] discovered that accessiblity to basic human needs is an important factor for improving quality of life through policy implementation and spatial planning for land use purposes or transportation infrastructure. Moreover, Khalil [@Khalil_2012] pointed out that economic viability of urban areas and the various of economic activity forms also an important indicator for quality of life and the functioning of urban systems.
 
