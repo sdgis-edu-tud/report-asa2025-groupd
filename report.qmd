@@ -33,14 +33,6 @@ editor: visual
 
 *ARFW0501 \| Applied Spatial Analytics for Sustainable Urban Development (2024/25 Q4)*
 
-*Students (Group D):*
-
--   *Finn van Asch (Urbanism)*
--   *Frederick Auer (Geomatics)*
--   *Matthijs Jerez Nova (Urbanism)*
--   *Ruofan Lin (Landscape Architecture)*
--   *Ula Nina Kunigėlytė (Urbanism)*
-
 *Teachers:*
 
 -   *Daniele Cannatella*
