@@ -86,7 +86,7 @@ library(sf)
 stream <- st_read("Inserted_images/stream_for_interactivemap.geojson", quiet = TRUE)
 
 # Read the city boundary GeoJSON
-city_boundary <- st_read("data/Jablonec nad Nisou/osm_city_boundary/osm_city_boundary.shp", quiet = TRUE)
+city_boundary <- st_read("Inserted_imeages/osm_city_boundary/osm_city_boundary.shp", quiet = TRUE)
 city_boundary <- st_transform(city_boundary, 4326)
 
 
