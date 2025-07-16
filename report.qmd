@@ -86,7 +86,7 @@ library(sf)
 stream <- st_read("Inserted_images/stream_for_interactivemap.geojson", quiet = TRUE)
 
 # Read the city boundary GeoJSON
-city_boundary <- st_read("Inserted_imeages/osm_city_boundary/osm_city_boundary.shp", quiet = TRUE)
+city_boundary <- st_read("Inserted_images/osm_city_boundary/osm_city_boundary.shp", quiet = TRUE)
 city_boundary <- st_transform(city_boundary, 4326)
 
 
@@ -245,7 +245,7 @@ The layer shows that most of the Bílá Nisa floodplain has negligible biotope v
 
 ::: {.callout-note collapse="true" title="Normalized Floodplain Biotope Value Table"}
 | Normalized Value | **\<0.3** | 0.3-0.7 | \>0.7 | Normalized Range (0-1) |
-|------------|------------|------------|------------|-----------------------|
+|--------------|--------------|--------------|--------------|-------------------|
 | **Meaning** | Low to No Presence | Some Presence | High Presence | Proportion of Moderately Valuable Floodplain Biotope per Cell |
 :::
 
@@ -265,7 +265,7 @@ The map shows that there the largest diversity of natural habitats is right at t
 
 ::: {.callout-note collapse="true" title="Normalized Diversity of Natural Habitats Table"}
 | Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|-------------|-------------|-------------|-------------|-----------------------|
+|--------------|--------------|--------------|--------------|------------------|
 | **Meaning** | Low to No Diversity | Some Diversity | High Diversity | Number of Unique Natural Habitats per Cell |
 :::
 
@@ -279,7 +279,7 @@ This criterion looks at the same data as the diversity of natural habitats, cate
 
 ::: {.callout-note collapse="true" title="Normalized Proportion of Natural Habitat Area Table"}
 | Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|-------------|-------------|-------------|-------------|----------------------|
+|--------------|--------------|--------------|--------------|-----------------|
 | **Meaning** | Low to No Presence | Some Presence | High Presence | Proportion of Natural Habitats per Cell |
 :::
 
@@ -307,7 +307,7 @@ The road infrastructure was taken from OpenStreetMap and clipped to the grid [@r
 
 ::: {.callout-note collapse="true" title="Normalized Weighed Road Segment Length Table"}
 | Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|------------|------------|------------|------------|-------------------------|
+|-------------|-------------|-------------|-------------|--------------------|
 | **Meaning** | Low to No Nuisance | Some Nuisance | High Nuisance | Road Nuisance by Proportion of Weighed Road Segment Length per Cell |
 :::
 
@@ -323,7 +323,7 @@ The results of the normalized data on build-up area show that there is some leve
 
 ::: {.callout-note collapse="true" title="Normalized Proportion of Built-up Area Table"}
 | Normalized Value | **\<40%** | 40-60% | \>60% | Normalized Range (0%-100%) |
-|-------------|-------------|-------------|-------------|-----------------------|
+|--------------|--------------|--------------|--------------|------------------|
 | **Meaning** | Low to No Build-up | Some Build-up | High Build-up | Percentage of Built-Up Area Per Cell |
 :::
 
@@ -349,7 +349,7 @@ To normalize this data, the layer polygons were split up per cell using the 'int
 
 ::: {.callout-note collapse="true" title="Normalized Ecological Corridors Table"}
 | Normalized Value | **\<0.4** | 0.4-0.6 | \>0.6 | Normalized Range (0-1) |
-|------------|------------|------------|------------|------------------------|
+|--------------|--------------|--------------|--------------|-------------------|
 | **Meaning** | Low to No Presence | Some Presence | High Presence | Proportion of Ecological Corridor Area Per Cell |
 :::
 
@@ -457,13 +457,13 @@ For these reasons, we applied normalization to this indicator using specific thr
 
 ![*Mean Impervious Surface Percentage (Normalized Map).*](Inserted_images/Climate%20Adaptation/Normalised_Mean_Impervious_v2.png){fig-align="center" width="500"}
 
-The impervious surface percentage map of the original extracted data can be found in the appendix under its respective theme. 
+The impervious surface percentage map of the original extracted data can be found in the appendix under its respective theme.
 
 ***Mean Night-Time Land Surface Temperature (LST)***
 
-High night-time temperatures indicate poor cooling and urban heat retention. The Mean Night-Time Land Surface Temperature (LST) was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range. 
+High night-time temperatures indicate poor cooling and urban heat retention. The Mean Night-Time Land Surface Temperature (LST) was collected from the Terra & Aqua satellite from NASA. The temporal range of when the data collected was the average LST from the summer of 2022 (june to august), this range was taken due to data availability. This data was chosen as the resolution was the highest at 1 by 1 km. Risk increases with rising LST, especially during summer heatwaves. The following table below shows the range of data collected compared to the normalized range.
 
-The range we chose is adjusted to the context of the city. For that reason we choose to take the upper and lower bounds of the temperature and normalise between that range, as can be seen in the table below. 
+The range we chose is adjusted to the context of the city. For that reason we choose to take the upper and lower bounds of the temperature and normalise between that range, as can be seen in the table below.
 
 ::: {.callout-note collapse="true" title="Night Time Land Surface Temperature Normalisation Table"}
 *Normalized Mean LST table*
@@ -475,7 +475,7 @@ The range we chose is adjusted to the context of the city. For that reason we ch
 
 ![*Mean Night-Time Land Surface Temperature (Normalized Map).*](Inserted_images/Climate%20Adaptation/Normalised_Mean_LST_v2.png){fig-align="center" width="500"}
 
-The Mean Night-Time Land Surface Temperature map of the original extracted data can be found in the appendix under its respective theme. 
+The Mean Night-Time Land Surface Temperature map of the original extracted data can be found in the appendix under its respective theme.
 
 #### Which Areas Have Healthy Vegetation?
 
@@ -495,7 +495,7 @@ NDVI indicates vegetation health and coverage. The NDVI was collected from the S
 
 ![*Normalized Difference Vegetation Index (Normalized Map).*](Inserted_images/Climate%20Adaptation/Normalised_Mean_NDVI_v2.png){fig-align="center" width="500"}
 
-The NDVI map of the original extracted data can be found in the appendix under its respective theme. 
+The NDVI map of the original extracted data can be found in the appendix under its respective theme.
 
 #### Climate Adaptation S-MCDA Aggregation & Conclusion
 
@@ -561,7 +561,6 @@ A clip mask has been made to overlay it on the grid layer using the mean values.
 **Normalized value** = *("area mean" - min("area mean")) / (max("area mean") - min("area mean"))*
 :::
 
-
 ::: {.callout-note collapse="true" title = "Normalized Public Green Table"}
 
 | Variable | Low availability (0-0.2) | High availability (0.8-1) | Notes |
@@ -587,13 +586,10 @@ The data is normalized using the layer count data, on a scale from 0 to 1. The f
 :::
 
 ::: {.callout-note collapse="true" title="Normalized Public Amenities Table"}
-
-| Variable   | Low availability (0-0.2) | High availability (0.8-1) | Notes                                            |
-|------------|--------------------------|---------------------------|--------------------------------------------------|
-| Type count | <2                       | >5                        | <2 → 0-0.2 (low availability), >5 → 0.8-1 (high availability) |
-
+| Variable | Low availability (0-0.2) | High availability (0.8-1) | Notes |
+|---------------|---------------|---------------|---------------------------|
+| Type count | \<2 | \>5 | \<2 → 0-0.2 (low availability), \>5 → 0.8-1 (high availability) |
 :::
-
 
 Using 5 classes, the layer is styled using an equal interval of 0.2. It shows two areas with high diversity, namely in the south downstream where different modes of infrastructure are located and more central near the Mšeno nad Nisou industrial area which is close to an urban center.
 
@@ -618,13 +614,10 @@ Using the open field calculator, a new column is created for normalizing the dat
 :::
 
 ::: {.callout-note collapse="true" title="Normalized Road Integration Table"}
-
-| Variable                 | Low Integration (0) | High Integration (1) | Notes                                                           |
-|--------------------------|---------------------|----------------------|-----------------------------------------------------------------|
-| Angular Integration Sum 2k | <41.25              | >115.25              | <41.25 → 0-0.25 (low integration), >115.25 → 0.75-1 (high integration) |
-
+| Variable | Low Integration (0) | High Integration (1) | Notes |
+|--------------|--------------|--------------|------------------------------|
+| Angular Integration Sum 2k | \<41.25 | \>115.25 | \<41.25 → 0-0.25 (low integration), \>115.25 → 0.75-1 (high integration) |
 :::
-
 
 Categorizing the layer with the newly calculated normalized column, the following map shows how urban centers North, central and South-west of the stream can be defined.
 
@@ -715,8 +708,7 @@ slickR(imgs, height = 800, width = 500) +
 
 ```
 
-The original non normalized maps of the original extracted pollution data can be found in the appendix under its respective theme. 
-
+The original non normalized maps of the original extracted pollution data can be found in the appendix under its respective theme.
 
 ***Percentage of Tree Cover***
 
@@ -730,7 +722,7 @@ Tree cover density represents the percentage of land surface covered by trees wi
 
 ![*Normalised Mean Tree Cover Percentage (Normalized Map).*](Inserted_images/Quality%20of%20Life/Normalised_Mean_treecover_v2.png){fig-align="center" width="500"}
 
-The tree cover percentage map of the original extracted data can be found in the appendix under its respective theme. 
+The tree cover percentage map of the original extracted data can be found in the appendix under its respective theme.
 
 Combining these two layers results in the following combined map. The map shows the more urban one goes, the less liveable the urban climate becomes. Some areas score low because they are former and current industrial areas, for example Hranicá and Janovska industrial areas were pollution is still present.
 
