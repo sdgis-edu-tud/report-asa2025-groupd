@@ -1,0 +1,36 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Targeting Climate Adaptation Measures Along the Bílá Nisa
+  Stream
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Frederick
+    family-names: Auer
+  - given-names: Lin
+    family-names: Ruofan
+  - given-names: Matthijs
+    family-names: Jerez Nova
+  - given-names: Ula
+    family-names: Kunigėlytė
+  - given-names: Finn
+    name-particle: van
+    family-names: Asch
+repository-code: 'https://github.com/sdgis-edu-tud/report-asa2025-groupd'
+url: >-
+  https://sdgis-edu-tud.github.io/report-asa2025-groupd/report.html
+abstract: >-
+  Group D's report in the Applied Spatial Analytics for
+  Sustainable Urban Development course at TU Delft.
+keywords:
+  - s-mcda
+  - typology
+  - ReBioClim
+  - spatial analysis
+  - urban stream restoration
+license: CC-BY-4.0
